@@ -1,6 +1,6 @@
 # Template file for 'brave-bin'
 pkgname=brave-bin
-version=1.36.122
+version=1.37.113
 revision=1
 only_for_archs="x86_64"
 repository="cereus-extra"
