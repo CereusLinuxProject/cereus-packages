@@ -1,0 +1,16 @@
+# Template file for 'plasma-fluxbox'
+pkgname=plasma-fluxbox
+version=1
+revision=1
+build_style=meta
+repository="cereus-extra"
+short_desc="Fluxbox session for KDE Plasma"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="Public Domain"
+homepage="https://github.com/KF-Art"
+
+do_install() {
+	vmkdir usr/share/xsessions
+	vcopy ${FILESDIR}/plasma-fluxbox.desktop usr/share/xsessions/
+}
+

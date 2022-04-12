@@ -1,0 +1,79 @@
+# Template file for 'Graphite-kvantum-theme'
+pkgname=Graphite-kvantum-theme
+version=1.0
+revision=4
+build_style=meta
+repository=cereus-extra
+depends="${pkgname}-black \
+    ${pkgname}-Nord-dark \
+    ${pkgname}-Nord-light \
+    ${pkgname}-dark \
+    ${pkgname}-light"
+nostrip=yes
+wrksrc=Graphite-kvantum-colors-${version}
+short_desc="Material design inspired Kvantum theme"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="GPL-3.0"
+homepage="https://github.com/KF-Art/Graphite-kvantum-colors"
+distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
+checksum=01be2c306de4e4b3ca6788d02e49206688aae207ccf0252957bece02eb1b1e1c
+
+Graphite-kvantum-theme-black_package() {
+    color=black
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        theme_dir=usr/share/Kvantum
+        vmkdir ${theme_dir}
+		vcopy ${color}/Graphite-*-${color} ${theme_dir}
+        vlicense ${FILESDIR}/LICENSE
+	}
+}
+
+Graphite-kvantum-theme-Nord-dark_package() {
+    color=Nord-dark
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        theme_dir=usr/share/Kvantum
+        vmkdir ${theme_dir}
+		vcopy ${color}/Graphite-*-${color} ${theme_dir}
+        vlicense ${FILESDIR}/LICENSE
+	}
+}
+
+Graphite-kvantum-theme-Nord-light_package() {
+    color=Nord-light
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        theme_dir=usr/share/Kvantum
+        vmkdir ${theme_dir}
+		vcopy ${color}/Graphite-*-${color} ${theme_dir}
+        vlicense ${FILESDIR}/LICENSE
+	}
+}
+
+Graphite-kvantum-theme-dark_package() {
+    color=dark
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        theme_dir=usr/share/Kvantum
+        vmkdir ${theme_dir}
+		vcopy ${color}/Graphite-*-${color} ${theme_dir}
+        vlicense ${FILESDIR}/LICENSE
+	}
+}
+
+Graphite-kvantum-theme-light_package() {
+    color=light
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        theme_dir=usr/share/Kvantum
+        vmkdir ${theme_dir}
+		vcopy ${color}/Graphite-*-${color} ${theme_dir}
+        vlicense ${FILESDIR}/LICENSE
+	}
+}

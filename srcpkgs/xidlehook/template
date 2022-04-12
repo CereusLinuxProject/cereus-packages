@@ -1,0 +1,32 @@
+# Template file for 'xidlehook'
+pkgname=xidlehook
+version=0.10.0
+revision=1
+repository="cereus-extra"
+archs="x86_64 x86_64-musl aarch64 aarch64-musl i686 i686-musl"
+build_style=cargo
+configure_args="$(vopt_if audio '--features pulse' '--no-default-features')"
+make_install_args="--path xidlehook-daemon"
+hostmakedepends="pkg-config python3"
+makedepends="libxcb-devel libXScrnSaver-devel $(vopt_if audio libpulseaudio)"
+short_desc="General-purpose replacement for xautolock"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="MIT"
+homepage="https://gitlab.com/jD91mZM2/xidlehook"
+distfiles="${homepage}/-/archive/${version}/${pkgname}-${version}.tar.gz"
+checksum=66751b78c5174c0e430d9becd749771d593f388db348514d8c3256670dc77cd8
+build_options_default="audio"
+desc_option_audio="Don't invoke the timer when any audio is playing (Only works with Pulseaudio)"
+build_options="audio"
+
+do_build() {
+	cargo build --release --target ${RUST_TARGET} ${configure_args} --manifest-path xidlehook-daemon/Cargo.toml
+}
+
+do_check() {
+	cargo test --release --target ${RUST_TARGET}
+}
+
+post_install() {
+	vlicense LICENSE
+}

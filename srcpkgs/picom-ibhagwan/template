@@ -1,0 +1,34 @@
+# Template file for 'picom-ibhagwan'
+pkgname=picom-ibhagwan
+version=20220221
+revision=2
+wrksrc=picom
+build_style=meson
+repository="cereus-extra"
+configure_args="-Dwith_docs=true"
+hostmakedepends="git pkg-config asciidoc"
+makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre-devel
+ pixman-devel xcb-util-image-devel xcb-util-renderutil-devel
+ libxdg-basedir-devel uthash"
+depends="desktop-file-utils"
+short_desc="Picom fork which includes blur effects and fade animations"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="MIT, MPL-2.0"
+homepage="https://github.com/ibhagwan/picom/"
+provides="picom"
+conflicts="picom, picom-jonaburg"
+
+do_fetch() {
+  git clone --single-branch --branch next-rebase --depth=1 ${homepage} ${wrksrc}
+}
+
+post_install() {
+	vlicense LICENSES/MIT
+	vsconf picom.sample.conf
+}
+
+picom-ibhagwan_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	build_style=meta
+	short_desc+=" (transitional dummy package)"
+}

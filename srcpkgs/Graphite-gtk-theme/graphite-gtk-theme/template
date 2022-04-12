@@ -1,0 +1,22 @@
+# Template file for 'graphite-gtk-theme'
+pkgname=graphite-gtk-theme
+version=2022.01.22
+date=2022-01-22
+revision=1
+wrksrc=Graphite-gtk-theme-${date}
+theme_dir=/usr/share/themes
+nostrip=yes
+hostmakedepends="sassc"
+depends="gtk+3 gtk-engine-murrine"
+short_desc="Material design inspired GTK theme with light and dark variants"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="GPL-3.0"
+homepage="https://github.com/vinceliuice/Graphite-gtk-theme"
+distfiles="${homepage}/archive/refs/tags/${date}.tar.gz"
+checksum=59909e3287cc7d58b20d7fab00c506f81316841454ea95b45a5399a2dc0cea89
+
+do_install() {
+    vmkdir ${theme_dir}
+    ./install.sh -t all --tweaks rimless -d ${DESTDIR}/${theme_dir}
+	vlicense LICENSE
+}

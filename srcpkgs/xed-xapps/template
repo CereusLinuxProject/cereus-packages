@@ -1,0 +1,42 @@
+# Template file for 'xed-xapps'
+pkgname=xed-xapps
+version=3.2.2
+revision=1
+nostrip=yes
+wrksrc=xed-${version}
+repository="cereus-extra"
+hostmakedepends="meson samurai xapps-devel"
+makedepends="meson samurai gobject-introspection intltool itstool xapps-devel pkg-config cmake libxml2-devel gtksourceview4-devel gspell-devel libpeas-devel base-devel libxkbfile-devel"
+depends="gspell gtksourceview4 libpeas xapps"
+short_desc="A small, cross-DE and lightweight text editor. X-Apps Project."
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="GPL-2.0"
+homepage="https://github.com/linuxmint/xed"
+distfiles="${homepage}/archive/${version}.tar.gz"
+checksum=7f0a1a8abc85da66980354aa033c1215eb7bf4e23e71d14b6ae9a28956352632
+
+do_build() {
+    mkdir -p ${wrksrc}/build
+    cd ${wrksrc}/build
+
+    meson --prefix=/usr \
+          --libexecdir=lib/xed \
+          --buildtype=plain \
+          ..
+    samu
+}
+
+do_install() {
+    cd ${wrksrc}/build
+    DESTDIR="${DESTDIR}" samu install
+}
+
+xed-xapps-devel_package() {
+	depends="${sourcepkg}>=${version}_${revision} gtksourceview4-devel
+	 libpeas-devel libpeas-devel xapps-devel"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+	}
+}

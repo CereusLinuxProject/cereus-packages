@@ -1,0 +1,93 @@
+# Template file for 'vibrancy-icon-theme'
+pkgname=vibrancy-icon-theme
+version=2.7
+revision=1
+repository=cereus-extra
+wrksrc=${pkgname}-main
+build_style=meta
+depends="
+    ${pkgname}-nonmono-light
+    ${pkgname}-nonmono-dark
+    ${pkgname}-colors
+    ${pkgname}-dark
+    ${pkgname}-full-dark
+    ${pkgname}-light"
+theme_dir="usr/share/icons/"
+short_desc="Modern, clean and customizable icon suite"
+maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
+license="CC-BY-SA-3.0, GPL-2.0"
+homepage="https://www.ravefinity.com/p/vibrancy-colors-gtk-icon-theme.html"
+distfiles="https://github.com/cereuslinux/vibrancy-icon-theme/archive/refs/heads/main.zip"
+checksum=3d78f0893156e39358fe1d284cd72c38aee55198af1c402f54a5336ac6b07a46
+
+vibrancy-icon-theme-nonmono-light_package() {
+    color=NonMono-Light
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${theme_dir}
+		vcopy Vibrancy-${color}-* ${theme_dir}/
+        vlicense ${FILESDIR}/LICENSE-CC-BY-SA-3.0
+        vlicense ${FILESDIR}/LICENSE-GPL-2.0
+	}
+}
+
+vibrancy-icon-theme-nonmono-dark_package() {
+    color=NonMono-Dark
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${theme_dir}
+		vcopy Vibrancy-${color}-* ${theme_dir}/
+        vlicense ${FILESDIR}/LICENSE-CC-BY-SA-3.0
+        vlicense ${FILESDIR}/LICENSE-GPL-2.0
+	}
+}
+
+vibrancy-icon-theme-colors_package() {
+    color=Colors
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${theme_dir}
+		vcopy Vibrancy-${color}-* ${theme_dir}/
+        vlicense ${FILESDIR}/LICENSE-CC-BY-SA-3.0
+        vlicense ${FILESDIR}/LICENSE-GPL-2.0
+	}
+}
+
+vibrancy-icon-theme-dark_package() {
+    color=Dark
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${theme_dir}
+		vcopy Vibrancy-${color}-* ${theme_dir}/
+        vlicense ${FILESDIR}/LICENSE-CC-BY-SA-3.0
+        vlicense ${FILESDIR}/LICENSE-GPL-2.0
+	}
+}
+
+vibrancy-icon-theme-full-dark_package() {
+    color=Full-Dark
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${theme_dir}
+		vcopy Vibrancy-${color}-* ${theme_dir}/
+        vlicense ${FILESDIR}/LICENSE-CC-BY-SA-3.0
+        vlicense ${FILESDIR}/LICENSE-GPL-2.0
+	}
+}
+
+vibrancy-icon-theme-light_package() {
+    color=Light
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${theme_dir}
+		vcopy Vibrancy-${color}-* ${theme_dir}/
+        vlicense ${FILESDIR}/LICENSE-CC-BY-SA-3.0
+        vlicense ${FILESDIR}/LICENSE-GPL-2.0
+	}
+}

@@ -1,0 +1,143 @@
+# Template file for 'Graphite-gtk-theme'
+pkgname=Graphite-gtk-theme
+version=2022.03.22
+date=2022-03-22
+revision=1
+repository="cereus-extra"
+wrksrc=Graphite-gtk-theme-${date}
+theme_dir=usr/share/themes
+nostrip=yes
+build_style=meta
+# NOTE: when building it will warn that sassc is not installed, even if it actually is installed.
+hostmakedepends="sassc"
+makedepends="sassc"
+
+depends="gtk+3 gtk-engine-murrine \
+${pkgname}-black
+${pkgname}-black-compact
+${pkgname}-dark
+${pkgname}-dark-compact
+${pkgname}-light
+${pkgname}-light-compact
+${pkgname}-nord-dark
+${pkgname}-nord-dark-compact
+${pkgname}-nord-light
+${pkgname}-nord-light-compact"
+
+short_desc="Material design inspired GTK theme with light and dark variants"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="GPL-3.0"
+homepage="https://github.com/vinceliuice/Graphite-gtk-theme"
+distfiles="${homepage}/archive/refs/tags/${date}.tar.gz"
+checksum=e4d1e9a768d822e956fc35549074b8225b81017dd74b6b2842409cdaade83ec5
+
+Graphite-gtk-theme-black_package() {
+    nostrip=yes
+    short_desc+=' - black variant'
+    pkg_install() {
+        vmkdir ${theme_dir}
+        ./install.sh -t all -c dark -s standard -n Graphite-black --tweaks rimless black -d ${wrksrc}/themes
+       vcopy ${wrksrc}/themes/Graphite-* ${theme_dir}
+        rm -r ${wrksrc}/themes/*
+    vlicense LICENSE
+	}
+}
+Graphite-gtk-theme-black-compact_package() {
+    nostrip=yes
+    short_desc+=' - black-compact variant'
+    pkg_install() {
+        vmkdir ${theme_dir}
+        ./install.sh -t all -c dark -s compact -n Graphite-black --tweaks rimless black -d ${wrksrc}/themes
+       vcopy ${wrksrc}/themes/Graphite-* ${theme_dir}
+        rm -r ${wrksrc}/themes/*
+    vlicense LICENSE
+	}
+}
+Graphite-gtk-theme-dark_package() {
+    nostrip=yes
+    short_desc+=' - dark variant'
+    pkg_install() {
+        vmkdir ${theme_dir}
+        ./install.sh -t all -c dark -s standard --tweaks rimless -d ${wrksrc}/themes
+        vcopy ${wrksrc}/themes/Graphite-* ${theme_dir}
+        rm -r ${wrksrc}/themes/*
+    vlicense LICENSE
+	}
+}
+Graphite-gtk-theme-dark-compact_package() {
+    nostrip=yes
+    short_desc+=' - dark-compact variant'
+    pkg_install() {
+        vmkdir ${theme_dir}
+        ./install.sh -t all -c dark -s compact --tweaks rimless -d ${wrksrc}/themes
+       vcopy ${wrksrc}/themes/Graphite-* ${theme_dir}
+        rm -r ${wrksrc}/themes/*
+    vlicense LICENSE
+	}
+}
+Graphite-gtk-theme-light_package() {
+    nostrip=yes
+    short_desc+=' - light variant'
+    pkg_install() {
+        vmkdir ${theme_dir}
+        ./install.sh -t all -c light -s standard --tweaks rimless -d ${wrksrc}/themes
+       vcopy ${wrksrc}/themes/Graphite-* ${theme_dir}
+        rm -r ${wrksrc}/themes/*
+    vlicense LICENSE
+	}
+}
+Graphite-gtk-theme-light-compact_package() {
+    nostrip=yes
+    short_desc+=' - light-compact variant'
+    pkg_install() {
+        vmkdir ${theme_dir}
+        ./install.sh -t all -c light -s compact --tweaks rimless -d ${wrksrc}/themes
+       vcopy ${wrksrc}/themes/Graphite-* ${theme_dir}
+        rm -r ${wrksrc}/themes/*
+    vlicense LICENSE
+	}
+}
+Graphite-gtk-theme-nord-dark_package() {
+    nostrip=yes
+    short_desc+=' - nord-dark variant'
+    pkg_install() {
+        vmkdir ${theme_dir}
+        ./install.sh -t all -c dark -s standard --tweaks rimless nord -d ${wrksrc}/themes
+       vcopy ${wrksrc}/themes/Graphite-* ${theme_dir}
+        rm -r ${wrksrc}/themes/*
+    vlicense LICENSE
+	}
+}
+Graphite-gtk-theme-nord-light_package() {
+    nostrip=yes
+    short_desc+=' - nord-light variant'
+    pkg_install() {
+        vmkdir ${theme_dir}
+        ./install.sh -t all -c light -s standard --tweaks rimless nord -d ${wrksrc}/themes
+       vcopy ${wrksrc}/themes/Graphite-* ${theme_dir}
+        rm -r ${wrksrc}/themes/*
+    vlicense LICENSE
+	}
+}
+Graphite-gtk-theme-nord-dark-compact_package() {
+    nostrip=yes
+    short_desc+=' - nord-dark-compact variant'
+    pkg_install() {
+        vmkdir ${theme_dir}
+        ./install.sh -t all -c dark -s compact --tweaks rimless nord -d ${wrksrc}/themes
+       vcopy ${wrksrc}/themes/Graphite-* ${theme_dir}
+        rm -r ${wrksrc}/themes/*
+    vlicense LICENSE
+	}
+}
+Graphite-gtk-theme-nord-light-compact_package() {
+    nostrip=yes
+    short_desc+=' - nord-light-compact variant'
+    pkg_install() {
+        vmkdir ${theme_dir}
+        ./install.sh -t all -c light -s compact --tweaks rimless nord -d ${wrksrc}/themes
+       vcopy ${wrksrc}/themes/Graphite-* ${theme_dir}
+        rm -r ${wrksrc}/themes/*
+    vlicense LICENSE
+	}
+}

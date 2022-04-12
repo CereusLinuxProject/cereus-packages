@@ -1,0 +1,40 @@
+# Template file for 'librewolf-bin'
+pkgname=librewolf-bin
+_realname=librewolf
+version=98.0.1
+revision=1
+only_for_archs="x86_64"
+repository="cereus-extra"
+short_desc="Community-maintained fork of Firefox, focused on privacy, security and freedom - binary-based package"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+hostmakedepends="tar xz"
+license="MPL-2.0"
+homepage="https://gitlab.com/librewolf-community"
+distfiles="https://gitlab.com/api/v4/projects/12829184/packages/generic/${_realname}/${version}-${revision}/LibreWolf-${version}-${revision}.x86_64.tar.bz2"
+checksum=c532da3a03377a93b70765fc29cab435a56c3edc9080eca2f9c62c2829d246e5
+nostrip=yes
+
+do_extract() {
+	vmkdir opt/${_realname}
+	bsdtar -C ${DESTDIR}/opt/${_realname} -xf ${XBPS_SRCDISTDIR}/${pkgname}-${version}/LibreWolf-${version}-${revision}.x86_64.tar.bz2 
+}
+
+do_install() {
+    vmkdir usr/bin
+    ln -rs ${DESTDIR}/opt/${_realname}/${_realname} ${DESTDIR}/usr/bin
+
+    # Copy launcher
+    vmkdir usr/share/applications
+	vcopy ${FILESDIR}/${_realname}.desktop  usr/share/applications
+
+    # Install the icons
+    for res in 16 32 48 64 128; do
+		vmkdir usr/share/icons/hicolor/${res}x${res}/apps
+                vcopy ${DESTDIR}/opt/${_realname}/browser/chrome/icons/default/default${res}.png \
+                        usr/share/icons/hicolor/${res}x${res}/apps/${_realname}.png
+    done
+
+    vinstall ${FILESDIR}/${_realname}.svg 0644 \
+	usr/share/icons/hicolor/scalable/apps/
+	
+}

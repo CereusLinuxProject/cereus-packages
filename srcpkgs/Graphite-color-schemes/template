@@ -1,0 +1,70 @@
+# Template file for 'Graphite-color-schemes'
+pkgname=Graphite-color-schemes
+version=02.20.2022
+revision=1
+build_style=meta
+nostrip=yes
+repository="cereus-extra"
+wrksrc=Graphite-color-schemes-${version}
+depends="Graphite-color-schemes-light \
+     Graphite-color-schemes-dark \
+     Graphite-color-schemes-black \
+     Graphite-color-schemes-nord-light \
+     Graphite-color-schemes-nord-dark"
+hostmakedepends="git"
+short_desc="Custom additional color schemes of Graphite theme for KDE Plasma desktop"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="GPL-3.0"
+homepage="https://github.com/KF-Art/Graphite-color-schemes"
+# distfiles="${homepage}/archive/v${version}.tar.gz"
+# checksum=
+
+do_fetch() {
+    git clone https://github.com/KF-Art/Graphite-color-schemes ${wrksrc}
+}
+
+Graphite-color-schemes-light_package() {
+	short_desc+=" - light variant"
+	pkg_install() {
+        vmkdir usr/share/color-schemes
+		vcopy light/* usr/share/color-schemes/
+        vlicense LICENSE
+	}
+}
+
+Graphite-color-schemes-dark_package() {
+	short_desc+=" - dark variant"
+	pkg_install() {
+        vmkdir usr/share/color-schemes
+		vcopy dark/* usr/share/color-schemes/
+        vlicense LICENSE
+	}
+}
+
+Graphite-color-schemes-black_package() {
+	short_desc+=" - black variant"
+	pkg_install() {
+        vmkdir usr/share/color-schemes
+		vcopy black/* usr/share/color-schemes/
+        vlicense LICENSE
+	}
+}
+
+Graphite-color-schemes-nord-light_package() {
+	short_desc+=" - nord light variant"
+	pkg_install() {
+        vmkdir usr/share/color-schemes
+		vcopy nord-light/* usr/share/color-schemes/
+        vlicense LICENSE
+	}
+}
+
+Graphite-color-schemes-nord-dark_package() {
+	short_desc+=" - nord dark variant"
+	pkg_install() {
+        vmkdir usr/share/color-schemes
+		vcopy nord-dark/* usr/share/color-schemes/
+        vlicense LICENSE
+	}
+}
+

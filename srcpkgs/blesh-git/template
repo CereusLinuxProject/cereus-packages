@@ -1,0 +1,24 @@
+# Template file for 'blesh-git'
+pkgname=blesh-git
+version=0.4.0
+revision=1
+makedepends="gawk git"
+depends="bash git"
+build_style="gnu-makefile"
+short_desc="A replacement for bash's line editor with advanced features"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="BSD-3-Clause"
+conflicts="blesh"
+homepage="https://github.com/akinomyoga/ble.sh"
+
+do_fetch() {
+	git clone ${homepage} ${wrksrc}
+}
+
+do_install() {
+	make install DESTDIR=${DESTDIR} PREFIX=/usr
+}
+	
+post_install() {
+    vlicense ${FILESDIR}/LICENSE.md
+}

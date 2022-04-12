@@ -1,0 +1,33 @@
+# Template file for 'whatsdesk-bin'
+pkgname=whatsdesk-bin
+version=0.3.8
+revision=1
+archs="x86_64"
+hostmakedepends="bsdtar"
+wrksrc=whatsdesk-bin
+create_wrksrc=yes
+repository="cereus-extra"
+depends="libXScrnSaver nss libXtst libnotify libappindicator"
+short_desc="Unofficial client for WhatsApp"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="MIT"
+homepage="https://gitlab.com/zerkc/whatsdesk"
+conflicts="whatsdesk-git"
+distfiles="https://zerkc.gitlab.io/whatsdesk/whatsdesk_${version}_amd64.deb
+           ${homepage}/-/raw/master/LICENSE"
+checksum="f9b2c1d58713df105064b268e3808bb320737464f388e508755a23dcead64433
+ 38f8c3d94c9497be761fc95f10d3c530a693bae33fa89d5ce29fe1fac45e3aea"
+
+do_extract() {
+    cd ${wrksrc}
+    ar xv ${XBPS_SRCDISTDIR}/${pkgname}-${version}/whatsdesk_${version}_amd64.deb
+}
+
+do_install() {
+	bsdtar -xv -C ${DESTDIR} -f data.tar.xz
+	vmkdir usr/bin
+	ln -sf "/opt/whatsdesk/whatsdesk" "${DESTDIR}/usr/bin/"
+	sed -i 's/MimeType=.*/ /g' ${DESTDIR}/usr/share/applications/whatsdesk.desktop
+	sed -i 's/Name=.*/Name=Whatsdesk/g' ${DESTDIR}/usr/share/applications/whatsdesk.desktop
+	vlicense ${XBPS_SRCDISTDIR}/${pkgname}-${version}/LICENSE
+}

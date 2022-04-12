@@ -1,0 +1,170 @@
+# Template file for 'flat-remix-icon-theme'
+pkgname=flat-remix-icon-theme
+version=20211214
+revision=1
+build_style=meta
+repository=cereus-extra
+depends="${pkgname}-black \
+    ${pkgname}-blue \
+    ${pkgname}-brown \
+    ${pkgname}-cyan \
+    ${pkgname}-green \
+    ${pkgname}-grey \
+    ${pkgname}-magenta \
+    ${pkgname}-orange \
+    ${pkgname}-red \
+    ${pkgname}-teal \
+    ${pkgname}-violet \
+    ${pkgname}-yellow"
+nostrip=yes
+wrksrc=flat-remix-${version}
+short_desc="Icon theme inspired by material design with colorful palette with some shadows, highlights, and gradients for some depth."
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="GPL-3.0"
+homepage="https://github.com/daniruiz/flat-remix"
+distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
+checksum=1c899ded7191bfbad16d99265bfb801d48da5af69e4f7baf090200ee421587da
+
+flat-remix-icon-theme-black_package() {
+    color=Black
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        vmkdir ${icondir}
+		vcopy Flat-Remix-${color}-* ${icondir}
+        vlicense LICENSE
+	}
+}
+
+flat-remix-icon-theme-blue_package() {
+    color=Blue
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        vmkdir ${icondir}
+		vcopy Flat-Remix-${color}-* ${icondir}
+        vlicense LICENSE
+	}
+}
+
+flat-remix-icon-theme-brown_package() {
+    color=Brown
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        vmkdir ${icondir}
+		vcopy Flat-Remix-${color}-* ${icondir}
+        vlicense LICENSE
+	}
+}
+
+flat-remix-icon-theme-cyan_package() {
+    color=Cyan
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        vmkdir ${icondir}
+		vcopy Flat-Remix-${color}-* ${icondir}
+        vlicense LICENSE
+	}
+}
+
+flat-remix-icon-theme-green_package() {
+    color=Green
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        vmkdir ${icondir}
+		vcopy Flat-Remix-${color}-* ${icondir}
+        vlicense LICENSE
+	}
+}
+
+flat-remix-icon-theme-grey_package() {
+    color=Grey
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        vmkdir ${icondir}
+		vcopy Flat-Remix-${color}-* ${icondir}
+        vlicense LICENSE
+	}
+}
+
+flat-remix-icon-theme-magenta_package() {
+    color=Magenta
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        vmkdir ${icondir}
+		vcopy Flat-Remix-${color}-* ${icondir}
+        vlicense LICENSE
+	}
+}
+
+flat-remix-icon-theme-orange_package() {
+    color=Orange
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        vmkdir ${icondir}
+		vcopy Flat-Remix-${color}-* ${icondir}
+        vlicense LICENSE
+	}
+}
+
+flat-remix-icon-theme-red_package() {
+    color=Red
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        vmkdir ${icondir}
+		vcopy Flat-Remix-${color}-* ${icondir}
+        vlicense LICENSE
+	}
+}
+
+flat-remix-icon-theme-teal_package() {
+    color=Teal
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        vmkdir ${icondir}
+		vcopy Flat-Remix-${color}-* ${icondir}
+        vlicense LICENSE
+	}
+}
+
+flat-remix-icon-theme-violet_package() {
+    color=Violet
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        vmkdir ${icondir}
+		vcopy Flat-Remix-${color}-* ${icondir}
+        vlicense LICENSE
+	}
+}
+
+flat-remix-icon-theme-yellow_package() {
+    color=Yellow
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        vmkdir ${icondir}
+		vcopy Flat-Remix-${color}-* ${icondir}
+        vlicense LICENSE
+	}
+}

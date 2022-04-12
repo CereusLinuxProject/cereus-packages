@@ -1,0 +1,31 @@
+# Template file for 'cereus-wallpapers'
+pkgname=cereus-wallpapers
+version=0.1
+revision=2
+build_style=meta
+repository=cereus-core
+short_desc="Cereus Linux desktop wallpapers"
+hostmakedepends="git"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="GPLv3"
+homepage="https://github.com/cereuslinux/cereus-wallpapers"
+
+do_fetch() {
+  git clone --depth=1 ${homepage} ${wrksrc}
+}
+
+do_install() {
+    vmkdir usr/share/backgrounds
+
+    cd ${wrksrc}
+    ls --color=never *.png > list.txt
+    ls --color=never *.jpg >> list.txt
+
+    for wall in $(cat list.txt); do
+        vinstall ${wrksrc}/${wall} 0644 usr/share/backgrounds
+    done
+}
+
+post_install() {
+    vlicense ${wrksrc}/LICENSE
+}

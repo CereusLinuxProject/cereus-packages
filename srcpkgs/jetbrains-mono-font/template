@@ -1,0 +1,25 @@
+# Template file for 'jetbrains-mono-font'
+pkgname=jetbrains-mono-font
+version=2.242
+revision=1
+create_wrksrc=yes
+depends="font-util"
+repository="cereus-extra"
+short_desc="JetBrains monospace font - the free and open-source typeface for developers"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="OFL-1.1"
+homepage="https://github.com/JetBrains/JetBrainsMono"
+distfiles="${homepage}/releases/download/v${version}/JetBrainsMono-${version}.zip"
+checksum=4e315b4ef176ce7ffc971b14997bdc8f646e3d1e5b913d1ecba3a3b10b4a1a9f
+font_dirs="/usr/share/fonts"
+
+do_install() {
+    for dir in ttf variable webfonts; do
+        vmkdir ${font_dirs}/${dir}
+	    install -Dm644 fonts/${dir}/* -t ${DESTDIR}/${font_dirs}/${dir}
+    done
+
+    vmkdir usr/share/jetbrains-mono/
+    vinstall AUTHORS.txt 644 usr/share/jetbrains-mono/
+	vlicense OFL.txt
+}

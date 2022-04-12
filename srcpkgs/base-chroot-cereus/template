@@ -1,0 +1,28 @@
+# Template file for 'base-chroot-cereus'
+pkgname=base-chroot-cereus
+version=0.67
+revision=1
+bootstrap=yes
+build_style=meta
+conflicts="base-chroot"
+repository=cereus-core
+short_desc="Minimal set of packages required for chroot with xbps-src - Cereus patched version"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="Public Domain"
+homepage="https://cereus-linux.sourceforge.io"
+
+case "$XBPS_TARGET_LIBC" in
+	musl) depends="musl-devel musl-locales";;
+	*) depends="glibc-devel glibc-locales";;
+esac
+
+depends+="
+ base-files>=2022.07.03 binutils gcc gcc-ada libada-devel
+ patch sed findutils diffutils make gzip coreutils
+ file bsdtar xbps mpfr ncurses libreadline8
+ chroot-bash chroot-grep chroot-gawk chroot-distcc
+ chroot-util-linux chroot-git tzdata"
+
+if [ "$CHROOT_READY" ]; then
+	depends+=" ccache"
+fi

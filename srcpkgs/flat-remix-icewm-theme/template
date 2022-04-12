@@ -1,0 +1,24 @@
+# Template file for 'flat-remix-icewm-theme'
+pkgname=flat-remix-icewm-theme
+version=20222602
+revision=1
+theme_dir=usr/share/icewm/themes/
+repository=cereus-extra
+hostmakedepends="bsdtar"
+short_desc="Flat-Remix-like theme for IceWM"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="GPL-2.0"
+homepage="https://github.com/IamTheMasterRoy/IceWM-Themes"
+distfiles="${homepage}/releases/download/FlatRemixIceWMThemes/Flat-Remix.Ice.All.Variants.tar.gz"
+checksum="4787403096166b1936a57242c136047e79876bb574cee16166cc01358f9864f7"
+
+do_extract() {
+    bsdtar -xvf ${XBPS_SRCDISTDIR}/${pkgname}-${version}/Flat-Remix.Ice.All.Variants.tar.gz \
+        -C ${wrksrc}
+}
+
+do_install() {
+    vmkdir ${theme_dir}
+    vcopy ./* ${theme_dir}
+    vlicense ${FILESDIR}/LICENSE
+}

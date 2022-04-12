@@ -1,0 +1,11 @@
+# Template file for 'calamares-cereus'
+pkgname=calamares-cereus
+version=20220803
+revision=1
+build_style=meta
+depends="calamares calamares-modules-cereus"
+repository="cereus-core"
+short_desc="Calamares installer meta-package for Cereus Linux"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="GPL-3.0"
+homepage="https://cereus-linux.sourceforge.io"
