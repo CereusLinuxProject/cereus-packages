@@ -1,6 +1,6 @@
 # Template file for 'pixelitos-icon-theme'
 pkgname=pixelitos-icon-theme
-version=0.1
+version=1.01
 revision=1
 repository=cereus-extra
 wrksrc=pixelitos-icon-theme-${version}
