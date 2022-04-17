@@ -9,7 +9,7 @@ short_desc="Cereus Linux base system files"
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="Public Domain"
 homepage="https://cereus-linux.sourceforge.io"
-conflicts="base-files"
+conflicts="base-files>=0.77"
 conf_files="
 	/etc/inputrc
 	/etc/profile
