@@ -1,6 +1,6 @@
 # Template file for 'picom-jonaburg'
 pkgname=picom-jonaburg
-version=20220221
+version=20220417
 revision=1
 wrksrc=picom
 build_style=meson

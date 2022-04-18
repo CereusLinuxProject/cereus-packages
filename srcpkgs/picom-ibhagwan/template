@@ -1,6 +1,6 @@
 # Template file for 'picom-ibhagwan'
 pkgname=picom-ibhagwan
-version=20220221
+version=20220417
 revision=2
 wrksrc=picom
 build_style=meson

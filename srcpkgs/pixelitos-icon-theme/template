@@ -10,7 +10,7 @@ license="MIT"
 homepage="https://github.com/ItzSelenux/pixelitos-icon-theme"
 changelog="https://github.com/ItzSelenux/pixelitos-icon-theme/releases/tag/${version}"
 distfiles="${homepage}/archive/${version}/${version}.tar.gz"
-checksum=30106112f0772e8f9163d3be06a2bb04d61b6b964cb67bc1f2ea9cbd01dca12b
+checksum=8b5494b4c43703d26bd7b0edf39977a97bea30cd7534092801fe38e7b997af65
 
 do_install() {
 	vmkdir usr/share/icons/pixelitos
