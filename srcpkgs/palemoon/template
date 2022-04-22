@@ -35,11 +35,11 @@ do_install() {
 	vinstall usr/share/applications/${pkgname}.desktop 0644 \
 		usr/share/applications
 
-	# Crear directorio en path falso ($DESTDIR) para el paquete
+	# Create dirs at $DESTDIR
 	vmkdir opt
 	vmkdir usr/bin
 	
-	# Mover archivos de forma recursiva
+	# Move recursively files
 	vcopy usr/lib/palemoon opt
 	ln -s /opt/palemoon/palemoon "${DESTDIR}/usr/bin/palemoon"
 
