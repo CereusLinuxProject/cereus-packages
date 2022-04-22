@@ -1,0 +1,21 @@
+# Template file for 'polyglot-prompt'
+pkgname=polyglot-prompt
+version=1.11.3
+revision=1
+repository=cereus-extra
+wrksrc="polyglot-${version}"
+short_desc="Color, ASCII-only Git prompt for zsh, bash, ksh93, mksh, pdksh, dash, and busybox ash"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="MIT"
+homepage="https://github.com/agkozak/polyglot"
+distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
+checksum=2e736fea0725bcad5523bdc558cc00709529175ef43660827e39a4eaa64d3cb7
+
+do_install() {
+	vmkdir usr/share/polyglot-prompt
+	vcopy * usr/share/polyglot-prompt
+}
+	
+post_install() {
+    vlicense LICENSE
+}
