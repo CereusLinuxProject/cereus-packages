@@ -1,0 +1,157 @@
+# Template file for 'reversal-icon-theme'
+pkgname=reversal-icon-theme
+version=20220423
+revision=1
+build_style=meta
+repository=cereus-extra
+depends="${pkgname}-yellow
+${pkgname}-blue
+${pkgname}-green
+${pkgname}-purple
+${pkgname}-brown
+${pkgname}-grey
+${pkgname}-red
+${pkgname}-black
+${pkgname}-orange
+${pkgname}-pink"
+nostrip=yes
+icondir=usr/share/icons
+hostmakedepends="git gtk-update-icon-cache"
+short_desc="A colorful Design Rectangle icon theme for Linux desktops"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="GPL-3.0"
+homepage="https://github.com/yeyushengfan258/Reversal-icon-theme"
+
+do_fetch() {
+    git clone ${homepage} ${wrksrc}
+}
+
+reversal-icon-theme-yellow_package() {
+    color=yellow
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        # vmkdir ${icondir}
+        mkdir -p ${DESTDIR}/${icondir}
+        ./install.sh -d ${DESTDIR}/${icondir}
+        vlicense COPYING
+	}
+}
+
+reversal-icon-theme-blue_package() {
+    color=blue
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        # vmkdir ${icondir}
+        mkdir -p ${DESTDIR}/${icondir}
+        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vlicense COPYING
+	}
+}
+
+reversal-icon-theme-green_package() {
+    color=green
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        # vmkdir ${icondir}
+        mkdir -p ${DESTDIR}/${icondir}
+        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vlicense COPYING
+	}
+}
+
+reversal-icon-theme-purple_package() {
+    color=purple
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        # vmkdir ${icondir}
+        mkdir -p ${DESTDIR}/${icondir}
+        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vlicense COPYING
+	}
+}
+
+reversal-icon-theme-brown_package() {
+    color=brown
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        # vmkdir ${icondir}
+        mkdir -p ${DESTDIR}/${icondir}
+        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vlicense COPYING
+	}
+}
+
+reversal-icon-theme-grey_package() {
+    color=grey
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        # vmkdir ${icondir}
+        mkdir -p ${DESTDIR}/${icondir}
+        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vlicense COPYING
+	}
+}
+
+reversal-icon-theme-red_package() {
+    color=red
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        # vmkdir ${icondir}
+        mkdir -p ${DESTDIR}/${icondir}
+        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vlicense COPYING
+	}
+}
+
+reversal-icon-theme-black_package() {
+    color=black
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        # vmkdir ${icondir}
+        mkdir -p ${DESTDIR}/${icondir}
+        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vlicense COPYING
+	}
+}
+
+reversal-icon-theme-orange_package() {
+    color=orange
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        # vmkdir ${icondir}
+        mkdir -p ${DESTDIR}/${icondir}
+        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vlicense COPYING
+	}
+}
+
+reversal-icon-theme-pink_package() {
+    color=pink
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        icondir=usr/share/icons
+        # vmkdir ${icondir}
+        mkdir -p ${DESTDIR}/${icondir}
+        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vlicense COPYING
+	}
+}
