@@ -1,0 +1,21 @@
+# Template file for 'open-sauce-fonts'
+pkgname=open-sauce-fonts
+version=20210709
+revision=1
+wrksrc="Open-Sauce-Fonts-master"
+fonts_dir="usr/share/fonts/TTF/"
+short_desc="Super family compact font optmised for better viewing small text"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="OFL-1.1"
+homepage="https://github.com/marcologous/Open-Sauce-Fonts"
+distfiles="${homepage}/archive/refs/heads/master.zip"
+checksum=48cc5c9d4de520c1bf4ef101d85022b5a1bb7e836e15c3cb06c378d01c863d41
+
+do_install() {
+    vmkdir ${fonts_dir}
+    vcopy fonts/* ${fonts_dir}
+
+    for font in One Sans Two; do
+        vlicense "Open Sauce ${font} OFL.txt"
+    done
+}
