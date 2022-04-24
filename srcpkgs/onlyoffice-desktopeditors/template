@@ -3,6 +3,7 @@ pkgname=onlyoffice-desktopeditors
 version=7.0.2
 revision=1
 archs="x86_64"
+repository="cereus-extra"
 hostmakedepends="tar xz"
 depends="libstdc++ curl xdg-utils dejavu-fonts-ttf GConf"
 short_desc="OnlyOffice office suite for desktops"
