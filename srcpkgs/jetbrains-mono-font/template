@@ -21,5 +21,5 @@ do_install() {
 
     vmkdir usr/share/jetbrains-mono/
     vinstall AUTHORS.txt 644 usr/share/jetbrains-mono/
-	vlicense OFL.txt
+    vlicense OFL.txt
 }

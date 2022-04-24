@@ -31,10 +31,11 @@ reversal-icon-theme-yellow_package() {
     nostrip=yes
 	short_desc+=" - ${color} variant"
 	pkg_install() {
-        icondir=usr/share/icons
-        # vmkdir ${icondir}
-        mkdir -p ${DESTDIR}/${icondir}
-        ./install.sh -d ${DESTDIR}/${icondir}
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh -d ${wrksrc}/icons
+        vcopy ${wrksrc}/icons/Reversal* ${icondir}
+        rm -r ${wrksrc}/icons/*
         vlicense COPYING
 	}
 }
@@ -44,10 +45,11 @@ reversal-icon-theme-blue_package() {
     nostrip=yes
 	short_desc+=" - ${color} variant"
 	pkg_install() {
-        icondir=usr/share/icons
-        # vmkdir ${icondir}
-        mkdir -p ${DESTDIR}/${icondir}
-        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh -${color} -d ${wrksrc}/icons
+        vcopy ${wrksrc}/icons/Reversal* ${icondir}
+        rm -r ${wrksrc}/icons/*
         vlicense COPYING
 	}
 }
@@ -57,10 +59,11 @@ reversal-icon-theme-green_package() {
     nostrip=yes
 	short_desc+=" - ${color} variant"
 	pkg_install() {
-        icondir=usr/share/icons
-        # vmkdir ${icondir}
-        mkdir -p ${DESTDIR}/${icondir}
-        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh -${color} -d ${wrksrc}/icons
+        vcopy ${wrksrc}/icons/Reversal* ${icondir}
+        rm -r ${wrksrc}/icons/*
         vlicense COPYING
 	}
 }
@@ -70,10 +73,11 @@ reversal-icon-theme-purple_package() {
     nostrip=yes
 	short_desc+=" - ${color} variant"
 	pkg_install() {
-        icondir=usr/share/icons
-        # vmkdir ${icondir}
-        mkdir -p ${DESTDIR}/${icondir}
-        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh -${color} -d ${wrksrc}/icons
+        vcopy ${wrksrc}/icons/Reversal* ${icondir}
+        rm -r ${wrksrc}/icons/*
         vlicense COPYING
 	}
 }
@@ -83,10 +87,11 @@ reversal-icon-theme-brown_package() {
     nostrip=yes
 	short_desc+=" - ${color} variant"
 	pkg_install() {
-        icondir=usr/share/icons
-        # vmkdir ${icondir}
-        mkdir -p ${DESTDIR}/${icondir}
-        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh -${color} -d ${wrksrc}/icons
+        vcopy ${wrksrc}/icons/Reversal* ${icondir}
+        rm -r ${wrksrc}/icons/*
         vlicense COPYING
 	}
 }
@@ -96,10 +101,11 @@ reversal-icon-theme-grey_package() {
     nostrip=yes
 	short_desc+=" - ${color} variant"
 	pkg_install() {
-        icondir=usr/share/icons
-        # vmkdir ${icondir}
-        mkdir -p ${DESTDIR}/${icondir}
-        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh -${color} -d ${wrksrc}/icons
+        vcopy ${wrksrc}/icons/Reversal* ${icondir}
+        rm -r ${wrksrc}/icons/*
         vlicense COPYING
 	}
 }
@@ -109,10 +115,11 @@ reversal-icon-theme-red_package() {
     nostrip=yes
 	short_desc+=" - ${color} variant"
 	pkg_install() {
-        icondir=usr/share/icons
-        # vmkdir ${icondir}
-        mkdir -p ${DESTDIR}/${icondir}
-        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh -${color} -d ${wrksrc}/icons
+        vcopy ${wrksrc}/icons/Reversal* ${icondir}
+        rm -r ${wrksrc}/icons/*
         vlicense COPYING
 	}
 }
@@ -122,10 +129,11 @@ reversal-icon-theme-black_package() {
     nostrip=yes
 	short_desc+=" - ${color} variant"
 	pkg_install() {
-        icondir=usr/share/icons
-        # vmkdir ${icondir}
-        mkdir -p ${DESTDIR}/${icondir}
-        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh -${color} -d ${wrksrc}/icons
+        vcopy ${wrksrc}/icons/Reversal* ${icondir}
+        rm -r ${wrksrc}/icons/*
         vlicense COPYING
 	}
 }
@@ -135,10 +143,11 @@ reversal-icon-theme-orange_package() {
     nostrip=yes
 	short_desc+=" - ${color} variant"
 	pkg_install() {
-        icondir=usr/share/icons
-        # vmkdir ${icondir}
-        mkdir -p ${DESTDIR}/${icondir}
-        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh -${color} -d ${wrksrc}/icons
+        vcopy ${wrksrc}/icons/Reversal* ${icondir}
+        rm -r ${wrksrc}/icons/*
         vlicense COPYING
 	}
 }
@@ -148,10 +157,11 @@ reversal-icon-theme-pink_package() {
     nostrip=yes
 	short_desc+=" - ${color} variant"
 	pkg_install() {
-        icondir=usr/share/icons
-        # vmkdir ${icondir}
-        mkdir -p ${DESTDIR}/${icondir}
-        ./install.sh -${color} -d ${DESTDIR}/${icondir}
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh -${color} -d ${wrksrc}/icons
+        vcopy ${wrksrc}/icons/Reversal* ${icondir}
+        rm -r ${wrksrc}/icons/*
         vlicense COPYING
 	}
 }
