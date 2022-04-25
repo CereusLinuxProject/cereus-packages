@@ -6,7 +6,7 @@ build_style=meson
 repository="cereus-extra"
 hostmakedepends="libgee08-devel cmake"
 makedepends="git meson vala-devel glib-devel pkg-config gettext gtk+3-devel webkit2gtk-devel clutter-gtk-devel clutter-gst3-devel"
-depends="clutter-gtk clutter-gst3 webkit2gtk gst-libav gstreamer-vaapi"
+depends="clutter-gtk clutter-gst3 webkit2gtk gst-libav gstreamer-vaapi libgee08"
 short_desc="A beautiful and customizable wallpaper manager for Linux"
 maintainer="KF-Art <https://github.com/KF-Art>"
 license="GPL-3.0"
@@ -14,3 +14,7 @@ homepage="https://github.com/Komorebi-Fork/komorebi"
 changelog="${homepage}/releases/tag/v${version}"
 distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
 checksum=4074751825cf031cca63c647372494446dab2492e8311ff439785527b3518c5b
+
+post_install() {
+	vlicense LICENSE
+}
