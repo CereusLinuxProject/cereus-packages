@@ -1,0 +1,29 @@
+# Template file for 'gpu-video-wallpaper'
+pkgname=gpu-video-wallpaper
+version=20220223
+revision=1
+wrksrc="${pkgname}-master"
+repository="cereus-extra"
+# hostmakedepends="python3 python3-PyQt5 xrandr pcre mpv xwinwrap"
+makedepends=""
+depends="python3 python3-PyQt5 xrandr pcre mpv xwinwrap"
+short_desc="Use your GPU for rendering low cpu using/usage video animated wallpaper"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="MIT"
+homepage="https://github.com/ghostlexly/gpu-video-wallpaper"
+distfiles="${homepage}/archive/refs/heads/master.zip"
+checksum=f0e8acb4b3d55fe4ef3cb5569c58a9a95733fad0b9a28a764e99799e9994edab
+bindir=usr/bin
+scriptdir=usr/share/${pkgname}/
+
+do_install() {
+#	./install.sh --distro-agnostic
+	vmkdir ${scriptdir}
+	vcopy * ${scriptdir}
+	vmkdir usr/share/applications
+	vcopy ${FILESDIR}/${pkgname}.desktop usr/share/applications/
+	vmkdir ${bindir}
+	cd ${DESTDIR}/${bindir}
+	ln -sf ../share/${pkgname}/video-wallpaper.py ${pkgname}-gui
+	ln -sf ../share/${pkgname}/video-wallpaper.sh ${pkgname}
+}
