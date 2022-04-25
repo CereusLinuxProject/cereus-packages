@@ -17,7 +17,6 @@ bindir=usr/bin
 scriptdir=usr/share/${pkgname}/
 
 do_install() {
-#	./install.sh --distro-agnostic
 	vmkdir ${scriptdir}
 	vcopy * ${scriptdir}
 	vmkdir usr/share/applications
