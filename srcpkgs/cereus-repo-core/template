@@ -1,14 +1,14 @@
 # Template file for 'cereus-repo-core'
 pkgname=cereus-repo-core
-version=0.1
+version=0.2
 revision=1
 build_style=meta
 repository=cereus-core
-archs="x86_64 x86_64-musl i686 aarch64 aarch64-musl"
-short_desc="Cereus Linux drop-in file for the core repository"
+archs="x86_64 x86_64-musl i686"
+short_desc="Cereus Linux Core repository"
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="Public Domain"
-homepage="https://sourceforge.net/projects/cereus-linux/files/repos/cereus-core"
+homepage="https://mirrors.gigenet.com/OSDN/storage/g/c/ce/cereuslinux/repos/cereus-core"
 
 do_install() {
 	vmkdir usr/share/xbps.d
