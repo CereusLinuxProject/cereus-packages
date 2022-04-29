@@ -1,7 +1,7 @@
 # Template file for 'komorebi'
 pkgname=komorebi
 version=2.2.1
-revision=1
+revision=2
 build_style=meson
 repository="cereus-extra"
 hostmakedepends="libgee08-devel cmake"
