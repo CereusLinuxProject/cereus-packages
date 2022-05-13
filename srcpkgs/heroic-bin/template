@@ -1,0 +1,28 @@
+# Template file for 'heroic-bin'
+pkgname=heroic-bin
+version=2.2.6
+revision=1
+nostrip=yes
+archs="x86_64"
+create_wrksrc=yes
+build_style=fetch
+hostmakedepends="bsdtar"
+depends="fuse gawk zstd"
+repository="cereus-extra"
+short_desc="Heroic Games Launcher, an Open Source Launcher for GOG and Epic Games"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="GPL-3.0"
+homepage="https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher"
+changelog="${homepage}/releases/tag/v${version}"
+distfiles="https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v${version}/heroic-${version}.tar.xz"
+checksum=fad4fda12ddcf5ee4f35dda01b84d9da048306a274808464f4d646815d13993e
+
+do_install() {
+	for dir in opt usr/bin usr/share/applications; do
+		vmkdir ${dir}
+	done
+
+	bsdtar -xf heroic-${version}.tar.xz -C "${DESTDIR}/opt/"
+	ln -s /opt/heroic-${version}/heroic "${DESTDIR}/usr/bin/heroic"
+    vcopy "${FILESDIR}/heroic.desktop" usr/share/applications/
+}
