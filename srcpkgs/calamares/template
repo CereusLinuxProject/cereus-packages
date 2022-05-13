@@ -1,6 +1,6 @@
 # Template file for 'calamares'
 pkgname=calamares
-version=3.2.55
+version=3.2.57
 revision=1
 build_style=cmake
 repository=cereus-extra
@@ -14,7 +14,7 @@ configure_args="-DCMAKE_BUILD_TYPE=Release
     -DSKIP_MODULES='webview;interactiveterminal;services-systemd;dummyprocess;dummypython;dummycpp;dummypythonqt'"
 hostmakedepends="git extra-cmake-modules pkg-config gettext
     ckbcomp kcoreaddons kdelibs4support python3-QtPy libpwquality
-    AppStream-qt python3-yaml python3-jsonschema"
+    AppStream-qt python3-yaml python3-jsonschema awk"
 makedepends="python3-devel python3-jsonschema yaml-cpp-devel python3-yaml boost-devel qt5-devel python3-devel kpmcore-devel
     qt5-tools qt5-translations boost boost-python3-1.72 python3-QtPy qt5-svg-devel
     libpwquality qt5-webengine AppStream-qt plasma-framework-devel qt5-webengine"
@@ -26,7 +26,7 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL"
 homepage="https://calamares.io"
 distfiles="https://github.com/${pkgname}/${pkgname}/releases/download/v${version}/${pkgname}-${version}.tar.gz"
-checksum=d717f4dab8f2ebef37cdb536cb11941a37081897d84bcaf2aa2e02073ae1ee42
+checksum=ef7f564ec2cd8baaf94a44982ce1db88c1192696617f21538d0b8472a63b4c2b
 
 case ${XBPS_TARGET_MACHINE} in
 	*-musl)
