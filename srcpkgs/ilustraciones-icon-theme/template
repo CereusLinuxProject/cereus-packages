@@ -1,6 +1,6 @@
 # Template file for 'ilustraciones-icon-theme'
 pkgname=ilustraciones-icon-theme
-version=20220422
+version=20220513
 revision=1
 repository=cereus-extra
 hostmakedepends="git"
