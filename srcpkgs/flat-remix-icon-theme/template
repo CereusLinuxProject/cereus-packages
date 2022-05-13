@@ -1,6 +1,6 @@
 # Template file for 'flat-remix-icon-theme'
 pkgname=flat-remix-icon-theme
-version=20211214
+version=20220304
 revision=1
 build_style=meta
 repository=cereus-extra
@@ -23,7 +23,7 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL-3.0"
 homepage="https://github.com/daniruiz/flat-remix"
 distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
-checksum=1c899ded7191bfbad16d99265bfb801d48da5af69e4f7baf090200ee421587da
+checksum=e23573117cff538e0830f2576606202a10f48e76e15f7d8ccf9d79c465b79cb8
 
 flat-remix-icon-theme-black_package() {
     color=Black
