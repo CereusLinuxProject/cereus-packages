@@ -18,7 +18,7 @@ distfiles="https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases
 checksum=fad4fda12ddcf5ee4f35dda01b84d9da048306a274808464f4d646815d13993e
 
 do_install() {
-	for dir in opt usr/bin usr/share/applications; do
+	for dir in opt usr/{bin,share/applications}; do
 		vmkdir ${dir}
 	done
 
