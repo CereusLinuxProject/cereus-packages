@@ -1,0 +1,15 @@
+diff --git a/src/unixcommand.cpp b/src/unixcommand.cpp
+index 1762c4b..bc059a8 100644
+--- a/src/unixcommand.cpp
++++ b/src/unixcommand.cpp
+@@ -713,6 +713,10 @@ LinuxDistro UnixCommand::getLinuxDistro()
+       {
+         ret = ectn_VOID;
+       }
++      else if (contents.contains("ID=\"Cereus\""))
++      {
++        ret = ectn_VOID;
++      }
+       else
+       {
+         ret = ectn_UNKNOWN;

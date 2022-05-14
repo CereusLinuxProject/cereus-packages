@@ -1,13 +1,13 @@
 # Template file for 'octoxbps-git'
 pkgname=octoxbps-git
-version=20220417
+version=20220513
 revision=1
 build_style=qmake
 repository="cereus-extra"
 hostmakedepends="qt5-qmake pkg-config qt5-host-tools git"
 makedepends="qt5-declarative-devel qtermwidget-devel"
 depends="curl"
-short_desc="Qt-based XBPS front-end"
+short_desc="Qt-based XBPS front-end - git branch"
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL-2.0-or-later"
 homepage="https://github.com/aarnt/octoxbps"
