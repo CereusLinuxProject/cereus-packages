@@ -4,7 +4,8 @@
 # Original source: https://git.disroot.org/tuxliban/tutoriales_void/src/branch/master/Plantillas/palemoon/template
 
 pkgname=palemoon
-version=31.0.0-1
+version=31.0.0
+release=1
 revision=1
 archs="i686 x86_64"
 repository="cereus-extra"
@@ -23,11 +24,11 @@ else
 	checksum=38da6d1e5b9a010a728268cb6e8669e52468d393418666344bd6d6ef9d949481
 fi
 
-distfiles="https://download.opensuse.org/repositories/home:/stevenpusser/Debian_11/${_debarch}/${pkgname}_${version}.gtk2_${_debarch}.deb"
+distfiles="https://download.opensuse.org/repositories/home:/stevenpusser/Debian_11/${_debarch}/${pkgname}_${version}-${release}.gtk2_${_debarch}.deb"
 _licenseURL="https://www.palemoon.org/redist.shtml"
 
 do_extract() {
-	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${pkgname}_${version}.gtk2_${_debarch}.deb
+	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${pkgname}_${version}-${release}.gtk2_${_debarch}.deb
 	tar xf data.tar.xz
 }
 
