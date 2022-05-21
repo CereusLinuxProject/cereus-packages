@@ -1,14 +1,14 @@
 # Template file for 'cereus-repo-extra'
 pkgname=cereus-repo-extra
 version=0.2
-revision=1
+revision=2
 build_style=meta
 repository=cereus-extra
 archs="x86_64 x86_64-musl i686"
 short_desc="Cereus Linux Extra repository"
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="Public Domain"
-homepage="https://mirrors.gigenet.com/OSDN/storage/g/c/ce/cereuslinux/repos/cereus-extra"
+homepage="https://sourceforge.net/projects/cereus-linux/files/repos/cereus-extra"
 
 do_install() {
 	vmkdir usr/share/xbps.d
