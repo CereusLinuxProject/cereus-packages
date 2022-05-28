@@ -3178,7 +3178,7 @@ libexecinfo.so.1 libexecinfo-1.1_1
 libkdeconnectpluginkcm.so.2 kdeconnect-20.12.2_1
 libkdeconnectinterfaces.so.21 kdeconnect-21.03.80_1
 libkdeconnectcore.so.21 kdeconnect-21.03.80_1
-libkpmcore.so.11 kpmcore-21.03.80_1
+libkpmcore.so.12 kpmcore-22.04.1_1
 libpkcs11-helper.so.1 pkcs11-helper-1.25.1_6
 libr_core.so.5.0.0 radare2-5.0.0_1
 libr_config.so.5.0.0 radare2-5.0.0_1
@@ -4146,3 +4146,5 @@ librz_search.so.0.3.4 rizin-0.3.4_1
 librz_bin.so.0.3.4 rizin-0.3.4_1
 libaravis-0.8.so.0 libaravis-0.8.21_1
 libLimeSuite.so.20.10-1 LimeSuite-20.10.0_1
+libcalamares.so.3.2.58.2 calamares-3.2.58.2_1
+libcalamaresui.so.3.2.58.2 calamares-3.2.58.2_1

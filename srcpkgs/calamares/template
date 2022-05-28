@@ -1,6 +1,6 @@
 # Template file for 'calamares'
 pkgname=calamares
-version=3.2.57
+version=3.2.58.2
 revision=1
 build_style=cmake
 repository=cereus-extra
@@ -26,7 +26,7 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL"
 homepage="https://calamares.io"
 distfiles="https://github.com/${pkgname}/${pkgname}/releases/download/v${version}/${pkgname}-${version}.tar.gz"
-checksum=ef7f564ec2cd8baaf94a44982ce1db88c1192696617f21538d0b8472a63b4c2b
+checksum=97d8dfc469642cdb1e8050a1782b3001e75ef2fc90582a0ee20d2624679c8c52
 
 case ${XBPS_TARGET_MACHINE} in
 	*-musl)

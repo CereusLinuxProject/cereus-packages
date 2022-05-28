@@ -1,0 +1,231 @@
+# Template file for 'Tela-icon-theme'
+pkgname=Tela-icon-theme
+date=2022-02-21
+version=2022.02.21
+revision=1
+build_style=meta
+repository=cereus-extra
+depends="${pkgname}-standard \
+    ${pkgname}-black \
+    ${pkgname}-blue \
+    ${pkgname}-green \
+    ${pkgname}-grey \
+    ${pkgname}-orange \
+    ${pkgname}-pink \
+    ${pkgname}-purple \
+    ${pkgname}-red \
+    ${pkgname}-yellow \
+    ${pkgname}-manjaro
+    ${pkgname}-ubuntu"
+
+# Keep nord variant until it integrates to future release (currently is only in git branch)
+#    ${pkgname}-nord"
+
+nostrip=yes
+icondir=usr/share/icons
+wrksrc=${pkgname}-${date}
+hostmakedepends="gtk-update-icon-cache"
+short_desc="A flat colorful Design icon theme"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="GPL-3.0"
+homepage="https://github.com/vinceliuice/Tela-icon-theme"
+distfiles="${homepage}/archive/refs/tags/${date}.tar.gz"
+checksum=f8a5e2c5928b826584be519b025ccdfc0ffe9fcc3ec583f1305267e55eee28c2
+
+Tela-icon-theme-standard_package() {
+    color=standard
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh ${color} -d ${wrksrc}/icons -c
+        vcopy ${wrksrc}/icons/Tela* ${icondir}
+        rm -r ${wrksrc}/icons/*
+        vlicense COPYING
+	}
+}
+
+Tela-icon-theme-black_package() {
+    color=black
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh ${color} -d ${wrksrc}/icons -c
+        vcopy ${wrksrc}/icons/Tela* ${icondir}
+        rm -r ${wrksrc}/icons/*
+        vlicense COPYING
+	}
+}
+
+Tela-icon-theme-blue_package() {
+    color=blue
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh ${color} -d ${wrksrc}/icons -c
+        vcopy ${wrksrc}/icons/Tela* ${icondir}
+        rm -r ${wrksrc}/icons/*
+        vlicense COPYING
+	}
+}
+
+Tela-icon-theme-brown_package() {
+    color=brown
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh ${color} -d ${wrksrc}/icons -c
+        vcopy ${wrksrc}/icons/Tela* ${icondir}
+        rm -r ${wrksrc}/icons/*
+        vlicense COPYING
+	}
+}
+
+Tela-icon-theme-green_package() {
+    color=green
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh ${color} -d ${wrksrc}/icons -c
+        vcopy ${wrksrc}/icons/Tela* ${icondir}
+        rm -r ${wrksrc}/icons/*
+        vlicense COPYING
+	}
+}
+
+Tela-icon-theme-grey_package() {
+    color=grey
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh ${color} -d ${wrksrc}/icons -c
+        vcopy ${wrksrc}/icons/Tela* ${icondir}
+        rm -r ${wrksrc}/icons/*
+        vlicense COPYING
+	}
+}
+
+Tela-icon-theme-orange_package() {
+    color=orange
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh ${color} -d ${wrksrc}/icons -c
+        vcopy ${wrksrc}/icons/Tela* ${icondir}
+        rm -r ${wrksrc}/icons/*
+        vlicense COPYING
+	}
+}
+
+Tela-icon-theme-pink_package() {
+    color=pink
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh ${color} -d ${wrksrc}/icons -c
+        vcopy ${wrksrc}/icons/Tela* ${icondir}
+        rm -r ${wrksrc}/icons/*
+        vlicense COPYING
+	}
+}
+
+Tela-icon-theme-purple_package() {
+    color=purple
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh ${color} -d ${wrksrc}/icons -c
+        vcopy ${wrksrc}/icons/Tela* ${icondir}
+        rm -r ${wrksrc}/icons/*
+        vlicense COPYING
+	}
+}
+
+Tela-icon-theme-red_package() {
+    color=red
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh ${color} -d ${wrksrc}/icons -c
+        vcopy ${wrksrc}/icons/Tela* ${icondir}
+        rm -r ${wrksrc}/icons/*
+        vlicense COPYING
+	}
+}
+
+Tela-icon-theme-yellow_package() {
+    color=yellow
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh ${color} -d ${wrksrc}/icons -c
+        vcopy ${wrksrc}/icons/Tela* ${icondir}
+        rm -r ${wrksrc}/icons/*
+        vlicense COPYING
+	}
+}
+
+Tela-icon-theme-manjaro_package() {
+    color=manjaro
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh ${color} -d ${wrksrc}/icons -c
+        vcopy ${wrksrc}/icons/Tela* ${icondir}
+        rm -r ${wrksrc}/icons/*
+        vlicense COPYING
+	}
+}
+
+Tela-icon-theme-ubuntu_package() {
+    color=ubuntu
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh ${color} -d ${wrksrc}/icons -c
+        vcopy ${wrksrc}/icons/Tela* ${icondir}
+        rm -r ${wrksrc}/icons/*
+        vlicense COPYING
+	}
+}
+
+# Keep nord variant until it integrates to future release (currently is only in git branch)
+
+# Tela-icon-theme-nord_package() {
+#    color=nord
+#    nostrip=yes
+#	short_desc+=" - ${color} variant"
+#	pkg_install() {
+#        vmkdir ${icondir}
+#        mkdir -p ${wrksrc}/icons
+#        ./install.sh ${color} -d ${wrksrc}/icons -c
+#        vcopy ${wrksrc}/icons/Tela* ${icondir}
+#        rm -r ${wrksrc}/icons/*
+#        vlicense COPYING
+#	}
+#}
