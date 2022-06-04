@@ -1,6 +1,6 @@
 # Template file for 'heroic-bin'
 pkgname=heroic-bin
-version=2.3.3
+version=2.3.5
 revision=1
 nostrip=yes
 archs="x86_64"
@@ -15,7 +15,7 @@ license="GPL-3.0"
 homepage="https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher"
 changelog="${homepage}/releases/tag/v${version}"
 distfiles="https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v${version}/heroic-${version}.tar.xz"
-checksum=a0fabe69cb28bd2b9d42d317fdf97149114a6be25cd091fe36e8daa200e67d4c
+checksum=0d34686cb4ab9b88da338fc7423a42ffcf60421f26114fa59c34d6e76a25b2a9
 
 do_install() {
 	for dir in opt usr/{bin,share/applications}; do
