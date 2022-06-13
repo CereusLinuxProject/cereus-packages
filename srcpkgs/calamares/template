@@ -16,7 +16,7 @@ hostmakedepends="git extra-cmake-modules pkg-config gettext
     ckbcomp kcoreaddons kdelibs4support python3-yaml awk"
 makedepends="python3-devel python3-jsonschema yaml-cpp-devel boost-devel qt5-devel python3-devel kpmcore-devel
     qt5-tools qt5-translations boost boost-python3-1.72 python3-QtPy qt5-svg-devel
-    libpwquality qt5-webengine AppStream-qt plasma-framework-devel qt5-webengine"
+    libpwquality AppStream-qt plasma-framework-devel qt5-webengine"
 depends="kconfig kcoreaddons kiconthemes ki18n kio ksolid yaml-cpp kpmcore boost ckbcomp
     hardinfo qt5-svg polkit-qt5 gtk-update-icon-cache plasma-framework qt5-xmlpatterns
     squashfs-tools libpwquality AppStream-qt icu"
