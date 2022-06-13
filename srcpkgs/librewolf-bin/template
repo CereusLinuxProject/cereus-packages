@@ -1,8 +1,9 @@
 # Template file for 'librewolf-bin'
 pkgname=librewolf-bin
 _realname=librewolf
-version=100.0
-revision=2
+version=101.0.1
+revision=1
+_release=1
 only_for_archs="x86_64"
 repository="cereus-extra"
 short_desc="Community-maintained fork of Firefox, focused on privacy, security and freedom - binary-based package"
@@ -11,13 +12,13 @@ hostmakedepends="tar xz xbps-triggers"
 makedepends="xbps-triggers"
 license="MPL-2.0"
 homepage="https://gitlab.com/librewolf-community"
-distfiles="https://gitlab.com/api/v4/projects/12829184/packages/generic/${_realname}/${version}-${revision}/LibreWolf-${version}-${revision}.x86_64.tar.bz2"
-checksum=07c41e125589a37ebd933ef529f7537bc7e8e36b2b35e5aef0eab24b5e80bc66
+distfiles="https://gitlab.com/api/v4/projects/12829184/packages/generic/${_realname}/${version}-${_release}/LibreWolf-${version}-${_release}.x86_64.tar.bz2"
+checksum=da4ebb324619daf3f414bd1092b343c0444befccd1c49bb0c0f8156fa694c721
 nostrip=yes
 
 do_extract() {
 	vmkdir opt/${_realname}
-	bsdtar -C ${DESTDIR}/opt/${_realname} -xf ${XBPS_SRCDISTDIR}/${pkgname}-${version}/LibreWolf-${version}-${revision}.x86_64.tar.bz2 
+	bsdtar -C ${DESTDIR}/opt/${_realname} -xf ${XBPS_SRCDISTDIR}/${pkgname}-${version}/LibreWolf-${version}-${_release}.x86_64.tar.bz2 
 }
 
 do_install() {
