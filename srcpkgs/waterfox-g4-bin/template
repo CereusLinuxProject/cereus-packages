@@ -1,0 +1,62 @@
+# Template file for 'waterfox-g4-bin'
+pkgname=waterfox-g4-bin
+version=1.2.1
+_generation=G4
+revision=1
+archs="x86_64"
+repository="cereus-extra"
+build_style=fetch
+hostmakedepends="bsdtar"
+depends="dbus-glib ffmpeg gtk+ gtk+3 hicolor-icon-theme startup-notification libnotify fontconfig libXt "
+short_desc="Fourth generation of customizable privacy-conscious web browser - binary-based package"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="MPL-2.0"
+homepage="https://github.com/WaterfoxCo/Waterfox"
+changelog="https://github.com/WaterfoxCo/Waterfox/releases/tag/${_generation}.${version}"
+distfiles="${homepage}/releases/download/${_generation}.${version}/waterfox-${_generation}.${version}.en-US.linux-x86_64.tar.bz2"
+checksum=233f1b22522f05f3c34ba8ea1eeb7baefd2bc97085d4994ffd8ab4b408cdfd53
+
+do_extract() {
+	vmkdir opt
+        bsdtar -C ${DESTDIR}/opt/ -xf "${XBPS_SRCDISTDIR}/${pkgname}-${version}/waterfox-${_generation}.${version}.en-US.linux-x86_64.tar.bz2"
+}
+
+do_install() {
+    vmkdir usr/bin
+    ln -rfs ${DESTDIR}/opt/waterfox/waterfox ${DESTDIR}/usr/bin
+
+    # Copy launcher
+    vmkdir usr/share/applications
+        vcopy ${FILESDIR}/waterfox.desktop  usr/share/applications
+
+    # Install the icons
+    for res in 16 32 48 64 128; do
+                vmkdir usr/share/icons/hicolor/${res}x${res}/apps
+                vcopy ${DESTDIR}/opt/waterfox/browser/chrome/icons/default/default${res}.png \
+                        usr/share/icons/hicolor/${res}x${res}/apps/waterfox.png
+    done
+
+   # Add additional useful settings
+   install -Dm644 /dev/stdin "${DESTDIR}/opt/waterfox/browser/defaults/preferences/vendor.js" <<END
+
+// Use LANG environment variable to choose locale
+pref("intl.locale.requested", "");
+
+// Automatic installation of updates won't work on root, so disable this
+pref("app.update.auto", false);
+
+// Use system-provided dictionaries
+pref("spellchecker.dictionary_path", "/usr/share/hunspell");
+END
+
+# Disable automatic updates and update notifications and allow only for manual update checking
+    install -Dm644 /dev/stdin "${DESTDIR}/opt/waterfox/distribution/policies.json" <<END
+{
+    "policies": {
+        "AppAutoUpdate": false,
+        "ManualAppUpdateOnly": true
+    }
+}
+END
+}
+
