@@ -1,0 +1,57 @@
+# Template file for 'cereus-artwork'
+pkgname=cereus-artwork
+version=20220614
+revision=1
+hostmakedepends="git"
+_wallpaperdir="usr/share/backgrounds"
+_icondir="usr/share/icons/hicolor"
+_logodir="usr/share/cereus-artwork"
+repository="cereus-core"
+short_desc="Cereus Linux artwork"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="CC-BY-SA-4.0"
+homepage="https://github.com/CereusLinuxProject/Cereus-Artwork/"
+
+do_fetch() {
+	git clone ${homepage} ${wrksrc}
+}
+
+do_install() {
+	# Create directories in fake root
+	for dir in ${_wallpaperdir} ${_icondir} ${_logodir}
+		do vmkdir ${dir}
+	done
+
+
+	# Create wallpaper list
+	for format in jpg png
+		do ls --color=never wallpapers/*.${format} >> list.txt
+	done
+
+	ls --color=never wallpapers/*.svg > svg-list.txt
+
+	# Install wallpapers
+	for wall in $(cat list.txt); do
+        	vinstall ${wall} 0644 usr/share/backgrounds
+ 	done
+
+	for svg in $(cat svg-list.txt); do
+                vinstall ${svg} 0644 usr/share/backgrounds/svg/
+        done
+
+
+	# Install icons
+	vinstall branding/cereus-logo-512x512.svg 0644 \
+		${_icondir}/scalable/apps cereus-logo.svg
+
+	for res in 16 22 32 48 64 128 256 512
+		do vinstall branding/cereus-logo-${res}x${res}.png 0644 \
+			${_icondir}/${res}x${res}/apps/ cereus-logo.png
+	done
+
+	# Install logos
+	vcopy branding/* ${_logodir}
+
+	# Install license
+	vlicense LICENSE
+}
