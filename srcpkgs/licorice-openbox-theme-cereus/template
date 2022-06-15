@@ -1,0 +1,18 @@
+# Template file for 'licorice-openbox-theme-cereus'
+pkgname=licorice-openbox-theme-cereus
+version=20220614
+revision=1
+repository="cereus-extra"
+_themedir=usr/share/themes/Licorice-Cereus
+wrksrc="licorice-openbox-theme-main"
+short_desc="Cereus Linux custom version of Licorice Openbox theme"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="GPL-3.0"
+homepage="https://github.com/CereusLinuxProject/licorice-openbox-theme"
+distfiles="${homepage}/archive/refs/heads/main.zip"
+checksum=fa62862a9d04df14e6b1fb287b8a1966046ea372283d300fc06bae02591b42ba
+
+do_install() {
+	vmkdir ${_themedir}
+	vcopy * ${_themedir}
+}
