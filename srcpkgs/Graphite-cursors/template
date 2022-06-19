@@ -1,0 +1,23 @@
+# Template file for 'Graphite-cursors'
+pkgname=Graphite-cursors
+version=20220107
+revision=1
+wrksrc=${pkgname}-main
+repository="cereus-extra"
+_cursordir=usr/share/icons
+short_desc="Graphite cursors theme for Linux desktops"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/vinceliuice/${pkgname}"
+distfiles="${homepage}/archive/refs/heads/main.zip"
+checksum=be7719b83009901a57ef141d6b490914f3066f5242ee33d0527778edb5c1e44c
+
+do_install() {
+	vmkdir ${_cursordir}
+
+	for variant in light{,-nord} dark{,-nord}
+		do vcopy dist-${variant} ${_cursordir}/Graphite-${variant}-cursors
+	done
+
+	vlicense LICENSE
+}
