@@ -25,7 +25,7 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL"
 homepage="https://calamares.io"
 distfiles="https://github.com/${pkgname}/${pkgname}/releases/download/v${version}/${pkgname}-${version}.tar.gz"
-checksum=55adef250613e80a868f2aa3d1e57bdae5b769387d91decf0fe2b64e3605574f
+checksum=9ec6c49f4e2316cd3058d402c2ab65efff02e3f09a0028d50f0359e5154e6c8c
 
 case ${XBPS_TARGET_MACHINE} in
 	*-musl)

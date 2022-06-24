@@ -522,12 +522,12 @@ libkImageAnnotator.so.0 kImageAnnotator-0.4.1_1
 libkColorPicker.so.0 kColorPicker-0.1.5_1
 libbabl-0.1.so.0 babl-0.1.16_1
 libbamf3.so.2 bamf-0.5.1_1
-libicuio.so.70 icu-libs-70.1_1
-libicui18n.so.70 icu-libs-70.1_1
-libicudata.so.70 icu-libs-70.1_1
-libicutu.so.70 icu-libs-70.1_1
-libicuuc.so.70 icu-libs-70.1_1
-libicutest.so.70 icu-libs-70.1_1
+libicuio.so.71 icu-libs-71.1_1
+libicui18n.so.71 icu-libs-71.1_1
+libicudata.so.71 icu-libs-71.1_1
+libicutu.so.71 icu-libs-71.1_1
+libicuuc.so.71 icu-libs-71.1_1
+libicutest.so.71 icu-libs-71.1_1
 libaspell.so.15 libaspell-0.60.8_2
 libpspell.so.15 libaspell-0.60.8_2
 libenchant-2.so.2 enchant2-2.2.3_1
@@ -968,7 +968,7 @@ libell.so.0 ell-0.45_1
 libgvnc-1.0.so.0 gtk-vnc-0.4.4_1
 libgtk-vnc-2.0.so.0 gtk-vnc-0.4.4_1
 libgvncpulse-1.0.so.0 gtk-vnc-1.2.0_2
-libyaml-0.so.2 libyaml-0.1.4_1
+libyaml-0.so.2 libyaml-0.7.0_1
 libuchardet.so.0 uchardet-0.0.6_1
 libgtksourceviewmm-3.0.so.0 gtksourceviewmm-3.2.0_1
 libyajl.so.2 yajl-2.0.1_1
@@ -2228,7 +2228,7 @@ libKF5ThreadWeaver.so.5 threadweaver-5.26.0_1
 libOpenImageIO_Util.so.2.2 openimageio-2.2.13.1_1
 libOpenImageIO.so.2.2 openimageio-2.2.13.1_1
 libOpenColorIO.so.1 opencolorio-1.0.8_1
-libyaml-cpp.so.0.6 yaml-cpp-0.6.2_1
+libyaml-cpp.so.0.7 yaml-cpp-0.7.0_1
 libpaper.so.1 libpaper-1.1.24_1
 libhtsjava.so.2 httrack-3.49.2_7
 libhttrack.so.2 httrack-3.49.2_7
