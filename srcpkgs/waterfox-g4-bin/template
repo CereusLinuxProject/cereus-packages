@@ -1,6 +1,6 @@
 # Template file for 'waterfox-g4-bin'
 pkgname=waterfox-g4-bin
-version=1.2.1
+version=1.4
 _generation=G4
 revision=1
 archs="x86_64"
@@ -14,7 +14,7 @@ license="MPL-2.0"
 homepage="https://github.com/WaterfoxCo/Waterfox"
 changelog="https://github.com/WaterfoxCo/Waterfox/releases/tag/${_generation}.${version}"
 distfiles="${homepage}/releases/download/${_generation}.${version}/waterfox-${_generation}.${version}.en-US.linux-x86_64.tar.bz2"
-checksum=233f1b22522f05f3c34ba8ea1eeb7baefd2bc97085d4994ffd8ab4b408cdfd53
+checksum=1748266754bb35bbaa47042a6ee208f345d3b5da4b65adf7675f85980fe97de4
 
 do_extract() {
 	vmkdir opt
