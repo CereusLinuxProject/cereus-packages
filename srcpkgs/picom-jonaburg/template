@@ -1,6 +1,6 @@
 # Template file for 'picom-jonaburg'
 pkgname=picom-jonaburg
-version=20220417
+version=2022.03.19
 revision=1
 wrksrc=picom
 build_style=meson
@@ -11,10 +11,10 @@ makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre-devel
  pixman-devel xcb-util-image-devel xcb-util-renderutil-devel
  libxdg-basedir-devel uthash"
 depends="desktop-file-utils"
-short_desc="Picom fork which includes rounded corners, animations and blur support (picom-jonaburg-fix branch)"
+short_desc="Picom fork which includes rounded corners, basic animations and blur support"
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="MIT, MPL-2.0"
-homepage="https://github.com/Arian8j2/picom-jonaburg-fix"
+homepage="https://github.com/jonaburg/picom"
 
 case "$XBPS_TARGET_MACHINE" in
         *-musl) broken="For Musl platforms it's recommended to use picom-ibhagwan fork instead";;
