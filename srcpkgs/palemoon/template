@@ -4,8 +4,8 @@
 # Original source: https://git.disroot.org/tuxliban/tutoriales_void/src/branch/master/Plantillas/palemoon/template
 
 pkgname=palemoon
-version=31.1.0
-_release=1.1
+version=31.2.0
+_release=1-1
 revision=1
 archs="i686 x86_64"
 repository="cereus-extra"
@@ -18,17 +18,17 @@ homepage="https://www.palemoon.org"
 
 if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
 	_debarch=amd64
-	checksum=d6351d67dce090ee17c8dbce84b3524c095afec2373fd33c8a2e795d94215155
+	checksum=c30eede30c12b8b3cf9396556f504d9dff7752cfc1e858d0365992053abd064b
 else
 	_debarch=i386
-	checksum=63857a7b7626f5238652795066191c9091e5b10673c51d08941b03ec26dcdbc0
+	checksum=dcca8d90ff438bbf4e8f84fbf6d085216d8636cbd2b2a1db16538fc88feb5839
 fi
 
-distfiles="https://download.opensuse.org/repositories/home:/stevenpusser/Debian_11/${_debarch}/${pkgname}_${version}-${_release}.gtk2_${_debarch}.deb"
+distfiles="https://download.opensuse.org/repositories/home:/stevenpusser/Debian_11/${_debarch}/${pkgname}_${version}.${_release}.gtk2_${_debarch}.deb"
 _licenseURL="https://www.palemoon.org/redist.shtml"
 
 do_extract() {
-	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${pkgname}_${version}-${_release}.gtk2_${_debarch}.deb
+	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${pkgname}_${version}.${_release}.gtk2_${_debarch}.deb
 	tar xf data.tar.xz
 }
 
