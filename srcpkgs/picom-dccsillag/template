@@ -1,0 +1,26 @@
+# Template file for 'picom-dccsillag'
+pkgname=picom-dccsillag
+version=20220413
+revision=1
+build_style=meson
+configure_args="-Dwith_docs=true"
+wrksrc="picom-implement-window-animations"
+hostmakedepends="pkg-config asciidoc git awk"
+makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre-devel
+ pixman-devel xcb-util-image-devel xcb-util-renderutil-devel
+ libxdg-basedir-devel uthash"
+depends="desktop-file-utils"
+short_desc="Picom fork with fancy windows animations"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="MIT, MPL-2.0"
+repository="cereus-extra"
+homepage="https://github.com/dccsillag/picom/"
+conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan"
+replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan"
+distfiles="https://github.com/dccsillag/picom/archive/refs/heads/implement-window-animations.zip"
+checksum=ac8bf6e95f58f83b39dbbd44d9e1e8213767a0d3b48dad6fe1acd8953c76d757
+
+post_install() {
+	vlicense LICENSES/{MIT,MPL-2.0}
+	vsconf picom.sample.conf
+}
