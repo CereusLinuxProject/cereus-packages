@@ -1,6 +1,6 @@
 # Template file for 'octoxbps-git'
 pkgname=octoxbps-git
-version=20220513
+version=20220617
 revision=1
 build_style=qmake
 repository="cereus-extra"
