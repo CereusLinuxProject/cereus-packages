@@ -1,17 +1,20 @@
 # Template file for 'calmsky-icon-theme'
 pkgname=calmsky-icon-theme
 version=20220223
-revision=1
-wrksrc="CalmSky-Old-main"
-theme_dir="usr/share/icons/CalmSky-Old"
+revision=2
+wrksrc="CalmSky-main"
+repository="cereus-extra"
+theme_dir="usr/share/icons/CalmSky"
 short_desc="Icon theme for GNU/Linux distributions with modernist focus"
 maintainer="Kevin F. <https://github.com/KF-Art>"
-license="GPL-3.0"
-homepage="https://github.com/doubleau15/CalmSky-Old"
+license="GPL-2.0"
+homepage="https://github.com/doubleau15/CalmSky"
 distfiles="${homepage}/archive/refs/heads/main.zip"
-checksum=7c0cf193cd36d422b97be80249dd0c8dc8afc54ace3b15c4a646066c5f9a6bfe
+checksum=1eb69044a85f8bd9d7ea2df24c9532f95c52477599d045376bed17e4fed66341
 
 do_install() {
     vmkdir ${theme_dir}
+    vlicense LICENSE
+    rm LICENSE
     vcopy ./* ${theme_dir}
 }
