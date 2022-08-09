@@ -1,0 +1,21 @@
+# REMOVE
+case "$ACTION" in
+
+pre)
+
+# 
+# Remove all installed LPKG packages to avoid conflicts
+#
+	for pkg in $(lpkg -i | cut -d "-" -f1 | tail -n +3);
+		 do lpkg remove ${pkg}
+	done
+	;;
+post)
+
+#
+# After removing opt/Loc-OS-LPKG, xbps removes opt if empty!
+# This script restores opt
+#
+	mkdir -p opt
+	;;
+esac

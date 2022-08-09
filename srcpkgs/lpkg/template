@@ -1,0 +1,55 @@
+# Template file for 'lpkg'
+pkgname=lpkg
+version=10.1
+revision=1
+archs="x86_64 i686"
+build_style=fetch
+hostmakedepends="bsdtar wget"
+depends="pv psmisc"
+repository="cereus-extra"
+short_desc="Low-level package manager developed by Loc-OS team"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="GPL-3.0"
+homepage="https://gitlab.com/loc-os_linux/updates"
+nostrip=yes
+checksum="ede89ebac1fa7d088b7e86b784cc911d2ad8965f6b0e46cd1993c512d937caf9"
+distfiles="https://github.com/CereusLinuxProject/lpkg-list/releases/download/${version}/${pkgname}.tar.gz"
+
+do_install() {
+    # Create dirs
+	for dir in opt/Loc-OS-LPKG usr/{bin,share/icons}; do
+		vmkdir ${dir}
+	done
+
+    # Extract distfile
+	bsdtar -xf lpkg.tar.gz
+
+    # Copy lpkg and icons to destdir
+	vcopy Loc-OS-LPKG /opt/
+	vcopy Loc-OS-LPKG/usr/share/icons/* usr/share/icons/
+
+    # Link lpkg binaries to PATH
+	ln -sf /opt/Loc-OS-LPKG/usr/sbin/{removelpkg,lpkg,installlpkg,createlpkg} ${DESTDIR}/usr/bin/
+
+    # Remove unnecesary binary
+    rm ${DESTDIR}/opt/Loc-OS-LPKG/usr/bin/killall
+
+    # Define repository list depending of target architecture
+    if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
+	_repo="locosporlinux/lpkg-list"
+    elif [ "$XBPS_TARGET_MACHINE" = "i686" ]; then
+	_repo="loc-os_linux/lpkg-list32"
+    fi
+
+    # Fetch repository list
+    wget "https://gitlab.com/${_repo}/-/raw/main/ListGitLabLocOS.LpkgRepo"
+    
+    # Install repository list
+	vinstall ListGitLabLocOS.LpkgRepo 0644 opt/Loc-OS-LPKG/Repos/
+
+    # Install desktop launcher
+    vinstall Loc-OS-LPKG/LocOSLpkg.desktop 0644 usr/share/applications/ lpkggui.desktop
+
+    # Install license
+    vlicense Loc-OS-LPKG/LICENSE
+}
