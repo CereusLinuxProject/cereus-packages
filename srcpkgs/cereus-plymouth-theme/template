@@ -1,0 +1,22 @@
+# Template file for 'cereus-plymouth-theme'
+pkgname=cereus-plymouth-theme
+version=20220814
+revision=1
+hostmakedepends="git"
+depends="plymouth"
+repository="cereus-core"
+_themedir="usr/share/plymouth/themes/cereus_simply"
+short_desc="A simple Plymouth theme for Cereus Linux"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/CereusLinuxProject/cereus_simply"
+
+do_fetch() {
+	git clone ${homepage} ${wrksrc}
+}
+
+do_install() {
+	vmkdir ${_themedir}
+	vcopy * ${_themedir}/
+	vlicense LICENSE
+}
