@@ -77,9 +77,8 @@ class ConfigController:
 
         # Remove calamares
         self.remove_pkg("calamares-cereus")
-        target_env_call(["find", "*", "-name", "calamares.desktop", "-delete"])
-        target_env_call(["unlink", "root/Desktop/calamares.desktop"])
-        target_env_call(["unlink", "home/*/Desktop/calamares.desktop"])
+        if exists(join(self.root, "usr/share/applications/calamares.desktop")):
+            target_env_call(["rm", "-f", "usr/share/applications/calamares.desktop"])
 
         # Copy skel to root
         self.copy_folder('etc/skel', 'root')
