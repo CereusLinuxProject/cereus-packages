@@ -78,6 +78,8 @@ class ConfigController:
         # Remove calamares
         self.remove_pkg("calamares-cereus")
         target_env_call(["find", "*", "-name", "calamares.desktop", "-delete"])
+        target_env_call(["unlink", "root/Desktop/calamares.desktop"])
+        target_env_call(["unlink", "home/*/Desktop/calamares.desktop"])
 
         # Copy skel to root
         self.copy_folder('etc/skel', 'root')
@@ -89,6 +91,9 @@ class ConfigController:
         # Enable 'menu_auto_hide' when supported in grubenv
         if exists(join(self.root, "usr/bin/grub-set-bootflag")):
             target_env_call(["grub-editenv", "-", "set", "menu_auto_hide=1", "boot_success=1"])
+
+        # Enable plymouth
+        target_env_call(["plymouth-set-default-theme", "-R", "cereus_simply"])
 
 def run():
     """ Misc postinstall configurations """
