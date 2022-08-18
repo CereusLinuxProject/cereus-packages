@@ -1,0 +1,22 @@
+# Template file for 'pasystray-git'
+pkgname=pasystray-git
+version=20220314
+revision=2
+build_style=gnu-configure
+repository="cereus-extra"
+hostmakedepends="pkg-config intltool automake git"
+makedepends="gtk+3-devel pulseaudio-devel libnotify-devel"
+short_desc="PulseAudio System Tray - git branch version"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="LGPL-2.1-or-later"
+homepage="https://github.com/christophgysin/pasystray"
+replaces="pasystray"
+conflicts="pasystray"
+
+do_fetch() {
+	git clone ${homepage} ${wrksrc}
+}
+
+pre_configure() {
+	autoreconf -fi
+}
