@@ -1,13 +1,13 @@
 # Template file for 'aleta-icon-theme'
 pkgname=aleta-icon-theme
-version=20220817
+version=2022.08.17
 revision=1
 hostmakedepends="git parallel optipng inkscape"
 repository="cereus-extra"
 _icondir="usr/share/icons"
 short_desc="A material icon pack featuring gradients, squares, and white symbolics"
 maintainer="KF-Art <https://github.com/KF-Art>"
-license="GPL-3.0-or-later"
+license="CC-BY-SA-4.0"
 homepage="https://git.owlcode.tech/germedeb/aleta-postre"
 
 do_fetch() {
@@ -21,5 +21,6 @@ do_build() {
 do_install() {
 	vmkdir ${_icondir}
 	vcopy _build/aleta ${_icondir}/
+	vcopy AUTHORS.md ${_icondir}/aleta/
 	vlicense LICENSE
 }
