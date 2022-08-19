@@ -2,7 +2,7 @@
 pkgname=librewolf-bin
 _realname=librewolf
 version=103.0.2
-revision=1
+revision=2
 _release=1
 only_for_archs="x86_64"
 repository="cereus-extra"
