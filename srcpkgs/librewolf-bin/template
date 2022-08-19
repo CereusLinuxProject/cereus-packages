@@ -1,9 +1,9 @@
 # Template file for 'librewolf-bin'
 pkgname=librewolf-bin
 _realname=librewolf
-version=103.0
+version=103.0.2
 revision=1
-_release=3
+_release=1
 only_for_archs="x86_64"
 repository="cereus-extra"
 short_desc="Community-maintained fork of Firefox, focused on privacy, security and freedom - binary-based package"
@@ -13,7 +13,7 @@ makedepends="xbps-triggers"
 license="MPL-2.0"
 homepage="https://gitlab.com/librewolf-community"
 distfiles="https://gitlab.com/api/v4/projects/12829184/packages/generic/${_realname}/${version}-${_release}/LibreWolf-${version}-${_release}.x86_64.tar.bz2"
-checksum=635710c32092491bd3e34490f245296171dc04a81dc236110ac0989bbe0ad593
+checksum=3539c946379ea0932abcd45edd572ed77bcd5d31acdf43fc5c84b8659f426bcb
 nostrip=yes
 
 do_extract() {
