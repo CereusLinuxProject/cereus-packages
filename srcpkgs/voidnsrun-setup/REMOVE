@@ -1,0 +1,6 @@
+# REMOVE
+case "$ACTION" in
+pre)
+    rm -r /glibc
+    ;;
+esac    

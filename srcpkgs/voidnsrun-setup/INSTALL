@@ -1,0 +1,8 @@
+# INSTALL
+
+case "$ACTION" in
+post)
+    voidnsrun-setup
+    ;;
+
+esac
