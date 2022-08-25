@@ -1,0 +1,23 @@
+# Template file for 'voidnsrun'
+pkgname=voidnsrun
+version=2022.07.30
+revision=1
+wrksrc=voidnsrun-master
+repository="cereus-extra"
+hostmakedepends="make gcc"
+short_desc="Run glibc binaries in musl libc Void Linux (and derivatives) environment and vice-versa"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="BSD-2-Clause"
+homepage="https://github.com/gch1p/voidnsrun"
+distfiles="${homepage}/archive/refs/heads/master.zip"
+checksum=693ec1c3e225fb5605c5aeb5d06d769d857b95482558fc490f189921d9341850
+
+do_build() {
+    make run
+}
+
+do_install() {
+    vmkdir usr/bin
+    vinstall voidnsrun 4755 usr/bin/
+    vlicense LICENSE
+}
