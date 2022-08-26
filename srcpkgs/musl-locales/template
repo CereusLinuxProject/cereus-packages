@@ -1,6 +1,6 @@
 # Template file for 'musl-locales'
 pkgname=musl-locales
-version=20220703
+version=2020.10.05
 revision=2
 archs="x86_64-musl aarch64-musl"
 wrksrc=${pkgname}-master
