@@ -1,6 +1,6 @@
 # Template file for 'picom-ibhagwan'
 pkgname=picom-ibhagwan
-version=20220417
+version=2021.11.04
 revision=3
 wrksrc=picom
 build_style=meson
@@ -25,6 +25,7 @@ do_fetch() {
 
 post_install() {
 	vlicense LICENSES/MIT
+	vlicense LICENSES/MPL-2.0
 	vsconf picom.sample.conf
 }
 
