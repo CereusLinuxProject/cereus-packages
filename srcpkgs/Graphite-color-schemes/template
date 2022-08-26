@@ -1,6 +1,6 @@
 # Template file for 'Graphite-color-schemes'
 pkgname=Graphite-color-schemes
-version=02.20.2022
+version=2022.02.21
 revision=1
 build_style=meta
 nostrip=yes
