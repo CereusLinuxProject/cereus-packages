@@ -1,7 +1,7 @@
 # Template file for 'picom-jonaburg-fix'
 pkgname=picom-jonaburg-fix
 version=20220417
-revision=1
+revision=2
 wrksrc=picom
 build_style=meson
 repository="cereus-extra"
@@ -15,9 +15,12 @@ short_desc="Picom fork which includes rounded corners, animations and blur suppo
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="MIT, MPL-2.0"
 homepage="https://github.com/Arian8j2/picom-jonaburg-fix"
+provides="picom"
+conflicts="picom picom-jonaburg picom-dccsillag picom-ibhagwan"
+replaces="picom picom-jonaburg picom-dccsillag picom-ibhagwan"
 
 case "$XBPS_TARGET_MACHINE" in
-        *-musl) broken="For Musl platforms it's recommended to use picom-ibhagwan fork instead";;
+        *-musl) broken="Cannot build on musl. It's recommended to use picom-dccsillag instead" ;;
 esac
 
 do_fetch() {

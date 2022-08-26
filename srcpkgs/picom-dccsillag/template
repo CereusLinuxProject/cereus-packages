@@ -1,6 +1,6 @@
 # Template file for 'picom-dccsillag'
 pkgname=picom-dccsillag
-version=20220413
+version=20220529
 revision=1
 build_style=meson
 configure_args="-Dwith_docs=true"
@@ -15,6 +15,7 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="MIT, MPL-2.0"
 repository="cereus-extra"
 homepage="https://github.com/dccsillag/picom/"
+provides="picom"
 conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan"
 replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan"
 distfiles="https://github.com/dccsillag/picom/archive/refs/heads/implement-window-animations.zip"
