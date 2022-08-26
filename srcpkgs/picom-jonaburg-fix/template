@@ -31,9 +31,3 @@ post_install() {
 	vlicense LICENSES/MIT
 	vsconf picom.sample.conf
 }
-
-picom-jonaburg_package() {
-	depends="${sourcepkg}>=${version}_${revision}"
-	build_style=meta
-	short_desc+=" (transitional dummy package)"
-}
