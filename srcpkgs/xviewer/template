@@ -1,0 +1,18 @@
+# Template file for 'xviewer'
+pkgname=xviewer
+version=3.2.10
+revision=1
+build_style=meson
+repository=cereus-extra
+makedepends="gobject-introspection librsvg-devel itstool gtk-doc cmake libglib-devel pkg-config gtk+3-devel libpeas-devel cinnamon-desktop-devel xapps-devel gettext glib-devel"
+depends="xapps gtk+3 cinnamon-desktop libpeas libexif libjpeg-turbo exempi librsvg webp-pixbuf-loader"
+short_desc="A simple and easy to use image viewer. X-Apps Project."
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="GPL-2.0"
+homepage="https://github.com/linuxmint/xviewer"
+distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
+checksum=c5c136b7f3f62c9d24e0ee362ec99e94f3dd0b3ae268b6932df6116e763c3c32
+
+post_install() {
+	vlicense COPYING
+}
