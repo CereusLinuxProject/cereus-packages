@@ -1,7 +1,7 @@
 # Template file for 'Tela-icon-theme'
 pkgname=Tela-icon-theme
-date=2022-02-21
-version=2022.02.21
+date=2022-08-28
+version=2022.08.28
 revision=1
 build_style=meta
 repository=cereus-extra
@@ -214,18 +214,16 @@ Tela-icon-theme-ubuntu_package() {
 	}
 }
 
-# Keep nord variant until it integrates to future release (currently is only in git branch)
-
-# Tela-icon-theme-nord_package() {
-#    color=nord
-#    nostrip=yes
-#	short_desc+=" - ${color} variant"
-#	pkg_install() {
-#        vmkdir ${icondir}
-#        mkdir -p ${wrksrc}/icons
-#        ./install.sh ${color} -d ${wrksrc}/icons -c
-#        vcopy ${wrksrc}/icons/Tela* ${icondir}
-#        rm -r ${wrksrc}/icons/*
-#        vlicense COPYING
-#	}
-#}
+Tela-icon-theme-nord_package() {
+    color=nord
+    nostrip=yes
+	short_desc+=" - ${color} variant"
+	pkg_install() {
+        vmkdir ${icondir}
+        mkdir -p ${wrksrc}/icons
+        ./install.sh ${color} -d ${wrksrc}/icons -c
+        vcopy ${wrksrc}/icons/Tela* ${icondir}
+        rm -r ${wrksrc}/icons/*
+        vlicense COPYING
+	}
+}
