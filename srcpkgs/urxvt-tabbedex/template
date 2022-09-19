@@ -1,6 +1,6 @@
 # Template file for 'urxvt-tabbedex'
 pkgname=urxvt-tabbedex
-version=21.47
+version=22.32
 revision=1
 repository="cereus-extra"
 perl_dir="usr/lib/urxvt/perl"
