@@ -1,6 +1,6 @@
 # Template file for 'plasma-fluxbox'
 pkgname=plasma-fluxbox
-version=1
+version=2022.09.19
 revision=1
 build_style=meta
 repository="cereus-extra"
