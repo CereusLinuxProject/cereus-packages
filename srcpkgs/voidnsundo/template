@@ -1,6 +1,6 @@
 # Template file for 'voidnsundo'
 pkgname=voidnsundo
-version=2022.07.30
+version=2021.07.30
 revision=1
 wrksrc=voidnsrun-master
 repository="cereus-extra"
