@@ -8,7 +8,7 @@ short_desc="Cereus Linux base system meta package"
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="Public Domain"
 conflicts="base-system"
-homepage="https://cereus-linux.sourceforge.io"
+homepage="https://cereuslinuxproject.github.io"
 
 depends="
  base-files>=2022.07.03 ncurses coreutils findutils diffutils libgcc
