@@ -1,4 +1,9 @@
 NAME="Cereus"
-ID="Cereus"
-DISTRIB_ID="cereus"
+ID="cereus"
 PRETTY_NAME="Cereus Linux"
+HOME_URL="https://cereuslinuxproject.github.io/"
+DOCUMENTATION_URL="https://github.com/cereuslinuxproject/"
+LOGO="cereus-logo"
+ANSI_COLOR="0;38;2;71;128;97"
+
+DISTRIB_ID="cereus"
