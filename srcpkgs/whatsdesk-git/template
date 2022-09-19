@@ -1,6 +1,6 @@
 # Template file for 'whatsdesk-git'
 pkgname=whatsdesk-git
-version=0.3.8
+version=2022.09.08
 revision=1
 archs="i686 x86_64"
 hostmakedepends="nodejs jq"

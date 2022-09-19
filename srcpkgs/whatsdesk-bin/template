@@ -1,8 +1,8 @@
 # Template file for 'whatsdesk-bin'
 pkgname=whatsdesk-bin
-version=0.3.8
+version=0.3.9
 revision=1
-archs="x86_64"
+archs="x86_64 i686"
 hostmakedepends="bsdtar"
 wrksrc=whatsdesk-bin
 create_wrksrc=yes
@@ -13,14 +13,25 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="MIT"
 homepage="https://gitlab.com/zerkc/whatsdesk"
 conflicts="whatsdesk-git"
-distfiles="https://zerkc.gitlab.io/whatsdesk/whatsdesk_${version}_amd64.deb
+
+
+if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
+	_debarch=amd64
+	checksum="02b1b2902fe835ac1f34fc0d24ed793f6d312ef12e44066de83ebbfd39b06486
+38f8c3d94c9497be761fc95f10d3c530a693bae33fa89d5ce29fe1fac45e3aea"
+else
+    broken="For some bug in WhatsDesk website, 32bit binary is not available yet. Template will be updated when they fix this."
+	# _debarch=i386
+	# checksum="3f551646fd5a9fcc8b37cbe157c0a92284e0e3d01013f13728e5362c7ac24e82
+    # 38f8c3d94c9497be761fc95f10d3c530a693bae33fa89d5ce29fe1fac45e3aea"
+fi
+
+distfiles="https://zerkc.gitlab.io/whatsdesk/whatsdesk_${version}_${_debarch}.deb
            ${homepage}/-/raw/master/LICENSE"
-checksum="f9b2c1d58713df105064b268e3808bb320737464f388e508755a23dcead64433
- 38f8c3d94c9497be761fc95f10d3c530a693bae33fa89d5ce29fe1fac45e3aea"
 
 do_extract() {
     cd ${wrksrc}
-    ar xv ${XBPS_SRCDISTDIR}/${pkgname}-${version}/whatsdesk_${version}_amd64.deb
+    ar xv ${XBPS_SRCDISTDIR}/${pkgname}-${version}/whatsdesk_${version}_${_debarch}.deb
 }
 
 do_install() {
