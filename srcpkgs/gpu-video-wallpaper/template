@@ -1,6 +1,6 @@
 # Template file for 'gpu-video-wallpaper'
 pkgname=gpu-video-wallpaper
-version=20220223
+version=2022.02.23
 revision=1
 wrksrc="${pkgname}-master"
 repository="cereus-extra"
