@@ -1,6 +1,6 @@
 # Template file for 'waterfox-g4-bin'
 pkgname=waterfox-g4-bin
-version=1.4
+version=1.5
 _generation=G4
 revision=1
 archs="x86_64"
