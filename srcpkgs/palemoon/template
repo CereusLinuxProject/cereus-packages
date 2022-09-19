@@ -6,13 +6,13 @@
 pkgname=palemoon
 version=31.2.0
 _release=1-1
-revision=1
+revision=2
 archs="i686 x86_64"
 repository="cereus-extra"
 hostmakedepends="curl python3-html2text tar xz"
 depends="libvpx alsa-lib dbus-glib libXt gtk+"
 short_desc="Open-source web browser based on Firefox focusing on efficiency"
-maintainer="David C. <https://github.com/David-Castro16>"
+maintainer="Kevin F. <https://github.com/KF_Art>"
 license="LGPL-2.1-or-later MPL-2.0-or-later GPL-3.0-or-later"
 homepage="https://www.palemoon.org"
 
