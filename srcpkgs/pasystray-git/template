@@ -1,7 +1,7 @@
 # Template file for 'pasystray-git'
 pkgname=pasystray-git
-version=20220314
-revision=2
+version=2022.03.14
+revision=1
 build_style=gnu-configure
 repository="cereus-extra"
 hostmakedepends="pkg-config intltool automake git"
