@@ -1,6 +1,6 @@
 # Template file for 'aleta-icon-theme'
 pkgname=aleta-icon-theme
-version=2022.08.17
+version=1.1pre8-2022.09.18
 revision=1
 hostmakedepends="git parallel optipng inkscape"
 repository="cereus-extra"
