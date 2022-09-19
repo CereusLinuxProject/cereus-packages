@@ -9,7 +9,7 @@ repository=cereus-core
 short_desc="Minimal set of packages required for chroot with xbps-src - Cereus patched version"
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="Public Domain"
-homepage="https://cereus-linux.sourceforge.io"
+homepage="https://cereuslinuxproject.github.io"
 
 case "$XBPS_TARGET_LIBC" in
 	musl) depends="musl-devel musl-locales";;
