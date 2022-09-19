@@ -1,6 +1,6 @@
 # Template file for 'calamares'
 pkgname=calamares
-version=3.2.60
+version=3.2.61
 revision=1
 build_style=cmake
 repository=cereus-extra
