@@ -1,14 +1,18 @@
+# IMPORTANT NOTE: the original GitHub repository was put as private by the creator, so this template uses an outdated
+# fork made by KF_Art when he made a pull request. The template will not be removed as the creator will update the
+# repository soon (or that's we expect). In cereus-extra will be still available the last build of this icon theme.
+
 # Template file for 'calmsky-icon-theme'
 pkgname=calmsky-icon-theme
-version=20220223
-revision=2
+version=20211230
+revision=1
 wrksrc="CalmSky-main"
 repository="cereus-extra"
 theme_dir="usr/share/icons/CalmSky"
 short_desc="Icon theme for GNU/Linux distributions with modernist focus"
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL-2.0"
-homepage="https://github.com/doubleau15/CalmSky"
+homepage="https://github.com/KF-Art/CalmSky"
 distfiles="${homepage}/archive/refs/heads/main.zip"
 checksum=1eb69044a85f8bd9d7ea2df24c9532f95c52477599d045376bed17e4fed66341
 
