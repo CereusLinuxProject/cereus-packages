@@ -29,7 +29,7 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL-3.0"
 homepage="https://github.com/vinceliuice/Graphite-gtk-theme"
 distfiles="${homepage}/archive/refs/tags/${date}.tar.gz"
-checksum=e4d1e9a768d822e956fc35549074b8225b81017dd74b6b2842409cdaade83ec5
+checksum=af03e9e5ae29a5b8ee4b10a8e2ca95396bc300e35e939f21dedbc9568aefcd60
 
 Graphite-gtk-theme-black_package() {
     nostrip=yes
