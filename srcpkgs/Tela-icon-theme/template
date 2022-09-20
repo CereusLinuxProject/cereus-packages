@@ -30,7 +30,7 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL-3.0"
 homepage="https://github.com/vinceliuice/Tela-icon-theme"
 distfiles="${homepage}/archive/refs/tags/${date}.tar.gz"
-checksum=f8a5e2c5928b826584be519b025ccdfc0ffe9fcc3ec583f1305267e55eee28c2
+checksum=09be82313a0ccfab4e3390de6dd1bd0ace115ba5990aae42e327777642ee7ff4
 
 Tela-icon-theme-standard_package() {
     color=standard
