@@ -7,7 +7,7 @@ archs="x86_64"
 create_wrksrc=yes
 build_style=fetch
 hostmakedepends="bsdtar"
-depends="fuse gawk zstd"
+depends="fuse gawk zstd vulkan-loader"
 repository="cereus-extra"
 short_desc="Heroic Games Launcher, an Open Source Launcher for GOG and Epic Games"
 maintainer="KF-Art <https://github.com/KF-Art>"
@@ -15,7 +15,7 @@ license="GPL-3.0"
 homepage="https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher"
 changelog="${homepage}/releases/tag/v${version}"
 distfiles="https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v${version}/heroic-${version}.tar.xz"
-checksum=297d4dcaaa425f48507dd101177df8234ca11f8ec77bb28521948a7b26a4f995
+checksum=5994dd5bca8b00e463c9cd73b5a648e7db89ddbe3493dd4c2f7178a28cafa9c3
 
 do_install() {
 	for dir in opt usr/{bin,share/applications}; do
@@ -28,6 +28,8 @@ do_install() {
 	done
 
 	bsdtar -xf heroic-${version}.tar.xz -C "${DESTDIR}/opt/"
+	# Remove unnecessary dependency
+	rm "${DESTDIR}/opt/heroic-${version}/libvulkan.so.1"
 	ln -s /opt/heroic-${version}/heroic "${DESTDIR}/usr/bin/heroic"
 	vcopy "${FILESDIR}/heroic.desktop" usr/share/applications/
 }
