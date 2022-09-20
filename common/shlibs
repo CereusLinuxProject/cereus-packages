@@ -651,7 +651,7 @@ libboost_stacktrace_noop.so.1.72.0 libboost_stacktrace_noop1.72-1.72.0_1
 libboost_stacktrace_addr2line.so.1.72.0 libboost_stacktrace_addr2line1.72-1.72.0_1
 libboost_stacktrace_basic.so.1.72.0 libboost_stacktrace_basic1.72-1.72.0_1
 libboost_python27.so.1.72.0 boost-python1.72-1.72.0_1
-libboost_python310.so.1.72.0 boost-python3-1.72-1.72.0_6
+libboost_python310.so.1.80.0 boost-python3-1.80-1.80.0_2
 libexempi.so.8 exempi-2.5.0_1
 libatasmart.so.4 libatasmart-0.17_1
 libsgutils2-1.45.so.2 libsgutils-1.45_1
@@ -4146,7 +4146,7 @@ librz_search.so.0.3.4 rizin-0.3.4_1
 librz_bin.so.0.3.4 rizin-0.3.4_1
 libaravis-0.8.so.0 libaravis-0.8.21_1
 libLimeSuite.so.20.10-1 LimeSuite-20.10.0_1
-libcalamares.so.3.2.60 calamares-3.2.60_1
-libcalamaresui.so.3.2.60 calamares-3.2.60_1
-libvulkan.so.1 heroic-bin-2.3.8_1
+libcalamares.so.3.2.61 calamares-3.2.61_1
+libcalamaresui.so.3.2.61 calamares-3.2.61_1
+libvulkan.so.1 heroic-bin-2.4.3_1
 libvulkan.so.1 brave-bin-1.39.122_1
