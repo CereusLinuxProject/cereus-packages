@@ -1,6 +1,6 @@
 # Template file for 'aleta-icon-theme'
 pkgname=aleta-icon-theme
-version=1.1pre8-2022.09.18
+version=1.1pre8.2022.09.18
 revision=1
 hostmakedepends="git parallel optipng inkscape"
 repository="cereus-extra"
@@ -22,5 +22,5 @@ do_install() {
 	vmkdir ${_icondir}
 	vcopy _build/aleta ${_icondir}/
 	vcopy AUTHORS.md ${_icondir}/aleta/
-	vlicense LICENSE
+	vlicense LICENSES/CC-BY-SA-4.0.txt
 }
