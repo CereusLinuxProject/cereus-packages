@@ -10,9 +10,9 @@ short_desc="Additional Budgie desktop applets to enhance user experience"
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL-3.0"
 homepage="https://github.com/UbuntuBudgie/budgie-extras"
-changelog=${homepage}/releases/tag/v${version}"
+changelog="${homepage}/releases/tag/v${version}"
 distfiles="${homepage}/releases/download/v${version}/${pkgname}-${version}.tar.xz"
-checksum=9bfe20f427faa7c96b69496ae9bac65425598bb6245637aa19cc4f9f5ac5ac8e
+checksum=10d14a1f6c90d5fa8106077094f83030a5ac26cf81e9820e9c34566b182a844a
 
 post_install() {
     vlicense LICENSE
