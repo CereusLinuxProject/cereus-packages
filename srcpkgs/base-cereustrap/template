@@ -8,7 +8,7 @@ short_desc="Cereus Linux base system meta package for containers/chroots"
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="Public Domain"
 homepage="https://cereuslinuxproject.github.io"
-f
+
 depends="
  base-files>=2022.07.03 ncurses coreutils findutils diffutils
  dash bash grep gzip file sed gawk less util-linux which tar man-pages
