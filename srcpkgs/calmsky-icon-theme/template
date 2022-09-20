@@ -14,11 +14,14 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL-2.0"
 homepage="https://github.com/KF-Art/CalmSky"
 distfiles="${homepage}/archive/refs/heads/main.zip"
-checksum=1eb69044a85f8bd9d7ea2df24c9532f95c52477599d045376bed17e4fed66341
+checksum=25acc66cc319067e0ed60e3ff20cdbc3f3aa741f79bb206891f98709cb1919c1
 
 do_install() {
     vmkdir ${theme_dir}
-    vlicense LICENSE
-    rm LICENSE
+    
+    # In the old version the license file is not present
+    # vlicense LICENSE
+    # rm LICENSE
+
     vcopy ./* ${theme_dir}
 }
