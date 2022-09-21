@@ -1,2 +1,2 @@
  #!/bin/bash
-pasystray --notify={sink,source} &
+pasystray --notify=sink --notify=source
