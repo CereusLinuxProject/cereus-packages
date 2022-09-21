@@ -12,7 +12,7 @@ maintainer="KF-Art <https://github.com/KF-Art>"
 license="GPL-3.0"
 homepage="https://gitlab.com/loc-os_linux/updates"
 nostrip=yes
-checksum="ede89ebac1fa7d088b7e86b784cc911d2ad8965f6b0e46cd1993c512d937caf9"
+checksum=ede89ebac1fa7d088b7e86b784cc911d2ad8965f6b0e46cd1993c512d937caf9
 distfiles="https://github.com/CereusLinuxProject/lpkg-list/releases/download/${version}/${pkgname}.tar.gz"
 
 do_install() {
@@ -37,12 +37,15 @@ do_install() {
     # Define repository list depending of target architecture
     if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
 	_repo="locosporlinux/lpkg-list"
+
+    # Install desktop launcher
+    vinstall Loc-OS-LPKG/LocOSLpkg.desktop 0644 usr/share/applications/ lpkggui.desktop
+
     elif [ "$XBPS_TARGET_MACHINE" = "i686" ]; then
 	_repo="loc-os_linux/lpkg-list32"
     
     # Currently the LPKG GUI is built only for x86_64. In future releases this won't be necessary.
     rm ${DESTDIR}/opt/Loc-OS-LPKG/LpkgGui
-    rm ${DESTDIR}/usr/share/applications/lpkggui.desktop
     fi
 
     # Fetch repository list
@@ -50,9 +53,6 @@ do_install() {
     
     # Install repository list
 	vinstall ListGitLabLocOS.LpkgRepo 0644 opt/Loc-OS-LPKG/Repos/
-
-    # Install desktop launcher
-    vinstall Loc-OS-LPKG/LocOSLpkg.desktop 0644 usr/share/applications/ lpkggui.desktop
 
     # Install license
     vlicense Loc-OS-LPKG/LICENSE
