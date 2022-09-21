@@ -16,6 +16,7 @@ do_fetch() {
 
 do_install() {
 	vmkdir usr/share/icons/ilustraciones
+	rm install.sh
 	vcopy ./* usr/share/icons/ilustraciones
 	vlicense LICENSE
 }
