@@ -1,16 +1,17 @@
 # Template file for 'runit-cereus'
 pkgname=runit-cereus
 version=2022.03.29
+_datever=20220329
 revision=2
 repository=cereus-core
-wrksrc="void-runit-${version}"
+wrksrc="void-runit-${_datever}"
 build_style=gnu-makefile
 short_desc="Cereus Linux runit scripts"
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="CC0-1.0"
 conflicts="runit-void"
 homepage="https://github.com/void-linux/void-runit"
-distfiles="https://github.com/void-linux/void-runit/archive/${version}.tar.gz"
+distfiles="https://github.com/void-linux/void-runit/archive/${_datever}.tar.gz"
 checksum=43037b1cbf177a3ee6d690cc652eedf819ca37f44636311b55aa716e159a4718
 
 depends="virtual?awk procps-ng runit"
