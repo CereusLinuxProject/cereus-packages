@@ -10,7 +10,7 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL-3.0"
 homepage="https://github.com/mina86/urxvt-tabbedex"
 distfiles="${homepage}/releases/download/v${version}/${pkgname}-${version}.tar.bz2"
-checksum=24cd8ed0145b8a1c4c082fa1ef3331e02b5c5a031c058ef1fe5ad052f157cfb1
+checksum=5edcb1c34fe0546bc5195af799a1f59cc61bae70b705ebc12a52c9d090f882d6
 
 do_install() {
 	vinstall tabbedex 644 ${perl_dir}
