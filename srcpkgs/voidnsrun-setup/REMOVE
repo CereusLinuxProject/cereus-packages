@@ -1,6 +1,8 @@
 # REMOVE
 case "$ACTION" in
 pre)
-    rm -r /glibc
+	if [ "$UPDATE" = "no" ]; then
+    		rm -r /glibc
+	fi
     ;;
 esac    

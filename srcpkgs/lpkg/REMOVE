@@ -6,9 +6,12 @@ pre)
 # 
 # Remove all installed LPKG packages to avoid conflicts
 #
-	for pkg in $(lpkg -i | cut -d "-" -f1 | tail -n +3);
-		 do lpkg remove ${pkg}
-	done
+
+	if [ "$UPDATE" = "no" ]; then
+		for pkg in $(lpkg -i | cut -d "-" -f1 | tail -n +3);
+		 	do lpkg remove ${pkg}
+		done
+	fi
 	;;
 post)
 
