@@ -1,6 +1,6 @@
 # Template file for 'open-sauce-fonts'
 pkgname=open-sauce-fonts
-version=20210709
+version=2021.07.09
 revision=1
 license="OFL-1.1"
 wrksrc="Open-Sauce-Fonts-master"

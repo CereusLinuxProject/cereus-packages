@@ -1,6 +1,6 @@
 # Template file for 'Graphite-cursors'
 pkgname=Graphite-cursors
-version=20220107
+version=2022.01.07
 revision=1
 wrksrc=${pkgname}-main
 repository="cereus-extra"

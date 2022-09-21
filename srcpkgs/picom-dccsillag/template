@@ -1,6 +1,6 @@
 # Template file for 'picom-dccsillag'
 pkgname=picom-dccsillag
-version=20220529
+version=2022.05.29
 revision=1
 build_style=meson
 configure_args="-Dwith_docs=true"

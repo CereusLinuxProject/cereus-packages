@@ -4,7 +4,7 @@
 
 # Template file for 'calmsky-icon-theme'
 pkgname=calmsky-icon-theme
-version=20211230
+version=2021.12.30
 revision=1
 wrksrc="CalmSky-main"
 repository="cereus-extra"

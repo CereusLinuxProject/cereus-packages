@@ -1,6 +1,6 @@
-# Template file for 'Mint-Ice-Y-Dark'
-pkgname=Mint-Ice-Y-Dark
-version=20220602
+# Template file for 'mint-ice-y-dark-theme'
+pkgname=mint-ice-y-dark-theme
+version=2022.06.02
 revision=1
 create_wrksrc=yes
 repository="cereus-extra"

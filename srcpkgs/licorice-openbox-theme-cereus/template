@@ -1,6 +1,6 @@
 # Template file for 'licorice-openbox-theme-cereus'
 pkgname=licorice-openbox-theme-cereus
-version=20220614
+version=2022.06.14
 revision=1
 repository="cereus-extra"
 _themedir=usr/share/themes/Licorice-Cereus

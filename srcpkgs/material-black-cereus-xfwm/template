@@ -1,6 +1,6 @@
 # Template file for 'material-black-cereus-xfwm'
 pkgname=material-black-cereus-xfwm
-version=20220526
+version=2022.05.26
 revision=1
 repository="cereus-extra"
 _themedir=usr/share/themes/material-black-cereus/

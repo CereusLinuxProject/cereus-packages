@@ -1,6 +1,6 @@
 # Template file for 'calamares-branding'
 pkgname=calamares-branding
-version=20220609
+version=2022.06.09
 revision=1
 hostmakedepends="git"
 _brandingdir="etc/calamares/branding/cereus"

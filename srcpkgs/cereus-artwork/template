@@ -1,6 +1,6 @@
 # Template file for 'cereus-artwork'
 pkgname=cereus-artwork
-version=20220614
+version=2022.06.14
 revision=1
 hostmakedepends="git"
 _wallpaperdir="usr/share/backgrounds"
