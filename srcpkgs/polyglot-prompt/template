@@ -9,7 +9,7 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="MIT"
 homepage="https://github.com/agkozak/polyglot"
 distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
-checksum=2e736fea0725bcad5523bdc558cc00709529175ef43660827e39a4eaa64d3cb7
+checksum=5dc25961a0a475349e18c27696ad207091e4c504a9014392e45fa62a0c6359da
 
 do_install() {
 	vmkdir usr/share/polyglot-prompt
