@@ -1,7 +1,7 @@
 # Template file for 'voidnsrun-setup'
 pkgname=voidnsrun-setup
 version=2022.08.25
-revision=2
+revision=3
 wrksrc=voidnsrun-setup-main
 repository="cereus-extra"
 depends="voidnsrun voidnsundo xtools"
