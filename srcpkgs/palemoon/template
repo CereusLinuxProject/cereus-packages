@@ -18,10 +18,10 @@ homepage="https://www.palemoon.org"
 
 if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
 	_debarch=amd64
-	checksum=c30eede30c12b8b3cf9396556f504d9dff7752cfc1e858d0365992053abd064b
+	checksum=a98755451a46a7ce6d75a881a856ed25adc70c2ba63e98447ad395167819b7ba
 else
 	_debarch=i386
-	checksum=dcca8d90ff438bbf4e8f84fbf6d085216d8636cbd2b2a1db16538fc88feb5839
+	checksum=d545e785f6638eeaa849f262d63a27d7435ff8d1bfc427a6265a6ed9f301159a
 fi
 
 distfiles="https://download.opensuse.org/repositories/home:/stevenpusser/Debian_11/${_debarch}/${pkgname}_${version}.${_release}.gtk2_${_debarch}.deb"
