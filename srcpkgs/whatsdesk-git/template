@@ -2,7 +2,7 @@
 pkgname=whatsdesk-git
 version=2022.09.08
 revision=1
-archs="i686 x86_64"
+archs="x86_64"
 hostmakedepends="nodejs jq"
 wrksrc=whatsdesk-master
 repository="cereus-extra"
@@ -12,7 +12,7 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="MIT"
 homepage="https://gitlab.com/zerkc/whatsdesk"
 distfiles="${homepage}/-/archive/master/whatsdesk-master.tar.gz"
-checksum=e57678f6f0e85474a696e7b13fe6298dd5c2c45f9245cc98734e7e4739515294
+checksum=01d276b8f9c6b8e654c3ab916b60a55cb428bcf49b9db1e92ced999ff1cc2794
 
 do_build() {
 	mv package.json package.json.tmp
