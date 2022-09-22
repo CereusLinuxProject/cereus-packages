@@ -7,7 +7,7 @@ index c48e124..61d3afb 100644
  GenericName=
  Comment=An Applet for PulseAudio
 -Exec=pasystray
-+Exec=pasystray-cereus
++Exec=sh -c 'pasystray --notify=source --notify=sink'
  Icon=pasystray
  StartupNotify=true
  Type=Application

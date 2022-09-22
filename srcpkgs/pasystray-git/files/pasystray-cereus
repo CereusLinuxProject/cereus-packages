@@ -1,2 +1,0 @@
- #!/bin/bash
-pasystray --notify=sink --notify=source
