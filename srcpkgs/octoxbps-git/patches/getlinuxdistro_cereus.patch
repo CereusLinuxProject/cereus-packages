@@ -6,7 +6,7 @@ index 1762c4b..bc059a8 100644
        {
          ret = ectn_VOID;
        }
-+      else if (contents.contains("ID=\"Cereus\""))
++      else if (contents.contains("ID=\"cereus\""))
 +      {
 +        ret = ectn_VOID;
 +      }
