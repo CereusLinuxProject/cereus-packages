@@ -1,0 +1,20 @@
+# Template file for 'qterminal-cereus-colorscheme'
+pkgname=qterminal-cereus-colorscheme
+version=2022.09.23
+revision=1
+wrksrc="qterminal-cereus-colorscheme-main"
+repository="cereus-extra"
+short_desc="Qterminal Cereus Linux custom color scheme"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/cereuslinuxproject/qterminal-cereus-colorscheme"
+_themedir="usr/share/qtermwidget5/color-schemes"
+#changelog="""
+distfiles="${homepage}/archive/refs/heads/main.zip"
+checksum=fb1672e2c764d43e23afa6b8bc4d059947f5fe022bdd45fcd5691c55ed38de58
+
+do_install() {
+	vmkdir ${_themedir}
+	vinstall CereusDark.colorscheme 644 ${_themedir}/
+	vlicense LICENSE
+}
