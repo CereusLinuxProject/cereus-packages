@@ -66,10 +66,8 @@ class ConfigController:
         if exists(join(self.root, "usr/sbin/void-installer")):
             target_env_call(["rm", "-f", "usr/sbin/void-installer"])
 
-        if exists(join(self.root, "usr/bin/startplasma-x11")):
-            print("Not removing Breeze")
-        else:
-            self.remove_pkg("breeze")
+        if exists(join(self.root, "usr/sbin/cereus-installer")):
+            target_env_call(["rm", "-f", "usr/sbin/cereus-installer"])
 
         # Initialize package manager databases
         if libcalamares.globalstorage.value("hasInternet"):
@@ -93,6 +91,13 @@ class ConfigController:
 
         # Enable plymouth
         target_env_call(["plymouth-set-default-theme", "-R", "cereus_simply"])
+
+        # Replace /etc/issue msg from live
+        if exists(join(self.root, "etc/issue.new")):
+            target_env_call(["mv", "etc/issue.new", "etc/issue"])
+
+        # Reconfigure all target packages to ensure everything is ok
+        target_env_call(["xbps-reconfigure", "-fa"])
 
 def run():
     """ Misc postinstall configurations """
