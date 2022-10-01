@@ -1,6 +1,6 @@
 # Template file for 'onlyoffice-desktopeditors'
 pkgname=onlyoffice-desktopeditors
-version=7.1.1
+version=7.2.0
 revision=1
 archs="x86_64"
 repository="cereus-extra"
