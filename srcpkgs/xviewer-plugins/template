@@ -1,0 +1,25 @@
+# Template file for 'xviewer-plugins'
+pkgname=xviewer-plugins
+version=1.4.1
+revision=1
+build_style=gnu-makefile
+repository=cereus-extra
+wrksrc=xviewer-plugins-${version}
+makedepends="gnome-common gobject-introspection which intltool pkg-config glib-devel gtk+3-devel libpeas-devel xviewer-devel cinnamon-desktop-devel xapps-devel librsvg-devel libexif-devel libchamplain-devel libgdata-devel gettext-devel libtool exempi-devel"
+depends="xviewer libpeas"
+short_desc="Plugins for XViewer. X-Apps Project."
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="GPL-2.0"
+homepage="https://github.com/linuxmint/xviewer-plugins"
+distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
+checksum=1d4970ccd6cd516143f267b7e128698c560a307b4f9e4d7bd9e35a14b0fcdaad
+
+do_configure(){
+	./autogen.sh --prefix="/usr" \
+        --localstatedir="/var" \
+        --libexecdir="/usr/libexec/${pkgname}"
+}
+
+post_install() {
+	vlicense COPYING
+}
