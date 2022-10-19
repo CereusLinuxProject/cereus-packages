@@ -1,7 +1,7 @@
 # Template file for 'librewolf-bin'
 pkgname=librewolf-bin
 _realname=librewolf
-version=104.0.2
+version=105.0.3
 revision=1
 _release=1
 archs="x86_64"
@@ -13,7 +13,7 @@ makedepends="xbps-triggers"
 license="MPL-2.0"
 homepage="https://gitlab.com/librewolf-community"
 distfiles="https://gitlab.com/api/v4/projects/12829184/packages/generic/${_realname}/${version}-${_release}/LibreWolf-${version}-${_release}.x86_64.tar.bz2"
-checksum=f34f85f74a176a1bc7ca05e9e1bca0c4627c9eab5fef24b7aa30dd4b55481938
+checksum=3c088d2874551244157ba25b98dfe8f902a2bf600776de69fe4e008c253dd859
 nostrip=yes
 
 do_extract() {
