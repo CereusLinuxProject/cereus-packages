@@ -1,0 +1,30 @@
+# Template file for 'alttab-git'
+pkgname=alttab-git
+version=2022.05.28
+revision=1
+build_style=gnu-configure
+hostmakedepends="pkg-config git"
+repository="cereus-extra"
+makedepends="libX11-devel libXft-devel libXmu-devel libXrandr-devel
+ libXrender-devel libpng-devel libXpm-devel uthash automake"
+checkdepends="procps-ng xvfb-run xeyes xprop"
+short_desc="Task switcher for minimalistic window managers - git branch"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/sagb/alttab"
+changelog="https://github.com/sagb/alttab/raw/master/ChangeLog"
+
+make_check=no # needs cnee/xnee which is not packaged
+
+CFLAGS="-fcommon"
+
+case "$XBPS_TARGET_MACHINE" in
+*-musl)
+	makedepends+=" musl-fts-devel"
+	export LDFLAGS="-lfts"
+	;;
+esac
+
+do_fetch() {
+	git clone ${homepage} ${wrksrc}
+}
