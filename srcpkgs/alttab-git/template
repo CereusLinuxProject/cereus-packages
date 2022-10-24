@@ -1,7 +1,7 @@
 # Template file for 'alttab-git'
 pkgname=alttab-git
 version=2022.05.28
-revision=1
+revision=2
 build_style=gnu-configure
 hostmakedepends="pkg-config git"
 repository="cereus-extra"
@@ -13,6 +13,8 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/sagb/alttab"
 changelog="https://github.com/sagb/alttab/raw/master/ChangeLog"
+conflicts="alttab"
+replaces="alttab"
 
 make_check=no # needs cnee/xnee which is not packaged
 
