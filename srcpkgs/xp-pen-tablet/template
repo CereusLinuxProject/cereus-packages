@@ -1,0 +1,40 @@
+# Template file for 'xp-pen-tablet'
+pkgname=xp-pen-tablet
+version=3.2.3.220323
+revision=1
+archs="x86_64"
+create_wrksrc=yes
+build_style=fetch
+repository="cereus-extra"
+nostrip=yes
+hostmakedepends="tar xz"
+short_desc="XP-Pen Official Linux utility"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="LGPL-3.0"
+homepage="https://www.xp-pen.com/download/index.html"
+distfiles="https://www.xp-pen.ru/download/file/id/1954/pid/143/ext/deb.html"
+checksum=f162dbd236ced66ee759e788d8df9cc8289416263f786636c18d07f458b736c8
+
+do_install() {
+    # Rename distfile.
+	mv deb.html XPPen-pentablet-${version}-1.x86_64.deb
+
+    # Extract distfile to DESTDIR.
+	ar x *.deb
+	tar -xf data.tar.xz -C ${DESTDIR}
+	cp -r ${DESTDIR}/lib/* ${DESTDIR}/usr/lib/
+	rm -r ${DESTDIR}/lib
+
+    # Fix icon permissions
+    chmod 644 ${DESTDIR}/usr/share/icons/pentablet.png
+
+    # Link to PATH.
+    vmkdir usr/bin
+    ln -rs ${DESTDIR}/usr/lib/pentablet/pentablet.sh ${DESTDIR}/usr/bin/pentablet
+
+    # Start in system tray by default.
+    sed -re 's/(^Exec=\/.+)/\1 \/mini/gi' -i ${DESTDIR}/etc/xdg/autostart/xppentablet.desktop
+
+    # Install license.
+    vlicense ${DESTDIR}/usr/lib/pentablet/LGPL
+}

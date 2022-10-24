@@ -4151,3 +4151,14 @@ libcalamaresui.so.3.2.61 calamares-3.2.61_1
 libvulkan.so.1 heroic-bin-2.4.3_1
 libvulkan.so.1 brave-bin-1.39.122_1
 libxviewer.so xviewer-3.2.10_2
+libQt5DBus.so.5 xp-pen-tablet-3.2.3.220323_1
+libicuuc.so.56 xp-pen-tablet-3.2.3.220323_1
+libQt5Network.so.5 xp-pen-tablet-3.2.3.220323_1
+libQt5X11Extras.so.5 xp-pen-tablet-3.2.3.220323_1
+libicui18n.so.56 xp-pen-tablet-3.2.3.220323_1
+libQt5Widgets.so.5 xp-pen-tablet-3.2.3.220323_1
+libQt5Gui.so.5 xp-pen-tablet-3.2.3.220323_1
+libQt5Xml.so.5 xp-pen-tablet-3.2.3.220323_1
+libQt5XcbQpa.so.5 xp-pen-tablet-3.2.3.220323_1
+libicudata.so.56 xp-pen-tablet-3.2.3.220323_1
+libQt5Core.so.5 xp-pen-tablet-3.2.3.220323_1
