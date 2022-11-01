@@ -1,0 +1,17 @@
+# Template file for 'ungoogled-chromium-repo'
+pkgname=ungoogled-chromium-repo
+version=2022.10.24
+revision=1
+repository=cereus-extra
+hostmakedepends="wget"
+archs="x86_64 x86_64-musl"
+short_desc="DAINRA's ungoogled-chromium-void repository"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="BSD-3-Clause"
+homepage="https://github.com/DAINRA/ungoogled-chromium-void"
+
+do_install() {
+	vmkdir usr/share/xbps.d
+	echo "repository=${homepage}/releases/latest/download" > \
+		${DESTDIR}/usr/share/xbps.d/20-ungoogled-chromium.conf
+}
