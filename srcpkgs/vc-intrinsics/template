@@ -1,0 +1,16 @@
+# Template file for 'vc-intrinsics'
+pkgname=vc-intrinsics
+version=0.8.1
+revision=1
+build_style=cmake
+configure_args="-DLLVM_DIR=/usr/lib/cmake/llvm"
+repository="cereus-extra"
+hostmakedepends="clang"
+makedepends="python3-devel llvm libllvm12 clang-tools-extra"
+short_desc="Set of new intrinsics on top of core LLVM IR instructions that represent SIMD semantics of a program targeting GPU"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="MIT"
+homepage="https://github.com/intel/vc-intrinsics"
+changelog="${homepage}/releases/tag/v${version}"
+distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
+checksum=5cc8d5dff2da8fa3515c20336777fbfa7ec943621079608a5361c398315dd664
