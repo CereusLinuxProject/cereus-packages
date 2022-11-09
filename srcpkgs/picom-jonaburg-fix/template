@@ -1,7 +1,7 @@
 # Template file for 'picom-jonaburg-fix'
 pkgname=picom-jonaburg-fix
 version=2022.04.17
-revision=2
+revision=3
 wrksrc=picom
 build_style=meson
 repository="cereus-extra"
@@ -16,11 +16,11 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="MIT, MPL-2.0"
 homepage="https://github.com/Arian8j2/picom-jonaburg-fix"
 provides="picom"
-conflicts="picom picom-jonaburg picom-dccsillag picom-ibhagwan"
-replaces="picom picom-jonaburg picom-dccsillag picom-ibhagwan"
+conflicts="picom picom-jonaburg picom-dccsillag picom-ibhagwan picom-git"
+replaces="picom picom-jonaburg picom-dccsillag picom-ibhagwan picom-git"
 
 case "$XBPS_TARGET_MACHINE" in
-        *-musl) broken="Cannot build on musl. It's recommended to use picom-dccsillag instead" ;;
+        *-musl) broken="Cannot build on musl. It's recommended to use picom-dccsillag or picom-git instead" ;;
 esac
 
 do_fetch() {

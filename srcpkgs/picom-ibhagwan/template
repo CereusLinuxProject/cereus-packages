@@ -1,7 +1,7 @@
 # Template file for 'picom-ibhagwan'
 pkgname=picom-ibhagwan
 version=2021.11.04
-revision=1
+revision=2
 wrksrc=picom
 build_style=meson
 repository="cereus-extra"
@@ -16,8 +16,8 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="MIT, MPL-2.0"
 homepage="https://github.com/ibhagwan/picom/"
 provides="picom"
-conflicts="picom picom-jonaburg picom-jonaburg-fix picom-dccsillag"
-replaces="picom picom-jonaburg picom-jonaburg-fix picom-dccsillag"
+conflicts="picom picom-jonaburg picom-jonaburg-fix picom-dccsillag picom-git"
+replaces="picom picom-jonaburg picom-jonaburg-fix picom-dccsillag picom-git"
 
 do_fetch() {
   git clone --single-branch --branch next-rebase --depth=1 ${homepage} ${wrksrc}

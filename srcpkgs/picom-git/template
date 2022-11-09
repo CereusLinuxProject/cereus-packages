@@ -1,0 +1,30 @@
+# Template file for 'picom-git'
+pkgname=picom-git
+version=2022.10.29
+revision=1
+build_style=meson
+configure_args="-Dwith_docs=true"
+hostmakedepends="pkg-config asciidoc git"
+makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre-devel
+ pixman-devel xcb-util-image-devel xcb-util-renderutil-devel
+ libxdg-basedir-devel uthash libglvnd-devel"
+depends="desktop-file-utils"
+short_desc="Lightweight compositor for X11 (previously a compton fork) - git branch"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="MIT, MPL-2.0"
+homepage="https://github.com/yshui/picom/"
+provides="picom"
+conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan"
+replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan"
+
+do_fetch() {
+	git clone --depth=1 ${homepage} ${wrksrc}
+}
+
+post_install() {
+	vlicense LICENSES/MIT
+	vlicense COPYING
+	vsconf picom.sample.conf
+	vsconf compton-default-fshader-win.glsl
+	vsconf compton-fake-transparency-fshader-win.glsl
+}
