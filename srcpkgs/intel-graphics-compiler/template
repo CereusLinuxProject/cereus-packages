@@ -1,0 +1,59 @@
+# Template file for 'intel-graphics-compiler'
+pkgname=intel-graphics-compiler
+version=1.0.12260.1
+revision=1
+wrksrc=${pkgname}-igc-${version}
+build_style=cmake
+configure_args="-DIGC_OPTION__LLVM_PREFERRED_VERSION='12.0.1' \
+	-DIGC_OPTION__LINK_KHRONOS_SPIRV_TRANSLATOR=ON \
+	-DIGC_OPTION__CLANG_MODE=Prebuilds \
+	-DIGC_OPTION__LLD_MODE=Prebuilds \
+	-DIGC_OPTION__LLVM_MODE=Prebuilds \
+	-DIGC_OPTION__USE_PREINSTALLED_SPIRV_HEADERS=ON \
+	-DIGC_OPTION__SPIRV_TOOLS_MODE=Sources \
+	-DIGC_OPTION__SPIRV_TRANSLATOR_MODE=Prebuilds \
+	-DIGC_OPTION__VC_INTRINSICS_MODE=Prebuilds \
+	-DINSTALL_GENX_IR=ON \
+	-Wno-dev"
+repository="cereus-extra"
+makedepends="git clang lld-devel llvm python3-devel libunwind-devel SPIRV-Headers clang-tools-extra libxml2-devel zlib-devel SPIRV-LLVM-Translator-devel SPIRV-Tools-devel vc-intrinsics protobuf-devel libprotoc-devel intel-opencl-clang bison flex"
+depends="libllvm12 ncurses SPIRV-Tools zlib"
+short_desc="Intel Graphics Compiler for OpenCL"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="MIT"
+homepage="https://github.com/intel/intel-graphics-compiler"
+changelog="${homepage}/releases/tag/igc-${version}"
+distfiles="${homepage}/archive/igc-${version}.tar.gz"
+_spirv_url="https://github.com/KhronosGroup"
+checksum=5079e8a01fc64c167ca6f96d0087513406664b9e8692d56479f7c69c19253d5d
+
+post_extract() {
+        # Clone extra required build dependencies
+        # As for now, the compiler does not detect the prebuilt SPIRV-Tools and Headers.
+
+        if [ -d ../SPIRV-* ]; then
+            rm -rf ../SPIRV-*
+        fi
+        
+        for repo in Tools Headers; do
+            git -C ../ clone ${_spirv_url}/SPIRV-${repo}.git
+        done
+}
+
+post_install() {
+	vlicense LICENSE.md
+	vlicense ${DESTDIR}/usr/lib/igc/NOTICES.txt
+
+    # Remove SPIRV builddir
+    rm -rf ../SPIRV*
+}
+
+intel-graphics-compiler-devel_package() {
+    depends="${sourcepkg}>=${version}_${revision}"
+    short_desc+=" - development files"
+    pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+        vmove usr/lib/*.so
+	}
+}
