@@ -1,0 +1,26 @@
+# Template file for 'igsc'
+pkgname=igsc
+version=0.8.4
+revision=1
+build_style=cmake
+configure_args="-DENABLE_WERROR:BOOL='OFF'"
+hostmakedepends=""
+makedepends="intel-metee-devel eudev-libudev-devel"
+depends="intel-metee eudev-libudev"
+short_desc="Intel graphics system controller firmware update library"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="Apache-2.0"
+homepage="https://github.com/intel/igsc"
+changelog="${homepage}/releases/tag/V${version}"
+distfiles="${homepage}/archive/V${version}/${pkgname}-${version}.tar.gz"
+checksum=dbb0c41c4481d532be009753701afd7218066f214b72616729295e0336726711
+
+igsc-devel_package() {
+    depends="${sourcepkg}>=${version}_${revision}"
+    short_desc+=" - development files"
+    pkg_install() {
+		vmove usr/include
+        vmove usr/lib/cmake
+        vmove usr/lib/*.so
+	}
+}
