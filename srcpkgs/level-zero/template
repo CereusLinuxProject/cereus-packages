@@ -1,0 +1,33 @@
+# Template file for 'level-zero'
+pkgname=level-zero
+version=1.8.8
+revision=1
+build_style=cmake
+makedepends="opencl2-headers"
+depends="opencl2-headers libgcc"
+short_desc="API for accessing low level interfaces in openAPI platform devices (headers and loader)"
+repository=cereus-extra
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="MIT"
+homepage="https://github.com/oneapi-src/level-zero"
+changelog="${homepage}/releases/tag/v${version}"
+distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
+checksum=3553ae8fa0d2d69c4210a8f3428bd6612bd8bb8a627faf52c3658a01851e66d2
+
+do_prepare() {
+	  printf '%s\n' ${version##*.} > VERSION_PATCH
+}
+
+post_install() {
+	vlicense LICENSE
+}
+
+level-zero-devel_package() {
+    depends="${sourcepkg}>=${version}_${revision}"
+    short_desc+=" - development files"
+    pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+        vmove usr/lib/*.so
+	}
+}
