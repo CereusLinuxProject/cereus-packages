@@ -1,0 +1,22 @@
+# Template file for 'intel-opencl-clang'
+pkgname=intel-opencl-clang
+version=12.0.0
+revision=1
+wrksrc=opencl-clang-${version}
+build_style=cmake
+repository=cereus-extra
+configure_args="-DLLVMSPIRV_INCLUDED_IN_LLVM=ON -DLLVM_NO_DEAD_STRIP=ON -Wno-dev"
+hostmakedepends="gcc"
+makedepends="llvm clang-tools-extra SPIRV-LLVM-Translator-devel zlib-devel libxml2-devel libllvm12"
+depends="clang libllvm12 SPIRV-LLVM-Translator"
+short_desc="Wrapper library around clang that can compile OpenCL C kernels to SPIR-V modules"
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="LLVM Release License"
+homepage="https://github.com/intel/opencl-clang"
+changelog="https://github.com/intel/opencl-clang/releases/tag/v${version}"
+distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
+checksum=da3cde9c3b360526371d255d99283f390a01a984fef84378d2df1e34021dda27
+
+post_install() {
+	vlicense LICENSE
+}
