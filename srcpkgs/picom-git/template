@@ -13,6 +13,7 @@ short_desc="Lightweight compositor for X11 (previously a compton fork) - git bra
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="MIT, MPL-2.0"
 homepage="https://github.com/yshui/picom/"
+repository="cereus-extra"
 provides="picom"
 conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan"
 replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan"
