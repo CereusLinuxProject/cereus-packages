@@ -1,0 +1,36 @@
+# Template file for 'intel-compute-runtime'
+
+## IMPORTANT NOTE: This package is currently broken as fails when building. We kept it with testing purposes.
+## If you need intel-compute-runtime, you should instead use intel-compute-runtime-bin, which uses prebuilt binaries instead (only x86_64, maybe it can work containerized for musl).
+
+pkgname=intel-compute-runtime
+version=22.30.23789
+revision=1
+wrksrc=compute-runtime-${version}
+build_style=cmake
+configure_args="-DNEO_OCL_VERSION_MAJOR=${version%%.*} \
+    -DNEO_OCL_VERSION_MINOR=$(echo ${version} | cut -d . -f2) \
+    -DNEO_VERSION_BUILD=${version##*.} \
+    -DSUPPORT_DG1=ON \
+     -Wno-dev"
+hostmakedepends="pkg-config"
+makedepends="libva-devel level-zero-devel igsc-devel intel-graphics-compiler-devel intel-gmmlib-devel"
+provides="opencl-driver level-zero-driver"
+depends="libgcc intel-gmmlib intel-graphics-compiler"
+short_desc="Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver"
+repository=cereus-extra
+maintainer="KF-Art <https://github.com/KF-Art>"
+license="MIT"
+homepage="https://github.com/intel/compute-runtime"
+changelog="${homepage}/releases/tag/${version}"
+distfiles="${homepage}/archive/${version}/${pkgname}-${version}.tar.gz"
+checksum=f59e435de687c3719b54119437e4c9a574a98466a38f532572a1367efde8e964
+
+intel-compute-runtime-devel_package() {
+    depends="${sourcepkg}>=${version}_${revision}"
+    short_desc+=" - development files"
+    pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+	}
+}
