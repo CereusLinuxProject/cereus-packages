@@ -1,0 +1,33 @@
+# Template file for 'wapanel'
+pkgname=wapanel
+version=1.1.0
+revision=1
+build_style=meson
+hostmakedepends="clang pkg-config git"
+makedepends="gtk-layer-shell-devel gtk+3-devel wayland-scanner++ pulseaudio-devel"
+short_desc="Desktop-dedicated Wayland bar for Wayfire and other wlroots based compositors. Mir compatible."
+maintainer="KF-Art <kevinfigueroart@protonmail.com>"
+license="MIT"
+homepage="https://github.com/Firstbober/wapanel"
+repository="cereus-extra"
+changelog="${homepage}/releases/tag/${version}"
+#distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
+#checksum=4f2f11f0d001b4507b5b1dc6622df68a9e786f590cabf603bc5a3b296039f0a5
+
+do_fetch() {
+	git clone --recurse-submodules ${homepage} ${wrksrc}
+}
+
+post_install() {
+    vlicense LICENSE
+}
+
+wapanel-devel_package() {
+    depends="${sourcepkg}>=${version}_${revision}"
+    short_desc+=" - development files"
+    pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+        vmove usr/lib/*.a
+	}
+}
