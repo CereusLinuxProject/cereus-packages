@@ -4,31 +4,31 @@
 # Original source: https://git.disroot.org/tuxliban/tutoriales_void/src/branch/master/Plantillas/palemoon/template
 
 pkgname=palemoon
-version=31.2.0
-_release=1-1
-revision=2
+version=31.3.1
+_release=1
+revision=1
 archs="i686 x86_64"
 repository="cereus-extra"
 hostmakedepends="curl python3-html2text tar xz"
 depends="libvpx alsa-lib dbus-glib libXt gtk+"
 short_desc="Open-source web browser based on Firefox focusing on efficiency"
 maintainer="Kevin F. <https://github.com/KF_Art>"
-license="LGPL-2.1-or-later MPL-2.0-or-later GPL-3.0-or-later"
+license="LGPL-2.1-or-later, MPL-2.0-or-later, GPL-3.0-or-later"
 homepage="https://www.palemoon.org"
 
 if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
 	_debarch=amd64
-	checksum=a98755451a46a7ce6d75a881a856ed25adc70c2ba63e98447ad395167819b7ba
+	checksum=d0062e539b5c61e9fddaa33166ad8759919300e4a138897922c16dafb5625ec1
 else
 	_debarch=i386
-	checksum=d545e785f6638eeaa849f262d63a27d7435ff8d1bfc427a6265a6ed9f301159a
+	checksum=b3a2e75f019863af1f79629bc830586cac6f2e6e06b702c01c7bfea47576184d
 fi
 
-distfiles="https://download.opensuse.org/repositories/home:/stevenpusser/Debian_11/${_debarch}/${pkgname}_${version}.${_release}.gtk2_${_debarch}.deb"
+distfiles="https://download.opensuse.org/repositories/home:/stevenpusser/Debian_11/${_debarch}/${pkgname}_${version}-${_release}.gtk2_${_debarch}.deb"
 _licenseURL="https://www.palemoon.org/redist.shtml"
 
 do_extract() {
-	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${pkgname}_${version}.${_release}.gtk2_${_debarch}.deb
+	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${pkgname}_${version}-${_release}.gtk2_${_debarch}.deb
 	tar xf data.tar.xz
 }
 
@@ -39,10 +39,10 @@ do_install() {
 	# Create dirs at $DESTDIR
 	vmkdir opt
 	vmkdir usr/bin
-	
+
 	# Move recursively files
 	vcopy usr/lib/palemoon opt
-	ln -s /opt/palemoon/palemoon "${DESTDIR}/usr/bin/palemoon"
+	ln -rs /opt/palemoon/palemoon "${DESTDIR}/usr/bin/palemoon"
 
 	for res in 16 32 48 128; do
 		vinstall usr/share/icons/hicolor/${res}x${res}/apps/${pkgname}.png 0644 \
