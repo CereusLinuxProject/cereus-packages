@@ -4146,8 +4146,8 @@ librz_search.so.0.3.4 rizin-0.3.4_1
 librz_bin.so.0.3.4 rizin-0.3.4_1
 libaravis-0.8.so.0 libaravis-0.8.21_1
 libLimeSuite.so.20.10-1 LimeSuite-20.10.0_1
-libcalamares.so.3.2.61 calamares-3.2.61_1
-libcalamaresui.so.3.2.61 calamares-3.2.61_1
+libcalamares.so.3.2.61 calamares-3.2.61_2
+libcalamaresui.so.3.2.61 calamares-3.2.61_2
 libvulkan.so.1 heroic-bin-2.4.3_1
 libvulkan.so.1 brave-bin-1.39.122_1
 libxviewer.so xviewer-3.2.10_2
