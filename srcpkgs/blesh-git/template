@@ -1,6 +1,6 @@
 # Template file for 'blesh-git'
 pkgname=blesh-git
-version=2022.09.16
+version=2022.11.12
 revision=1
 makedepends="gawk git"
 depends="bash git"
@@ -19,7 +19,7 @@ do_fetch() {
 do_install() {
 	make install DESTDIR=${DESTDIR} PREFIX=/usr
 }
-	
+
 post_install() {
     vlicense ${FILESDIR}/LICENSE.md
 }
