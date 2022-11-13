@@ -2,7 +2,7 @@
 pkgname=runit-cereus
 version=2022.03.29
 _datever=20220329
-revision=3
+revision=4
 repository=cereus-core
 wrksrc="void-runit-${_datever}"
 build_style=gnu-makefile
