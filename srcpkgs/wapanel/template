@@ -11,8 +11,6 @@ license="MIT"
 homepage="https://github.com/Firstbober/wapanel"
 repository="cereus-extra"
 changelog="${homepage}/releases/tag/${version}"
-#distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
-#checksum=4f2f11f0d001b4507b5b1dc6622df68a9e786f590cabf603bc5a3b296039f0a5
 
 do_fetch() {
 	git clone --recurse-submodules ${homepage} ${wrksrc}
