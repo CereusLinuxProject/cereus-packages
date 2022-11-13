@@ -1,7 +1,7 @@
 # Template file for 'librewolf-bin'
 pkgname=librewolf-bin
 _realname=librewolf
-version=106.0.1
+version=106.0.4
 revision=1
 _release=1
 archs="x86_64"
@@ -13,12 +13,12 @@ makedepends="xbps-triggers"
 license="MPL-2.0"
 homepage="https://gitlab.com/librewolf-community"
 distfiles="https://gitlab.com/api/v4/projects/12829184/packages/generic/${_realname}/${version}-${_release}/LibreWolf-${version}-${_release}.x86_64.tar.bz2"
-checksum=df52e1a8594250b4e0c082be04e0156f26b4b3b445b185938481bf004aa6f1db
+checksum=cf67c6b7914ae19bdca0b6203fe07c165ee12e865c136d1f0f6fa19fe45fb9b4
 nostrip=yes
 
 do_extract() {
 	vmkdir opt/${_realname}
-	bsdtar -C ${DESTDIR}/opt/${_realname} -xf ${XBPS_SRCDISTDIR}/${pkgname}-${version}/LibreWolf-${version}-${_release}.x86_64.tar.bz2 
+	bsdtar -C ${DESTDIR}/opt/${_realname} -xf ${XBPS_SRCDISTDIR}/${pkgname}-${version}/LibreWolf-${version}-${_release}.x86_64.tar.bz2
 }
 
 do_install() {
@@ -38,5 +38,5 @@ do_install() {
 
     vinstall ${FILESDIR}/${_realname}.svg 0644 \
 	usr/share/icons/hicolor/scalable/apps/
-	
+
 }
