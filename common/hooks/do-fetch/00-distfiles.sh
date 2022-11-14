@@ -2,6 +2,7 @@
 # the $distfiles variable and then verifies its sha256 checksum comparing
 # its value with the one stored in the $checksum variable.
 
+<<<<<<< HEAD
 # Get the checksum for $curfile at index $dfcount
 get_cksum() {
 	local curfile="$1" dfcount="$2" ckcount cksum i
@@ -20,6 +21,8 @@ get_cksum() {
 	echo "$cksum"
 }
 
+=======
+>>>>>>> upstream/master
 # Return the checksum of the contents of a tarball
 contents_cksum() {
 	local curfile="$1" cursufx cksum
@@ -110,9 +113,13 @@ contents_cksum() {
 
 # Verify the checksum for $curfile stored at $distfile and index $dfcount
 verify_cksum() {
+<<<<<<< HEAD
 	local curfile="$1" distfile="$2" dfcount="$3" filesum cksum
 
 	cksum=$(get_cksum $curfile $dfcount)
+=======
+	local curfile="$1" distfile="$2" cksum="$3" filesum
+>>>>>>> upstream/master
 
 	# If the checksum starts with an commercial at (@) it is the contents checksum
 	if [ "${cksum:0:1}" = "@" ]; then
@@ -121,7 +128,11 @@ verify_cksum() {
 		filesum=$(contents_cksum "$curfile")
 		if [ "${cksum}" != "$filesum" ]; then
 			echo
+<<<<<<< HEAD
 			msg_red "SHA256 mismatch for '$curfile:'\n@$filesum\n"
+=======
+			msg_red "SHA256 mismatch for '${curfile}:'\n@${filesum}\n"
+>>>>>>> upstream/master
 			errors=$((errors + 1))
 		else
 			msg_normal_append "OK.\n"
@@ -131,7 +142,11 @@ verify_cksum() {
 		filesum=$(${XBPS_DIGEST_CMD} "$distfile")
 		if [ "$cksum" != "$filesum" ]; then
 			echo
+<<<<<<< HEAD
 			msg_red "SHA256 mismatch for '$curfile:'\n$filesum\n"
+=======
+			msg_red "SHA256 mismatch for '${curfile}:'\n${filesum}\n"
+>>>>>>> upstream/master
 			errors=$((errors + 1))
 		else
 			if [ ! -f "$XBPS_SRCDISTDIR/by_sha256/${cksum}_${curfile}" ]; then
@@ -145,6 +160,7 @@ verify_cksum() {
 
 # Link an existing cksum $distfile for $curfile at index $dfcount
 link_cksum() {
+<<<<<<< HEAD
 	local curfile="$1" distfile="$2" dfcount="$3" filesum cksum
 
 	cksum=$(get_cksum $curfile $dfcount)
@@ -161,6 +177,22 @@ try_mirrors() {
 	[ -z "$XBPS_DISTFILES_MIRROR" ] && return
 	basefile="${f##*/}"
 	cksum=$(get_cksum $curfile $dfcount)
+=======
+	local curfile="$1" distfile="$2" cksum="$3"
+	if [ -n "$cksum" -a -f "$XBPS_SRCDISTDIR/by_sha256/${cksum}_${curfile}" ]; then
+		ln -f "$XBPS_SRCDISTDIR/by_sha256/${cksum}_${curfile}" "$distfile"
+		msg_normal "$pkgver: using known distfile $curfile.\n"
+		return 0
+	fi
+	return 1
+}
+
+try_mirrors() {
+	local curfile="$1" distfile="$2" cksum="$3" f="$4"
+	local filesum basefile mirror path scheme good
+	[ -z "$XBPS_DISTFILES_MIRROR" ] && return 1
+	basefile="${f##*/}"
+>>>>>>> upstream/master
 	for mirror in $XBPS_DISTFILES_MIRROR; do
 		scheme="file"
 		if [[ $mirror == *://* ]]; then
@@ -179,6 +211,7 @@ try_mirrors() {
 		fi
 		if [[ "$mirror" == *voidlinux* ]]; then
 			# For distfiles.voidlinux.* append the subdirectory
+<<<<<<< HEAD
 			mirror="$mirror/$subdir"
 		fi
 		msg_normal "$pkgver: fetching distfile '$curfile' from '$mirror'...\n"
@@ -194,13 +227,86 @@ try_mirrors() {
 		msg_normal "$pkgver: checksum failed - removing '$curfile'...\n"
 		rm -f ${distfile}
 	done
+=======
+			mirror="$mirror/$pkgname-$version"
+		fi
+		msg_normal "$pkgver: fetching distfile '$curfile' from mirror '$mirror'...\n"
+		$fetch_cmd "$mirror/$curfile"
+		# If basefile was not found, but a curfile file may exist, try to fetch it
+		# if [ ! -f "$distfile" -a "$basefile" != "$curfile" ]; then
+		# 	msg_normal "$pkgver: fetching distfile '$basefile' from mirror '$mirror'...\n"
+		# 	$fetch_cmd "$mirror/$basefile"
+		# fi
+		[ ! -f "$distfile" ] && continue
+		flock -n ${distfile}.part rm -f ${distfile}.part
+		filesum=$(${XBPS_DIGEST_CMD} "$distfile")
+		if [ "$cksum" == "$filesum" ]; then
+			return 0
+		fi
+		msg_normal "$pkgver: checksum failed - removing '$curfile'...\n"
+		rm -f ${distfile}
+	done
+	return 1
+}
+
+try_urls() {
+	local curfile="$1"
+	local good=
+	for i in ${_file_idxs["$curfile"]}; do
+		local cksum=${_checksums["$i"]}
+		local url=${_distfiles["$i"]}
+
+		# If distfile does not exist, download it from the original location.
+		if [[ "$FTP_RETRIES" && "${url}" =~ ^ftp:// ]]; then
+			max_retries="$FTP_RETRIES"
+		else
+			max_retries=1
+		fi
+		for retry in $(seq 1 1 $max_retries); do
+			if [ ! -f "$distfile" ]; then
+				if [ "$retry" == 1 ]; then
+					msg_normal "$pkgver: fetching distfile '$curfile' from '$url'...\n"
+				else
+					msg_normal "$pkgver: fetch attempt $retry of $max_retries...\n"
+				fi
+				flock "${distfile}.part" $fetch_cmd "$url"
+			fi
+		done
+
+		if [ ! -f "$distfile" ]; then
+			continue
+		fi
+
+		# distfile downloaded, verify sha256 hash.
+		flock -n "${distfile}.part" rm -f "${distfile}.part"
+		verify_cksum "$curfile" "$distfile" "$cksum"
+		return 0
+	done
+	return 1
+>>>>>>> upstream/master
 }
 
 hook() {
 	local srcdir="$XBPS_SRCDISTDIR/$pkgname-$version"
 	local dfcount=0 dfgood=0 errors=0 max_retries
 
+<<<<<<< HEAD
 	if [ ! -d "$srcdir" ]; then
+=======
+	local -a _distfiles=($distfiles)
+	local -a _checksums=($checksum)
+	local -A _file_idxs
+
+	# Create a map from target file to index in _distfiles/_checksums
+	for i in ${!_distfiles[@]}; do
+		f="${_distfiles[$i]}"
+		curfile="${f#*>}"
+		curfile="${curfile##*/}"
+		_file_idxs["$curfile"]+=" $i"
+	done
+
+	if [[ ! -d "$srcdir" ]]; then
+>>>>>>> upstream/master
 		mkdir -p -m775 "$srcdir"
 		chgrp $(id -g) "$srcdir"
 	fi
@@ -209,14 +315,21 @@ hook() {
 
 	# Disable trap on ERR; the code is smart enough to report errors and abort.
 	trap - ERR
+<<<<<<< HEAD
 
 	# Detect bsdtar and GNU tar (in that order of preference)
 	TAR_CMD="$(command -v bsdtar)"
 	if [ -z "$TAR_CMD" ]; then
+=======
+	# Detect bsdtar and GNU tar (in that order of preference)
+	TAR_CMD="$(command -v bsdtar)"
+	if [[ -z "$TAR_CMD" ]]; then
+>>>>>>> upstream/master
 		TAR_CMD="$(command -v tar)"
 	fi
 
 	# Detect distfiles with obsolete checksum and purge them from the cache
+<<<<<<< HEAD
 	for f in ${distfiles}; do
 		curfile="${f#*>}"
 		curfile="${curfile##*/}"
@@ -288,11 +401,71 @@ hook() {
 		flock -n ${distfile}.part rm -f ${distfile}.part
 		verify_cksum $curfile $distfile $dfcount
 		dfcount=$((dfcount + 1))
+=======
+	for f in ${!_file_idxs[@]}; do
+		distfile="$srcdir/$f"
+		for i in ${_file_idxs["$f"]}; do
+			if [[ -f $distfile ]]; then
+				cksum=${_checksums["$i"]}
+				if [[ ${cksum:0:1} = @ ]]; then
+					cksum=${cksum:1}
+					filesum=$(contents_cksum "$distfile")
+				else
+					filesum=$(${XBPS_DIGEST_CMD} "$distfile")
+				fi
+				if [[ $cksum = $filesum ]]; then
+					dfgood=$((dfgood + 1))
+				else
+					inode=$(stat "$distfile" --printf "%i")
+					msg_warn "$pkgver: wrong checksum found for ${curfile} - purging\n"
+					find ${XBPS_SRCDISTDIR} -inum ${inode} -delete -print
+				fi
+			fi
+			dfcount=$((dfcount + 1))
+		done
+	done
+
+	# We're done, if all distfiles were found and had good checksums
+	[[ $dfcount -eq $dfgood ]] && return
+
+	# Download missing distfiles and verify their checksums
+	for curfile in ${!_file_idxs[@]}; do
+		distfile="$srcdir/$curfile"
+		set -- ${_file_idxs["$curfile"]}
+		i="$1"
+
+		# If file lock cannot be acquired wait until it's available.
+		while ! flock -w 1 "${distfile}.part" true; do
+			msg_warn "$pkgver: ${curfile} is already being downloaded, waiting for 1s ...\n"
+		done
+
+		if [[ -f "$distfile" ]]; then
+			continue
+		fi
+
+		# If distfile does not exist, try to link to it.
+		if link_cksum "$curfile" "$distfile" "${_checksums[$i]}"; then
+			continue
+		fi
+
+		# If distfile does not exist, download it from a mirror location.
+		if try_mirrors "$curfile" "$distfile" "${_checksums[$i]}" "${_distfiles[$i]}"; then
+			continue
+		fi
+
+		if ! try_urls "$curfile"; then
+			msg_error "$pkgver: failed to fetch '$curfile'.\n"
+		fi
+>>>>>>> upstream/master
 	done
 
 	unset TAR_CMD
 
+<<<<<<< HEAD
 	if [ $errors -gt 0 ]; then
+=======
+	if [[ $errors -gt 0 ]]; then
+>>>>>>> upstream/master
 		msg_error "$pkgver: couldn't verify distfiles, exiting...\n"
 	fi
 }

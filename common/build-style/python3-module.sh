@@ -3,6 +3,7 @@
 #
 
 do_build() {
+<<<<<<< HEAD
 	if [ -n "$CROSS_BUILD" ]; then
 		PYPREFIX="$XBPS_CROSS_BASE"
 		CFLAGS+=" -I${XBPS_CROSS_BASE}/${py3_inc} -I${XBPS_CROSS_BASE}/usr/include"
@@ -27,6 +28,20 @@ do_check() {
 	if python3 -c 'import pytest' >/dev/null 2>&1; then
 		PYTHONPATH="$(cd build/lib* && pwd)" \
 			python3 -m pytest ${make_check_args} ${make_check_target}
+=======
+	python3 setup.py build ${make_build_args}
+}
+
+do_check() {
+	local testjobs
+	if python3 -c 'import pytest' >/dev/null 2>&1; then
+		if python3 -c 'import xdist' >/dev/null 2>&1; then
+			testjobs="-n $XBPS_MAKEJOBS"
+		fi
+		PYTHONPATH="$(cd build/lib* && pwd)" \
+			${make_check_pre} \
+			python3 -m pytest ${testjobs} ${make_check_args} ${make_check_target}
+>>>>>>> upstream/master
 	else
 		# Fall back to deprecated setup.py test orchestration without pytest
 		if [ -z "$make_check_target" ]; then
@@ -37,11 +52,16 @@ do_check() {
 		fi
 
 		: ${make_check_target:=test}
+<<<<<<< HEAD
 		python3 setup.py ${make_check_target} ${make_check_args}
+=======
+		${make_check_pre} python3 setup.py ${make_check_target} ${make_check_args}
+>>>>>>> upstream/master
 	fi
 }
 
 do_install() {
+<<<<<<< HEAD
 	if [ -n "$CROSS_BUILD" ]; then
 		PYPREFIX="$XBPS_CROSS_BASE"
 		CFLAGS+=" -I${XBPS_CROSS_BASE}/${py3_inc} -I${XBPS_CROSS_BASE}/usr/include"
@@ -61,4 +81,7 @@ do_install() {
 	else
 		python3 setup.py install --prefix=/usr --root=${DESTDIR} ${make_install_args}
 	fi
+=======
+	python3 setup.py install --prefix=/usr --root=${DESTDIR} ${make_install_args}
+>>>>>>> upstream/master
 }

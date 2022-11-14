@@ -7,7 +7,11 @@ TAR=tar
 command -v bsdtar >/dev/null && TAR=bsdtar
 ARCH=$(uname -m)-musl
 VERSION=0.59_5
+<<<<<<< HEAD
 URL="https://alpha.de.repo.voidlinux.org/static/xbps-static-static-${VERSION}.${ARCH}.tar.xz"
+=======
+URL="https://repo-ci.voidlinux.org/static/xbps-static-static-${VERSION}.${ARCH}.tar.xz"
+>>>>>>> upstream/master
 FILE=${URL##*/}
 
 mkdir -p /tmp/bin

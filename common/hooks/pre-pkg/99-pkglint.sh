@@ -22,7 +22,11 @@ hook() {
 		fi
 	done
 
+<<<<<<< HEAD
 	for f in var/run usr/local; do
+=======
+	for f in var/run usr/local usr/etc; do
+>>>>>>> upstream/master
 		if [ -d ${PKGDESTDIR}/${f} ]; then
 			msg_red "${pkgver}: /${f} directory is not allowed, remove it!\n"
 			error=1
@@ -103,11 +107,27 @@ hook() {
 		error=1
 	fi
 
+<<<<<<< HEAD
+=======
+	if [ -d ${PKGDESTDIR}/usr/usr ]; then
+		msg_red "${pkgver}: /usr/usr is forbidden, use /usr.\n"
+		error=1
+	fi
+
+>>>>>>> upstream/master
 	if [ -d ${PKGDESTDIR}/usr/man ]; then
 		msg_red "${pkgver}: /usr/man is forbidden, use /usr/share/man.\n"
 		error=1
 	fi
 
+<<<<<<< HEAD
+=======
+	if [[ -d ${PKGDESTDIR}/usr/share/man/man ]]; then
+		msg_red "${pkgver}: /usr/share/man/man is forbidden, use /usr/share/man.\n"
+		error=1
+	fi
+
+>>>>>>> upstream/master
 	if [ -d ${PKGDESTDIR}/usr/doc ]; then
 		msg_red "${pkgver}: /usr/doc is forbidden. Use /usr/share/doc.\n"
 		error=1
@@ -182,7 +202,11 @@ hook() {
 			if [ -z "$found" ]; then
 				_myshlib="${libname}.so"
 				[ "${_myshlib}" != "${rev}" ] && _myshlib+=".${rev}"
+<<<<<<< HEAD
 				msg_warn "${pkgver}: ${_myshlib} not found in common/shlibs!\n"
+=======
+				msg_normal "${pkgver}: ${_myshlib} not found in common/shlibs.\n"
+>>>>>>> upstream/master
 			fi;
 		}
 	done

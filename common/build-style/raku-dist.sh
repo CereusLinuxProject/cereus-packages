@@ -3,7 +3,11 @@
 #
 
 do_check() {
+<<<<<<< HEAD
 	RAKULIB=lib prove -r -e raku t/
+=======
+	RAKULIB=lib ${make_check_pre} prove -r -e raku t/
+>>>>>>> upstream/master
 }
 
 do_install() {

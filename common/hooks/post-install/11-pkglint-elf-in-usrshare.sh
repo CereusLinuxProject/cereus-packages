@@ -24,8 +24,12 @@ hook() {
 
     # Find all binaries in /usr/share and add them to the pool
     while read -r f; do
+<<<<<<< HEAD
         mime="${f##*:}"
         mime="${mime// /}"
+=======
+        mime="${f##*: }"
+>>>>>>> upstream/master
         file="${f%:*}"
         file="${file#${PKGDESTDIR}}"
         case "${mime}" in
@@ -37,7 +41,11 @@ hook() {
                 fi
                 ;;
         esac
+<<<<<<< HEAD
     done < <(find $PKGDESTDIR/usr/share $prune_expr -type f | file --mime-type --files-from -)
+=======
+    done < <(find $PKGDESTDIR/usr/share $prune_expr -type f | file --no-pad --mime-type --files-from -)
+>>>>>>> upstream/master
 
     # Check passed if no packages in pool
     if [ -z "$matches" ]; then

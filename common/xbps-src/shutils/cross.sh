@@ -72,7 +72,11 @@ prepare_cross_sysroot() {
     fi
     rm -f $errlog
     # Create top level symlinks in sysroot.
+<<<<<<< HEAD
     XBPS_ARCH=$XBPS_TARGET_MACHINE xbps-reconfigure -r $XBPS_CROSS_BASE -f base-files-cereus>=2022.07.03 &>/dev/null
+=======
+    XBPS_ARCH=$XBPS_TARGET_MACHINE xbps-reconfigure -r $XBPS_CROSS_BASE -f base-files &>/dev/null
+>>>>>>> upstream/master
     # Create a sysroot/include and sysroot/lib symlink just in case.
     ln -s usr/include ${XBPS_CROSS_BASE}/include
     ln -s usr/lib ${XBPS_CROSS_BASE}/lib

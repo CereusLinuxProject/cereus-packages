@@ -31,6 +31,10 @@ Apache-1.0
 Apache-1.1
 Apache-2.0
 App-s2p
+<<<<<<< HEAD
+=======
+Arphic-1999
+>>>>>>> upstream/master
 Artistic-1.0-Perl
 Artistic-1.0-cl8
 Artistic-1.0
@@ -58,12 +62,20 @@ BSD-Protection
 BSD-Source-Code
 BSL-1.0
 BUSL-1.1
+<<<<<<< HEAD
+=======
+Baekmuk
+>>>>>>> upstream/master
 Bahyph
 Barr
 Beerware
 Bison-exception-2.2
 BitTorrent-1.0
 BitTorrent-1.1
+<<<<<<< HEAD
+=======
+Bitstream-Vera
+>>>>>>> upstream/master
 BlueOak-1.0.0
 Bootloader-exception
 Borceux
@@ -77,6 +89,10 @@ CC-BY-2.5-AU
 CC-BY-2.5
 CC-BY-3.0-AT
 CC-BY-3.0-DE
+<<<<<<< HEAD
+=======
+CC-BY-3.0-IGO
+>>>>>>> upstream/master
 CC-BY-3.0-NL
 CC-BY-3.0-US
 CC-BY-3.0
@@ -220,6 +236,11 @@ GPL-3.0-linking-source-exception
 GPL-3.0-only
 GPL-3.0-or-later
 GPL-CC-1.0
+<<<<<<< HEAD
+=======
+GStreamer-exception-2005
+GStreamer-exception-2008
+>>>>>>> upstream/master
 Giftware
 Glide
 Glulxe
@@ -244,6 +265,10 @@ JPNIC
 JSON
 Jam
 JasPer-2.0
+<<<<<<< HEAD
+=======
+KiCad-libraries-exception
+>>>>>>> upstream/master
 LAL-1.2
 LAL-1.3
 LGPL-2.0-only
@@ -262,6 +287,11 @@ LPPL-1.1
 LPPL-1.2
 LPPL-1.3a
 LPPL-1.3c
+<<<<<<< HEAD
+=======
+LZMA-SDK-9.11-to-9.20
+LZMA-SDK-9.22
+>>>>>>> upstream/master
 LZMA-exception
 Latex2e
 Leptonica
@@ -286,10 +316,18 @@ MPL-1.0
 MPL-1.1
 MPL-2.0-no-copyleft-exception
 MPL-2.0
+<<<<<<< HEAD
+=======
+MS-LPL
+>>>>>>> upstream/master
 MS-PL
 MS-RL
 MTLL
 MakeIndex
+<<<<<<< HEAD
+=======
+Minpack
+>>>>>>> upstream/master
 MirOS
 Motosoto
 MulanPSL-1.0
@@ -302,6 +340,10 @@ NBPL-1.0
 NCGL-UK-2.0
 NCSA
 NGPL
+<<<<<<< HEAD
+=======
+NICTA-1.0
+>>>>>>> upstream/master
 NIST-PD-fallback
 NIST-PD
 NLOD-1.0
@@ -379,6 +421,10 @@ Plexus
 PolyForm-Noncommercial-1.0.0
 PolyForm-Small-Business-1.0.0
 PostgreSQL
+<<<<<<< HEAD
+=======
+Python-2.0.1
+>>>>>>> upstream/master
 Python-2.0
 QPL-1.0
 Qhull
@@ -515,7 +561,13 @@ libpng-2.0
 libselinux-1.0
 libtiff
 mif-exception
+<<<<<<< HEAD
 mpich2
+=======
+mpi-permissive
+mpich2
+mplus
+>>>>>>> upstream/master
 openvpn-openssl-exception
 psfrag
 psutils

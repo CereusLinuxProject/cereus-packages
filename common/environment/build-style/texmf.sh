@@ -2,4 +2,7 @@
 hostmakedepends+=" rsync"
 # python_version isn't needed for everything either
 python_version=3
+<<<<<<< HEAD
 create_wrksrc=yes
+=======
+>>>>>>> upstream/master
