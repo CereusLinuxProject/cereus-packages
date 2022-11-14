@@ -4,17 +4,6 @@ void-packages is the backbone of the Void Linux distribution. It contains all th
 
 This document describes how you, as a contributor, can help with adding packages, correcting bugs and adding features to void-packages.
 
-<<<<<<< HEAD
-## Getting your packages into Void by yourself
-
-If you really want to get a package into Void Linux, we recommend you package it yourself.
-
-We provide a [comprehensive Manual](./Manual.md) on how to create new packages.
-There's also a [manual for xbps-src](./README.md), which is used
-to build package files from templates.
-
-For this guide, we assume you have basic knowledge about [git](http://git-scm.org), as well as a [GitHub Account](http://github.com).
-=======
 ## Package Requirements
 
 To be included in the Void repository, software must meet at least one of the following requirements.
@@ -48,7 +37,6 @@ There's also a [manual for xbps-src](./README.md), which is used to build packag
 For this guide, we assume you have basic knowledge about [git](http://git-scm.org), as well as a [GitHub Account](http://github.com) with [SSH set up](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 
 You should also [set the email](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address) on your GitHub account and in git so your commits are associated with your GitHub account properly.
->>>>>>> upstream/master
 
 To get started, [fork](https://help.github.com/articles/fork-a-repo) the void-linux `void-packages` git repository on GitHub and clone it:
 
@@ -59,11 +47,6 @@ To keep your forked repository up to date, setup the `upstream` remote to pull i
     $ git remote add upstream https://github.com/void-linux/void-packages.git
     $ git pull --rebase upstream master
 
-<<<<<<< HEAD
-### Creating a new template
-
-You can use the helper tool `xnew`, from the [xtools](https://github.com/chneukirchen/xtools) package, to create new templates:
-=======
 This can also be done with the `github-cli` tool:
 
     $ gh repo fork void-linux/void-packages
@@ -82,7 +65,6 @@ To create a new branch:
 ### Creating a new template
 
 You can use the helper tool `xnew`, from the [xtools](https://github.com/leahneukirchen/xtools) package, to create new templates:
->>>>>>> upstream/master
 
     $ xnew pkgname subpkg1 subpkg2 ...
 
@@ -90,9 +72,6 @@ Templates must have the name `void-packages/srcpkgs/<pkgname>/template`, where `
 
 For deeper insights on the contents of template files, please read the [manual](./Manual.md), and be sure to browse the existing template files in the `srcpkgs` directory of this repository for concrete examples.
 
-<<<<<<< HEAD
-When you've finished working on the template file, please check it with `xlint` helper from the [xtools](https://github.com/chneukirchen/xtools) package:
-=======
 ### Updating a template
 
 At minimum, a template update will consist of changing `version` and `checksum`, if there was an upstream version change, and/or `revision`, if a template-specific change (e.g. patch, correction, etc.) is needed.
@@ -116,46 +95,11 @@ When building for `x86_64*` or `i686`, building with the `-Q` flag or with `XBPS
 Also, new packages and updates will not be accepted unless they have been runtime tested by installing and running the package.
 
 When you've finished working on the template file, please check it with `xlint` helper from the [xtools](https://github.com/leahneukirchen/xtools) package:
->>>>>>> upstream/master
 
     $ xlint template
 
 If `xlint` reports any issues, resolve them before committing.
 
-<<<<<<< HEAD
-### Committing your changes
-
-Once you have made and verified your changes to the package template and/or other files, make one commit per package (including all changes to its sub-packages). Each commit message should have one of the following formats:
-
-* for new packages, use ```New package: <pkgname>-<version>``` ([example](https://github.com/void-linux/void-packages/commit/176d9655429188aac10cd229827f99b72982ab10)).
-
-* for package updates, use ```<pkgname>: update to <version>.``` ([example](https://github.com/void-linux/void-packages/commit/b6b82dcbd4aeea5fc37a32e4b6a8dd8bd980d5a3)).
-
-* for template modifications without a version change, use ```<pkgname>: <reason>``` ([example](https://github.com/void-linux/void-packages/commit/8b68d6bf1eb997cd5e7c095acd040e2c5379c91d)).
-
-* for package removals, use ```<pkgname>: remove package``` ([example](https://github.com/void-linux/void-packages/commit/83784632d94deee5d038c8e1c4c1dffa922fca21)).
-
-* for `common/shlibs` modifications, use `common/shlibs: <pkgname>` ([example](https://github.com/void-linux/void-packages/commit/613651c91811cb4fd2e1a6be701c87072d759a9f)).
-
-If you want to describe your changes in more detail, add an empty line followed by those details ([example](https://github.com/void-linux/void-packages/commit/f1c45a502086ba1952f23ace9084a870ce437bc6)).
-
-`xbump`, available in the [xtools](https://github.com/chneukirchen/xtools) package, can be used to commit a new or updated package:
-
-    $ xbump <pkgname> <git commit options>
-
-`xbump` will use `git commit` to commit the changes with the appropriate commit message. For more fine-grained control over the commit, specific options can be passed to `git commit` by adding them after the package name.
-
-After committing your changes, please check that the package builds successfully. From the top level directory of your local copy of the `void-packages` repository, run:
-
-    $ ./xbps-src pkg <pkgname>
-
-Your package must build successfully for at least x86, but we recommend trying to build for armv* as well, e.g.:
-
-    $ ./xbps-src -a armv7l pkg <pkgname>
-
-Runtime testing of packages and building with the `-Q` flag or with `XBPS_CHECK_PKGS=yes` set in the environment or `etc/conf` are strongly encouraged.
-New packages will not be accepted unless they have been runtime tested.
-=======
 Once you have made and verified your changes to the package template and/or other files, make one commit per package (including all changes to its sub-packages). Each commit message should have one of the following formats:
 
 * for new packages, use `New package: <pkgname>-<version>` ([example](https://github.com/void-linux/void-packages/commit/8ed8d41c40bf6a82cf006c7e207e05942c15bff8)).
@@ -180,7 +124,6 @@ If you want to describe your changes in more detail, explain in the commit body 
     $ xrevbump '<message>' <pkgnames...>
 
 `xbump` and `xrevbump` will use `git commit` to commit the changes with the appropriate commit message. For more fine-grained control over the commit, specific options can be passed to `git commit` by adding them after the package name.
->>>>>>> upstream/master
 
 ### Starting a pull request
 
@@ -233,18 +176,12 @@ Once you have applied all requested changes, the reviewers will merge your reque
 If the pull request becomes inactive for some days, the reviewers may or may not warn you when they are about to close it.
 If it stays inactive further, it will be closed.
 
-<<<<<<< HEAD
-Please abstain from temporarily closing a pull request while revising the templates. Instead, leave a comment on the PR describing what still needs work, or add "[WIP]" to the PR title. Only close your pull request if you're sure you don't want your changes to be included.
-=======
 Please abstain from temporarily closing a pull request while revising the templates. Instead, leave a comment on the PR describing what still needs work, [mark it as a draft](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request#converting-a-pull-request-to-a-draft), or add "[WIP]" to the PR title. Only close your pull request if you're sure you don't want your changes to be included.
->>>>>>> upstream/master
 
 #### Publishing the package
 
 Once the reviewers have merged the pull request, our [build server](http://build.voidlinux.org) is automatically triggered and builds
 all packages in the pull request for all supported platforms. Upon completion, the packages are available to all Void Linux users.
-<<<<<<< HEAD
-=======
 
 ## Testing Pull Requests
 
@@ -267,4 +204,3 @@ Then fetch and check out the PR (replacing `<remote>` with either `origin` or `u
     $ git checkout <branch-name>
 
 Then [build and install](https://github.com/void-linux/void-packages#building-packages) the package and test its functionality.
->>>>>>> upstream/master

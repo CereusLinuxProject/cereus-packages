@@ -8,28 +8,12 @@ install_base_chroot() {
         XBPS_TARGET_PKG="$1"
     fi
     # binary bootstrap
-<<<<<<< HEAD
-    msg_normal "xbps-src: installing base-chroot-cereus...\n"
-=======
     msg_normal "xbps-src: installing base-chroot...\n"
->>>>>>> upstream/master
     # XBPS_TARGET_PKG == arch
     if [ "$XBPS_TARGET_PKG" ]; then
         _bootstrap_arch="env XBPS_TARGET_ARCH=$XBPS_TARGET_PKG"
     fi
     (export XBPS_MACHINE=$XBPS_TARGET_PKG XBPS_ARCH=$XBPS_TARGET_PKG; chroot_sync_repodata)
-<<<<<<< HEAD
-    ${_bootstrap_arch} $XBPS_INSTALL_CMD ${XBPS_INSTALL_ARGS} -y base-chroot-cereus
-    if [ $? -ne 0 ]; then
-        msg_error "xbps-src: failed to install base-chroot-cereus!\n"
-    fi
-    # Reconfigure base-files to create dirs/symlinks.
-    if xbps-query -r $XBPS_MASTERDIR base-files>=2022.07.03 &>/dev/null; then
-        XBPS_ARCH=$XBPS_TARGET_PKG xbps-reconfigure -r $XBPS_MASTERDIR -f base-files>=2022.07.03 &>/dev/null
-    fi
-
-    msg_normal "xbps-src: installed base-chroot-cereus successfully!\n"
-=======
     ${_bootstrap_arch} $XBPS_INSTALL_CMD ${XBPS_INSTALL_ARGS} -y base-chroot
     if [ $? -ne 0 ]; then
         msg_error "xbps-src: failed to install base-chroot!\n"
@@ -40,7 +24,6 @@ install_base_chroot() {
     fi
 
     msg_normal "xbps-src: installed base-chroot successfully!\n"
->>>>>>> upstream/master
     chroot_prepare $XBPS_TARGET_PKG || msg_error "xbps-src: failed to initialize chroot!\n"
     chroot_check
     chroot_handler clean
@@ -51,11 +34,7 @@ reconfigure_base_chroot() {
     local pkgs="glibc-locales ca-certificates"
     [ -z "$IN_CHROOT" -o -e $statefile ] && return 0
     # Reconfigure ca-certificates.
-<<<<<<< HEAD
-    msg_normal "xbps-src: reconfiguring base-chroot-cereus...\n"
-=======
     msg_normal "xbps-src: reconfiguring base-chroot...\n"
->>>>>>> upstream/master
     for f in ${pkgs}; do
         if xbps-query -r $XBPS_MASTERDIR $f &>/dev/null; then
             xbps-reconfigure -r $XBPS_MASTERDIR -f $f
@@ -72,11 +51,7 @@ update_base_chroot() {
     if $(${XBPS_INSTALL_CMD} ${XBPS_INSTALL_ARGS} -nu|grep -q xbps); then
         ${XBPS_INSTALL_CMD} ${XBPS_INSTALL_ARGS} -yu xbps || msg_error "xbps-src: failed to update xbps!\n"
     fi
-<<<<<<< HEAD
-    ${XBPS_INSTALL_CMD} ${XBPS_INSTALL_ARGS} -yu || msg_error "xbps-src: failed to update base-chroot-cereus!\n"
-=======
     ${XBPS_INSTALL_CMD} ${XBPS_INSTALL_ARGS} -yu || msg_error "xbps-src: failed to update base-chroot!\n"
->>>>>>> upstream/master
     msg_normal "xbps-src: cleaning up $XBPS_MASTERDIR masterdir...\n"
     [ -z "$XBPS_KEEP_ALL" -a -z "$XBPS_SKIP_DEPS" ] && remove_pkg_autodeps
     [ -z "$XBPS_KEEP_ALL" -a -z "$keep_all_force" ] && rm -rf $XBPS_MASTERDIR/builddir $XBPS_MASTERDIR/destdir
@@ -140,22 +115,14 @@ chroot_prepare() {
         [ ! -d $XBPS_MASTERDIR/$f ] && mkdir -p $XBPS_MASTERDIR/$f
     done
 
-<<<<<<< HEAD
-    # Copy /etc/passwd and /etc/group from base-files
-=======
     # Copy /etc/passwd and /etc/group from base-files.
->>>>>>> upstream/master
     cp -f $XBPS_SRCPKGDIR/base-files/files/passwd $XBPS_MASTERDIR/etc
     echo "$(whoami):x:$(id -u):$(id -g):$(whoami) user:/tmp:/bin/xbps-shell" \
         >> $XBPS_MASTERDIR/etc/passwd
     cp -f $XBPS_SRCPKGDIR/base-files/files/group $XBPS_MASTERDIR/etc
     echo "$(whoami):x:$(id -g):" >> $XBPS_MASTERDIR/etc/group
 
-<<<<<<< HEAD
-    # Copy /etc/hosts from base-files
-=======
     # Copy /etc/hosts from base-files.
->>>>>>> upstream/master
     cp -f $XBPS_SRCPKGDIR/base-files/files/hosts $XBPS_MASTERDIR/etc
 
     # Prepare default locale: en_US.UTF-8.

@@ -236,11 +236,7 @@ hook() {
 	generic_wrapper3 libetpan-config
 	generic_wrapper3 giblib-config
 	python_wrapper python-config 2.7
-<<<<<<< HEAD
-	python_wrapper python3-config 3.10
-=======
 	python_wrapper python3-config 3.11
->>>>>>> upstream/master
 	apr_apu_wrapper apr-1-config
 	apr_apu_wrapper apu-1-config
 }

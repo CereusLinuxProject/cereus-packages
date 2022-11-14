@@ -20,8 +20,6 @@ done
 
 setup_pkg "$PKGNAME" $XBPS_CROSS_BUILD
 
-<<<<<<< HEAD
-=======
 if [ -n "$disable_parallel_check" ]; then
     XBPS_MAKEJOBS=1
 else
@@ -29,7 +27,6 @@ else
 fi
 makejobs="-j$XBPS_MAKEJOBS"
 
->>>>>>> upstream/master
 XBPS_CHECK_DONE="${XBPS_STATEDIR}/${sourcepkg}_${XBPS_CROSS_BUILD}_check_done"
 
 if [ -n "$XBPS_CROSS_BUILD" ]; then

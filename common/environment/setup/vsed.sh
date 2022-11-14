@@ -57,10 +57,6 @@ vsed() {
 			newdigest="$($XBPS_DIGEST_CMD "$f")"
 			newdigest="${newdigest%% *}"
 
-<<<<<<< HEAD
-			if [ "$olddigest" = "$newdigest" ]; then
-				msg_warn "$pkgver: vsed: regex \"$rx\" didn't change file \"$f\"\n"
-=======
 			msgfunc=msg_warn
 			if [ -n "$XBPS_STRICT" ]; then
 				msgfunc=msg_error
@@ -68,7 +64,6 @@ vsed() {
 
 			if [ "$olddigest" = "$newdigest" ]; then
 				$msgfunc "$pkgver: vsed: regex \"$rx\" didn't change file \"$f\"\n"
->>>>>>> upstream/master
 			fi
 			olddigest="${newdigest}"
 		done

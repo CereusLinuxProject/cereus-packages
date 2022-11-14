@@ -147,8 +147,6 @@ msg_normal() {
     fi
 }
 
-<<<<<<< HEAD
-=======
 report_broken() {
     if [ "$show_problems" = "ignore-problems" ]; then
         return
@@ -166,7 +164,6 @@ report_broken() {
     fi
 }
 
->>>>>>> upstream/master
 msg_normal_append() {
     [ -n "$NOCOLORS" ] || printf "\033[1m"
     printf "$@"
@@ -492,9 +489,6 @@ setup_pkg() {
     fi
     makejobs="-j$XBPS_MAKEJOBS"
     if [ -n "$XBPS_BINPKG_EXISTS" ]; then
-<<<<<<< HEAD
-        local _binpkgver="$($XBPS_QUERY_XCMD -R -ppkgver $pkgver 2>/dev/null)"
-=======
         local extraflags=""
         if [ -n "$XBPS_SKIP_REMOTEREPOS" ]; then
             extraflags="-i"
@@ -504,7 +498,6 @@ setup_pkg() {
             done
         fi
         local _binpkgver="$($XBPS_QUERY_XCMD -R -ppkgver $pkgver $extraflags 2>/dev/null)"
->>>>>>> upstream/master
         if [ "$_binpkgver" = "$pkgver" ]; then
             if [ -z "$XBPS_DEPENDENCY" ]; then
                 local _repo="$($XBPS_QUERY_XCMD -R -prepository $pkgver 2>/dev/null)"
@@ -662,22 +655,6 @@ setup_pkg() {
     fi
 
     # Setup some specific package vars.
-<<<<<<< HEAD
-    if [ -z "$wrksrc" ]; then
-        wrksrc="$XBPS_BUILDDIR/${sourcepkg}-${version}"
-    else
-        wrksrc="$XBPS_BUILDDIR/$wrksrc"
-    fi
-
-    if [ "$cross" -a "$nocross" -a "$show_problems" != "ignore-problems" ]; then
-        msg_red "$pkgver: cannot be cross compiled, exiting...\n"
-        msg_red "$pkgver: $nocross\n"
-        exit 2
-    elif [ "$broken" -a "$show_problems" != "ignore-problems" ]; then
-        msg_red "$pkgver: cannot be built, it's currently broken; see the build log:\n"
-        msg_red "$pkgver: $broken\n"
-        exit 2
-=======
     wrksrc="$XBPS_BUILDDIR/${sourcepkg}-${version}"
 
     if [ "$cross" -a "$nocross" ]; then
@@ -688,7 +665,6 @@ setup_pkg() {
         report_broken \
             "$pkgver: cannot be built, it's currently broken; see the build log:\n" \
             "$pkgver: $broken\n"
->>>>>>> upstream/master
     fi
 
     if [ -n "$restricted" -a -z "$XBPS_ALLOW_RESTRICTED" -a "$show_problems" != "ignore-problems" ]; then

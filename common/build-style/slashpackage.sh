@@ -5,10 +5,6 @@
 # required variables
 #
 #   build_style=slashpackage
-<<<<<<< HEAD
-#   wrksrc=<category>
-=======
->>>>>>> upstream/master
 #   build_wrksrc=${pkgname}-${version}
 #   distfiles=<download link>
 # 
@@ -18,10 +14,6 @@
 #   pkgname=daemontools
 #   version=0.76
 #   revision=1
-<<<<<<< HEAD
-#   wrksrc=admin
-=======
->>>>>>> upstream/master
 #   build_wrksrc=${pkgname}-${version}
 #   build_style=slashpackage
 #   short_desc="A collection of tools for managing UNIX services"

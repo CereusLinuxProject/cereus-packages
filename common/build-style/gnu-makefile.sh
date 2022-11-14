@@ -9,15 +9,10 @@ do_build() {
 			CC="$CC" CXX="$CXX" LD="$LD" AR="$AR" RANLIB="$RANLIB" \
 			CPP="$CPP" AS="$AS" OBJCOPY="$OBJCOPY" OBJDUMP="$OBJDUMP" \
 			CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" \
-<<<<<<< HEAD
-			${makejobs} ${make_build_args} ${make_build_target}
-	else
-=======
 			PREFIX=/usr prefix=/usr \
 			${makejobs} ${make_build_args} ${make_build_target}
 	else
 		export PREFIX=/usr prefix=/usr
->>>>>>> upstream/master
 		${make_cmd} ${makejobs} ${make_build_args} ${make_build_target}
 	fi
 }
@@ -37,20 +32,12 @@ do_check() {
 	: ${make_cmd:=make}
 	: ${make_check_target:=check}
 
-<<<<<<< HEAD
-	${make_cmd} ${make_check_args} ${make_check_target}
-=======
 	${make_check_pre} ${make_cmd} ${makejobs} ${make_check_args} ${make_check_target}
->>>>>>> upstream/master
 }
 
 do_install() {
 	: ${make_cmd:=make}
 	: ${make_install_target:=install}
 
-<<<<<<< HEAD
-	${make_cmd} STRIP=true PREFIX=/usr DESTDIR=${DESTDIR} ${make_install_args} ${make_install_target}
-=======
 	${make_cmd} STRIP=true PREFIX=/usr prefix=/usr DESTDIR=${DESTDIR} ${make_install_args} ${make_install_target}
->>>>>>> upstream/master
 }

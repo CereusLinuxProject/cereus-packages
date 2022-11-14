@@ -13,31 +13,17 @@ if ! [ "$base_rev" ]; then
 	die "usage: $0 TEMPLATE BASE-REVISION [TIP-REVISION]"
 fi
 
-<<<<<<< HEAD
-if command -v chroot-git >/dev/null 2>&1; then
-	GIT_CMD=$(command -v chroot-git)
-elif command -v git >/dev/null 2>&1; then
-	GIT_CMD=$(command -v git)
-else
-=======
 if ! command -v git >/dev/null 2>&1; then
->>>>>>> upstream/master
 	die "neither chroot-git nor git could be found"
 fi
 
 scan() {
 	rx="$1" msg="$2"
 	template_path=$template
-<<<<<<< HEAD
-	if [ "$tip_rev" ]; then
-		template_path="${tip_rev}:${template}"
-		maybe_git="$GIT_CMD"
-=======
 	maybe_git=
 	if [ "$tip_rev" ]; then
 		template_path="${tip_rev}:${template}"
 		maybe_git="git"
->>>>>>> upstream/master
 		revspec="[^:]*:"
 	fi
 	$maybe_git grep -P -Hn -e "$rx" "$template_path" |
@@ -48,11 +34,7 @@ scan() {
 show_template() {
 	rev="$1"
 	if [ "$rev" ]; then
-<<<<<<< HEAD
-		$GIT_CMD cat-file blob "${rev}:${template}" 2>/dev/null
-=======
 		git cat-file blob "${rev}:${template}" 2>/dev/null
->>>>>>> upstream/master
 	else
 		cat "${template}" 2>/dev/null
 	fi
@@ -60,14 +42,10 @@ show_template() {
 
 show_template_var() {
 	rev="$1" var="$2"
-<<<<<<< HEAD
-	show_template "$rev" | grep -Po '^'${var}'=\K.*'
-=======
 	(
 		show_template "$rev"
 		printf '%s\n' "printf '%s\\n' \"\$${var}\""
 	) | bash 2>/dev/null
->>>>>>> upstream/master
 }
 
 revision_reset() {
@@ -94,8 +72,6 @@ reverts_on_downgrade() {
 	esac
 }
 
-<<<<<<< HEAD
-=======
 check_revert() {
 	for vr in $reverts; do
 		xbps-uhelper cmpver "${version}" "${vr%_*}"
@@ -118,7 +94,6 @@ check_revert() {
 	done
 }
 
->>>>>>> upstream/master
 version_change() {
 	version="$(show_template_var "$tip_rev" version)"
 	revision="$(show_template_var "$tip_rev" revision)"
@@ -130,10 +105,7 @@ version_change() {
 		1) revision_reset;;
 		-1|255) reverts_on_downgrade;;
 	esac
-<<<<<<< HEAD
-=======
 	check_revert
->>>>>>> upstream/master
 }
 
 version_change

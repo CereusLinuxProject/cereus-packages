@@ -1,26 +1,12 @@
 #
-<<<<<<< HEAD
-# This helper is for templates using Qt4/Qt5 qmake.
-=======
 # This helper is for templates using Qt5/Qt6 qmake.
->>>>>>> upstream/master
 #
 do_configure() {
 	local qmake
 	local qmake_args
 	if [ -x "/usr/lib/qt5/bin/qmake" ]; then
-<<<<<<< HEAD
-		# Qt5 qmake
 		qmake="/usr/lib/qt5/bin/qmake"
 	fi
-	if [ -x "/usr/lib/qt/bin/qmake" ]; then
-		# Qt4 qmake
-		qmake="/usr/lib/qt/bin/qmake"
-	fi
-=======
-		qmake="/usr/lib/qt5/bin/qmake"
-	fi
->>>>>>> upstream/master
 	if [ -z "${qmake}" ]; then
 		msg_error "${pkgver}: Could not find qmake - missing in hostmakedepends?\n"
 	fi

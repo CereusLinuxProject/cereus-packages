@@ -41,11 +41,7 @@ do_check() {
 	if [ ! -x ./Build ]; then
 		msg_error "$pkgver: cannot find ./Build script!\n"
 	fi
-<<<<<<< HEAD
-	./Build test
-=======
 	${make_check_pre} ./Build test
->>>>>>> upstream/master
 }
 
 do_install() {

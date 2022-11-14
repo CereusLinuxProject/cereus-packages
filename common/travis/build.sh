@@ -13,11 +13,7 @@ fi
 PKGS=$(/hostrepo/xbps-src sort-dependencies $(cat /tmp/templates))
 
 for pkg in ${PKGS}; do
-<<<<<<< HEAD
-	/hostrepo/xbps-src -j$(nproc) -H "$HOME"/hostdir $arch $test pkg "$pkg"
-=======
 	/hostrepo/xbps-src -j$(nproc) -s -H "$HOME"/hostdir $arch $test pkg "$pkg"
->>>>>>> upstream/master
 	[ $? -eq 1 ] && exit 1
 done
 

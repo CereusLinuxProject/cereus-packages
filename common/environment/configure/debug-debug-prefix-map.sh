@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-CFLAGS="${CFLAGS} -fdebug-prefix-map=$wrksrc=."
-CXXFLAGS="${CXXFLAGS} -fdebug-prefix-map=$wrksrc=."
-=======
 local _wrksrc="$wrksrc${build_wrksrc:+/$build_wrksrc}"
 case "$build_style" in
 cmake)
@@ -18,4 +14,3 @@ meson)
 esac
 
 unset _wrksrc
->>>>>>> upstream/master

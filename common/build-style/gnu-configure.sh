@@ -30,11 +30,7 @@ do_check() {
 	: ${make_cmd:=make}
 	: ${make_check_target:=check}
 
-<<<<<<< HEAD
-	${make_cmd} ${make_check_args} ${make_check_target}
-=======
 	${make_check_pre} ${make_cmd} ${makejobs} ${make_check_args} ${make_check_target}
->>>>>>> upstream/master
 }
 
 do_install() {
