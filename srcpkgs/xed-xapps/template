@@ -1,9 +1,10 @@
 # Template file for 'xed-xapps'
 pkgname=xed-xapps
 version=3.2.7
-revision=1
+revision=2
 nostrip=yes
 wrksrc=xed-${version}
+build_style="meson"
 repository="cereus-extra"
 hostmakedepends="meson samurai xapps-devel"
 makedepends="meson samurai gobject-introspection intltool itstool xapps-devel pkg-config cmake libxml2-devel gtksourceview4-devel gspell-devel libpeas-devel base-devel libxkbfile-devel glib-devel"
@@ -14,22 +15,6 @@ license="GPL-2.0"
 homepage="https://github.com/linuxmint/xed"
 distfiles="${homepage}/archive/${version}.tar.gz"
 checksum=70d5dc2a004c8120a66e11256946e87fae2e0d3ade3d22e8fdc92e11f62300d8
-
-do_build() {
-    mkdir -p ${wrksrc}/build
-    cd ${wrksrc}/build
-
-    meson --prefix=/usr \
-          --libexecdir=lib/xed \
-          --buildtype=plain \
-          ..
-    samu
-}
-
-do_install() {
-    cd ${wrksrc}/build
-    DESTDIR="${DESTDIR}" samu install
-}
 
 xed-xapps-devel_package() {
 	depends="${sourcepkg}>=${version}_${revision} gtksourceview4-devel
