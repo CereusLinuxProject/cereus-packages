@@ -1,7 +1,7 @@
 # Template file for 'octoxbps-git'
 pkgname=octoxbps-git
-version=2022.10.29
-revision=1
+version=2022.11.14
+revision=2
 build_style=qmake
 repository="cereus-extra"
 hostmakedepends="qt5-qmake pkg-config qt5-host-tools git"
