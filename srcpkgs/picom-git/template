@@ -1,6 +1,6 @@
 # Template file for 'picom-git'
 pkgname=picom-git
-version=2022.11.11
+version=2022.11.24
 revision=1
 build_style=meson
 configure_args="-Dwith_docs=true"
@@ -15,8 +15,8 @@ license="MIT, MPL-2.0"
 homepage="https://github.com/yshui/picom/"
 repository="cereus-extra"
 provides="picom"
-conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan"
-replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan"
+conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-arian8j2 picom-dccsillag"
+replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-arian8j2 picom-dccsillag"
 
 do_fetch() {
 	git clone --depth=1 ${homepage} ${wrksrc}
