@@ -1,6 +1,6 @@
 # Template file for 'picom-manager'
 pkgname=picom-manager
-version=2022.11.24
+version=2022.11.25
 revision=1
 hostmakedepends="git"
 repository="cereus-extra"
@@ -9,13 +9,16 @@ maintainer="KF-Art <kevinfigueroart@protonmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/CereusLinuxProject/picom-manager"
 changelog="${homepage}/commits/main"
+_conf_dir="/etc/default/picom.conf.d/"
 
 do_fetch() {
     git clone ${homepage} ${wrksrc}
 }
 
 do_install() {
-    find picom.conf.d -exec vinstall {} 0644 "etc/default/picom.conf.d" \;
+    for conf in picom.conf.d/{compatibility,opengl,blur}
+        do vinstall ${conf} 0644 ${_conf_dir}
+    done 
     vinstall ${FILESDIR}/${pkgname}.desktop 0644 etc/xdg/autostart
     vbin picom-manager
     vlicense LICENSE
