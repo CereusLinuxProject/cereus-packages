@@ -1,6 +1,6 @@
 # Template file for 'vc-intrinsics'
 pkgname=vc-intrinsics
-version=0.8.1
+version=0.10.1
 revision=1
 build_style=cmake
 configure_args="-DLLVM_DIR=/usr/lib/cmake/llvm"
@@ -13,4 +13,4 @@ license="MIT"
 homepage="https://github.com/intel/vc-intrinsics"
 changelog="${homepage}/releases/tag/v${version}"
 distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
-checksum=5cc8d5dff2da8fa3515c20336777fbfa7ec943621079608a5361c398315dd664
+checksum=b013bc89dd83c8d631091fb85efc4b415cc6c4a3ff386c7560a707902d903202
