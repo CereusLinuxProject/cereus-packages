@@ -1,10 +1,10 @@
 # Template file for 'igsc'
 pkgname=igsc
-version=0.8.4
+version=0.8.5
 revision=1
 build_style=cmake
 configure_args="-DENABLE_WERROR:BOOL='OFF'"
-hostmakedepends=""
+hostmakedepends="awk"
 makedepends="intel-metee-devel eudev-libudev-devel"
 depends="intel-metee eudev-libudev"
 short_desc="Intel graphics system controller firmware update library"
@@ -13,7 +13,7 @@ license="Apache-2.0"
 homepage="https://github.com/intel/igsc"
 changelog="${homepage}/releases/tag/V${version}"
 distfiles="${homepage}/archive/V${version}/${pkgname}-${version}.tar.gz"
-checksum=dbb0c41c4481d532be009753701afd7218066f214b72616729295e0336726711
+checksum=84b7a3c7e968bfeb93cf1bf635781353b2e12fda5da12d2347af1db0f9514f35
 
 igsc-devel_package() {
     depends="${sourcepkg}>=${version}_${revision}"
