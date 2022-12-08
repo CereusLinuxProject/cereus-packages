@@ -1,7 +1,7 @@
 # Template file for 'librewolf-musl'
 pkgname=librewolf-musl
 _realname=librewolf
-version=106.0.4
+version=107.0.1
 revision=1
 _release=1
 archs="x86_64-musl"
