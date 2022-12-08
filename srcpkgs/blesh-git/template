@@ -1,6 +1,6 @@
 # Template file for 'blesh-git'
 pkgname=blesh-git
-version=2022.11.12
+version=2022.12.01
 revision=1
 makedepends="gawk git"
 depends="bash git"
