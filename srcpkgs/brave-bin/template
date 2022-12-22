@@ -1,6 +1,6 @@
 # Template file for 'brave-bin'
 pkgname=brave-bin
-version=1.46.140
+version=1.46.144
 revision=1
 archs="x86_64"
 repository="cereus-extra"
@@ -10,7 +10,7 @@ hostmakedepends="tar xz awk"
 license="MPL-2.0"
 homepage="https://brave.com"
 distfiles="https://github.com/brave/brave-browser/releases/download/v${version}/brave-browser_${version}_amd64.deb"
-checksum=8a71cebf80a54d9c7c801ecb436ff98104111aa730f263ede939cdb19d0d983e
+checksum=462beec8c3eba815de4c436b1f8c00a6a1e094f0191d55cc77ceb75a587e1076
 
 do_extract() {
 	mkdir -p ${DESTDIR}
