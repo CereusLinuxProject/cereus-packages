@@ -1,6 +1,6 @@
 # Template file for 'level-zero'
 pkgname=level-zero
-version=1.8.8
+version=1.8.12
 revision=1
 build_style=cmake
 makedepends="opencl2-headers"
@@ -12,7 +12,7 @@ license="MIT"
 homepage="https://github.com/oneapi-src/level-zero"
 changelog="${homepage}/releases/tag/v${version}"
 distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
-checksum=3553ae8fa0d2d69c4210a8f3428bd6612bd8bb8a627faf52c3658a01851e66d2
+checksum=9c5d3dd912882abe8e2e3ba72f8c27e2a2d86759ac48f6318a0df091204985eb
 
 do_prepare() {
 	  printf '%s\n' ${version##*.} > VERSION_PATCH
