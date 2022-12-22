@@ -1,6 +1,6 @@
 # Template file for 'pix'
 pkgname=pix
-version=2.8.7
+version=2.8.9
 revision=1
 repository=cereus-extra
 build_style=gnu-makefile
@@ -19,10 +19,6 @@ do_configure() {
         --libexecdir="/usr/libexec/${pkgname}" \
         -disable-static
 }
-
-#do_install() {
-#	make DESTDIR=${DESTDIR} install
-#}
 
 post_install() {
 	vlicense COPYING
