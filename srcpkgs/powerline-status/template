@@ -1,0 +1,19 @@
+# Template file for 'powerline-status'
+# Maybe will split this in different packages in the future.
+pkgname=powerline-status
+version=2.8.3
+revision=1
+repository="cereus-extra"
+build_style=python3-module
+short_desc="Statusline plugin for vim, and provides statuslines and prompts for several other applications, including zsh, bash, tmux, IPython, Awesome and Qtile."
+maintainer="KF-Art <kevinfigueroart@protonmail.com>"
+license="MIT"
+homepage="https://github.com/powerline/powerline"
+changelog="${homepage}/releases/tag/${version}"
+distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
+checksum=45d838dbac94a1363942899708b6ce7c71c1cad9e1b9d048affab4f630c4cb98
+
+post_install() {
+	vlicense LICENSE
+	rm -r ${DESTDIR}/usr/lib/python*/site-packages/powerline/dist/systemd
+}
