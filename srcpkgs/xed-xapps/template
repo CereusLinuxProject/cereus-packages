@@ -1,7 +1,7 @@
 # Template file for 'xed-xapps'
 pkgname=xed-xapps
-version=3.2.7
-revision=2
+version=3.2.8
+revision=1
 nostrip=yes
 wrksrc=xed-${version}
 build_style="meson"
@@ -14,7 +14,7 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL-2.0"
 homepage="https://github.com/linuxmint/xed"
 distfiles="${homepage}/archive/${version}.tar.gz"
-checksum=70d5dc2a004c8120a66e11256946e87fae2e0d3ade3d22e8fdc92e11f62300d8
+checksum=682f7557674be8557b58e082e0f9643419be3dc17a777f90a0bd08850311f5d5
 
 xed-xapps-devel_package() {
 	depends="${sourcepkg}>=${version}_${revision} gtksourceview4-devel
