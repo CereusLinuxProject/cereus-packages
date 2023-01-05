@@ -1,6 +1,6 @@
 # Template file for 'reversal-icon-theme'
 pkgname=reversal-icon-theme
-version=2022.09.17
+version=2022.12.18
 revision=1
 build_style=meta
 repository=cereus-extra
