@@ -1,6 +1,6 @@
 # Template file for 'igsc'
 pkgname=igsc
-version=0.8.5
+version=0.8.6
 revision=1
 build_style=cmake
 configure_args="-DENABLE_WERROR:BOOL='OFF'"
