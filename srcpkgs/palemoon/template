@@ -4,7 +4,7 @@
 # Original source: https://git.disroot.org/tuxliban/tutoriales_void/src/branch/master/Plantillas/palemoon/template
 
 pkgname=palemoon
-version=31.4.1
+version=31.4.2
 _release=1
 revision=1
 archs="i686 x86_64"
@@ -18,10 +18,10 @@ homepage="https://www.palemoon.org"
 
 if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
 	_debarch=amd64
-	checksum=6f580ed3367eef3fade1a3851483b6a56da6c508f0d4f462419883d23414011f
+	checksum=3f4af956ee97cc106a71b801c4d890f254c70984974450ebf7f0000fb714e5c8
 else
 	_debarch=i386
-	checksum=068107d9303c1f386bb4e0197086d0de28a2755d08f9f9e89532325d4e3f9e82
+	checksum=0534894e9a8c5bee22af729e99a5254694bf13486719d67fb12e7dd409541b11
 fi
 
 distfiles="https://download.opensuse.org/repositories/home:/stevenpusser/Debian_11/${_debarch}/${pkgname}_${version}-${_release}.gtk2_${_debarch}.deb"
