@@ -11,7 +11,7 @@ maintainer="KF-Art <https://github.com/KF-Art>"
 license="GPL-2.0"
 homepage="https://github.com/linuxmint/pix"
 distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
-checksum=84934c9ab237e0676029abeeb00ec2ff203c800c713ef1d808df80980019ae38
+checksum=7cb509037b8b712f3be2cfa1cc35491cc95abb2f5a2a966910edf7a172eb98fa
 
 do_configure() {
 	gnome-autogen.sh --prefix="/usr" \

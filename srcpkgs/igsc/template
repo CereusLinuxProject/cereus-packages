@@ -13,7 +13,7 @@ license="Apache-2.0"
 homepage="https://github.com/intel/igsc"
 changelog="${homepage}/releases/tag/V${version}"
 distfiles="${homepage}/archive/V${version}/${pkgname}-${version}.tar.gz"
-checksum=84b7a3c7e968bfeb93cf1bf635781353b2e12fda5da12d2347af1db0f9514f35
+checksum=9726227af0667d247db54f94621b9d1af312dff1cd06ba75a18052cbcb754fa7
 
 igsc-devel_package() {
     depends="${sourcepkg}>=${version}_${revision}"
