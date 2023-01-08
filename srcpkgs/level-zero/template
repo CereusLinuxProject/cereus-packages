@@ -3,6 +3,7 @@ pkgname=level-zero
 version=1.8.12
 revision=1
 build_style=cmake
+hostmakedepends="awk"
 makedepends="opencl2-headers"
 depends="opencl2-headers libgcc"
 short_desc="API for accessing low level interfaces in openAPI platform devices (headers and loader)"
