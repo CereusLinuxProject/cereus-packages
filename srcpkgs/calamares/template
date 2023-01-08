@@ -1,7 +1,7 @@
 # Template file for 'calamares'
 pkgname=calamares
 version=3.2.61
-revision=2
+revision=3
 build_style=cmake
 repository=cereus-extra
 configure_args="-DCMAKE_BUILD_TYPE=Release
@@ -13,7 +13,7 @@ configure_args="-DCMAKE_BUILD_TYPE=Release
     -DBoost_NO_BOOST_CMAKE=ON
     -DSKIP_MODULES='webview;interactiveterminal;services-systemd;dummyprocess;dummypython;dummycpp;dummypythonqt'"
 hostmakedepends="git extra-cmake-modules pkg-config gettext
-    ckbcomp kcoreaddons kdelibs4support python3-yaml awk"
+    ckbcomp kcoreaddons kdelibs4support python3-yaml awk clang"
 makedepends="python3-devel python3-jsonschema yaml-cpp-devel boost-devel qt5-devel python3-devel kpmcore-devel
     qt5-tools qt5-translations boost boost-python3-1.80 python3-QtPy qt5-svg-devel
     libpwquality AppStream-qt plasma-framework-devel qt5-webengine"
