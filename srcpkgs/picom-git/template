@@ -1,11 +1,11 @@
 # Template file for 'picom-git'
-pkgname=picom-git
+pkgname="picom-git"
 version=2022.12.23
 revision=1
 build_style=meson
 configure_args="-Dwith_docs=true"
 hostmakedepends="pkg-config asciidoc git"
-makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre-devel
+makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre2-devel
  pixman-devel xcb-util-image-devel xcb-util-renderutil-devel
  libxdg-basedir-devel uthash libglvnd-devel"
 depends="desktop-file-utils"
