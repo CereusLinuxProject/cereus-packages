@@ -1,6 +1,6 @@
 # Template file for 'betterlockscreen-gui'
 pkgname=betterlockscreen-gui
-version=2022.01.15
+version=2023.01.15
 repository="cereus-extra"
 revision=1
 depends="python3-psutil betterlockscreen python3-gobject pygtk"
