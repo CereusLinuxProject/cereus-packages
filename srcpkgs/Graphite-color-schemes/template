@@ -1,6 +1,6 @@
 # Template file for 'Graphite-color-schemes'
 pkgname=Graphite-color-schemes
-version=2022.02.21
+version=2023.01.16
 revision=1
 build_style=meta
 nostrip=yes
@@ -16,8 +16,6 @@ short_desc="Custom additional color schemes of Graphite theme for KDE Plasma des
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL-3.0"
 homepage="https://github.com/KF-Art/Graphite-color-schemes"
-# distfiles="${homepage}/archive/v${version}.tar.gz"
-# checksum=
 
 do_fetch() {
     git clone https://github.com/KF-Art/Graphite-color-schemes ${wrksrc}
