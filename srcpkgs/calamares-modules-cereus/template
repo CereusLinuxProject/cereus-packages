@@ -1,12 +1,12 @@
 # Template file for 'calamares-modules-cereus'
 pkgname=calamares-modules-cereus
-version=2022.11.26
+version=2023.01.20
 revision=1
 hostmakedepends="git"
-modules_dir="usr/lib/calamares/modules/"
+_modules_dir="usr/lib/calamares/modules/"
 repository="cereus-core"
-short_desc="Additional Cereus modules for Calamares installer"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+short_desc="Additional Cereus Linux modules for Calamares installer"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="GPL-2.0"
 homepage="https://github.com/CereusLinuxProject/calamares-modules"
 
@@ -15,7 +15,7 @@ do_fetch() {
 }
 
 do_install() {
-    vmkdir ${modules_dir}
-    vcopy modules/* ${modules_dir}
+    vmkdir ${_modules_dir}
+    vcopy modules/* ${_modules_dir}
     vlicense LICENSE
 }
