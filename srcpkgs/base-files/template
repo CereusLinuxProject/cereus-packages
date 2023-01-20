@@ -1,12 +1,12 @@
 # Template file for 'base-files'
 pkgname=base-files
-version=2022.07.03
-revision=11
+version=2023.01.20
+revision=1
 bootstrap=yes
 repository=cereus-core
 depends="xbps-triggers"
 short_desc="Cereus Linux base system files"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="Public Domain"
 homepage="https://cereus-linux.sourceforge.io"
 conflicts="base-files>=0.77"
