@@ -1,0 +1,36 @@
+# Template file for 'cereus-global-presets'
+pkgname=cereus-global-presets
+version=2023.01.20
+revision=1
+repository="cereus-core"
+conf_files="
+    /etc/pipewire/pipewire.conf
+    /etc/skel/.profile
+    /etc/xdg/autostart/*.desktop
+    /etc/bash/bashrc.d/*.sh"
+hostmakedepends="git"
+depends="cereus-themes-presets bluez gst-libav libva-utils gst-plugins-base1 gst-plugins-good1 libcups-filters python3-cups python3-cupshelpers system-config-printer system-config-printer-udev vpm vsv numlockx xdg-user-dirs octoxbps-git touchegg plymouth cereus-plymouth-theme sof-firmware libspa-bluetooth connman-ui connman-gtk connman-ncurses chrony elogind alsa-pipewire pipewire gstreamer1-pipewire wireplumber pulseaudio-utils"
+short_desc="Cereus Linux global default configurations"
+maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/CereusLinuxProject/presets"
+changelog="${homepage}/commits/main/global"
+
+do_fetch() {
+    git clone ${homepage} ${wrksrc}
+}
+
+do_install() {
+    cd global/etc
+    vinstall pipewire/pipewire.conf 0644 /etc/pipewire/
+
+    vinstall skel/.profile 0644 /etc/skel/
+    for f in connman-ui octoxbps-notifier pipewire touchegg; do
+        vinstall xdg/autostart/${f}.desktop 0644 /etc/xdg/autostart/
+    done
+    
+    cd bash/bashrc.d
+    for f in 99-ble 10-cereus-prompt; do
+        vinstall ${f}.sh 0644 /etc/bash/bashrc.d/
+    done
+}

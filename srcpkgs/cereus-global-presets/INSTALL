@@ -1,0 +1,5 @@
+# INSTALL
+case "$ACTION" in
+post)
+    plymouth-set-default-theme -R cereus_simply ;;
+esac
