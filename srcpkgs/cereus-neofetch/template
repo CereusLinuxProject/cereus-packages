@@ -1,11 +1,11 @@
 # Template file for 'cereus-neofetch'
 pkgname=cereus-neofetch
 version=7.1.0
-revision=4
+revision=5
 repository=cereus-core
 wrksrc=neofetch-${version}
 build_style=gnu-makefile
-depends="bash"
+depends="bash nerd-fonts-symbolsg"
 short_desc="Simple system information script - Cereus patched edition"
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="MIT"
