@@ -1,12 +1,12 @@
 # Template file for 'calamares-branding'
 pkgname=calamares-branding
-version=2022.06.09
+version=2023.01.20
 revision=1
 hostmakedepends="git"
 _brandingdir="etc/calamares/branding/cereus"
 repository="cereus-core"
 short_desc="Calamares branding for Cereus Linux"
-maintainer="KF-Art <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="CC-BY-SA-4.0"
 homepage="https://github.com/CereusLinuxProject/Cereus-Artwork/tree/main/calamares-branding"
 
