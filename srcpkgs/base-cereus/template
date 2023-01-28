@@ -1,11 +1,11 @@
 # Template file for 'base-cereus'
 pkgname=base-cereus
 version=0.114
-revision=4
+revision=5
 build_style=meta
 repository=cereus-core
 short_desc="Cereus Linux base system meta package"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="Public Domain"
 conflicts="base-system"
 homepage="https://cereuslinuxproject.github.io"
@@ -16,7 +16,8 @@ depends="
  mdocml>=1.13.3 shadow e2fsprogs btrfs-progs xfsprogs f2fs-tools dosfstools
  procps-ng tzdata pciutils usbutils iana-etc openssh dhcpcd cereus-repo-core
  cereus-repo-extra kbd iproute2 iputils iw wpa_supplicant xbps nvi wifi-firmware
- cereus-artwork traceroute ethtool kmod acpid eudev runit-cereus removed-packages"
+ cereus-artwork traceroute ethtool kmod acpid eudev runit-cereus removed-packages
+ xrankmirrors"
 
 case "$XBPS_TARGET_MACHINE" in
 	*-musl) depends+=" musl musl-locales";;
