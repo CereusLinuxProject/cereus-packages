@@ -1,7 +1,8 @@
 # Template file for 'resolution-hooks'
 pkgname=resolution-hooks
-version=2023.01.17
+version=2023.01.21
 revision=1
+hostmakedepends="git"
 depends="xeventbind"
 repository="cereus-extra"
 short_desc="Custom hooks when monitor resolution changes"
@@ -9,14 +10,17 @@ maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/CereusLinuxProject/resolution-hooks"
 changelog="${homepage}/commits/main"
-distfiles="${homepage}/archive/refs/heads/main.zip"
-checksum=bbcb4b1c73842ac1a6bd18a871b73e32128f2dfe876f6b354a8b7b4e3c892620
+
+do_fetch() {
+    git clone ${homepage} ${wrksrc}
+}
 
 do_install() {
-	vbin ${pkgname}
-    vbin resolution-monitor
-    vmkdir usr/share/resolution-hooks.d
-	vinstall resolution-monitor.desktop 0644 etc/xdg/autostart/
+    for f in resolution-{hooks,monitor}; do
+        vbin ${f}
+	    vinstall ${f}.desktop 0644 etc/xdg/autostart/
+    done
+    
     vdoc README.md
 	vlicense LICENSE
 }
