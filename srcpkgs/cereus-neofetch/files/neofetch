@@ -60,7 +60,7 @@ print_info() {
     #prin "Init  " Runit
     info "Uptime  " uptime
     info "CPU  " cpu 
-    info "GPU   " gpu
+    info "GPU  " gpu
     info "Memory  " memory
     info "Disk  " disk
 
