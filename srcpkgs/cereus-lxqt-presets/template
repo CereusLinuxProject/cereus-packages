@@ -1,6 +1,6 @@
 # Template file for 'cereus-lxqt-presets'
 pkgname=cereus-lxqt-presets
-version=2023.01.20
+version=2023.01.28
 revision=1
 repository="cereus-core"
 conf_files="
@@ -8,6 +8,9 @@ conf_files="
     /etc/pcmanfm-qt/*/*.conf
     /etc/qterminal.org/qterminal.ini
     /etc/skel/.config/kdeglobals
+    /etc/skel/.config/lockscreen-bg.conf
+    /etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+    /etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
     /etc/xdg/autostart/ksuperkey.desktop"
 hostmakedepends="git"
 depends="lxqt-cereus cereus-global-presets cereus-lightdm-presets udisks2 gvfs-afc gvfs-mtp gvfs-smb blueman flameshot pasystray-git ksuperkey"
@@ -23,4 +26,5 @@ do_fetch() {
 
 do_install() {
     vcopy lxqt/* ./
+    vinstall global/etc/skel/.config/lockscreen-bg.conf 0644 etc/skel/.config/
 }
