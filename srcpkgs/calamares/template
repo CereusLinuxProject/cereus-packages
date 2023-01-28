@@ -1,7 +1,7 @@
 # Template file for 'calamares'
 pkgname=calamares
 version=3.2.61
-revision=3
+revision=4
 build_style=cmake
 repository=cereus-extra
 configure_args="-DCMAKE_BUILD_TYPE=Release
@@ -45,4 +45,6 @@ post_install() {
     for license in BSD-2-Clause CC-BY-4.0 CC0-1.0 GPL-3.0-or-later LGPL-2.0-only LGPL-2.1-only LGPL-3.0-or-later MIT; do
    	 vlicense LICENSES/${license}.txt
     done
+
+    vbin build/loadmodule
 }
