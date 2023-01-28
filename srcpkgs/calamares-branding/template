@@ -17,6 +17,7 @@ do_fetch() {
 do_install() {
 	vmkdir ${_brandingdir}
 	vcopy ${pkgname}/*.png ${_brandingdir}
+    vinstall ${pkgname}/show.qml 0644 ${_brandingdir}
 	cp branding/cereus-logo-512x512.png branding/logo.png
 	vinstall branding/logo.png 0644 ${_brandingdir}
 	vinstall ${pkgname}/branding.desc 0644 ${_brandingdir}
