@@ -13,7 +13,8 @@ conf_files="
     /etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
     /etc/xdg/autostart/ksuperkey.desktop"
 hostmakedepends="git"
-depends="lxqt-cereus cereus-global-presets cereus-lightdm-presets udisks2 gvfs-afc gvfs-mtp gvfs-smb blueman flameshot pasystray-git ksuperkey"
+depends="lxqt-cereus cereus-global-presets cereus-lightdm-presets udisks2 gvfs-afc gvfs-mtp
+gvfs-smb blueman flameshot pasystray-git ksuperkey network-manager-applet"
 short_desc="Cereus Linux default configurations for LXQt edition"
 maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
 license="GPL-3.0-or-later"
