@@ -1,8 +1,8 @@
 # Template file for 'Graphite-gtk-theme'
 pkgname=Graphite-gtk-theme
 version=2022.09.02
-date=2022-09-02
-revision=1
+date=${version//./-}
+revision=2
 repository="cereus-extra"
 wrksrc=Graphite-gtk-theme-${date}
 theme_dir=usr/share/themes
