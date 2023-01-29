@@ -1,6 +1,6 @@
 # Template file for 'betterlockscreen-gui'
 pkgname=betterlockscreen-gui
-version=2023.01.18
+version=2023.01.28
 revision=1
 repository="cereus-extra"
 hostmakedepends="git"
