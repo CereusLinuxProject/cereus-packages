@@ -10,7 +10,7 @@ conf_files="
     /etc/skel/.config/xfce4/panel/*.rc
     /etc/skel/.config/xfce4/panel/launcher-*/*.desktop
     /etc/skel/.config/xfce4/terminal/terminalrc
-    /etc/skel/.config/xfce4/xfconf/xfce-perchanner-xml/*.xml
+    /etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/*.xml
     /etc/skel/.local/share/xfce4/helpers/custom-WebBrowser.desktop
     /etc/xdg/autostart/ksuperkey.desktop"
 hostmakedepends="git"
@@ -27,5 +27,5 @@ do_fetch() {
 
 do_install() {
     vcopy xfce/* ./
-    vinstall global/etc/skel/qt5ct/qt5ct.conf 0644 etc/qt5ct/
+    vinstall global/etc/qt5ct/qt5ct.conf 0644 etc/qt5ct/
 }
