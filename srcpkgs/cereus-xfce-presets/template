@@ -1,11 +1,10 @@
 # Template file for 'cereus-xfce-presets'
 pkgname=cereus-xfce-presets
 version=2023.01.29
-revision=1
+revision=2
 repository="cereus-core"
 conf_files="
-    /etc/Kvantum/kvantum.kvconfig
-    /etc/Thunar/*
+    /etc/skel/.config/Thunar/*
     /etc/skel/.config/xfce4/helpers.rc
     /etc/skel/.config/xfce4/panel/*.rc
     /etc/skel/.config/xfce4/panel/launcher-*/*.desktop
