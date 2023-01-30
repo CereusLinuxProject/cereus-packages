@@ -1,6 +1,6 @@
 # Template file for 'calamares-modules-cereus'
 pkgname=calamares-modules-cereus
-version=2023.01.21
+version=2023.01.29
 revision=1
 hostmakedepends="git"
 _modules_dir="usr/lib/calamares/modules/"
