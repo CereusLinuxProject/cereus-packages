@@ -50,32 +50,32 @@ read -rd '' config <<'EOF'
 # See this wiki page for more info:
 # https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
 print_info() {
-    prin "System Info"
+     prin "System Info"
     info underline
 
     prin " ~ Hardware ~"
 
-    info "Host  " model
-    info "Kernel  " kernel
-    #prin "Init  " Runit
+ info "Host  " model
     info "Uptime  " uptime
     info "CPU  " cpu 
-    info "GPU  " gpu
+    info "GPU   " gpu
     info "Memory  " memory
     info "Disk  " disk
 
     prin " ~ Software ~"
 
     info "OS  " distro
+    info "Kernel  " kernel
+    prin "Init  " Runit
     info "Packages  " packages
-    info "WM  " wm
-    info "DE  " de
+    info "DE  " de
+    info "WM  " wm
     info "Shell  " shell
     info "Resolution  " resolution
 
     prin " ~ Customization ~"
 
-    info "WM Theme   " wm_theme
+    info "WM Theme   " wm_theme
     info "Theme  " theme
     info "Icons  " icons
     info "Font  " font
@@ -5297,108 +5297,63 @@ get_distro_ascii() {
     #
     # $ascii_distro is the same as $distro.
     case $(trim "$ascii_distro") in
-        "Cereus"*)
-            set_colors 7 2
+        "AIX"*)
+            set_colors 2 7
             read -rd '' ascii_data <<'EOF'
-${c1}                      .......                     
-               .°*ooOOOOOOooOooo*°.               
-        .   °*OO#####OOo*****oO###OO*°   °        
-      *  .*O###OOOOOO* ${c2} ***${c1}  *oOOOO###O*.  °      
-       .oO#OOOOooOOOO* ${c2}*****${c1}  *OOOOOOOO##o.       
-   °  *##O********oO* ${c2}******  ${c1}*oOOOOOOOOO##*  .   
-  . .o#OOO*${c2} *****    ${c2}*******  ${c1}*oOo***ooOOOO#O. .  
- . .O#OOOO${c2} *******  ${c2} *******  ${c1}${c2}**°°*°${c1} *oOOOO#O. . 
-   o#OOOO*${c2} *******. ${c2} *******  ${c1}${c2}****°*°${c1} oOOOOO#O   
-  *#OOOOOO*${c2} *******  ${c2}*******  ${c1}${c2}******°${c1} *oOOOOO#*  
-  O#OOOOOO*${c2} *°*****  ${c2}*******  ${c1}${c2}*******°${c1} *oOOOOOOO  
- .OOOOOOOOO*${c2} *****. ${c2} *******  ${c1}${c2}*******°${c1} oOOOOOO#. 
- °#OOOOOOOOo${c2} ****** ${c2} *******  ${c1}${c2}*******°${c1} oOOOOOO#° 
- .OOOOOOOOo*${c2} ****** ${c2} *******  ${c1}${c2}******°${c1} *oOOOOOO#° 
-  O#OOOOOOOo* ${c2}***************°°°*****${c1} *OOOOOOOO  
-  *#OOOOOOOOo* ${c2}********************* ${c1}*oOOOOOO#*  
-   O#OOOOOOOOOOo* ${c2}**°************* ${c1}*OOOOOOOOO#O  .
- . .O#OOOOOOOOOOOOOO* ${c2}********** ${c1}*OOOOOOOOOO#O. . 
-  . .O#OOOOOOOOOOOOO* ${c2}******** ${c1}*OOOOOOOOOOO#O. .  
-   °  *##OOOOOOOOOOO* ${c2}****** ${c1}oOOOOOOOOOO##*  .   
-       .o##OOOOOOOOO* ${c2}****** ${c1}OOOOOOOOO##o.       
-      °  .*O###OOOOO* ${c2}****** ${c1}oOOOOO###Oo.  .      
-        °   °oOO####O* ${c2}**** ${c1}OoO####Oo°.  .        
-               .°*ooOO******oooo*°.               
-                     ........                                         
+${c1}           `:+ssssossossss+-`
+        .oys///oyhddddhyo///sy+.
+      /yo:+hNNNNNNNNNNNNNNNNh+:oy/
+    :h/:yNNNNNNNNNNNNNNNNNNNNNNy-+h:
+  `ys.yNNNNNNNNNNNNNNNNNNNNNNNNNNy.ys
+ `h+-mNNNNNNNNNNNNNNNNNNNNNNNNNNNNm-oh
+ h+-NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN.oy
+/d`mNNNNNNN/::mNNNd::m+:/dNNNo::dNNNd`m:
+h//NNNNNNN: . .NNNh  mNo  od. -dNNNNN:+y
+N.sNNNNNN+ -N/ -NNh  mNNd.   sNNNNNNNo-m
+N.sNNNNNs  +oo  /Nh  mNNs` ` /mNNNNNNo-m
+h//NNNNh  ossss` +h  md- .hm/ `sNNNNN:+y
+:d`mNNN+/yNNNNNd//y//h//oNNNNy//sNNNd`m-
+ yo-NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNm.ss
+ `h+-mNNNNNNNNNNNNNNNNNNNNNNNNNNNNm-oy
+   sy.yNNNNNNNNNNNNNNNNNNNNNNNNNNs.yo
+    :h+-yNNNNNNNNNNNNNNNNNNNNNNs-oh-
+      :ys:/yNNNNNNNNNNNNNNNmy/:sy:
+        .+ys///osyhhhhys+///sy+.
+            -/osssossossso/-
 EOF
                 ;;
 
-                "Void"*)
-            set_colors 7 2
-            read -rd '' ascii_data <<'EOF'
-${c1}                      .......
-               .°*ooOOOOOOooOooo*°.
-        .   °*OO#####OOo*****oO###OO*°   °
-      *  .*O###OOOOOO* ${c2} ***${c1}  *oOOOO###O*.  °
-       .oO#OOOOooOOOO* ${c2}*****${c1}  *OOOOOOOO##o.
-   °  *##O********oO* ${c2}******  ${c1}*oOOOOOOOOO##*  .
-  . .o#OOO*${c2} *****    ${c2}*******  ${c1}*oOo***ooOOOO#O. .
- . .O#OOOO${c2} *******  ${c2} *******  ${c1}${c2}**°°*°${c1} *oOOOO#O. .
-   o#OOOO*${c2} *******. ${c2} *******  ${c1}${c2}****°*°${c1} oOOOOO#O
-  *#OOOOOO*${c2} *******  ${c2}*******  ${c1}${c2}******°${c1} *oOOOOO#*
-  O#OOOOOO*${c2} *°*****  ${c2}*******  ${c1}${c2}*******°${c1} *oOOOOOOO
- .OOOOOOOOO*${c2} *****. ${c2} *******  ${c1}${c2}*******°${c1} oOOOOOO#.
- °#OOOOOOOOo${c2} ****** ${c2} *******  ${c1}${c2}*******°${c1} oOOOOOO#°
- .OOOOOOOOo*${c2} ****** ${c2} *******  ${c1}${c2}******°${c1} *oOOOOOO#°
-  O#OOOOOOOo* ${c2}***************°°°*****${c1} *OOOOOOOO
-  *#OOOOOOOOo* ${c2}********************* ${c1}*oOOOOOO#*
-   O#OOOOOOOOOOo* ${c2}**°************* ${c1}*OOOOOOOOO#O  .
- . .O#OOOOOOOOOOOOOO* ${c2}********** ${c1}*OOOOOOOOOO#O. .
-  . .O#OOOOOOOOOOOOO* ${c2}******** ${c1}*OOOOOOOOOOO#O. .
-   °  *##OOOOOOOOOOO* ${c2}****** ${c1}oOOOOOOOOOO##*  .
-       .o##OOOOOOOOO* ${c2}****** ${c1}OOOOOOOOO##o.
-      °  .*O###OOOOO* ${c2}****** ${c1}oOOOOO###Oo.  .
-        °   °oOO####O* ${c2}**** ${c1}OoO####Oo°.  .
-               .°*ooOO******oooo*°.
-                     ........
-EOF
-                ;;
-
-                "Linux")
-                    set_colors fg 8 3
-                    read -rd '' ascii_data <<'EOF'
-${c2}        #####
-${c2}       #######
-${c2}       ##${c1}O${c2}#${c1}O${c2}##
-${c2}       #${c3}#####${c2}#
-${c2}     ##${c1}##${c3}###${c1}##${c2}##
-${c2}    #${c1}##########${c2}##
-${c2}   #${c1}############${c2}##
-${c2}   #${c1}############${c2}###
-${c3}  ##${c2}#${c1}###########${c2}##${c3}#
-${c3}######${c2}#${c1}#######${c2}#${c3}######
-${c3}#######${c2}#${c1}#####${c2}#${c3}#######
-${c3}  #####${c2}#######${c3}#####
-EOF
-                ;;
-        "Profelis SambaBOX"* | "SambaBOX"*)
-            set_colors 3 6
-            read -rd '' ascii_data <<'EOF'
-${c1}
-                    #
-               *////#####
-           /////////#########(
-      .((((((/////    ,####(#(((((
-  /#######(((*             (#(((((((((.
-//((#(#(#,        ((##(        ,((((((//
-//////        #(##########(       //////
-//////    ((#(#(#(#(##########(/////////
-/////(    (((((((#########(##((((((/////
-/(((#(                             ((((/
-####(#                             ((###
-#########(((/////////(((((((((,    (#(#(
-########(   /////////(((((((*      #####
-####///,        *////(((         (((((((
-.///////////                .//(((((((((
-     ///////////,       *(/////((((*
-         ,/(((((((((##########/.
-             .((((((#######
-                  ((##*
+        "Cereus"*)      #R  #RR #BR #LR #DR
+            set_colors 173 108 71 151 72 ##~ItzSelenux
+            read -rd '' ascii_data <<'EOF' 
+${c1}                         ..
+                        '::,.....
+                        .,;:llll;. ${c4}     ...
+                     ${c2}...... ${c1}''''.${c4}       ':::;.
+                ${c2} ..,::lll::;,..${c4}            ::::;.
+               ${c2} ':llllllllllll:' ${c4}           ;:::;
+             ${c2} .;llllllllllllllll'  ${c4}          ;::;.
+${c3}    .... ${c2}    .;lllllllllllllllll:. ${c4}            ;::;.
+${c3}  .;::::,  ${c2}  ,lllllllllllllllllll.  ${c4}             .
+${c3}  .::::::.${c2}  .lllllllllllllllllll:.
+${c3}  .::::::. ${c2} ,lllllllllllllllllll:.${c3}        ......
+${c3}  .;:::::'${c2} .;lllllllllllllllllll,${c3}       .,::::::,.
+${c3}   .;::::;.${c2}.:lllllllllllllllllll.${c3}      .,::::::::;.
+${c3}     .,;::;${c2};lllllllllllllllllll;${c3}       .:::::::::;.
+${c3}        ...${c2},lllllllllllllllllll.${c3}       ':::::::::,.
+${c2}           .:lllllllllllllllll, ${c3}      .;::::::::;.
+${c2}           .:llllllllllllllll:.${c3}      .;::::::::,.
+${c2}            ,llllllllllllllll'${c3}     .';:::::::;.
+${c5} ...      ${c2}  .llllllllllllllll;${c3},,,,;:::::::;,.
+${c5}.:l:.    ${c2}    ,llllllllllllll;${c3},,:::::::;,'..
+${c5}.;::,    ${c2}    .;lllllllllllll,${c3} '''''''''''
+${c5} .:::.     ${c2}    ':lllllllllll:.
+${c5}  .;::'        ${c2} .,:llllllllll,
+${c5}   .,::;.      ${c2}   .';lllllllll'
+${c5}     .,::;'..   ${c2}     .';lllllll,.
+${c5}       ..,;::;,.  ${c2}      ...,;lll:.
+${c5}          ...''.  ${c2}           ..',;'.
+                                      
 EOF
         ;;
 
