@@ -1,7 +1,7 @@
 # Template file for 'cereus-xfce-presets'
 pkgname=cereus-xfce-presets
-version=2023.01.29
-revision=2
+version=2023.01.30
+revision=1
 repository="cereus-core"
 conf_files="
     /etc/skel/.config/Thunar/*
