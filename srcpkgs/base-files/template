@@ -1,6 +1,6 @@
 # Template file for 'base-files'
 pkgname=base-files
-version=2023.01.20
+version=2023.01.30
 revision=1
 bootstrap=yes
 repository=cereus-core
