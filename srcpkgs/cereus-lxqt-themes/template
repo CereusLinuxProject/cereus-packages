@@ -1,6 +1,6 @@
 # Template file for 'cereus-lxqt-themes'
 pkgname=cereus-lxqt-themes
-version=2023.01.16
+version=2023.01.30
 revision=1
 repository="cereus-extra"
 _theme_dir="usr/share/lxqt/themes"
@@ -10,7 +10,7 @@ license="GPL-3.0-or-later"
 homepage="https://github.com/CereusLinuxProject/cereus-lxqt-themes"
 changelog="${homepage}/commits/main"
 distfiles="${homepage}/archive/refs/heads/main.zip"
-checksum=611b0cd431d68c1be0a27d44a3aebb0c966475a1f4cb418f8f301f7778ce5d12
+checksum=73f325b870b2e39b8b15d61faf18a73c84e641dc8710f6d42ad8161e6db2673d
 
 do_install() {
 	vmkdir ${_theme_dir}
