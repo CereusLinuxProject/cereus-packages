@@ -1,6 +1,6 @@
 # Template file for 'picom-git'
 pkgname="picom-git"
-version=2022.12.23
+version=2023.01.29
 revision=1
 build_style=meson
 configure_args="-Dwith_docs=true"
@@ -10,7 +10,7 @@ makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre2-devel
  libxdg-basedir-devel uthash libglvnd-devel"
 depends="desktop-file-utils"
 short_desc="Lightweight compositor for X11 (previously a compton fork) - git branch"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="MIT, MPL-2.0"
 homepage="https://github.com/yshui/picom/"
 repository="cereus-extra"
