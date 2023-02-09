@@ -6,7 +6,7 @@ diff -ruN a/data/lightdm-gtk-greeter.conf b/data/lightdm-gtk-greeter.conf
  #
  [greeter]
 -#background=
-+background = /usr/share/backgrounds/wallpaper.png
++background = /usr/share/backgrounds/wallpaper1.png
  #user-background=
 -#theme-name=
 -#icon-theme-name=
