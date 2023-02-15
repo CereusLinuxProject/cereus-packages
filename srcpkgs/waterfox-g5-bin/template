@@ -1,19 +1,19 @@
 # Template file for 'waterfox-g5-bin'
 pkgname=waterfox-g5-bin
-version=5.1.1
+version=5.1.2
 revision=1
 archs="x86_64"
 repository="cereus-extra"
 build_style=fetch
-hostmakedepends="bsdtar"
+hostmakedepends="bsdtar awk"
 depends="dbus-glib ffmpeg gtk+ gtk+3 hicolor-icon-theme startup-notification libnotify fontconfig libXt"
 short_desc="Fifth generation of customizable privacy-conscious web browser - binary-based package"
-maintainer="KF-Art <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="MPL-2.0"
 homepage="https://www.waterfox.net"
 changelog="${homepage}/docs/releases/G${version}/"
 distfiles="https://cdn1.waterfox.net/waterfox/releases/G${version}/Linux_x86_64/waterfox-G${version}.tar.bz2"
-checksum=299084d00bf527f417c2e7602891e0a5e00aeb1b43c4db133d5199af1f53c0b5
+checksum=0a570f0eae2d623980a72bba5bf1d9ee1d80be31732e33784988e19b3fa16187
 replaces="waterfox-g4-bin"
 
 do_install() {
