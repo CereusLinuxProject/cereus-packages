@@ -1,10 +1,10 @@
 # Template file for 'onlyoffice-desktopeditors'
 pkgname=onlyoffice-desktopeditors
-version=7.2.1
+version=7.3.0
 revision=1
 archs="x86_64"
 repository="cereus-extra"
-hostmakedepends="tar xz"
+hostmakedepends="tar xz awk"
 depends="libstdc++ curl xdg-utils dejavu-fonts-ttf GConf"
 short_desc="OnlyOffice office suite for desktops"
 maintainer="Kevin F. <https://github.com/KF-Art>"
@@ -12,7 +12,7 @@ license="AGPL-3.0"
 homepage="https://www.onlyoffice.com"
 distfiles="https://github.com/ONLYOFFICE/DesktopEditors/releases/download/v${version}/onlyoffice-desktopeditors_amd64.deb"
 changelog="https://github.com/ONLYOFFICE/DesktopEditors/blob/master/CHANGELOG.md"
-checksum=16519e98718803b29e54e81b09a231406ddb0342ab68320ebb9508a312e0b5de
+checksum=91762fbca4541b09907e0b8629a3a079d38ceeb2ec0085eb0d396172c876ecaf
 nostrip=yes
 
 do_extract() {
