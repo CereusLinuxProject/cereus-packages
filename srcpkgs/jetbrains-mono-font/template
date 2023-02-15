@@ -1,6 +1,6 @@
 # Template file for 'jetbrains-mono-font'
 pkgname=jetbrains-mono-font
-version=2.242
+version=2.304
 revision=1
 create_wrksrc=yes
 depends="font-util"
@@ -9,8 +9,9 @@ short_desc="JetBrains monospace font - the free and open-source typeface for dev
 maintainer="Kevin F. <https://github.com/KF-Art>"
 license="OFL-1.1"
 homepage="https://github.com/JetBrains/JetBrainsMono"
+changelog="${homepage}/releases/tag/v${version}"
 distfiles="${homepage}/releases/download/v${version}/JetBrainsMono-${version}.zip"
-checksum=4e315b4ef176ce7ffc971b14997bdc8f646e3d1e5b913d1ecba3a3b10b4a1a9f
+checksum=6f6376c6ed2960ea8a963cd7387ec9d76e3f629125bc33d1fdcd7eb7012f7bbf
 font_dirs="/usr/share/fonts"
 
 do_install() {
