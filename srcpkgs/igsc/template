@@ -1,19 +1,20 @@
 # Template file for 'igsc'
 pkgname=igsc
-version=0.8.6
+version=0.8.7
 revision=1
+repository="cereus-extra"
 build_style=cmake
 configure_args="-DENABLE_WERROR:BOOL='OFF'"
 hostmakedepends="awk"
 makedepends="intel-metee-devel eudev-libudev-devel"
 depends="intel-metee eudev-libudev"
 short_desc="Intel graphics system controller firmware update library"
-maintainer="KF-Art <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="Apache-2.0"
 homepage="https://github.com/intel/igsc"
 changelog="${homepage}/releases/tag/V${version}"
 distfiles="${homepage}/archive/V${version}/${pkgname}-${version}.tar.gz"
-checksum=9726227af0667d247db54f94621b9d1af312dff1cd06ba75a18052cbcb754fa7
+checksum=03432cc707bab03589a6c4cd1728540180d1a4e82e8ea686de1a11a9f359ca16
 
 igsc-devel_package() {
     depends="${sourcepkg}>=${version}_${revision}"
