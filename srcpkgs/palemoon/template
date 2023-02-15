@@ -4,7 +4,7 @@
 # Original source: https://git.disroot.org/tuxliban/tutoriales_void/src/branch/master/Plantillas/palemoon/template
 
 pkgname=palemoon
-version=31.4.2
+version=32.0.0
 _release=1
 revision=1
 archs="i686 x86_64"
@@ -12,16 +12,16 @@ repository="cereus-extra"
 hostmakedepends="curl python3-html2text tar xz awk"
 depends="libvpx alsa-lib dbus-glib libXt gtk+"
 short_desc="Open-source web browser based on Firefox focusing on efficiency"
-maintainer="Kevin F. <https://github.com/KF_Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="LGPL-2.1-or-later, MPL-2.0-or-later, GPL-3.0-or-later"
 homepage="https://www.palemoon.org"
 
 if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
 	_debarch=amd64
-	checksum=3f4af956ee97cc106a71b801c4d890f254c70984974450ebf7f0000fb714e5c8
+	checksum=ad5ad243eeed1af5932e8a8b44d83bf092fded28455b9d80599478955b353e71
 else
 	_debarch=i386
-	checksum=0534894e9a8c5bee22af729e99a5254694bf13486719d67fb12e7dd409541b11
+	checksum=a7b3e60b125422f8d515780d19f3097fd5147d529a904de46cedf5beff20b5b8
 fi
 
 distfiles="https://download.opensuse.org/repositories/home:/stevenpusser/Debian_11/${_debarch}/${pkgname}_${version}-${_release}.gtk2_${_debarch}.deb"
