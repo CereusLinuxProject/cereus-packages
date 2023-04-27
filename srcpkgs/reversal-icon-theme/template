@@ -1,6 +1,6 @@
 # Template file for 'reversal-icon-theme'
 pkgname=reversal-icon-theme
-version=2022.12.18
+version=2023.04.26
 revision=1
 build_style=meta
 repository=cereus-extra
@@ -19,7 +19,7 @@ create_wrksrc=no
 icondir=usr/share/icons
 hostmakedepends="git gtk-update-icon-cache"
 short_desc="A colorful Design Rectangle icon theme for Linux desktops"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="GPL-3.0"
 homepage="https://github.com/yeyushengfan258/Reversal-icon-theme"
 
