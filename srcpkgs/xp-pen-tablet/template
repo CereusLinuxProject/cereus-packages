@@ -1,19 +1,20 @@
 # Template file for 'xp-pen-tablet'
 pkgname=xp-pen-tablet
-version=3.2.3.220323
+version=3.2.3.230215
 revision=1
 archs="x86_64"
 create_wrksrc=yes
 build_style=fetch
 repository="cereus-extra"
 nostrip=yes
-hostmakedepends="tar xz"
+hostmakedepends="tar xz awk"
 short_desc="XP-Pen Official Linux utility"
-maintainer="KF-Art <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
+conf_files="usr/lib/pentablet/conf/xppen/*"
 license="LGPL-3.0"
 homepage="https://www.xp-pen.com/download/index.html"
 distfiles="https://www.xp-pen.ru/download/file/id/1954/pid/143/ext/deb.html"
-checksum=f162dbd236ced66ee759e788d8df9cc8289416263f786636c18d07f458b736c8
+checksum=79b4f8a6496b7ef8e1b83729ad2d88f78e82fef7045c0a422cfd5a9e419c8e60
 
 do_install() {
     # Rename distfile.
