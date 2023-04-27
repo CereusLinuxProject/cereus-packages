@@ -1,6 +1,6 @@
 # Template file for 'picom-git'
 pkgname="picom-git"
-version=2023.01.29
+version=2023.04.01
 revision=1
 build_style=meson
 configure_args="-Dwith_docs=true"
