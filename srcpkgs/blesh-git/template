@@ -1,13 +1,13 @@
 # Template file for 'blesh-git'
 pkgname=blesh-git
-version=2022.12.14
+version=2023.04.18
 revision=1
 makedepends="gawk git"
 depends="bash git"
 build_style="gnu-makefile"
 repository=cereus-extra
-short_desc="A replacement for bash's line editor with advanced features"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+short_desc="A replacement for bash's line editor with advanced features - git nightly branch"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="BSD-3-Clause"
 conflicts="blesh"
 homepage="https://github.com/akinomyoga/ble.sh"
