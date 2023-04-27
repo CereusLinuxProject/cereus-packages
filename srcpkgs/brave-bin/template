@@ -1,16 +1,16 @@
 # Template file for 'brave-bin'
 pkgname=brave-bin
-version=1.48.158
+version=1.50.121
 revision=1
 archs="x86_64"
 repository="cereus-extra"
 short_desc="Secure, fast and private web browser with ad blocker"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 hostmakedepends="tar xz awk"
 license="MPL-2.0"
 homepage="https://brave.com"
 distfiles="https://github.com/brave/brave-browser/releases/download/v${version}/brave-browser_${version}_amd64.deb"
-checksum=86057cf8c8ed878dca22d972f7c95387752bfa1f6f03d05f2713aa3069759dd6
+checksum=b15edc10d04240bb3c569253d7507bd488ee18e95ec5de66fd696fffdbeab561
 
 do_extract() {
 	mkdir -p ${DESTDIR}
