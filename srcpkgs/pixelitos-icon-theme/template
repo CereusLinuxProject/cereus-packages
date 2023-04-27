@@ -1,10 +1,10 @@
 # Template file for 'pixelitos-icon-theme'
 pkgname=pixelitos-icon-theme
-version=2022.05.07
+version=2022.06.07
 revision=1
 repository=cereus-extra
 hostmakedepends="git"
-short_desc="Pixel Art icon theme"
+short_desc="Pixel art icon theme"
 _icondir="usr/share/icons/pixelitos"
 maintainer="ItsZariep <https://github.com/ItzSelenux>"
 license="MIT"
