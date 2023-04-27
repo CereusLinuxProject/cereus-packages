@@ -4,7 +4,7 @@
 case "$ACTION" in
 post)
 	if [ "$UPDATE" = "no" ]; then
-        	# Enter via chroot to container and remove librewolf-bin
+        	# Enter via chroot to container and remove xp-pen-tablet
         	xchroot /glibc xbps-install -Ryfv xp-pen-tablet qt5-dbus qt5-network qt5-x11extras qt5-widgets qt5-gui qt5-xml qt5-styleplugins
 
             # Remove udev rule from host system
