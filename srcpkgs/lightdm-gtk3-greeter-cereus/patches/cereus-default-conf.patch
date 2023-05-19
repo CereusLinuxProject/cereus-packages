@@ -14,6 +14,8 @@ diff -ruN a/data/lightdm-gtk-greeter.conf b/data/lightdm-gtk-greeter.conf
 +theme-name = Graphite-black-green-Dark
 +icon-theme-name = Tela-green-dark
 +font-name = Roboto 10
++cursor-theme-name = Graphite-light-cursors
+
  #xft-antialias=
  #xft-dpi=
  #xft-hintstyle=
