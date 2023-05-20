@@ -1,0 +1,31 @@
+# Template file for 'youtube-music-bin'
+pkgname=youtube-music-bin
+version=1.20.0
+revision=1
+repository="cereus-extra"
+archs="x86_64"
+build_style=fetch
+#conf_files=""
+hostmakedepends="bsdtar awk"
+makedepends="setconf"
+depends="gtk+3 libsecret nss libappindicator libnotify"
+short_desc="YouTube Music Desktop App bundled with custom plugins (and built-in ad blocker / downloader)"
+maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
+license="MIT"
+homepage="https://th-ch.github.io/youtube-music"
+changelog="https://github.com/th-ch/youtube-music/blob/master/changelog.md#v1200"
+distfiles="https://github.com/th-ch/youtube-music/releases/download/v${version}/${pkgname%-bin}_${version}_amd64.deb
+https://github.com/th-ch/youtube-music/raw/v${version}/license"
+checksum="dbefcfdcab7df20be27690b9ecb0762816be61988b0371af7b2f0afb24b66494
+ e7e14b3b771ecadb23f6ee0b6f99d1553e385e35cdb44fc8e36ee7c878dacd08"
+
+do_install() {
+	ar x ${pkgname%-bin}_${version}_amd64.deb
+	bsdtar xfv data.tar.xz -C "${DESTDIR}"
+	setconf "${DESTDIR}/usr/share/applications/${pkgname%-bin}.desktop" Exec "${pkgname%-bin} %U"
+	vbin ${FILESDIR}/${pkgname%-bin}.sh ${pkgname%-bin}
+}
+
+post_install() {
+	vlicense license
+}
