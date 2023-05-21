@@ -10,4 +10,4 @@ jobs:
         uses: Lukasss93/telegram-action@v2
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT: ${{ secrets.TELEGRAM_TO }}
+          TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
