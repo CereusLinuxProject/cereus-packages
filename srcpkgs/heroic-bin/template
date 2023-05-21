@@ -1,6 +1,6 @@
 # Template file for 'heroic-bin'
 pkgname=heroic-bin
-version=2.6.2
+version=2.7.1
 revision=1
 nostrip=yes
 archs="x86_64"
@@ -10,12 +10,12 @@ hostmakedepends="bsdtar awk"
 depends="fuse gawk zstd vulkan-loader"
 repository="cereus-extra"
 short_desc="Heroic Games Launcher, an Open Source Launcher for GOG and Epic Games"
-maintainer="KF-Art <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="GPL-3.0"
 homepage="https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher"
 changelog="${homepage}/releases/tag/v${version}"
 distfiles="https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v${version}/heroic-${version}.tar.xz"
-checksum=cc03d247e7f9405f22e4565194fece15c9e1522c7c57be9359454c5d5f3cad4e
+checksum=91f9129eb472eea0bfe93dde07740cb0c2acf9b5a02c97945041f5bd7188fdfc
 
 do_install() {
 	for dir in opt usr/{bin,share/applications}; do
