@@ -14,5 +14,5 @@ jobs:
       - name: Notify the commit on Telegram
         uses: EverythingSuckz/github-telegram-notify@main
         with:
-            bot_token: '${{ secrets.6131699506:AAGZVZA85qBPDtoakDb9n7Ljh_wAU50d1ZQ }}'
-            chat_id: '${{ secrets.-1001752348115 }}'
+            bot_token: '${{ secrets.BOT_TOKEN }}'
+            chat_id: '${{ secrets.CHAT_ID }}'
