@@ -1,7 +1,7 @@
 # Template file for 'calamares'
 pkgname=calamares
-version=3.2.61
-revision=4
+version=3.2.62
+revision=1
 build_style=cmake
 repository=cereus-extra
 configure_args="-DCMAKE_BUILD_TYPE=Release
@@ -15,17 +15,17 @@ configure_args="-DCMAKE_BUILD_TYPE=Release
 hostmakedepends="git extra-cmake-modules pkg-config gettext
     ckbcomp kcoreaddons kdelibs4support python3-yaml awk clang"
 makedepends="python3-devel python3-jsonschema yaml-cpp-devel boost-devel qt5-devel python3-devel kpmcore-devel
-    qt5-tools qt5-translations boost boost-python3-1.80 python3-QtPy qt5-svg-devel
+    qt5-tools qt5-translations boost boost-python3 python3-QtPy qt5-svg-devel
     libpwquality AppStream-qt plasma-framework-devel qt5-webengine"
 depends="kconfig kcoreaddons kiconthemes ki18n kio ksolid yaml-cpp kpmcore boost ckbcomp
     hardinfo qt5-svg polkit-qt5 gtk-update-icon-cache plasma-framework qt5-xmlpatterns
     squashfs-tools libpwquality AppStream-qt icu"
 short_desc="Distribution-independent installer framework"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="GPL"
 homepage="https://calamares.io"
 distfiles="https://github.com/${pkgname}/${pkgname}/releases/download/v${version}/${pkgname}-${version}.tar.gz"
-checksum=7591b9b60738bdba7b9de2b8da5462ab21006db06a006f0dd21ac5b832711dd2
+checksum=a0fbcec2a438693753fc174220356119ad7adb8a2b19c317518aa1cb025d6dd0
 
 case ${XBPS_TARGET_MACHINE} in
 	*-musl)
