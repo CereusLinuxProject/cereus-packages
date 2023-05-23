@@ -1,4 +1,4 @@
-name: telegram message
+name: Telegram notification
 on: [push]
 jobs:
 
@@ -6,11 +6,11 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: send telegram message on push
+      - name: Notify to internal Telegram group on push
         uses: appleboy/telegram-action@master
         with:
-          to: ${{ secrets.GROUP_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
+          to: ${{ secrets.TG_INTERNAL_GROUP_ID }}
+          token: ${{ secrets.TG_INTERNAL_BOT_TOKEN }}
           format: markdown
           message: |
             [${{ github.actor }}](https://github.com/${{ github.actor }}) created a commit on [${{ github.repository }}](https://github.com/${{ github.repository }})
