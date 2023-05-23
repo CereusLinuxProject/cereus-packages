@@ -1,14 +1,21 @@
 name: telegram message
 on: [push]
-
 jobs:
-  notify:
-    name: Notify via Telegram
+
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-        - name: Notify the commit on Telegram
-          uses: EverythingSuckz/github-telegram-notify@main
-          with:
-            bot_token: '${{ secrets.BOT_TOKEN }}'
-            chat_id: '${{ secrets.CHAT_ID }}'
-          
+      - name: send telegram message on push
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: |
+            [${{ github.actor }}](https://github.com/${{ github.actor }}) created a commit on [${{ github.repository }}](https://github.com/${{ github.repository }})
+            
+            *Commit message*: 
+            ${{ github.event.commits[0].message }}
+            
+            [See changes](https://github.com/${{ github.repository }}/commit/${{github.sha}})
