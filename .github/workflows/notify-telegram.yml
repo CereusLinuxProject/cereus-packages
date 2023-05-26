@@ -13,9 +13,6 @@ jobs:
           token: ${{ secrets.TG_INTERNAL_BOT_TOKEN }}
           format: markdown
           message: |
-            [${{ github.actor }}](https://github.com/${{ github.actor }}) created a commit on [${{ github.repository }}](https://github.com/${{ github.repository }})
-            
-            *Commit message*: 
-            ${{ github.event.commits[0].message }}
-            
-            [See changes](https://github.com/${{ github.repository }}/commit/${{github.sha}})
+            [New commit](https://github.com/${{ github.repository }}/commit/${{github.sha}}) to [${{ github.repository }}](https://github.com/${{ github.repository }}):
+
+            [${{github.sha}}](https://github.com/${{ github.repository }}/commit/${{github.sha}}): __${{ github.event.commits[0].message }}__ by [${{ github.actor }}](https://github.com/${{ github.actor }})
