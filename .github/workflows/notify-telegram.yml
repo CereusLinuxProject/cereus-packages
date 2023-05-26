@@ -15,4 +15,4 @@ jobs:
           message: |
             [New commit](https://github.com/${{ github.repository }}/commit/${{github.sha}}) to [${{ github.repository }}](https://github.com/${{ github.repository }}):
 
-            *Commit Message*: _${{ github.event.commits[0].message }}_ by [${{ github.actor }}](https://github.com/${{ github.actor }}).
+            *${{ github.event.commits[0].message }}* by [${{ github.actor }}](https://github.com/${{ github.actor }}).
