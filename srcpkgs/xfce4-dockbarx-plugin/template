@@ -1,0 +1,17 @@
+# Template file for 'xfce4-dockbarx-plugin'
+pkgname=xfce4-dockbarx-plugin
+version=0.7.2
+revision=1
+repository="cereus-extra"
+build_style=cmake
+#conf_files=""
+hostmakedepends="pkg-config awk"
+makedepends="xfce4-panel-devel"
+depends="dockbarx xfce4-panel"
+short_desc="Embed DockbarX in the xfce4-panel"
+maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
+license="X11"
+homepage="https://github.com/xuzhen/xfce4-dockbarx-plugin"
+#changelog=""
+distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
+checksum=331973e7ffd88a64497e2ab422ff73c7d71fae6245df9061ce638160a3a5a549
