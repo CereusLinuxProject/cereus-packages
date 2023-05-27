@@ -1,7 +1,7 @@
 # Template file for 'xp-pen-tablet'
 pkgname=xp-pen-tablet
 version=3.2.3.230215
-revision=1
+revision=2
 archs="x86_64"
 create_wrksrc=yes
 build_style=fetch
@@ -29,9 +29,8 @@ do_install() {
     # Fix icon permissions
     chmod 644 ${DESTDIR}/usr/share/icons/pentablet.png
 
-    # Link to PATH.
-    vmkdir usr/bin
-    ln -rs ${DESTDIR}/usr/lib/pentablet/pentablet.sh ${DESTDIR}/usr/bin/pentablet
+    # Use an alternative launch script for PATH
+    vbin ${FILESDIR}/pentablet.sh
 
     # Start in system tray by default.
     sed -re 's/(^Exec=\/.+)/\1 \/mini/gi' -i ${DESTDIR}/etc/xdg/autostart/xppentablet.desktop
