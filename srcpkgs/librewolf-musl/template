@@ -2,7 +2,7 @@
 pkgname=librewolf-musl
 _realname=librewolf
 version=111.0
-revision=1
+revision=2
 _release=3
 archs="x86_64-musl"
 repository="cereus-extra"

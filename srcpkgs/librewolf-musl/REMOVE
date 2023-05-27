@@ -5,7 +5,7 @@ case "$ACTION" in
 post)
 	if [ "$UPDATE" = "no" ]; then
         	# Enter via chroot to container and remove librewolf-bin
-        	xchroot /glibc xbps-install -Ryfv librewolf-bin
+        	xchroot /glibc xbps-remove -Ryfv librewolf-bin
 
         	# Ensure that xchroot has unmounted all binds
         	umount -R "/glibc/dev" "/glibc/etc/resolv.conf" "/glibc/proc" "/glibc/sys"
