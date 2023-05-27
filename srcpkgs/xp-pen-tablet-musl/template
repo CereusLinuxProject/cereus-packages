@@ -17,6 +17,9 @@ do_install() {
     # Install launcher
     vinstall ${FILESDIR}/xppentablet.desktop 0644 usr/share/applications
 
+    # Use an alternative launch script for PATH
+    vbin ${FILESDIR}/pentablet.sh 
+
     # Enable autostart
     vinstall ${FILESDIR}/autostart.desktop 0644 etc/xdg/autostart xppentablet.desktop
 
