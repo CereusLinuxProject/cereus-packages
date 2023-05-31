@@ -1,6 +1,6 @@
 # Template file for 'xrankmirrors'
 pkgname=xrankmirrors
-version=2023.02.14
+version=2023.05.31
 revision=1
 repository="cereus-core"
 hostmakedepends="git"
@@ -20,4 +20,6 @@ do_install() {
 	vbin xrankmirrors
     vinstall xrankmirrors.desktop 644 usr/share/applications/
     vinstall desktop-open.sh 755 usr/share/xrankmirrors/
+    vinstall pkexec-launch 755 usr/share/xrankmirrors/
+    vinstall cereuslinuxproject.github.io.xrankmirrors.policy 644 usr/share/polkit-1/actions/
 }
