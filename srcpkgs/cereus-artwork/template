@@ -1,6 +1,6 @@
 # Template file for 'cereus-artwork'
 pkgname=cereus-artwork
-version=2022.06.14
+version=2023.01.30
 revision=1
 hostmakedepends="git"
 _wallpaperdir="usr/share/backgrounds"
@@ -17,7 +17,7 @@ do_fetch() {
 }
 
 do_install() {
-	# Create directories in fake root
+	# Create directories in targetdir
 	for dir in ${_wallpaperdir} ${_icondir} ${_logodir}
 		do vmkdir ${dir}
 	done
@@ -41,16 +41,29 @@ do_install() {
 
 
 	# Install icons
-	vinstall branding/cereus-logo-512x512.svg 0644 \
-		${_icondir}/scalable/apps cereus-logo.svg
+
+    for logo in cereus-logo{,-dark,-light}; do
+	    vinstall Branding/${logo}-512x512.svg 0644 \
+		    ${_icondir}/scalable/apps ${logo}.svg
+    done
 
 	for res in 16 22 32 48 64 128 256 512
-		do vinstall branding/cereus-logo-${res}x${res}.png 0644 \
+		do vinstall Branding/cereus-logo-${res}x${res}.png 0644 \
 			${_icondir}/${res}x${res}/apps/ cereus-logo.png
 	done
 
+	for res in 16 22 32 48 64 128 256 512
+		do vinstall Branding/cereus-logo-light-${res}x${res}.png 0644 \
+			${_icondir}/${res}x${res}/apps/ cereus-logo-light.png
+	done
+
+	for res in 16 22 32 48 64 128 256 512
+		do vinstall Branding/cereus-logo-dark-${res}x${res}.png 0644 \
+			${_icondir}/${res}x${res}/apps/ cereus-logo-dark.png
+	done
+
 	# Install logos
-	vcopy branding/* ${_logodir}
+	vcopy Branding/* ${_logodir}
 
 	# Install license
 	vlicense LICENSE

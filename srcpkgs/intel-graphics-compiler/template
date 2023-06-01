@@ -1,6 +1,6 @@
 # Template file for 'intel-graphics-compiler'
 pkgname=intel-graphics-compiler
-version=1.0.12260.1
+version=1.0.12504.5
 revision=1
 wrksrc=${pkgname}-igc-${version}
 build_style=cmake
@@ -25,7 +25,7 @@ homepage="https://github.com/intel/intel-graphics-compiler"
 changelog="${homepage}/releases/tag/igc-${version}"
 distfiles="${homepage}/archive/igc-${version}.tar.gz"
 _spirv_url="https://github.com/KhronosGroup"
-checksum=5079e8a01fc64c167ca6f96d0087513406664b9e8692d56479f7c69c19253d5d
+checksum=7715e92889ad95235af3c844058fdf614b0cb37c5ab072c0bc53b37f417caaf0
 
 post_extract() {
         # Clone extra required build dependencies

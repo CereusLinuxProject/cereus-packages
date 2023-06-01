@@ -1,0 +1,51 @@
+# Template file for 'libxfce4ui-nocsd'
+pkgname=libxfce4ui-nocsd
+version=4.17.0
+revision=1
+build_style=gnu-configure
+build_helper="gir"
+configure_args="--with-locales-dir=/usr/share/locale --disable-static
+ $(vopt_enable gir introspection) $(vopt_enable vala vala)"
+conf_files="/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml"
+hostmakedepends="xfce4-dev-tools pkg-config intltool glib-devel gettext-devel
+ $(vopt_if vala vala)"
+makedepends="gtk+3-devel glade3-devel libxfce4util-devel xfconf-devel
+ libxml2-devel startup-notification-devel libSM-devel libgtop-devel"
+short_desc="Replacement of the old libxfcegui4 library (No CSD fork)"
+maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
+conflicts="libxfce4ui"
+replaces="libxfce4ui"
+repository="cereus-extra"
+license="GPL-2.0-or-later"
+homepage="https://github.com/Xfce-Classic/libxfce4ui-nocsd"
+distfiles="${homepage}/releases/download/${version}/libxfce4ui-${version}.tar.bz2"
+checksum=ca0095d41b0c02d768191e1a1db68e721e5afb48f29ff299e06ad53bb5f5ecfa
+
+# Package build options
+build_options="gir vala"
+build_options_default="gir vala"
+
+libxfce4ui-nocsd-devel_package() {
+	depends="${makedepends} ${sourcepkg}>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+		vmove "usr/lib/*.so"
+		vmove usr/share/gtk-doc
+		if [ "$build_option_gir" ]; then
+			vmove usr/share/gir-1.0
+		fi
+		if [ "$build_option_vala" ]; then
+			vmove usr/share/vala
+		fi
+	}
+}
+
+libxfce4ui-nocsd-glade_package() {
+	short_desc+=" - glade plugins"
+	pkg_install() {
+		vmove usr/lib/glade
+		vmove usr/share/glade
+	}
+}

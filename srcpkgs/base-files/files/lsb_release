@@ -5,7 +5,7 @@
 version="1.0"
 distributor_id="Cereus"
 description="Cereus Linux"
-release="Rolling"
+release="Beta"
 codename="cereus"
 options=""
 short=0

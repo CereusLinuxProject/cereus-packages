@@ -1,0 +1,27 @@
+# Template file for 'cereus-themes-presets'
+pkgname=cereus-themes-presets
+version=2023.01.19
+revision=1
+repository="cereus-core"
+conf_files="
+    /etc/gtk-3.0/settings.ini
+    /etc/Kvantum/kvantum.kvconfig
+    /etc/skel/.gtkrc-2.0"
+hostmakedepends="git"
+depends="kvantum Graphite-kvantum-theme-black Graphite-gtk-theme-black Tela-icon-theme-green Graphite-color-schemes-black Graphite-cursors jetbrains-mono-font fonts-roboto-ttf"
+short_desc="Cereus Linux default theme configurations"
+maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/CereusLinuxProject/presets"
+changelog="${homepage}/commits/main/global"
+
+do_fetch() {
+    git clone ${homepage} ${wrksrc}
+}
+
+do_install() {
+    cd global/etc
+    vinstall gtk-3.0/settings.ini 0644 /etc/gtk-3.0/
+    vinstall Kvantum/kvantum.kvconfig 0644 /etc/Kvantum/
+    vinstall skel/.gtkrc-2.0 0644 /etc/skel/
+}

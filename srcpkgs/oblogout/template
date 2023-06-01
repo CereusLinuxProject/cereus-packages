@@ -1,7 +1,7 @@
 # Template file for 'oblogout'
 pkgname=oblogout
 version=2021.06.26
-revision=1
+revision=2
 wrksrc=oblogout-py3-master
 build_style=python3-module
 repository="cereus-extra"

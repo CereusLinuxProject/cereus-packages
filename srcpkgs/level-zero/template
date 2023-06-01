@@ -1,18 +1,19 @@
 # Template file for 'level-zero'
 pkgname=level-zero
-version=1.8.8
+version=1.10.0
 revision=1
 build_style=cmake
+hostmakedepends="awk"
 makedepends="opencl2-headers"
 depends="opencl2-headers libgcc"
 short_desc="API for accessing low level interfaces in openAPI platform devices (headers and loader)"
 repository=cereus-extra
-maintainer="KF-Art <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="MIT"
 homepage="https://github.com/oneapi-src/level-zero"
 changelog="${homepage}/releases/tag/v${version}"
 distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
-checksum=3553ae8fa0d2d69c4210a8f3428bd6612bd8bb8a627faf52c3658a01851e66d2
+checksum=2811e4128ff6114020d0a147c2769b9b2e782e68ad49827685c33b9e716bf6ab
 
 do_prepare() {
 	  printf '%s\n' ${version##*.} > VERSION_PATCH

@@ -1,18 +1,18 @@
 # Template file for 'budgie-extras'
 pkgname=budgie-extras
-version=1.5.0
+version=1.6.0
 revision=1
 repository=cereus-extra
 build_style=meson
-hostmakedepends="pkg-config glib"
+hostmakedepends="pkg-config glib awk"
 makedepends="budgie-desktop-devel pam-devel pkg-config glib-devel glib cmake libgee08-devel intltool granite-devel libsoup-devel AppStream-devel zeitgeist-devel libhandy-devel libkeybinder3-devel libnma-devel"
 short_desc="Additional Budgie desktop applets to enhance user experience"
-maintainer="Kevin F. <https://github.com/KF-Art>"
-license="GPL-3.0"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
+license="GPL-3.0-or-later"
 homepage="https://github.com/UbuntuBudgie/budgie-extras"
 changelog="${homepage}/releases/tag/v${version}"
 distfiles="${homepage}/releases/download/v${version}/${pkgname}-${version}.tar.xz"
-checksum=10d14a1f6c90d5fa8106077094f83030a5ac26cf81e9820e9c34566b182a844a
+checksum=450e801a187290a00b7fb3e7922ea91159d7ecc8ae6592f375ca7a0874a0f674
 
 post_install() {
     vlicense LICENSE

@@ -1,0 +1,11 @@
+# Template file for 'xorg-cereus'
+pkgname=xorg-cereus
+repository="cereus-core"
+version=7.6
+revision=6
+build_style=meta
+depends="xorg-fonts xorg-server xorg-apps xorg-input-drivers xorg-video-drivers-cereus"
+short_desc="X.org meta-package"
+maintainer="Kevin F. <https://github.com/KF-Art>"
+license="Public Domain"
+homepage="https://www.x.org/wiki/"

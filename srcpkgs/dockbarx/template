@@ -1,0 +1,21 @@
+# Template file for 'dockbarx'
+pkgname=dockbarx
+version=1.0.beta2
+_pkgrel=${version//.b/-b}
+revision=1
+repository="cereus-extra"
+build_style=python3-module
+hostmakedepends="python3-polib"
+makedepends="awk"
+depends="libkeybinder3 python3-cairo python3-dbus python3-gobject python3-Pillow
+python3-xlib python3-xdg"
+short_desc="TaskBar with groupping and group manipulation"
+maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/xuzhen/dockbarx"
+distfiles="${homepage}/archive/refs/tags/${_pkgrel}.tar.gz"
+checksum=418101acb09a4fd4fd94280fa5a313a4fab103fd105ca267ea72fc609f5bb865
+
+post_install() {
+	vinstall icons/hicolor/128x128/apps/dockbarx.png 644 usr/share/pixmaps/dockbarx.png
+}

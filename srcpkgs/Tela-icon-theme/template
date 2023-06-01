@@ -1,7 +1,7 @@
 # Template file for 'Tela-icon-theme'
 pkgname=Tela-icon-theme
-date=2022-08-28
-version=2022.08.28
+version=2023.02.03
+date=${version//./-}
 revision=1
 build_style=meta
 repository=cereus-extra
@@ -16,10 +16,8 @@ depends="${pkgname}-standard \
     ${pkgname}-red \
     ${pkgname}-yellow \
     ${pkgname}-manjaro
-    ${pkgname}-ubuntu"
-
-# Keep nord variant until it integrates to future release (currently is only in git branch)
-#    ${pkgname}-nord"
+    ${pkgname}-ubuntu
+    ${pkgname}-nord"
 
 nostrip=yes
 icondir=usr/share/icons
@@ -30,7 +28,7 @@ maintainer="Kevin F. <https://github.com/KF-Art>"
 license="GPL-3.0"
 homepage="https://github.com/vinceliuice/Tela-icon-theme"
 distfiles="${homepage}/archive/refs/tags/${date}.tar.gz"
-checksum=09be82313a0ccfab4e3390de6dd1bd0ace115ba5990aae42e327777642ee7ff4
+checksum=ab6bf283875a8d777d1a3c8b5969c78a0d329409a4561f4c0f22d36d69171e5d
 
 Tela-icon-theme-standard_package() {
     color=standard

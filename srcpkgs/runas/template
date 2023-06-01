@@ -1,0 +1,33 @@
+# Template file for 'runas'
+pkgname=runas
+version=2021.01.31
+revision=2
+archs="x86_64 x86_64-musl i686"
+conf_files="/etc/runas.yml"
+repository="cereus-extra"
+build_style=cargo
+hostmakedepends="git"
+short_desc="An alternative to sudo and doas written in Rust"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/keyboard-slayer/runas"
+
+do_fetch() {
+	git clone ${homepage} ${wrksrc}
+}
+
+do_install() {
+    if [ "$XBPS_TARGET_MACHINE" = "x86_64-musl" ]; then
+        vbin target/x86_64-unknown-linux-musl/release/runas
+    elif [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
+        vbin target/x86_64-unknown-linux-gnu/release/runas
+    elif [ "$XBPS_TARGET_MACHINE" = "i686" ]; then
+        vbin target/i686-unknown-linux-gnu/release/runas
+    fi
+}
+
+post_install() {
+	vlicense LICENSE
+	cat src/runas.yml | head -n +5 | tee src/runas.yml
+	vinstall src/runas.yml 644 etc/
+}

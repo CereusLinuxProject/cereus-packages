@@ -1,17 +1,18 @@
 # Template file for 'pix'
 pkgname=pix
-version=2.8.7
-revision=1
+version=2.8.9
+revision=2
 repository=cereus-extra
 build_style=gnu-makefile
+hostmakedepends="awk"
 makedepends="gnome-common make intltool itstool liboauth-devel libchamplain-devel exiv2-devel glib-devel pkg-config yelp-tools gettext-devel libtool gsettings-desktop-schemas-devel libjpeg-turbo-devel tiff-devel gst-plugins-base1-devel gstreamer1-devel libopenraw-devel clutter-devel clutter-gtk-devel liboauth-devel libchamplain-devel brasero-devel libsecret-devel"
 depends="desktop-file-utils librsvg clutter-gtk gst-plugins-base1 gsettings-desktop-schemas libwebp webkit2gtk liboauth libchamplain tiff exiv2 libjpeg-turbo"
 short_desc="Image viewer and browser based on gthumb. X-Apps Project."
-maintainer="KF-Art <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="GPL-2.0"
 homepage="https://github.com/linuxmint/pix"
 distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
-checksum=84934c9ab237e0676029abeeb00ec2ff203c800c713ef1d808df80980019ae38
+checksum=7cb509037b8b712f3be2cfa1cc35491cc95abb2f5a2a966910edf7a172eb98fa
 
 do_configure() {
 	gnome-autogen.sh --prefix="/usr" \
@@ -19,10 +20,6 @@ do_configure() {
         --libexecdir="/usr/libexec/${pkgname}" \
         -disable-static
 }
-
-#do_install() {
-#	make DESTDIR=${DESTDIR} install
-#}
 
 post_install() {
 	vlicense COPYING

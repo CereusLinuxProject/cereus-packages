@@ -1,0 +1,30 @@
+# Template file for 'cereus-xfce-presets'
+pkgname=cereus-xfce-presets
+version=2023.02.08
+revision=2
+repository="cereus-core"
+conf_files="
+    /etc/skel/.config/Thunar/*
+    /etc/skel/.config/xfce4/helpers.rc
+    /etc/skel/.config/xfce4/panel/*.rc
+    /etc/skel/.config/xfce4/panel/launcher-*/*.desktop
+    /etc/skel/.config/xfce4/terminal/terminalrc
+    /etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/*.xml
+    /etc/skel/.local/share/xfce4/helpers/custom-WebBrowser.desktop
+    /etc/xdg/autostart/ksuperkey.desktop"
+hostmakedepends="git"
+depends="cereus-global-presets cereus-themes-presets xfce4 gnome-keyring gvfs-afc gvfs-mtp gvfs-smb udisks2 xfce4-whiskermenu-plugin xfce4-pulseaudio-plugin xfce4-clipman-plugin thunar-archive-plugin thunar-archive-plugin blueman rhythmbox xfce4-screenshooter xfce4-plugins material-black-cereus-xfwm qt5ct xfce4-docklike-plugin mugshot qt5ct pavucontrol network-manager-applet"
+short_desc="Cereus Linux default configurations for XFCE edition"
+maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/CereusLinuxProject/presets"
+changelog="${homepage}/commits/main/xfce"
+
+do_fetch() {
+    git clone ${homepage} ${wrksrc}
+}
+
+do_install() {
+    vcopy xfce/* ./
+    vinstall global/etc/qt5ct/qt5ct.conf 0644 etc/qt5ct/
+}

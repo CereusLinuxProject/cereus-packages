@@ -1,7 +1,7 @@
 # Template file for 'picom-dccsillag'
 pkgname=picom-dccsillag
 version=2022.05.29
-revision=2
+revision=3
 build_style=meson
 configure_args="-Dwith_docs=true"
 wrksrc="picom-implement-window-animations"
@@ -16,8 +16,8 @@ license="MIT, MPL-2.0"
 repository="cereus-extra"
 homepage="https://github.com/dccsillag/picom/"
 provides="picom"
-conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-git"
-replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-git"
+conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-git picom-arian8j2"
+replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-git picom-arian8j2"
 distfiles="https://github.com/dccsillag/picom/archive/refs/heads/implement-window-animations.zip"
 checksum=ac8bf6e95f58f83b39dbbd44d9e1e8213767a0d3b48dad6fe1acd8953c76d757
 

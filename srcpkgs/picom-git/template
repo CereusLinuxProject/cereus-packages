@@ -1,22 +1,22 @@
 # Template file for 'picom-git'
-pkgname=picom-git
-version=2022.11.11
+pkgname="picom-git"
+version=2023.05.08
 revision=1
 build_style=meson
 configure_args="-Dwith_docs=true"
 hostmakedepends="pkg-config asciidoc git"
-makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre-devel
+makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre2-devel
  pixman-devel xcb-util-image-devel xcb-util-renderutil-devel
  libxdg-basedir-devel uthash libglvnd-devel"
 depends="desktop-file-utils"
 short_desc="Lightweight compositor for X11 (previously a compton fork) - git branch"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="MIT, MPL-2.0"
 homepage="https://github.com/yshui/picom/"
 repository="cereus-extra"
 provides="picom"
-conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan"
-replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan"
+conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-arian8j2 picom-dccsillag"
+replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-arian8j2 picom-dccsillag"
 
 do_fetch() {
 	git clone --depth=1 ${homepage} ${wrksrc}

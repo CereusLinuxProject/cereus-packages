@@ -1,7 +1,7 @@
 # Template file for 'Graphite-gtk-theme'
 pkgname=Graphite-gtk-theme
-version=2022.09.02
-date=2022-09-02
+version=2023.05.17
+date=${version//./-}
 revision=1
 repository="cereus-extra"
 wrksrc=Graphite-gtk-theme-${date}
@@ -25,11 +25,11 @@ ${pkgname}-nord-light
 ${pkgname}-nord-light-compact"
 
 short_desc="Material design inspired GTK theme with light and dark variants"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="GPL-3.0"
 homepage="https://github.com/vinceliuice/Graphite-gtk-theme"
 distfiles="${homepage}/archive/refs/tags/${date}.tar.gz"
-checksum=af03e9e5ae29a5b8ee4b10a8e2ca95396bc300e35e939f21dedbc9568aefcd60
+checksum=aa212d71ba70cfbc3038fc0f850b1265a9d85a3a87ae1a9da024127e25f53903
 
 Graphite-gtk-theme-black_package() {
     nostrip=yes
