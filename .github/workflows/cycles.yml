@@ -10,7 +10,7 @@ jobs:
     permissions:
       issues: write
     container:
-        image: 'ghcr.io/void-linux/xbps-src-masterdir:20220527RC01-x86_64-musl'
+        image: 'ghcr.io/void-linux/xbps-src-masterdir:20230425RC01-x86_64-musl'
     steps:
       - name: Prepare container
         run: |
