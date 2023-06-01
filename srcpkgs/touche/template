@@ -1,0 +1,40 @@
+# Template file for 'touche'
+pkgname=touche
+version=2.0.9
+revision=1
+repository="cereus-extra"
+build_style=meson
+hostmakedepends="cmake awk"
+makedepends="gobject-introspection appstream-glib-devel nodejs gjs-devel libadwaita-devel desktop-file-utils pkg-config gettext-devel"
+provides="libtouche.so.0"
+depends="touchegg gjs libadwaita"
+short_desc="The desktop application to configure Touchégg"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/JoseExposito/touche"
+changelog="${homepage}/releases/tag/${version}"
+distfiles="${homepage}/archive/${version}.tar.gz"
+checksum=acca74dad75418a5aecdafe0fe2c2ae9b32c143c595a39173090083c3919c167
+
+pre_configure() {
+	# Clock skew detected
+	find . -exec touch {} \;
+}
+
+pre_build() {
+	export npm_config_cache="./npm_cache"
+	npm install
+}
+
+post_install() {
+	ln -rfs ${DESTDIR}/usr/bin/com.github.joseexposito.${pkgname} ${DESTDIR}/usr/bin/${pkgname}
+}
+
+touche-devel_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/*.so
+	}
+}

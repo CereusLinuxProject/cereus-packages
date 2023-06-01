@@ -1,0 +1,22 @@
+# Template file for 'cereus-lightdm-presets'
+pkgname=cereus-lightdm-presets
+version=2023.01.20
+revision=1
+repository="cereus-core"
+conf_files="
+    /etc/lightdm/lightdm.conf.d/*.conf"
+hostmakedepends="git"
+short_desc="Cereus Linux default configurations for LightDM"
+maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/CereusLinuxProject/presets"
+changelog="${homepage}/commits/main/global/etc/lightdm"
+
+do_fetch() {
+    git clone ${homepage} ${wrksrc}
+}
+
+do_install() {
+    cd global/etc/lightdm/lightdm.conf.d
+    vinstall 10-numlock.conf 0644 etc/lightdm/lightdm.conf.d/
+}

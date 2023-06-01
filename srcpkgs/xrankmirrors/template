@@ -1,0 +1,25 @@
+# Template file for 'xrankmirrors'
+pkgname=xrankmirrors
+version=2023.05.31
+revision=1
+repository="cereus-core"
+hostmakedepends="git"
+depends="fzf wget curl dialog"
+short_desc="Rank and set XBPS mirrors"
+maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
+license="MIT"
+homepage="https://github.com/CereusLinuxProject/xrankmirrors"
+changelog="${homepage}/commits/main"
+
+do_fetch() {
+	git clone ${homepage} ${wrksrc}
+}
+
+do_install() {
+	vlicense LICENSE
+	vbin xrankmirrors
+    vinstall xrankmirrors.desktop 644 usr/share/applications/
+    vinstall desktop-open.sh 755 usr/share/xrankmirrors/
+    vinstall pkexec-launch 755 usr/share/xrankmirrors/
+    vinstall cereuslinuxproject.github.io.xrankmirrors.policy 644 usr/share/polkit-1/actions/
+}

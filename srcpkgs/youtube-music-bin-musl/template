@@ -1,0 +1,29 @@
+# Template file for 'youtube-music-bin-musl'
+pkgname=youtube-music-bin-musl
+version=1.20.0
+revision=1
+repository="cereus-extra"
+archs="x86_64-musl"
+#conf_files=""
+hostmakedepends="awk"
+depends="voidnsrun-setup"
+short_desc="YouTube Music Desktop App bundled with custom plugins (and built-in ad blocker / downloader) - glibc containerized package"
+maintainer="Kevin F. <kevinfigueroart@proton.me"
+license="MIT"
+homepage="https://th-ch.github.io/youtube-music"
+changelog="https://github.com/th-ch/youtube-music/blob/master/changelog.md#v${version/./}"
+
+do_install() {
+    # Install the script
+	vbin ${FILESDIR}/${pkgname%-bin-musl}.sh ${pkgname%-bin-musl}
+
+    # Copy launcher
+	vinstall ${FILESDIR}/${pkgname%-bin-musl}.desktop 644 \
+        usr/share/applications/
+
+    # Install the icons
+    for res in 16 24 32 48 64 128 256 512 1024; do
+        vinstall ${FILESDIR}/icon-${res}x${res}.png 0644 \
+            usr/share/icons/hicolor/${res}x${res}/apps/${pkgname%-bin-musl/}.png
+    done
+}

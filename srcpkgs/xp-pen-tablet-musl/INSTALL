@@ -4,7 +4,7 @@
 case "$ACTION" in
 post)
     if [ "$UPDATE" = "yes" ]; then
-        xchroot /mnt xbps-install -Syu xp-pen-tablet
+        xchroot /glibc xbps-install -Syu xp-pen-tablet
 
 	# Ensure that xchroot has unmounted all binds
         umount -R "glibc/dev" "glibc/etc/resolv.conf" "glibc/proc" "glibc/sys"

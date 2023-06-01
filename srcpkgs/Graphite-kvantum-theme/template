@@ -1,22 +1,23 @@
 # Template file for 'Graphite-kvantum-theme'
 pkgname=Graphite-kvantum-theme
-version=1.0
-revision=4
+version=1.1.1
+revision=1
 build_style=meta
 repository=cereus-extra
-depends="${pkgname}-black \
-    ${pkgname}-Nord-dark \
-    ${pkgname}-Nord-light \
-    ${pkgname}-dark \
+depends="${pkgname}-black
+    ${pkgname}-Nord-dark 
+    ${pkgname}-Nord-light
+    ${pkgname}-dark
     ${pkgname}-light"
 nostrip=yes
 wrksrc=Graphite-kvantum-colors-${version}
 short_desc="Material design inspired Kvantum theme"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin F. <kevinfigueroart@proton.me>"
 license="GPL-3.0"
 homepage="https://github.com/KF-Art/Graphite-kvantum-colors"
+changelog="${homepage}/releases/tag/${version}"
 distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
-checksum=01be2c306de4e4b3ca6788d02e49206688aae207ccf0252957bece02eb1b1e1c
+checksum=af603cbd5b1e323ca775a8a724e94bddf9534a0961db6d5a4771bcb6d9a02fbc
 
 Graphite-kvantum-theme-black_package() {
     color=black

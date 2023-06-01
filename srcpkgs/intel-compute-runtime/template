@@ -4,7 +4,7 @@
 ## If you need intel-compute-runtime, you should instead use intel-compute-runtime-bin, which uses prebuilt binaries instead (only x86_64, maybe it can work containerized for musl).
 
 pkgname=intel-compute-runtime
-version=22.30.23789
+version=22.49.25018.14
 revision=1
 wrksrc=compute-runtime-${version}
 build_style=cmake
@@ -24,7 +24,7 @@ license="MIT"
 homepage="https://github.com/intel/compute-runtime"
 changelog="${homepage}/releases/tag/${version}"
 distfiles="${homepage}/archive/${version}/${pkgname}-${version}.tar.gz"
-checksum=f59e435de687c3719b54119437e4c9a574a98466a38f532572a1367efde8e964
+checksum=28ded5a13596d8524effc250413dd8b4a4c4bd2d9aa0b4e190b10acd8f506baf
 
 intel-compute-runtime-devel_package() {
     depends="${sourcepkg}>=${version}_${revision}"

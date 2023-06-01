@@ -1,0 +1,13 @@
+diff --git a/src/linux/metee_linux.c b/src/linux/metee_linux.c
+index 51f4217..666609d 100644
+--- a/src/linux/metee_linux.c
++++ b/src/linux/metee_linux.c
+@@ -12,7 +12,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <sys/ioctl.h>
+-#include <sys/poll.h>
++#include <poll.h>
+ #include <unistd.h>
+ 
+ #include "metee.h"

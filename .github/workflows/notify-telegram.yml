@@ -1,0 +1,18 @@
+name: Telegram notification
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify to internal Telegram group on push
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TG_INTERNAL_GROUP_ID }}
+          token: ${{ secrets.TG_INTERNAL_BOT_TOKEN }}
+          format: markdown
+          message: |
+            [New commit](https://github.com/${{ github.repository }}/commit/${{github.sha}}) to [${{ github.repository }}](https://github.com/${{ github.repository }}):
+
+            *${{ github.event.commits[0].message }}* by [${{ github.actor }}](https://github.com/${{ github.actor }}).

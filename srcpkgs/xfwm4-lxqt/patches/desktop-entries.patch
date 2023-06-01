@@ -1,0 +1,146 @@
+diff -ruN a/settings-dialogs/Makefile.am b/settings-dialogs/Makefile.am
+--- a/settings-dialogs/Makefile.am	2023-01-15 14:08:50.424129102 -0600
++++ b/settings-dialogs/Makefile.am	2023-01-15 14:45:56.886520397 -0600
+@@ -115,9 +115,9 @@
+ 
+ desktopdir = $(datadir)/applications
+ desktop_in_files = \
+-	xfce-wm-settings.desktop.in \
+-	xfce-wmtweaks-settings.desktop.in \
+-	xfce-workspaces-settings.desktop.in
++	xfwm-settings.desktop \
++	xfwm-tweaks-settings.desktop.in \
++	xfwm-workspaces-settings.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+ 
+ @INTLTOOL_DESKTOP_RULE@
+diff -ruN a/settings-dialogs/Makefile.in b/settings-dialogs/Makefile.in
+--- a/settings-dialogs/Makefile.in	2023-01-15 14:08:50.424129102 -0600
++++ b/settings-dialogs/Makefile.in	2023-01-15 14:45:19.125529764 -0600
+@@ -534,9 +534,9 @@
+ 
+ desktopdir = $(datadir)/applications
+ desktop_in_files = \
+-	xfce-wm-settings.desktop.in \
+-	xfce-wmtweaks-settings.desktop.in \
+-	xfce-workspaces-settings.desktop.in
++	xfwm-settings.desktop.in \
++	xfwm-tweaks-settings.desktop.in \
++	xfwm-workspaces-settings.desktop.in
+ 
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+ EXTRA_DIST = \
+diff -ruN a/settings-dialogs/xfce-wm-settings.desktop.in b/settings-dialogs/xfce-wm-settings.desktop.in
+--- a/settings-dialogs/xfce-wm-settings.desktop.in	2023-01-15 14:08:50.424129102 -0600
++++ b/settings-dialogs/xfce-wm-settings.desktop.in	1969-12-31 18:00:00.000000000 -0600
+@@ -1,15 +0,0 @@
+-[Desktop Entry]
+-Version=1.0
+-_Name=Window Manager
+-_Comment=Configure window behavior and shortcuts
+-_Keywords=windows;management;settings;preferences;themes;styles;decorations;title bar;font;buttons;menu;minimize;maximize;shade;roll up;layout;keyboard shortcuts;focus;snapping;screen;workspaces;edges;corner;hide content;move;resize;moving;resizing;double click;
+-Exec=xfwm4-settings
+-Icon=org.xfce.xfwm4
+-Terminal=false
+-Type=Application
+-Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
+-StartupNotify=true
+-OnlyShowIn=XFCE;
+-X-XfcePluggable=true
+-X-XfceHelpComponent=xfwm4
+-X-XfceHelpPage=preferences
+diff -ruN a/settings-dialogs/xfce-wmtweaks-settings.desktop.in b/settings-dialogs/xfce-wmtweaks-settings.desktop.in
+--- a/settings-dialogs/xfce-wmtweaks-settings.desktop.in	2023-01-15 14:08:50.424129102 -0600
++++ b/settings-dialogs/xfce-wmtweaks-settings.desktop.in	1969-12-31 18:00:00.000000000 -0600
+@@ -1,15 +0,0 @@
+-[Desktop Entry]
+-Version=1.0
+-_Name=Window Manager Tweaks
+-_Comment=Fine-tune window behaviour and effects
+-_Keywords=windows;behavior;settings;preferences;cycling;cycle;switching;focus;raises;accessibility;key;dragging;move;moving;hide;frame;title bar;maximized;tile;screen;edge;hot corner;snapping;mouse wheel;roll up;workspaces;placement;compositor;compositing;enable;disable;shadows;decorations;opacity;resize;inactive;preview;compiz;transitions;
+-Exec=xfwm4-tweaks-settings
+-Icon=org.xfce.xfwm4-tweaks
+-Terminal=false
+-Type=Application
+-Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
+-StartupNotify=true
+-OnlyShowIn=XFCE;
+-X-XfcePluggable=true
+-X-XfceHelpComponent=xfwm4
+-X-XfceHelpPage=wmtweaks
+diff -ruN a/settings-dialogs/xfce-workspaces-settings.desktop.in b/settings-dialogs/xfce-workspaces-settings.desktop.in
+--- a/settings-dialogs/xfce-workspaces-settings.desktop.in	2023-01-15 14:08:50.424129102 -0600
++++ b/settings-dialogs/xfce-workspaces-settings.desktop.in	1969-12-31 18:00:00.000000000 -0600
+@@ -1,15 +0,0 @@
+-[Desktop Entry]
+-Version=1.0
+-_Name=Workspaces
+-_Comment=Configure layout, names and margins
+-_Keywords=workspaces;settings;preferences;virtual desktops;number;windows;screen;margins;
+-Exec=xfwm4-workspace-settings
+-Icon=org.xfce.workspaces
+-Terminal=false
+-Type=Application
+-Categories=XFCE;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
+-StartupNotify=true
+-OnlyShowIn=XFCE;
+-X-XfcePluggable=true
+-X-XfceHelpComponent=xfwm4
+-X-XfceHelpPage=workspaces
+diff -ruN a/settings-dialogs/xfwm-settings.desktop.in b/settings-dialogs/xfwm-settings.desktop.in
+--- a/settings-dialogs/xfwm-settings.desktop.in	1969-12-31 18:00:00.000000000 -0600
++++ b/settings-dialogs/xfwm-settings.desktop.in	2023-01-15 14:09:13.841147619 -0600
+@@ -0,0 +1,15 @@
++[Desktop Entry]
++Version=1.0
++_Name=Window Manager
++_Comment=Configure window behavior and shortcuts
++_Keywords=windows;management;settings;preferences;themes;styles;decorations;title bar;font;buttons;menu;minimize;maximize;shade;roll up;layout;keyboard shortcuts;focus;snapping;screen;workspaces;edges;corner;hide content;move;resize;moving;resizing;double click;
++Exec=xfwm4-settings
++Icon=org.xfce.xfwm4
++Terminal=false
++Type=Application
++Categories=LXQt;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
++StartupNotify=true
++OnlyShowIn=LXQt;
++X-XfcePluggable=true
++X-XfceHelpComponent=xfwm4
++X-XfceHelpPage=preferences
+diff -ruN a/settings-dialogs/xfwm-tweaks-settings.desktop.in b/settings-dialogs/xfwm-tweaks-settings.desktop.in
+--- a/settings-dialogs/xfwm-tweaks-settings.desktop.in	1969-12-31 18:00:00.000000000 -0600
++++ b/settings-dialogs/xfwm-tweaks-settings.desktop.in	2023-01-15 14:09:13.841147619 -0600
+@@ -0,0 +1,15 @@
++[Desktop Entry]
++Version=1.0
++_Name=Window Manager Tweaks
++_Comment=Fine-tune window behaviour and effects
++_Keywords=windows;behavior;settings;preferences;cycling;cycle;switching;focus;raises;accessibility;key;dragging;move;moving;hide;frame;title bar;maximized;tile;screen;edge;hot corner;snapping;mouse wheel;roll up;workspaces;placement;compositor;compositing;enable;disable;shadows;decorations;opacity;resize;inactive;preview;compiz;transitions;
++Exec=xfwm4-tweaks-settings
++Icon=org.xfce.xfwm4-tweaks
++Terminal=false
++Type=Application
++Categories=LXQt;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
++StartupNotify=true
++OnlyShowIn=LXQt;
++X-XfcePluggable=true
++X-XfceHelpComponent=xfwm4
++X-XfceHelpPage=wmtweaks
+diff -ruN a/settings-dialogs/xfwm-workspaces-settings.desktop.in b/settings-dialogs/xfwm-workspaces-settings.desktop.in
+--- a/settings-dialogs/xfwm-workspaces-settings.desktop.in	1969-12-31 18:00:00.000000000 -0600
++++ b/settings-dialogs/xfwm-workspaces-settings.desktop.in	2023-01-15 14:09:13.841147619 -0600
+@@ -0,0 +1,15 @@
++[Desktop Entry]
++Version=1.0
++_Name=Workspaces
++_Comment=Configure layout, names and margins
++_Keywords=workspaces;settings;preferences;virtual desktops;number;windows;screen;margins;
++Exec=xfwm4-workspace-settings
++Icon=org.xfce.workspaces
++Terminal=false
++Type=Application
++Categories=LXQt;GTK;Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;
++StartupNotify=true
++OnlyShowIn=LXQt;
++X-XfcePluggable=true
++X-XfceHelpComponent=xfwm4
++X-XfceHelpPage=workspaces
