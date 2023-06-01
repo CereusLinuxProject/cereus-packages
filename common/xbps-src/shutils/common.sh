@@ -415,7 +415,7 @@ setup_pkg() {
     done
 
     if [ ! -f ${XBPS_SRCPKGDIR}/${basepkg}/template ]; then
-        msg_error "xbps-src: unexistent file: ${XBPS_SRCPKGDIR}/${basepkg}/template\n"
+        msg_error "xbps-src: nonexistent file: ${XBPS_SRCPKGDIR}/${basepkg}/template\n"
     fi
     if [ -n "$cross" ]; then
         export CROSS_BUILD="$cross"
@@ -477,12 +477,17 @@ setup_pkg() {
         fi
     fi
 
+    for x in ${hostmakedepends} ${makedepends} ${checkdepends}; do
+        if [[ $x = *[\<\>]* || $x =~ -[^-_]*[0-9][^-_]*_[0-9_]+$ ]]; then
+            msg_error "$pkgver: specifying version in build dependency '$x' is invalid, template version is used always\n"
+        fi
+    done
+
     FILESDIR=$XBPS_SRCPKGDIR/$sourcepkg/files
     PATCHESDIR=$XBPS_SRCPKGDIR/$sourcepkg/patches
     DESTDIR=$XBPS_DESTDIR/$XBPS_CROSS_TRIPLET/${sourcepkg}-${version}
     PKGDESTDIR=$XBPS_DESTDIR/$XBPS_CROSS_TRIPLET/${pkg}-${version}
 
-    : ${XBPS_MAKEJOBS:=1}
     export XBPS_ORIG_MAKEJOBS=${XBPS_ORIG_MAKEJOBS:=$XBPS_MAKEJOBS}
     if [ -n "$disable_parallel_build" ]; then
         XBPS_MAKEJOBS=1
