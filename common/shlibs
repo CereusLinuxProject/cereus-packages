@@ -4272,8 +4272,8 @@ libgrass_raster.8.3.so grass-8.3.0_1
 libgrass_vector.8.3.so grass-8.3.0_1
 
 # Cereus Linux custom shlibs
-libcalamares.so.3.2.61 calamares-3.2.61_2
-libcalamaresui.so.3.2.61 calamares-3.2.61_2
+libcalamares.so.3.2.62 calamares-3.2.62_2
+libcalamaresui.so.3.2.62 calamares-3.2.62_2
 libvulkan.so.1 heroic-bin-2.4.3_1
 libvulkan.so.1 brave-bin-1.39.122_1
 libxviewer.so xviewer-3.2.10_2
