@@ -1,14 +1,14 @@
 # Template file for 'base-files'
 pkgname=base-files
-version=2023.01.30
+version=2023.11.12
 revision=1
 bootstrap=yes
 repository=cereus-core
 depends="xbps-triggers"
 short_desc="Cereus Linux base system files"
-maintainer="Kevin F. <kevinfigueroart@proton.me>"
+maintainer="Kevin F. <kfdevart@disroot.org>"
 license="Public Domain"
-homepage="https://cereus-linux.sourceforge.io"
+homepage="https://cereuslinuxproject.github.io"
 conflicts="base-files>=0.77"
 conf_files="
 	/etc/inputrc
@@ -31,7 +31,7 @@ conf_files="
 
 replaces="base-directories>=0"
 # New system groups
-system_groups="kvm:24"
+system_groups="kvm:24 plugdev:26 usbmon:27 sgx:28"
 
 do_install() {
 	# Create bin and lib dirs and symlinks.
@@ -99,4 +99,8 @@ do_install() {
 	# udev rules
 	vmkdir usr/lib/udev/rules.d
 	install -m644 ${FILESDIR}/*.rules ${DESTDIR}/usr/lib/udev/rules.d
+
+	# os-release in the expected places
+	vinstall ${FILESDIR}/os-release 644 /usr/lib/
+	ln -s ../usr/lib/os-release ${DESTDIR}/etc/os-release
 }

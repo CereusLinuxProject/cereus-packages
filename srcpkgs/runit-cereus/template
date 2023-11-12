@@ -1,18 +1,18 @@
 # Template file for 'runit-cereus'
 pkgname=runit-cereus
-version=2022.03.29
-_datever=${version//./}
-revision=4
+version=2023.04.13
+_version=${version//./}
+revision=1
 repository=cereus-core
-wrksrc="void-runit-${_datever}"
+wrksrc="void-runit-${_version}"
 build_style=gnu-makefile
 short_desc="Cereus Linux runit scripts"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin F. <kfdevart@disroot.org>"
 license="CC0-1.0"
 conflicts="runit-void"
 homepage="https://github.com/void-linux/void-runit"
-distfiles="https://github.com/void-linux/void-runit/archive/${_datever}.tar.gz"
-checksum=43037b1cbf177a3ee6d690cc652eedf819ca37f44636311b55aa716e159a4718
+distfiles="https://github.com/void-linux/void-runit/archive/${_version}.tar.gz"
+checksum=1049555eb27c370ec482ab576382ff951c2c33da6e8f5d165b3733c4a6d157cb
 
 depends="virtual?awk procps-ng runit"
 conf_files="
@@ -35,10 +35,10 @@ post_install() {
 	vmkdir usr/bin
 	mv ${DESTDIR}/usr/sbin/* ${DESTDIR}/usr/bin
 	vconf ${FILESDIR}/hostname
-	vconf ${FILESDIR}/os-release
 	vconf ${FILESDIR}/locale.conf
 	vinstall ${FILESDIR}/apparmor 644 /etc/default/
 	vinstall ${FILESDIR}/09-apparmor.sh 644 /etc/runit/core-services/
+	vmkdir usr/lib
 	# Enable services at post-install time instead.
 	rm -f ${DESTDIR}/etc/runit/runsvdir/current
 	rm -rf ${DESTDIR}/etc/runit/runsvdir/default
