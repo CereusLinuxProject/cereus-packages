@@ -1,6 +1,6 @@
 # Template file for 'lxqt-cereus'
 pkgname=lxqt-cereus
-version=1.2.0
+version=1.3.0
 revision=1
 repository="cereus-core"
 build_style=meta
@@ -35,6 +35,6 @@ depends="
 	elogind
 	upower"
 short_desc="LXQt meta-package for Cereus Linux"
-maintainer="Kevin F. <kevinfigueroart@proton.me>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="BSD-2-Clause" # Suppress xlint warning: vlicense
 homepage="https://lxqt-project.org"
