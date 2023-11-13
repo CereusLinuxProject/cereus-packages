@@ -70,7 +70,7 @@ index 9cd3918..3c968bb 100755
  		return missingDependencies
  
 diff --git a/video-wallpaper.sh b/video-wallpaper.sh
-index a2a8000..66c72d1 100755
+index 8b95f00..1b4ffd0 100755
 --- a/video-wallpaper.sh
 +++ b/video-wallpaper.sh
 @@ -3,7 +3,7 @@
@@ -80,13 +80,13 @@ index a2a8000..66c72d1 100755
 -name="video-wallpaper"
 +name="gpu-video-wallpaper"
  scriptdir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
- confdir="/home/$USER/.config/video-wallpaper"
+ confdir="$HOME/.config/video-wallpaper"
  conf="$confdir/settings.conf"
 @@ -49,7 +49,7 @@ start() {
  	SCREENS=`xrandr | grep " connected\|\*" | pcregrep -o1 '([0-9]{1,}[x]{1,1}[0-9+]{1,}) \('`
  	for item in $SCREENS
  	do
--		"$scriptdir"/xwinwrap -g $item -fdt -ni -b -nf -un -o 1.0 -- mpv -wid WID --loop --no-audio "$VIDEO_PATH" & disown
+-		"$scriptdir"/xwinwrap -g $item -fdt -ni -b -nf -un -o 1.0 -- mpv -wid %WID --loop --no-audio "$VIDEO_PATH" & disown
 +		xwinwrap -g $item -fdt -ni -b -nf -un -o 1.0 -- mpv -wid WID --loop --no-audio "$VIDEO_PATH" & disown
  	done
  	update_config $! "\"$VIDEO_PATH\""
@@ -97,6 +97,6 @@ index a2a8000..66c72d1 100755
  	fi
 -	LAUNCH_SCRIPT="bash -c '\"$scriptdir/$name.sh\" --start \"$videofile\"'"
 +	LAUNCH_SCRIPT="bash -c '\"$name\" --start \"$videofile\"'"
- 	printf "[Desktop Entry]\nType=Application\nExec=$LAUNCH_SCRIPT\nHidden=false\nNoDisplay=false\nX-GNOME-Autostart-enabled=$startup\nName=$name" > "/home/$USER/.config/autostart/$name.desktop"
+ 	printf "[Desktop Entry]\nType=Application\nExec=$LAUNCH_SCRIPT\nHidden=false\nNoDisplay=false\nX-GNOME-Autostart-enabled=$startup\nName=$name" > "$HOME/.config/autostart/$name.desktop"
  }
  
