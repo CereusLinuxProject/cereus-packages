@@ -1,11 +1,11 @@
 # Template file for 'ilustraciones-icon-theme'
 pkgname=ilustraciones-icon-theme
-version=2022.09.17
+version=2023.04.06
 revision=1
 repository=cereus-extra
 hostmakedepends="git"
 short_desc="Flat icon pack inspired on Pixelitos icon theme"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT"
 homepage="https://github.com/ItzSelenux/ilustraciones-icon-theme"
 
