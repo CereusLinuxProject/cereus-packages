@@ -1,7 +1,7 @@
 # Template file for 'grub-cereus'
 pkgname=grub-cereus
 version=2.06
-revision=1
+revision=2
 hostmakedepends="python3 pkg-config flex freetype-devel font-unifont-bdf help2man
  automake gettext-devel-tools"
 makedepends="libusb-compat-devel ncurses-devel freetype-devel
@@ -11,7 +11,7 @@ conflicts="grub"
 repository="cereus-core"
 conf_files="/etc/default/grub /etc/grub.d/*"
 short_desc="GRand Unified Bootloader 2"
-maintainer="Kevin F. <kevinfigueroart@proton.me>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
 homepage="https://www.gnu.org/software/grub/"
 distfiles="${GNU_SITE}/grub/grub-${version}.tar.xz"
