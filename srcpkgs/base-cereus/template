@@ -26,5 +26,5 @@ esac
 
 case "$XBPS_TARGET_MACHINE" in
 	x86_64*|ppc*) depends+=" linux-default-cereus";;
-    i686*) depends +=" linux-legacy-cereus" ;;
+    i686*) depends+=" linux-legacy-cereus" ;;
 esac
