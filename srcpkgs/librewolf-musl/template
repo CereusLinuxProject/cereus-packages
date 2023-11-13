@@ -1,13 +1,13 @@
 # Template file for 'librewolf-musl'
 pkgname=librewolf-musl
 _realname=librewolf
-version=111.0
-revision=2
-_release=3
+_version=119.0.1-1
+version=${_version//-/.}
+revision=1
 archs="x86_64-musl"
 repository="cereus-extra"
 short_desc="Community-maintained fork of Firefox, focused on privacy, security and freedom - glibc containerized package"
-maintainer="Kevin F. <kevinfigueroart@proton.me>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 hostmakedepends="tar xz xbps-triggers"
 makedepends="xbps-triggers"
 depends="voidnsrun-setup"
