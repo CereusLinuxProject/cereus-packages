@@ -1,6 +1,6 @@
 # Template file for 'base-cereus'
 pkgname=base-cereus
-version=2023.02.14
+version=2023.11.12
 revision=1
 build_style=meta
 repository=cereus-core
@@ -25,5 +25,6 @@ case "$XBPS_TARGET_MACHINE" in
 esac
 
 case "$XBPS_TARGET_MACHINE" in
-	i686*|x86_64*|ppc*) depends+=" linux-default-cereus";;
+	x86_64*|ppc*) depends+=" linux-default-cereus";;
+    i686*) depends +=" linux-legacy-cereus" ;;
 esac
