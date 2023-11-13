@@ -1,25 +1,26 @@
 # Template file for 'libadwaita-without-adwaita'
 pkgname=libadwaita-without-adwaita
-version=1.3.1
+version=1.4.0
 revision=1
 repository="cereus-extra"
 build_style=meson
 build_helper="gir"
 configure_args="-Dexamples=true -Dtests=true $(vopt_bool gtk_doc)
- $(vopt_bool gir vapi) -Dintrospection=$(vopt_if gir enabled disabled)"
+ $(vopt_bool gir vapi) $(vopt_feature gir introspection)"
 hostmakedepends="glib-devel pkg-config $(vopt_if gtk_doc gi-docgen)
  $(vopt_if gir vala-devel) gettext sassc"
-makedepends="gtk4-devel libglib-devel harfbuzz-devel awk"
-checkdepends="xvfb-run cantarell-fonts"
+makedepends="gtk4-devel libglib-devel harfbuzz-devel AppStream-devel"
+checkdepends="xvfb-run cantarell-fonts dbus"
 short_desc="libadwaita; Includes a patch to not overwrite the system theme"
-maintainer="Kevin F. <kevinfigueroart@proton.me>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="LGPL-2.0-or-later"
 homepage="https://gitlab.gnome.org/GNOME/libadwaita/"
-changelog="https://gitlab.gnome.org/GNOME/libadwaita/-/raw/libadwaita-1-3/NEWS"
+changelog="https://gitlab.gnome.org/GNOME/libadwaita/-/raw/libadwaita-1-4/NEWS"
 distfiles="${GNOME_SITE}/libadwaita/${version%.*}/libadwaita-${version}.tar.xz"
-checksum=6b8bbf413c501b46c8616a0e5b836d7a34091140941412520bbd9ddda6df8cbd
-make_check_pre="xvfb-run"
-conflicts="libadwaita"
+checksum=e51a098a54d43568218fc48fcf52e80e36f469b3ce912d8ce9c308a37e9f47c2
+make_check_pre="dbus-run-session xvfb-run"
+replaces="libadwaita"
+provides="libadwaita"
 
 build_options="gir gtk_doc"
 build_options_default="gir gtk_doc"
@@ -32,7 +33,7 @@ pre_build() {
 }
 
 libadwaita-without-adwaita-devel_package() {
-	depends="${sourcepkg}>=${version}_${revision} gtk4-devel"
+	depends="${sourcepkg}>=${version}_${revision} gtk4-devel AppStream-devel"
 	short_desc+=" - development files"
 	pkg_install() {
 		vmove "usr/lib/*.so"
