@@ -1,34 +1,34 @@
 # Template file for 'palemoon'
 
-# This template is based on tuxliban <tenshalito@gmail.com> work. All credits goes to him.
+# This template is based on tuxliban <tenshalito@gmail.com> work. All credits go to him.
 # Original source: https://git.disroot.org/tuxliban/tutoriales_void/src/branch/master/Plantillas/palemoon/template
 
 pkgname=palemoon
-version=32.1.1
-_release=1
+_version=32.5.0-1
+version=${_version//-/.}
 revision=1
 archs="i686 x86_64"
 repository="cereus-extra"
-hostmakedepends="curl python3-html2text tar xz awk"
+hostmakedepends="curl python3-html2text tar xz"
 depends="libvpx alsa-lib dbus-glib libXt gtk+"
 short_desc="Open-source web browser based on Firefox focusing on efficiency"
-maintainer="Kevin F. <kevinfigueroart@proton.me>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="LGPL-2.1-or-later, MPL-2.0-or-later, GPL-3.0-or-later"
 homepage="https://www.palemoon.org"
 
 if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
 	_debarch=amd64
-	checksum=b009c3fef30bb0a09c9dd3ee290b4ae172b9b44ad51f74328332b37572018d2d
+	checksum=9516d95124ddc708cebc3d4d17f4308e23cb0aa6b38495a3048c0378892129d6
 else
 	_debarch=i386
-	checksum=f85671649ad228e01c39b20c61edea0734491a481fd04dbd7ee55e5b2090ed21
+	checksum=1ae5841b6391656a3cf092f704db80a922406ffe6c688fa9598aa4fabdc80688
 fi
 
-distfiles="https://download.opensuse.org/repositories/home:/stevenpusser/Debian_11/${_debarch}/${pkgname}_${version}-${_release}.gtk2_${_debarch}.deb"
+distfiles="https://download.opensuse.org/repositories/home:/stevenpusser/Debian_12/${_debarch}/${pkgname}_${_version}.gtk2_${_debarch}.deb"
 _licenseURL="https://www.palemoon.org/redist.shtml"
 
 do_extract() {
-	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${pkgname}_${version}-${_release}.gtk2_${_debarch}.deb
+	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/${pkgname}_${_version}.gtk2_${_debarch}.deb
 	tar xf data.tar.xz
 }
 
