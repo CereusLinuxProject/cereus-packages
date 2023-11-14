@@ -1,6 +1,6 @@
 # Template file for 'octoxbps-git'
 pkgname=octoxbps-git
-version=2023.03.04
+version=2023.11.11
 revision=1
 build_style=qmake
 repository="cereus-extra"
@@ -8,9 +8,9 @@ hostmakedepends="qt5-qmake pkg-config qt5-host-tools git"
 makedepends="qt5-declarative-devel qtermwidget-devel"
 depends="curl"
 short_desc="Qt-based XBPS front-end - git branch"
-maintainer="Kevin F. <kevinfigueroart@proton.me>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-2.0-or-later"
-homepage="https://github.com/aarnt/octoxbps"
+homepage="https://tintaescura.com/projects/octoxbps/"
 changelog="https://raw.githubusercontent.com/aarnt/octoxbps/master/CHANGELOG"
 conflicts="octoxbps"
 replaces="octoxbps"
@@ -18,6 +18,12 @@ replaces="octoxbps"
 do_fetch() {
 	git clone https://github.com/aarnt/octoxbps ${wrksrc}
 }
+
+# Experimental Spanish translation
+post_fetch() {
+    cp ${FILESDIR}/octoxbps_es.ts ${wrksrc}/translations
+}
+
 
 post_configure() {
 	local qmake_args
@@ -48,4 +54,8 @@ do_install() {
 	for _dir in ${wrksrc} ${wrksrc}/notifier ${wrksrc}/sudo; do
 		cd $_dir && make INSTALL_ROOT=${DESTDIR} install
 	done
+}
+
+post_install() {
+	vdoc "${FILESDIR}/README.cereus"
 }
