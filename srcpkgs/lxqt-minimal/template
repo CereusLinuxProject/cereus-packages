@@ -1,6 +1,6 @@
 # Template file for 'lxqt-minimal'
 pkgname=lxqt-minimal
-version=1.3.0
+version=1.4.0
 revision=1
 repository="cereus-extra"
 build_style=meta
