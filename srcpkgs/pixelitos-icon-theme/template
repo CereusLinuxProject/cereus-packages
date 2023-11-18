@@ -23,6 +23,6 @@ do_install() {
     vcopy * ${_icondir}/
 	
     # Also add package license
-    vlicense ${FILESDIR}/LICENSE
+    vlicense LICENSE
 }
 
