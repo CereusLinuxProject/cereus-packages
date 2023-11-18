@@ -1,6 +1,6 @@
-# Template file for 'picom-git'
-pkgname="picom-git"
-version=2023.05.08
+# Template file for 'picom-ftlabs'
+pkgname="picom-ftlabs"
+version=2023.11.10
 revision=1
 build_style=meson
 configure_args="-Dwith_docs=true"
@@ -9,14 +9,14 @@ makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre2-devel
  pixman-devel xcb-util-image-devel xcb-util-renderutil-devel
  libxdg-basedir-devel uthash libglvnd-devel"
 depends="desktop-file-utils"
-short_desc="Lightweight compositor for X11 (previously a compton fork) - git branch"
+short_desc="Picom fork which features more than 10 unique animation supported (open window, tag change, fading ...)"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT, MPL-2.0"
-homepage="https://github.com/yshui/picom/"
+homepage="https://github.com/FT-Labs/picom/"
 repository="cereus-extra"
 provides="picom"
-conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-arian8j2 picom-dccsillag picom-ftlabs"
-replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-arian8j2 picom-dccsillag picom-ftlabs"
+conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-arian8j2 picom-dccsillag picom-git"
+replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-arian8j2 picom-dccsillag picom-git"
 
 do_fetch() {
 	git clone --depth=1 ${homepage} ${wrksrc}
@@ -26,6 +26,4 @@ post_install() {
 	vlicense LICENSES/MIT
 	vlicense COPYING
 	vsconf picom.sample.conf
-	vsconf compton-default-fshader-win.glsl
-	vsconf compton-fake-transparency-fshader-win.glsl
 }

@@ -1,22 +1,22 @@
 # Template file for 'picom-arian8j2'
 pkgname=picom-arian8j2
-version=2022.09.29
-revision=1
+version=2023.07.16
+revision=2
 build_style=meson
 configure_args="-Dwith_docs=true"
 hostmakedepends="pkg-config asciidoc git"
-makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre-devel
+makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre2-devel
  pixman-devel xcb-util-image-devel xcb-util-renderutil-devel
  libxdg-basedir-devel uthash libglvnd-devel"
 depends="desktop-file-utils"
 short_desc="Picom fork which includes transition animations"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT, MPL-2.0"
 homepage="https://github.com/arian8j2/picom/"
 repository="cereus-extra"
 provides="picom"
-conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-git picom-dccsillag"
-replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-git picom-dccsillag"
+conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-git picom-dccsillag picom-ftlabs"
+replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-git picom-dccsillag picom-ftlabs"
 
 do_fetch() {
 	git clone --depth=1 ${homepage} ${wrksrc}
@@ -26,6 +26,4 @@ post_install() {
 	vlicense LICENSES/MIT
 	vlicense COPYING
 	vsconf picom.sample.conf
-	vsconf compton-default-fshader-win.glsl
-	vsconf compton-fake-transparency-fshader-win.glsl
 }

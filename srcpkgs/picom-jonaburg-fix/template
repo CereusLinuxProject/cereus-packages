@@ -12,15 +12,15 @@ makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre-devel
  libxdg-basedir-devel uthash"
 depends="desktop-file-utils"
 short_desc="Picom fork which includes rounded corners, animations and blur support (picom-jonaburg-fix branch)"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT, MPL-2.0"
 homepage="https://github.com/Arian8j2/picom-jonaburg-fix"
 provides="picom"
-conflicts="picom picom-jonaburg picom-dccsillag picom-ibhagwan picom-git picom-arian8j2"
-replaces="picom picom-jonaburg picom-dccsillag picom-ibhagwan picom-git picom-arian8j2"
+conflicts="picom picom-jonaburg picom-dccsillag picom-ibhagwan picom-git picom-arian8j2 picom-ftlabs"
+replaces="picom picom-jonaburg picom-dccsillag picom-ibhagwan picom-git picom-arian8j2 picom-ftlabs"
 
 case "$XBPS_TARGET_MACHINE" in
-        *-musl) broken="Cannot build on musl. It's recommended to use picom-dccsillag or picom-git instead" ;;
+        *-musl) broken="Can't build for musl. It's recommended to use picom-dccsillag, picom-ftlabs or picom-git instead" ;;
 esac
 
 do_fetch() {
