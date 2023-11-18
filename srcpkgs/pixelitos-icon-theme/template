@@ -1,6 +1,6 @@
 # Template file for 'pixelitos-icon-theme'
 pkgname=pixelitos-icon-theme
-version=2022.06.07
+version=2023.07.31
 revision=1
 repository=cereus-extra
 hostmakedepends="git"
