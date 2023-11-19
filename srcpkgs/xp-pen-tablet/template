@@ -8,7 +8,7 @@ repository=nonfree
 nostrip=yes
 short_desc="XP-Pen Official Linux utility"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
-conf_files="usr/lib/pentablet/conf/xppen/config.xml"
+conf_files="/usr/lib/pentablet/conf/xppen/config.xml"
 license="custom:Proprietary"
 homepage="https://www.xp-pen.com/download/index.html"
 distfiles="https://www.xp-pen.com/download/file/id/1936/pid/1016/ext/gz.html>XPPenLinux${version}.tar.gz"
@@ -16,8 +16,15 @@ checksum=df707c2633a3b2fd7bb8569edf38462b0e34a1e0fa7c7275602f7011540eefe4
 
 do_install() {
     cp -r App/* ${DESTDIR}/
-    mv ${DESTDIR}/lib/ ${DESTDIR}/usr/lib/
+    cp -r ${DESTDIR}/lib/* ${DESTDIR}/usr/lib/
     rm -rf ${DESTDIR}/lib
+
+    # Fix permissions
+    chmod +0444 ${DESTDIR}/etc/xdg/autostart/xppentablet.desktop
+    chmod +0444 ${DESTDIR}/usr/share/applications/xppentablet.desktop
+    chmod +0555 ${DESTDIR}/usr/share/icons/hicolor/256x256/apps/xppentablet.png
+    chmod +0555 ${DESTDIR}/usr/lib/pentablet/PenTablet
+    chmod +0755 ${DESTDIR}/usr/lib/pentablet/PenTablet.sh
 
     # Use an alternative launch script for PATH
     vbin ${FILESDIR}/pentablet

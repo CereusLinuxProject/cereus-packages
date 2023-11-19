@@ -2,8 +2,9 @@
 
 case "$ACTION" in
 post)
-        # Restore permissions for pentablet folder, as they must be r/w by all users. Otherwise, pentablet will not be able to save configurations.
-        chmod 777 -R /usr/lib/pentablet/
+        # Restore permissions for some pentablet files, as they must be r/w by all users. Otherwise, pentablet will not be able to save configurations.
+        chmod +0666 /usr/lib/pentablet/resource.rcc
+        chmod +0666 /usr/lib/pentablet/conf/xppen/*
     ;;
 
 esac
