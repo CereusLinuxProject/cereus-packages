@@ -1,6 +1,6 @@
 # Template file for 'qelectrotech'
 pkgname=qelectrotech
-version=0.8.0
+version=0.9
 revision=1
 repository="cereus-extra"
 build_style="qmake"
@@ -8,11 +8,11 @@ wrksrc=qet-${version}
 makedepends="pkg-config qt5-qmake sqlite-devel kwidgetsaddons-devel kcoreaddons-devel qt5-svg-devel git"
 depends="qt5-svg hicolor-icon-theme desktop-file-utils kwidgetsaddons kcoreaddons"
 short_desc="An electric diagram editor"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-2.0-or-later"
 homepage="https://qelectrotech.org/"
-distfiles="https://git.tuxfamily.org/qet/qet.git/snapshot/qet-${version}.tar.gz"
-checksum=62ea5bd34d823c2d287fa58db8b7452825d7c3479b8ceb6650ef630c3976e070
+distfiles="https://github.com/qelectrotech/qelectrotech-source-mirror/archive/refs/tags/${version}.tar.gz"
+checksum=4bfaa114b7b75cbacdd7e32612d07ff48776d5dc3c2543b850c79627c3710a7a
 
 do_prepare() {
     sed -i 's/gzip \-9n/gzip -9nf/' "man/compress_man_pages.sh"
