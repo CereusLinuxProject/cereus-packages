@@ -1,12 +1,12 @@
 # Template file for 'xrankmirrors'
 pkgname=xrankmirrors
-version=2023.05.31
+version=2023.08.13
 revision=1
 repository="cereus-core"
 hostmakedepends="git"
 depends="fzf wget curl dialog"
 short_desc="Rank and set XBPS mirrors"
-maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT"
 homepage="https://github.com/CereusLinuxProject/xrankmirrors"
 changelog="${homepage}/commits/main"
