@@ -10,7 +10,7 @@ post)
         umount -R "glibc/dev" "glibc/etc/resolv.conf" "glibc/proc" "glibc/sys"
 
     else
-        # Enter via chroot to container and install librewolf-bin
+        # Enter via chroot to container and install the package
         # This is necessary, because through voidnsrun it will not install automatically its dependencies, as the host already has them.
         xchroot /glibc xbps-install -Syf youtube-music-bin
 

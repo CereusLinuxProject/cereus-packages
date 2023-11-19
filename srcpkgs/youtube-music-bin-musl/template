@@ -1,14 +1,13 @@
 # Template file for 'youtube-music-bin-musl'
 pkgname=youtube-music-bin-musl
-version=1.20.0
+version=2.2.0
 revision=1
 repository="cereus-extra"
 archs="x86_64-musl"
 #conf_files=""
-hostmakedepends="awk"
 depends="voidnsrun-setup"
 short_desc="YouTube Music Desktop App bundled with custom plugins (and built-in ad blocker / downloader) - glibc containerized package"
-maintainer="Kevin F. <kevinfigueroart@proton.me"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT"
 homepage="https://th-ch.github.io/youtube-music"
 changelog="https://github.com/th-ch/youtube-music/blob/master/changelog.md#v${version/./}"
