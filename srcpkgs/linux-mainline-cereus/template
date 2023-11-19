@@ -10,7 +10,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="Public Domain"
 homepage="http://CereusLinuxProject.github.io/"
 
-linux-legacy-cereus-headers_package() {
-	short_desc="Cereus Linux default kernel headers meta package"
+linux-mainline-cereus-headers_package() {
+	short_desc="Cereus Linux mainline kernel headers meta package"
 	depends="linux${version}-headers"
 }

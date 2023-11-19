@@ -11,6 +11,6 @@ license="Public Domain"
 homepage="http://CereusLinuxProject.github.io/"
 
 linux-legacy-cereus-headers_package() {
-	short_desc="Cereus Linux default kernel headers meta package"
+	short_desc="Cereus Linux legacy kernel headers meta package"
 	depends="linux${version}-headers"
 }
