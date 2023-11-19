@@ -1,20 +1,21 @@
 # Template file for 'Tela-icon-theme'
 pkgname=Tela-icon-theme
-version=2023.02.03
+version=2023.06.25
 date=${version//./-}
 revision=1
 build_style=meta
 repository=cereus-extra
-depends="${pkgname}-standard \
-    ${pkgname}-black \
-    ${pkgname}-blue \
-    ${pkgname}-green \
-    ${pkgname}-grey \
-    ${pkgname}-orange \
-    ${pkgname}-pink \
-    ${pkgname}-purple \
-    ${pkgname}-red \
-    ${pkgname}-yellow \
+depends="${pkgname}-standard
+    ${pkgname}-black
+    ${pkgname}-brown
+    ${pkgname}-blue
+    ${pkgname}-green
+    ${pkgname}-grey
+    ${pkgname}-orange
+    ${pkgname}-pink
+    ${pkgname}-purple
+    ${pkgname}-red
+    ${pkgname}-yellow
     ${pkgname}-manjaro
     ${pkgname}-ubuntu
     ${pkgname}-nord"
@@ -24,11 +25,11 @@ icondir=usr/share/icons
 wrksrc=${pkgname}-${date}
 hostmakedepends="gtk-update-icon-cache"
 short_desc="A flat colorful Design icon theme"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0"
 homepage="https://github.com/vinceliuice/Tela-icon-theme"
 distfiles="${homepage}/archive/refs/tags/${date}.tar.gz"
-checksum=ab6bf283875a8d777d1a3c8b5969c78a0d329409a4561f4c0f22d36d69171e5d
+checksum=74cf173ce079dbec4ae7af628ebb33d0d32e953b0e1d1a6fd56641a228853f09
 
 Tela-icon-theme-standard_package() {
     color=standard
