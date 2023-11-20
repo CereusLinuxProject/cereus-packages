@@ -6,6 +6,6 @@ revision=6
 build_style=meta
 depends="xorg-fonts xorg-server xorg-apps xorg-input-drivers xorg-video-drivers-cereus"
 short_desc="X.org meta-package"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="Public Domain"
 homepage="https://www.x.org/wiki/"

@@ -6,6 +6,6 @@ build_style=meta
 depends="calamares calamares-branding calamares-modules-cereus"
 repository="cereus-core"
 short_desc="Calamares installer meta-package for Cereus Linux"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0"
 homepage="https://cereus-linux.sourceforge.io"

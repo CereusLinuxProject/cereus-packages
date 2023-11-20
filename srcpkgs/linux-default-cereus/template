@@ -6,7 +6,7 @@ build_style=meta
 repository="cereus-core"
 depends="linux${version} linux-base"
 short_desc="Cereus Linux default kernel meta package"
-maintainer="Kevin F. <kevinfigueroart@proton.me>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="Public Domain"
 homepage="http://CereusLinuxProject.github.io/"
 

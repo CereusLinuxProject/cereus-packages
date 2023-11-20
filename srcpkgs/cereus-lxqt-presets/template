@@ -18,7 +18,7 @@ hostmakedepends="git"
 depends="lxqt-cereus cereus-global-presets cereus-lightdm-presets udisks2 gvfs-afc gvfs-mtp
 gvfs-smb blueman flameshot pasystray-git ksuperkey network-manager-applet pavucontrol-qt"
 short_desc="Cereus Linux default configurations for LXQt edition"
-maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/CereusLinuxProject/presets"
 changelog="${homepage}/commits/main/lxqt"

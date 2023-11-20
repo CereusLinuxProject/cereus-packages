@@ -8,7 +8,7 @@ confdir=usr/share/fontconfig/conf.avail
 hostmakedepends="wget"
 depends="font-util xbps-triggers"
 short_desc="High number of extra glyphs from popular 'iconic fonts'"
-maintainer="KF-Art <https://github.com/KF-Art>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT"
 homepage="https://nerdfonts.com"
 

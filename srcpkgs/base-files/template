@@ -6,7 +6,7 @@ bootstrap=yes
 repository=cereus-core
 depends="xbps-triggers"
 short_desc="Cereus Linux base system files"
-maintainer="Kevin F. <kfdevart@disroot.org>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="Public Domain"
 homepage="https://cereuslinuxproject.github.io"
 conflicts="base-files>=0.77"

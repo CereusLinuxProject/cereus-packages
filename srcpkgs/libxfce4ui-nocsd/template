@@ -12,7 +12,7 @@ hostmakedepends="xfce4-dev-tools pkg-config intltool glib-devel gettext-devel
 makedepends="gtk+3-devel glade3-devel libxfce4util-devel xfconf-devel
  libxml2-devel startup-notification-devel libSM-devel libgtop-devel"
 short_desc="Replacement of the old libxfcegui4 library (No CSD fork)"
-maintainer="Kevin F. <kevinfigueroart@protonmail.com>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 conflicts="libxfce4ui"
 replaces="libxfce4ui"
 repository="cereus-extra"

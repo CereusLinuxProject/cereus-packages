@@ -7,7 +7,7 @@ depends="plymouth"
 repository="cereus-core"
 _themedir="usr/share/plymouth/themes/cereus_simply"
 short_desc="A simple Plymouth theme for Cereus Linux"
-maintainer="KF-Art <https://github.com/KF-Art>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/CereusLinuxProject/cereus_simply"
 

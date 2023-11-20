@@ -13,7 +13,7 @@ depends="Graphite-color-schemes-light \
      Graphite-color-schemes-nord-dark"
 hostmakedepends="git"
 short_desc="Custom additional color schemes of Graphite theme for KDE Plasma desktop"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0"
 homepage="https://github.com/KF-Art/Graphite-color-schemes"
 

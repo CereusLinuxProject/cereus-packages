@@ -11,7 +11,7 @@ makedepends="libxfce4ui-nocsd-devel startup-notification-devel
  libXrender-devel libXpresent-devel libwnck-devel"
 depends="hicolor-icon-theme desktop-file-utils"
 short_desc="Next generation window manager (LXQt integration with window gaps support)"
-maintainer="Kevin F. <kevinfigueroart@proton.me>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 conflicts="xfwm4 xfwm4-gaps"
 license="GPL-2.0-or-later"
 homepage="https://xfce.org/"

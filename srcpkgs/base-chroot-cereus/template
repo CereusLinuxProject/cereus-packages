@@ -7,7 +7,7 @@ build_style=meta
 conflicts="base-chroot"
 repository=cereus-core
 short_desc="Minimal set of packages required for chroot with xbps-src - Cereus patched version"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="Public Domain"
 homepage="https://cereuslinuxproject.github.io"
 

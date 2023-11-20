@@ -5,7 +5,7 @@ revision=2
 build_style=meta
 repository="cereus-core"
 short_desc="Cereus Linux base system meta package for containers/chroots"
-maintainer="Kevin F. <https://github.com/KF-Art>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="Public Domain"
 homepage="https://cereuslinuxproject.github.io"
 
