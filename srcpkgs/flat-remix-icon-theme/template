@@ -1,30 +1,30 @@
 # Template file for 'flat-remix-icon-theme'
 pkgname=flat-remix-icon-theme
-version=2022.05.25
-_datever=${version//./}
+version=2023.06.22
+_version=${version//./}
 revision=1
 build_style=meta
 repository=cereus-extra
-depends="${pkgname}-black \
-    ${pkgname}-blue \
-    ${pkgname}-brown \
-    ${pkgname}-cyan \
-    ${pkgname}-green \
-    ${pkgname}-grey \
-    ${pkgname}-magenta \
-    ${pkgname}-orange \
-    ${pkgname}-red \
-    ${pkgname}-teal \
-    ${pkgname}-violet \
+depends="${pkgname}-black
+    ${pkgname}-blue
+    ${pkgname}-brown
+    ${pkgname}-cyan
+    ${pkgname}-green
+    ${pkgname}-grey
+    ${pkgname}-magenta
+    ${pkgname}-orange
+    ${pkgname}-red
+    ${pkgname}-teal
+    ${pkgname}-violet
     ${pkgname}-yellow"
 nostrip=yes
-wrksrc=flat-remix-${_datever}
-short_desc="Icon theme inspired by material design with colorful palette with some shadows, highlights, and gradients for some depth."
-maintainer="Kevin F. <https://github.com/KF-Art>"
+wrksrc=flat-remix-${_version}
+short_desc="Icon theme inspired by material design with colorful palette with some shadows, highlights, and gradients for some depth"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0"
 homepage="https://github.com/daniruiz/flat-remix"
-distfiles="${homepage}/archive/refs/tags/${_datever}.tar.gz"
-checksum=ffee808b8bc9d9f2a3f6fb5fe22b2674d74b0e78e087f06f6852b4dd6e48b013
+distfiles="${homepage}/archive/refs/tags/${_version}.tar.gz"
+checksum=5d07ed401f31f8fb729983b93f637b8beb73ebb451ffb619f700df7ff0187641
 
 flat-remix-icon-theme-black_package() {
     color=Black
