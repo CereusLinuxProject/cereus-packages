@@ -6,12 +6,12 @@ depends="bash"
 repository=cereus-extra
 wrksrc="ble-${version}"
 short_desc="A replacement for bash's line editor with advanced features"
-maintainer="Kevin F. <kevinfigueroart@proton.me>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="BSD-3-Clause"
-conflicts="blesh-git"
 homepage="https://github.com/akinomyoga/ble.sh"
 distfiles="${homepage}/releases/download/v${version}/ble-${version}.tar.xz"
 checksum=e543a43d211fef8f52b96b2e7935e892581421f759cda4ae87563854ebc60573
+replaces="blesh-git"
 
 do_install() {
 	vmkdir usr/share/blesh 
