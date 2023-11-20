@@ -4,7 +4,7 @@ _realname=${pkgname%-bin}
 _version=119.0.1-1
 version=${_version//-/.}
 revision=1
-archs="x86_64"
+archs="x86_64 i686"
 repository="cereus-extra"
 short_desc="Community-maintained fork of Firefox, focused on privacy, security and freedom - binary-based package"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
@@ -12,9 +12,14 @@ hostmakedepends="tar xz xbps-triggers"
 makedepends="xbps-triggers"
 license="MPL-2.0"
 homepage="https://gitlab.com/librewolf-community"
-distfiles="https://gitlab.com/api/v4/projects/44042130/packages/generic/${_realname}/${_version}/librewolf-${_version}-linux-x86_64-package.tar.bz2"
+distfiles="https://gitlab.com/api/v4/projects/44042130/packages/generic/${_realname}/${_version}/librewolf-${_version}-linux-${XBPS_TARGET_MACHINE}-package.tar.bz2"
 checksum=9423594dce53ccdc114d87ec406b738d543669618c675681a4d2022f8f866556
-#nostrip=yes
+
+if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
+	checksum=9423594dce53ccdc114d87ec406b738d543669618c675681a4d2022f8f866556
+else
+	checksum=8f77f081e9a2322c76063e618081631e7736a0cd0e91b3faaa5022882d812055
+fi
 
 do_extract() {
 	vmkdir opt/${_realname}
