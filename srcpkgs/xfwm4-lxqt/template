@@ -5,7 +5,7 @@ revision=2
 repository="cereus-extra"
 build_style=gnu-configure
 configure_args="--with-locales-dir=/usr/share/locale"
-hostmakedepends="pkg-config intltool awk"
+hostmakedepends="pkg-config intltool"
 makedepends="libxfce4ui-nocsd-devel startup-notification-devel
  libXcomposite-devel libXdamage-devel libXfixes-devel libXrandr-devel
  libXrender-devel libXpresent-devel libwnck-devel"
