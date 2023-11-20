@@ -1,20 +1,19 @@
 # Template file for 'intel-metee'
 pkgname=intel-metee
-version=3.1.5
+version=3.2.4
 revision=1
 wrksrc=metee-${version}
 build_style=cmake
 repository="cereus-extra"
 configure_args="-DBUILD_SHARED_LIBS:BOOL='ON'"
-hostmakedepends="awk"
 makedepends="doxygen"
 short_desc="Access library for Intel CSME HECI interface"
-maintainer="KF-Art <https://github.com/KF-Art>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="Apache-2.0"
 homepage="https://github.com/intel/metee/"
 changelog="${homepage}/releases/tag/${version}"
 distfiles="${homepage}/archive/${version}/${pkgname}-${version}.tar.gz"
-checksum=1085ee44afa7a63d8510a499d6d8bddc56b823025a89fa53c5151b1f3d1a0859
+checksum=af6581beeab660a5519c3cfc751f2bc7a78eca376e43637568991a26bd66ca94
 shlib_provides="libmetee.so.${version}"
 
 post_install() {
