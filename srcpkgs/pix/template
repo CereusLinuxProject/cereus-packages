@@ -1,26 +1,27 @@
 # Template file for 'pix'
 pkgname=pix
-version=2.8.9
-revision=2
+version=3.0.2
+revision=1
 repository=cereus-extra
-build_style=gnu-makefile
-hostmakedepends="awk"
-makedepends="gnome-common make intltool itstool liboauth-devel libchamplain-devel exiv2-devel glib-devel pkg-config yelp-tools gettext-devel libtool gsettings-desktop-schemas-devel libjpeg-turbo-devel tiff-devel gst-plugins-base1-devel gstreamer1-devel libopenraw-devel clutter-devel clutter-gtk-devel liboauth-devel libchamplain-devel brasero-devel libsecret-devel"
+build_style=meson
+makedepends="gnome-common make intltool itstool liboauth-devel libchamplain-devel exiv2-devel glib-devel pkg-config yelp-tools gettext-devel libtool gsettings-desktop-schemas-devel libjpeg-turbo-devel tiff-devel gst-plugins-base1-devel gstreamer1-devel libopenraw-devel clutter-devel clutter-gtk-devel liboauth-devel libchamplain-devel brasero-devel libsecret-devel xapps-devel bison flex libxkbfile-devel"
 depends="desktop-file-utils librsvg clutter-gtk gst-plugins-base1 gsettings-desktop-schemas libwebp webkit2gtk liboauth libchamplain tiff exiv2 libjpeg-turbo"
 short_desc="Image viewer and browser based on gthumb. X-Apps Project."
-maintainer="Kevin F. <kevinfigueroart@proton.me>"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-2.0"
 homepage="https://github.com/linuxmint/pix"
 distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
-checksum=7cb509037b8b712f3be2cfa1cc35491cc95abb2f5a2a966910edf7a172eb98fa
-
-do_configure() {
-	gnome-autogen.sh --prefix="/usr" \
-        --localstatedir="/var" \
-        --libexecdir="/usr/libexec/${pkgname}" \
-        -disable-static
-}
+checksum=dfe0f96420b1cf28051a6802d8105264b72a7d44334b122be7848009c2dcd1e6
 
 post_install() {
 	vlicense COPYING
+}
+
+pix-devel_package() {
+	depends="${sourcepkg}>=${version}_${revision} xapps-devel"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+	}
 }
