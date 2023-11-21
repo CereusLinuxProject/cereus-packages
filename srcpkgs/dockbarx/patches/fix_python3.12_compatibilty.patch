@@ -1,0 +1,47 @@
+From ecfe511bfa74cc3f5d92448106805dbe8c90efea Mon Sep 17 00:00:00 2001
+From: Xu Zhen <xuzhen@users.noreply.github.com>
+Date: Tue, 21 Nov 2023 20:34:18 +0800
+Subject: [PATCH] Fix compatibility with python 3.12
+
+---
+ README.md           | 2 +-
+ dockbarx/applets.py | 6 ++++--
+ 2 files changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/README.md b/README.md
+index ab910d4..e9ae2d2 100644
+--- a/README.md
++++ b/README.md
+@@ -45,7 +45,7 @@ https://aur.archlinux.org/packages/xfce4-dockbarx-plugin/
+ ## Manual Installation
+ 
+ 1. Following dependencies needs to be installed (many of them might be installed already on your system):
+-  - gir1.2-gtk-3.0 (>= 3.22), gir1.2-glib-2.0 (>= 1.40), gir1.2-keybinder-3.0, gir1.2-pango-1.0, gir1.2-wnck-3.0, python3-cairo (>= 1.11.0), python3-dbus, python3-distutils, python3-gi, python3-gi-cairo, python3-pil, python3-polib, python3-xdg and python3-xlib.
++  - gir1.2-gtk-3.0 (>= 3.22), gir1.2-glib-2.0 (>= 1.40), gir1.2-keybinder-3.0, gir1.2-pango-1.0, gir1.2-wnck-3.0, python3 (>= 3.4), python3-cairo (>= 1.11.0), python3-dbus, python3-distutils, python3-gi, python3-gi-cairo, python3-pil, python3-polib, python3-xdg and python3-xlib.
+   - (Optional) gir1.2-zeitgeist-2.0 and zeitgeist, to access latest and most used documents.
+   - (Optional) indicator-application or ayatana-indicator-application, to use the appindicator applet with DockX
+   - (Optional) python3-pyudev (>= 0.15), to use the battery status applet with DockX
+diff --git a/dockbarx/applets.py b/dockbarx/applets.py
+index 881a35a..9fba5e2 100644
+--- a/dockbarx/applets.py
++++ b/dockbarx/applets.py
+@@ -22,7 +22,7 @@
+ from gi.repository import Gtk
+ from gi.repository import Gdk
+ import os
+-import imp
++import importlib.util
+ import dbus
+ import weakref
+ from gi.repository import GObject
+@@ -213,7 +213,9 @@ def get(self, name):
+         iname, ext = os.path.splitext(os.path.split(e)[-1])
+         path = os.path.join(self.applets[name]["dir"], e)
+         try:
+-            applet = imp.load_source(iname, path)
++            spec = importlib.util.spec_from_file_location(iname, path)
++            applet = importlib.util.module_from_spec(spec)
++            spec.loader.exec_module(applet)
+         except:
+             message = "Error: Could not load applet from %s. " % path
+             message += "Could not import the script."
