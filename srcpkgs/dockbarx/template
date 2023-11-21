@@ -5,8 +5,8 @@ _pkgrel=${version//.b/-b}
 revision=1
 repository="cereus-extra"
 build_style=python3-module
-hostmakedepends="python3-polib python3-setuptools python3-distutils-extra"
-depends="libkeybinder3 python3-cairo python3-dbus python3-gobject python3-Pillow python3-distutils-extra
+hostmakedepends="python3-polib python3-setuptools"
+depends="libkeybinder3 python3-cairo python3-dbus python3-gobject python3-Pillow
 python3-xlib python3-xdg"
 short_desc="TaskBar with groupping and group manipulation"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
