@@ -1,7 +1,7 @@
 # Template file for 'librewolf-musl'
 pkgname=librewolf-musl
 _realname=librewolf
-_version=119.0.1-1
+_version=120.0-1
 version=${_version//-/.}
 revision=1
 archs="x86_64-musl"
