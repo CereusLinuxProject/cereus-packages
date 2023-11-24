@@ -1,7 +1,7 @@
 # Template file for 'xfwm4-gaps'
 pkgname=xfwm4-gaps
 version=4.18.0
-revision=2
+revision=3
 repository="cereus-extra"
 build_style=gnu-configure
 configure_args="--with-locales-dir=/usr/share/locale"
@@ -13,7 +13,7 @@ depends="hicolor-icon-theme desktop-file-utils"
 short_desc="Next generation window manager (patched with window gaps support)"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 replaces="xfwm4"
-conflicts="xfwm4-lxqt" # This one already ships the same gaps patch
+conflicts="xfwm4 xfwm4-lxqt"
 license="GPL-2.0-or-later"
 homepage="https://xfce.org/"
 distfiles="https://archive.xfce.org/src/xfce/xfwm4/${version%.*}/xfwm4-${version}.tar.bz2"
