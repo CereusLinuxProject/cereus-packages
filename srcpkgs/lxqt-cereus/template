@@ -1,7 +1,7 @@
 # Template file for 'lxqt-cereus'
 pkgname=lxqt-cereus
 version=1.4.0
-revision=1
+revision=2
 repository="cereus-core"
 build_style=meta
 depends="
@@ -18,7 +18,7 @@ depends="
 	lxqt-runner>=${version}
 	lxqt-session>=${version}
 	lxqt-sudo>=${version}
-	lxqt-themes>=${version}
+	lxqt-themes
 	pcmanfm-qt>=${version}
 	lximage-qt>=${version}
 	lxqt-archiver
