@@ -1,6 +1,6 @@
 # Template file for 'xed-xapps'
 pkgname=xed-xapps
-version=3.4.3
+version=3.4.4
 revision=1
 nostrip=yes
 wrksrc=xed-${version}
@@ -14,7 +14,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-2.0"
 homepage="https://github.com/linuxmint/xed"
 distfiles="${homepage}/archive/${version}.tar.gz"
-checksum=3d75b7b43294519c2c583a851cd8e7aca9a729146061c95c140acf23c7430316
+checksum=9100ccf0186a2bd3d6b990d0d255b8cd5c1c9e37debcc6f010d290bdda378f8a
 
 xed-xapps-devel_package() {
 	depends="${sourcepkg}>=${version}_${revision} xapps-devel"
