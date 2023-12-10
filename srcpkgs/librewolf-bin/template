@@ -1,11 +1,12 @@
 # Template file for 'librewolf-bin'
 pkgname=librewolf-bin
 _realname=${pkgname%-bin}
-_version=120.0-1
+_version=120.0.1-1
 version=${_version//-/.}
 revision=1
 archs="x86_64 i686"
 repository="cereus-extra"
+build_style="fetch"
 short_desc="Community-maintained fork of Firefox, focused on privacy, security and freedom - binary-based package"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 hostmakedepends="tar xz xbps-triggers"
@@ -13,20 +14,16 @@ makedepends="xbps-triggers"
 license="MPL-2.0"
 homepage="https://gitlab.com/librewolf-community"
 distfiles="https://gitlab.com/api/v4/projects/44042130/packages/generic/${_realname}/${_version}/librewolf-${_version}-linux-${XBPS_TARGET_MACHINE}-package.tar.bz2"
-checksum=9423594dce53ccdc114d87ec406b738d543669618c675681a4d2022f8f866556
 
 if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
-	checksum=8ffc047b8cc450fdde0c451ae26e84c730343c48a7763fd36081767b0a9c90f0
+	checksum=727c0ba648259d435edcc4d6e021681464048089e4ce0697568031977f077098
 else
-	checksum=0fafea525be22f615498784e2cb91c786afeda1fdc9ea093dee1de081547b745
+	checksum=f1b9c9ada4439bd5bb3b4d2fccd1ff972ab2448682fa499ddb5b0038a19f3479
 fi
 
-do_extract() {
-	vmkdir opt/${_realname}
-	bsdtar -C ${DESTDIR}/opt/ -xf ${XBPS_SRCDISTDIR}/${pkgname}-${version}/librewolf-${_version}-linux-x86_64-package.tar.bz2
-}
-
 do_install() {
+	vmkdir opt/${_realname}
+	bsdtar -C ${DESTDIR}/opt/ -xf librewolf-${_version}-linux-${XBPS_TARGET_MACHINE}-package.tar.bz2
     vmkdir usr/bin
     ln -rs ${DESTDIR}/opt/${_realname}/${_realname} ${DESTDIR}/usr/bin
 
