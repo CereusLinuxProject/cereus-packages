@@ -1,8 +1,9 @@
 # Template file for 'brave-bin'
 pkgname=brave-bin
-version=1.60.118
+version=1.61.101
 revision=1
 archs="x86_64"
+build_style="fetch"
 repository="cereus-extra"
 short_desc="Secure, fast and private web browser with ad blocker"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
@@ -10,14 +11,10 @@ hostmakedepends="tar xz"
 license="MPL-2.0"
 homepage="https://brave.com"
 distfiles="https://github.com/brave/brave-browser/releases/download/v${version}/brave-browser_${version}_amd64.deb"
-checksum=2e8f45ef3f2024944877b2c17d54e3d7c0bae6cc03afc0bb32dd603665e84a86
-
-do_extract() {
-	mkdir -p ${DESTDIR}
-	ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/brave-browser_${version}_amd64.deb
-}
+checksum=b3e6234d9b3e753fd3fcc4b3380bd7307cddde958c6cb6bcbfd6a69dddacaa7b
 
 do_install() {
+	ar x brave-browser_${version}_amd64.deb
 	tar xf data.tar.xz -C ${DESTDIR}
 
 	# Install the icons
