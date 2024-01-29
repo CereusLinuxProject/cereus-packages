@@ -8,22 +8,30 @@ install_base_chroot() {
         XBPS_TARGET_PKG="$1"
     fi
     # binary bootstrap
-    msg_normal "xbps-src: installing base-chroot-cereus...\n"
+    msg_normal "xbps-src: installing base-chroot...\n"
     # XBPS_TARGET_PKG == arch
     if [ "$XBPS_TARGET_PKG" ]; then
         _bootstrap_arch="env XBPS_TARGET_ARCH=$XBPS_TARGET_PKG"
     fi
     (export XBPS_MACHINE=$XBPS_TARGET_PKG XBPS_ARCH=$XBPS_TARGET_PKG; chroot_sync_repodata)
-    ${_bootstrap_arch} $XBPS_INSTALL_CMD ${XBPS_INSTALL_ARGS} -y base-chroot-cereus
+    # Fix cyclic between glibc and libxcrypt-compat
+    case "$XBPS_MACHINE" in
+        *-musl)
+            ${_bootstrap_arch} $XBPS_INSTALL_CMD ${XBPS_INSTALL_ARGS} -y base-chroot
+            ;;
+        *)
+            ${_bootstrap_arch} $XBPS_INSTALL_CMD ${XBPS_INSTALL_ARGS} -y base-chroot glibc libxcrypt-compat
+            ;;
+    esac
     if [ $? -ne 0 ]; then
-        msg_error "xbps-src: failed to install base-chroot-cereus!\n"
+        msg_error "xbps-src: failed to install base-chroot!\n"
     fi
     # Reconfigure base-files to create dirs/symlinks.
     if xbps-query -r $XBPS_MASTERDIR base-files &>/dev/null; then
         XBPS_ARCH=$XBPS_TARGET_PKG xbps-reconfigure -r $XBPS_MASTERDIR -f base-files &>/dev/null
     fi
 
-    msg_normal "xbps-src: installed base-chroot-cereus successfully!\n"
+    msg_normal "xbps-src: installed base-chroot successfully!\n"
     chroot_prepare $XBPS_TARGET_PKG || msg_error "xbps-src: failed to initialize chroot!\n"
     chroot_check
     chroot_handler clean
@@ -34,7 +42,7 @@ reconfigure_base_chroot() {
     local pkgs="glibc-locales ca-certificates"
     [ -z "$IN_CHROOT" -o -e $statefile ] && return 0
     # Reconfigure ca-certificates.
-    msg_normal "xbps-src: reconfiguring base-chroot-cereus...\n"
+    msg_normal "xbps-src: reconfiguring base-chroot...\n"
     for f in ${pkgs}; do
         if xbps-query -r $XBPS_MASTERDIR $f &>/dev/null; then
             xbps-reconfigure -r $XBPS_MASTERDIR -f $f
@@ -51,7 +59,7 @@ update_base_chroot() {
     if $(${XBPS_INSTALL_CMD} ${XBPS_INSTALL_ARGS} -nu|grep -q xbps); then
         ${XBPS_INSTALL_CMD} ${XBPS_INSTALL_ARGS} -yu xbps || msg_error "xbps-src: failed to update xbps!\n"
     fi
-    ${XBPS_INSTALL_CMD} ${XBPS_INSTALL_ARGS} -yu || msg_error "xbps-src: failed to update base-chroot-cereus!\n"
+    ${XBPS_INSTALL_CMD} ${XBPS_INSTALL_ARGS} -yu || msg_error "xbps-src: failed to update base-chroot!\n"
     msg_normal "xbps-src: cleaning up $XBPS_MASTERDIR masterdir...\n"
     [ -z "$XBPS_KEEP_ALL" -a -z "$XBPS_SKIP_DEPS" ] && remove_pkg_autodeps
     [ -z "$XBPS_KEEP_ALL" -a -z "$keep_all_force" ] && rm -rf $XBPS_MASTERDIR/builddir $XBPS_MASTERDIR/destdir
@@ -309,6 +317,9 @@ chroot_sync_repodata() {
     # Copy xbps repository keys to the masterdir.
     mkdir -p $XBPS_MASTERDIR/var/db/xbps/keys
     cp -f $XBPS_COMMONDIR/repo-keys/*.plist $XBPS_MASTERDIR/var/db/xbps/keys
+    if [ -n "$(shopt -s nullglob; echo "$XBPS_DISTDIR"/etc/repo-keys/*.plist)" ]; then
+        cp -f "$XBPS_DISTDIR"/etc/repo-keys/*.plist "$XBPS_MASTERDIR"/var/db/xbps/keys
+    fi
 
     # Make sure to sync index for remote repositories.
     if [ -z "$XBPS_SKIP_REMOTEREPOS" ]; then
