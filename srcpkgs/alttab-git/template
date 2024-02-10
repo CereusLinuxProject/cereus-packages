@@ -1,6 +1,6 @@
 # Template file for 'alttab-git'
 pkgname=alttab-git
-version=2023.07.29
+version=2024.02.09
 revision=1
 build_style=gnu-configure
 hostmakedepends="pkg-config git"
