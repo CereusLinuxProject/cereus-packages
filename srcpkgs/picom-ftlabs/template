@@ -1,6 +1,6 @@
 # Template file for 'picom-ftlabs'
 pkgname="picom-ftlabs"
-version=2023.11.10
+version=2024.02.09
 revision=1
 build_style=meson
 configure_args="-Dwith_docs=true"
