@@ -1,25 +1,25 @@
 # Template file for 'onlyoffice-desktopeditors'
 pkgname=onlyoffice-desktopeditors
-version=7.5.1
+version=8.0.0
 revision=1
 archs="x86_64"
 repository="cereus-extra"
+build_style=fetch
 hostmakedepends="tar xz"
-depends="libstdc++ curl xdg-utils dejavu-fonts-ttf GConf"
+depends="libstdc++ curl xdg-utils dejavu-fonts-ttf liberation-fonts-ttf
+ font-crosextra-carlito-ttf gst-plugins-ugly1 nss nspr alsa-lib gst-plugins-base1
+ libpulseaudio gtk+3 desktop-file-utils hicolor-icon-theme gstreamer1"
 short_desc="OnlyOffice office suite for desktops"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="AGPL-3.0"
 homepage="https://www.onlyoffice.com"
 distfiles="https://github.com/ONLYOFFICE/DesktopEditors/releases/download/v${version}/onlyoffice-desktopeditors_amd64.deb"
 changelog="https://github.com/ONLYOFFICE/DesktopEditors/blob/master/CHANGELOG.md"
-checksum=1dfe4235b51432e1d91c36377e00f8aa917850049ebec70af034d995abb21e16
+checksum=62d4767e201130ac3c74e8003d760cf961709a129946c208050613c69a6edc5d
 nostrip=yes
 
-do_extract() {
-    mkdir -p ${DESTDIR}
-    ar x ${XBPS_SRCDISTDIR}/${pkgname}-${version}/onlyoffice-desktopeditors_amd64.deb
-}
-
 do_install() {
+    mkdir -p ${DESTDIR}
+    ar x onlyoffice-desktopeditors_amd64.deb
     tar -xf data.tar.xz -C ${DESTDIR}
 }
