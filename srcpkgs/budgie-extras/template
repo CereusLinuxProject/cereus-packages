@@ -1,6 +1,6 @@
 # Template file for 'budgie-extras'
 pkgname=budgie-extras
-version=1.7.0
+version=1.8.0
 revision=1
 repository=cereus-extra
 build_style=meson
@@ -12,7 +12,7 @@ license="GPL-3.0-or-later"
 homepage="https://github.com/UbuntuBudgie/budgie-extras"
 changelog="${homepage}/releases/tag/v${version}"
 distfiles="${homepage}/releases/download/v${version}/${pkgname}-${version}.tar.xz"
-checksum=9605a79006dadc293ea7e4dbbf01dbf411c732a7fa82252ba29664fbd962d89c
+checksum=7d72ed2d94b89e8f0a119c522acb34e6324ff6fa777bc9ed83e8caaf5101304a
 
 post_install() {
     vlicense LICENSE
