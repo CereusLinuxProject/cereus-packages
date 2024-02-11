@@ -1,10 +1,10 @@
 # Template file for 'betterlockscreen-gui'
 pkgname=betterlockscreen-gui
 version=2023.01.28
-revision=1
+revision=2
 repository="cereus-extra"
 hostmakedepends="git"
-depends="python3-psutil betterlockscreen python3-gobject pygtk resolution-hooks bc"
+depends="python3-psutil betterlockscreen python3-gobject resolution-hooks bc"
 short_desc="Betterlockscreen GUI configuration tool"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
