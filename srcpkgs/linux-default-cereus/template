@@ -1,6 +1,6 @@
 # Template file for 'linux-default-cereus'
 pkgname=linux-default-cereus
-version=6.1
+version=6.6
 revision=1
 build_style=meta
 repository="cereus-core"
