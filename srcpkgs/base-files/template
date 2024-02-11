@@ -1,6 +1,6 @@
 # Template file for 'base-files'
 pkgname=base-files
-version=2023.11.12
+version=2024.02.10
 revision=1
 bootstrap=yes
 repository=cereus-core
@@ -48,8 +48,8 @@ do_install() {
 		ln -snrf "${DESTDIR}/usr/lib" \
 			"${DESTDIR}/${d}${XBPS_TARGET_WORDSIZE}"
 	done
-	# Populate 32-bit lib files on 64-bit systems, for multilib.
-	if [ "${XBPS_TARGET_WORDSIZE}" = "64" ]; then
+	# Populate 32-bit lib files on 64-bit glibc systems, for multilib.
+	if [ "${XBPS_TARGET_WORDSIZE}" = "64" ] && [ "${XBPS_TARGET_LIBC}" = "glibc" ]; then
 		vmkdir usr/lib32
 		ln -snrf "${DESTDIR}/usr/lib32" "${DESTDIR}/lib32"
 		ln -sf ../lib/locale "${DESTDIR}/usr/lib32/locale"
