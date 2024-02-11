@@ -1,6 +1,6 @@
 # Template file for 'picom-git'
 pkgname="picom-git"
-version=2023.10.16
+version=2024.02.10
 revision=1
 build_style=meson
 configure_args="-Dwith_docs=true"
@@ -9,7 +9,7 @@ makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre2-devel
  pixman-devel xcb-util-image-devel xcb-util-renderutil-devel
  libxdg-basedir-devel uthash libglvnd-devel"
 depends="desktop-file-utils"
-short_desc="Lightweight compositor for X11 (previously a compton fork) - git branch"
+short_desc="Lightweight compositor for X11 (previously a compton fork) - git development branch"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT, MPL-2.0"
 homepage="https://github.com/yshui/picom/"
