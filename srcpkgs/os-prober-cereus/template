@@ -2,8 +2,9 @@
 pkgname=os-prober-cereus
 version=1.81
 revision=1
-repository="cereus-core"
+repository="cereus-extra"
 conflicts="os-prober"
+replaces="os-prober"
 build_style=gnu-makefile
 make_dirs="/var/lib/os-prober 0755 root root"
 short_desc="Utility to detect other OSes on a set of drives (with additional patches to detect btrfs systems and other systems)"
