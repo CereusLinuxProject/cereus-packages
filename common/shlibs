@@ -4276,8 +4276,8 @@ libunicode_ucd.so.0.4 libunicode-0.4.0_1
 libunicode_loader.so.0.4 libunicode-0.4.0_1
 
 # Cereus Linux custom shlibs
-libcalamares.so.3.2.62 calamares-3.2.62_2
-libcalamaresui.so.3.2.62 calamares-3.2.62_2
+libcalamares.so.3.3 calamares-3.3.1_1
+libcalamaresui.so.3.3 calamares-3.3.1_1
 libvulkan.so.1 heroic-bin-2.4.3_1
 libvulkan.so.1 brave-bin-1.39.122_1
 libxviewer.so xviewer-3.2.10_2
