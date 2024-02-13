@@ -1,8 +1,8 @@
 # Template file for 'Graphite-gtk-theme'
 pkgname=Graphite-gtk-theme
-version=2023.05.17
+version=2023.12.31
 date=${version//./-}
-revision=2
+revision=1
 repository="cereus-extra"
 wrksrc=Graphite-gtk-theme-${date}
 theme_dir=usr/share/themes
@@ -29,7 +29,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0"
 homepage="https://github.com/vinceliuice/Graphite-gtk-theme"
 distfiles="${homepage}/archive/refs/tags/${date}.tar.gz"
-checksum=aa212d71ba70cfbc3038fc0f850b1265a9d85a3a87ae1a9da024127e25f53903
+checksum=b21c3803d2c34928b2f05c6bc9e58995545e135de780ffffc143027b33df4bac
 
 Graphite-gtk-theme-black_package() {
     nostrip=yes
