@@ -1,7 +1,7 @@
 # Template file for 'librewolf-bin'
 pkgname=librewolf-bin
 _realname=${pkgname%-bin}
-_version=120.0.1-1
+_version=122.0-2
 version=${_version//-/.}
 revision=1
 archs="x86_64 i686"
@@ -16,9 +16,9 @@ homepage="https://gitlab.com/librewolf-community"
 distfiles="https://gitlab.com/api/v4/projects/44042130/packages/generic/${_realname}/${_version}/librewolf-${_version}-linux-${XBPS_TARGET_MACHINE}-package.tar.bz2"
 
 if [ "$XBPS_TARGET_MACHINE" = "x86_64" ]; then
-	checksum=727c0ba648259d435edcc4d6e021681464048089e4ce0697568031977f077098
+	checksum=5a876b6148d736902318d2750561a2423d72b149040225bb12d48eb1be9558bc
 else
-	checksum=f1b9c9ada4439bd5bb3b4d2fccd1ff972ab2448682fa499ddb5b0038a19f3479
+	checksum=f08b5bac7084ab0b01c17434c7df965757b81bdb35df4c77c82b487b96ca037f
 fi
 
 do_install() {
