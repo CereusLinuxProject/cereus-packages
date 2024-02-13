@@ -1,6 +1,6 @@
 # Template file for 'flat-remix-icon-theme'
 pkgname=flat-remix-icon-theme
-version=2023.06.22
+version=2024.02.01
 _version=${version//./}
 revision=1
 build_style=meta
@@ -24,7 +24,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0"
 homepage="https://github.com/daniruiz/flat-remix"
 distfiles="${homepage}/archive/refs/tags/${_version}.tar.gz"
-checksum=5d07ed401f31f8fb729983b93f637b8beb73ebb451ffb619f700df7ff0187641
+checksum=f4ad5c51cfa72ccb6829b53f704529e96e44ef076fa58178132e56459a325702
 
 flat-remix-icon-theme-black_package() {
     color=Black
