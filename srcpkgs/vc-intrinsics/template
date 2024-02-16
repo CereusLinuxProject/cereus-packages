@@ -1,19 +1,19 @@
 # Template file for 'vc-intrinsics'
 pkgname=vc-intrinsics
-version=0.14.0
+version=0.17.0
 revision=1
 build_style=cmake
 configure_args="-DLLVM_DIR=/usr/lib/cmake/llvm"
 repository="cereus-extra"
 hostmakedepends="clang"
-makedepends="python3-devel llvm libllvm12 clang-tools-extra"
+makedepends="python3-devel llvm17-devel clang-tools-extra"
 short_desc="Set of new intrinsics on top of core LLVM IR instructions that represent SIMD semantics of a program targeting GPU"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT"
 homepage="https://github.com/intel/vc-intrinsics"
 changelog="${homepage}/releases/tag/v${version}"
 distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
-checksum=7383df91f6b5049f2059f321e30cae0171859310252e7bd06dcbd4c36c5ec5c3
+checksum=25a54888ec2fb4d6def6916a63954ac4d4b4d7bf3e64049b44e8bad508913314
 
 post_install() {
     vlicense LICENSE.md
