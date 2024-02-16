@@ -1,0 +1,37 @@
+# Template file for 'cemu-bin'
+pkgname=cemu-bin
+version=2.0.65
+_srcver=${version%.*}-${version##*.}
+revision=1
+archs="x86_64"
+hostmakedepends="wget"
+depends="at-spi2-core cairo libgcc gdk-pixbuf glib glu gtk+3 harfbuzz hicolor-icon-theme
+	libglvnd libICE libpng libSM libX11 libXext libxkbcommon libXrender pango"
+short_desc="Nintendo Wii U Emulator - precompiled binaries"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
+repository="cereus-extra"
+license="MPL-2.0"
+homepage="https://cemu.info"
+changelog="https://github.com/cemu-project/Cemu/compare/v${_srcver}...main"
+distfiles="https://github.com/cemu-project/Cemu/releases/download/v$_srcver/cemu-$_srcver-ubuntu-22.04-x64.zip"
+checksum="91ecc5ac7576dd68984b5dd15d34350f10ae6b74174660c09ac55b9fb5a727f5"
+_resourcefiles="https://raw.githubusercontent.com/cemu-project/Cemu/main/dist/linux/info.cemu.Cemu.desktop
+	https://github.com/cemu-project/Cemu/raw/main/dist/linux/info.cemu.Cemu.png
+	https://raw.githubusercontent.com/cemu-project/Cemu/main/dist/linux/info.cemu.Cemu.metainfo.xml"
+	
+do_install() {
+	vbin Cemu cemu
+	vmkdir usr/share/Cemu
+	for dir in gameProfiles resources shaderCache; do
+		vcopy ${dir} usr/share/Cemu
+	done
+
+	for res in ${_resourcefiles}; do
+		wget ${res}
+	done
+
+	sed -i -e '/^Exec=Cemu/cExec=cemu' info.cemu.Cemu.desktop
+	vinstall info.cemu.Cemu.desktop 644 usr/share/applications
+	vinstall info.cemu.Cemu.png 644 usr/share/icons/hicolor/128x128/apps
+	vinstall info.cemu.Cemu.metainfo.xml 644 usr/share/metainfo
+}
