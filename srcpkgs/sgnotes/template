@@ -1,0 +1,25 @@
+# Template file for 'sgnotes'
+pkgname=sgnotes
+version=2023.10.22
+revision=1
+build_style=gnu-makefile
+hostmakedepends="git"
+makedepends="gtk+3-devel gtksourceview-devel pkg-config"
+short_desc="Simple GTK Notes App"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
+repository="cereus-extra"
+license="GPL-3.0-or-later"
+homepage="https://github.com/sgde/sgnotes"
+
+do_fetch() {
+	git clone ${homepage} ${wrksrc}
+}
+
+do_build() {
+	make
+}
+
+do_install() {
+	vbin sgnotes
+	vinstall sgnotes.desktop 644 usr/share/applications
+}
