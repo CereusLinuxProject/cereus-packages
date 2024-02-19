@@ -4309,3 +4309,4 @@ libocloc.so intel-compute-runtime-bin-devel-22.43.24558_1
 libxplayer-plparser.so.18 xplayer-plparser-1.0.3_1
 libtouche.so.0 touche-2.0.9_1
 libtouche.so touche-devel-2.0.9_1
+libcrypto.so.1.1 libcrypto1.1-1.1.1t_2
