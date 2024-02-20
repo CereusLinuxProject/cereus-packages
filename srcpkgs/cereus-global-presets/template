@@ -1,15 +1,13 @@
 # Template file for 'cereus-global-presets'
 pkgname=cereus-global-presets
-version=2023.01.28
+version=2024.02.20
 revision=1
 repository="cereus-core"
 conf_files="
-    /etc/pipewire/pipewire.conf
     /etc/skel/.profile
-    /etc/xdg/autostart/*.desktop
     /etc/bash/bashrc.d/*.sh"
 hostmakedepends="git"
-depends="cereus-themes-presets bluez gst-libav libva-utils gst-plugins-base1 gst-plugins-good1 libcups-filters python3-cups python3-cupshelpers system-config-printer system-config-printer-udev vpm vsv numlockx xdg-user-dirs octoxbps-git touchegg plymouth cereus-plymouth-theme sof-firmware libspa-bluetooth NetworkManager chrony elogind alsa-pipewire pipewire gstreamer1-pipewire wireplumber pulseaudio-utils"
+depends="cereus-themes-presets bluez gst-libav libva-utils gst-plugins-base1 gst-plugins-good1 libcups-filters python3-cups python3-cupshelpers system-config-printer system-config-printer-udev vpm vsv numlockx xdg-user-dirs octoxbps-git touchegg plymouth cereus-plymouth-theme sof-firmware libspa-bluetooth NetworkManager chrony elogind alsa-pipewire pipewire gstreamer1-pipewire wireplumber pulseaudio-utils polyglot-prompt"
 short_desc="Cereus Linux global default configurations"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
@@ -22,15 +20,8 @@ do_fetch() {
 
 do_install() {
     cd global/etc
-    vinstall pipewire/pipewire.conf 0644 /etc/pipewire/
-
     vinstall skel/.profile 0644 /etc/skel/
-    for f in octoxbps-notifier pipewire touchegg; do
-        vinstall xdg/autostart/${f}.desktop 0644 /etc/xdg/autostart/
-    done
-    
+
     cd bash/bashrc.d
-    for f in 99-ble 10-cereus-prompt; do
-        vinstall ${f}.sh 0644 /etc/bash/bashrc.d/
-    done
+    vinstall 10-polyglot-prompt.sh 0644 /etc/bash/bashrc.d/
 }
