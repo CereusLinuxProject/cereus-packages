@@ -1,13 +1,13 @@
 # Template file for 'picom-git'
 pkgname="picom-git"
-version=2024.02.10
+version=2024.02.19
 revision=1
 build_style=meson
 configure_args="-Dwith_docs=true"
 hostmakedepends="pkg-config asciidoc git"
 makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre2-devel
  pixman-devel xcb-util-image-devel xcb-util-renderutil-devel
- libxdg-basedir-devel uthash libglvnd-devel"
+ libxdg-basedir-devel uthash libglvnd-devel libepoxy-devel"
 depends="desktop-file-utils"
 short_desc="Lightweight compositor for X11 (previously a compton fork) - git development branch"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
