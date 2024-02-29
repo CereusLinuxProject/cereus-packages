@@ -1,31 +1,31 @@
 # Template file for 'calamares'
 pkgname=calamares
-version=3.3.1
+version=3.3.4
 revision=1
 build_style=cmake
 repository=cereus-extra
 configure_args="-DCMAKE_BUILD_TYPE=Release
-    -DCMAKE_INSTALL_PREFIX=/usr
-    -DCMAKE_INSTALL_LIBDIR=lib
     -DWITH_PYTHONQT:BOOL=ON
     -DINSTALL_CONFIG:BOOL=ON
     -DINSTALL_POLKIT:BOOL=ON
     -DBoost_NO_BOOST_CMAKE=ON
-    -DSKIP_MODULES='webview;interactiveterminal;services-systemd;dummyprocess;dummypython;dummycpp;dummypythonqt'"
+    -DBUILD_APPSTREAM:BOOL=OFF
+    -DBUILD_APPDATA:BOOL=OFF
+    -DSKIP_MODULES='webview;interactiveterminal;services-systemd;dummyprocess;dummypython;dummycpp;dummypythonqt;oemid;tracking;'"
 hostmakedepends="git extra-cmake-modules pkg-config gettext
     ckbcomp kcoreaddons kdelibs4support python3-yaml clang"
 makedepends="python3-devel python3-jsonschema yaml-cpp-devel qt5-devel python3-devel kpmcore-devel
-    qt5-tools qt5-translations qt5-svg-devel
-    libpwquality AppStream-qt plasma-framework-devel qt5-webengine"
+    qt5-tools qt5-translations qt5-svg-devel libpwquality plasma-framework-devel
+    qt5-webengine libxcrypt-devel"
 depends="kconfig kcoreaddons kiconthemes ki18n kio ksolid yaml-cpp kpmcore boost ckbcomp
     hardinfo qt5-svg polkit-qt5 gtk-update-icon-cache plasma-framework qt5-xmlpatterns
-    squashfs-tools libpwquality AppStream-qt icu"
+    squashfs-tools libpwquality icu"
 short_desc="Distribution-independent installer framework"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
 homepage="https://calamares.io"
 distfiles="https://github.com/${pkgname}/${pkgname}/releases/download/v${version}/${pkgname}-${version}.tar.gz"
-checksum=c5a6dd7d2fb7dc5d8a863f37f6f64782b88f79e341f7bf8504eb98dc31f714ef
+checksum=c2a2f175b1dbc3179beb18a4c7c0a698066f8563c21d5280c974d0083c0fd4db
 
 case ${XBPS_TARGET_MACHINE} in
 	*-musl)
