@@ -1,14 +1,15 @@
 # Template file for 'picom-ftlabs'
 pkgname="picom-ftlabs"
-version=2024.02.09
+version=2024.02.16
 revision=1
 build_style=meson
 configure_args="-Dwith_docs=true"
-hostmakedepends="pkg-config asciidoc git"
+hostmakedepends="pkg-config asciidoc"
 makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre2-devel
  pixman-devel xcb-util-image-devel xcb-util-renderutil-devel
- libxdg-basedir-devel uthash libglvnd-devel"
+ libxdg-basedir-devel uthash libglvnd-devel libepoxy-devel"
 depends="desktop-file-utils"
+_commit="df4c6a3d9b11e14ed7f3142540babea4c775ddb1"
 short_desc="Picom fork which features more than 10 unique animation supported (open window, tag change, fading ...)"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT, MPL-2.0"
@@ -17,10 +18,8 @@ repository="cereus-extra"
 provides="picom"
 conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-arian8j2 picom-dccsillag picom-git"
 replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-arian8j2 picom-dccsillag picom-git"
-
-do_fetch() {
-	git clone --depth=1 ${homepage} ${wrksrc}
-}
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=5f02e1ac8a24624206f447f6de217fca8abdbe1019056378d3ca356cc4f55675
 
 post_install() {
 	vlicense LICENSES/MIT
