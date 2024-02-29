@@ -1,19 +1,19 @@
 # Template file for 'ds4drv'
 pkgname=ds4drv
-version=0.5.1
+version=2021.04.19
 revision=1
 build_style=python3-module
 repository="cereus-extra"
-hostmakedepends="git"
 makedepends="python3-devel python3-setuptools"
 depends="python3-pyudev python3-evdev"
-short_desc="A Sony DualShock 4 userspace driver for Linux"
+_commit=a58f63b70f8d8efa33e5e82a8888a1e08754aeed
+short_desc="A Sony DualShock 4 userspace driver for Linux (with basic support of cemuhook's UDP protocol)"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT"
-homepage="https://github.com/chrippa/ds4drv"
-changelog="${homepage}/releases/tag/v${version}"
-distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
-checksum=da6841c17af0fc019abfe9e65d3f2a6fab3ced40294dc7391dc3e954e04479f8
+homepage="https://github.com/TheDrHax/ds4drv-cemuhook"
+changelog="${homepage}/commit/${_commit}"
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=a95595c70f9a8ea7a9d692f38ba6663da73bec194bb2e253b918bf539792b207
 
 post_install() {
 	vlicense LICENSE
