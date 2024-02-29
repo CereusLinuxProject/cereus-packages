@@ -1,6 +1,6 @@
 # Template file for 'onlyoffice-desktopeditors'
 pkgname=onlyoffice-desktopeditors
-version=8.0.0
+version=8.0.1
 revision=1
 archs="x86_64"
 repository="cereus-extra"
@@ -15,7 +15,7 @@ license="AGPL-3.0"
 homepage="https://www.onlyoffice.com"
 distfiles="https://github.com/ONLYOFFICE/DesktopEditors/releases/download/v${version}/onlyoffice-desktopeditors_amd64.deb"
 changelog="https://github.com/ONLYOFFICE/DesktopEditors/blob/master/CHANGELOG.md"
-checksum=62d4767e201130ac3c74e8003d760cf961709a129946c208050613c69a6edc5d
+checksum=5978cf746c3074ed77becc95613ba82e031e76c0034bc68ebd92fe73071c0564
 nostrip=yes
 
 do_install() {
