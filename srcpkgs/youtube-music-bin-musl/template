@@ -1,6 +1,6 @@
 # Template file for 'youtube-music-bin-musl'
 pkgname=youtube-music-bin-musl
-version=3.2.2
+version=3.3.2
 revision=1
 repository="cereus-extra"
 archs="x86_64-musl"
