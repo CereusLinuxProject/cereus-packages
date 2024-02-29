@@ -1,0 +1,38 @@
+# Template file for 'freetube'
+pkgname=freetube
+version=0.19.2
+revision=1
+archs="x86_64 x86_64-musl"
+hostmakedepends="yarn jq moreutils app-builder nodejs tar"
+depends="electron24 gtk+3 ffmpeg"
+short_desc="An open source desktop YouTube player built with privacy in mind"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
+repository="cereus-extra"
+license="AGPL-3.0"
+homepage="https://freetubeapp.io"
+changelog="${homepage}/releases/tag/v${version}-beta"
+distfiles="https://github.com/FreeTubeApp/FreeTube/archive/v${version}-beta.tar.gz"
+checksum=21c4c05eb1e2e8a95d7d1b94a150a6535616c82a17a6f0ad60a974ec03e3c3b0
+
+export USE_SYSTEM_APP_BUILDER=true
+
+post_extract() {
+	jq '.build.linux.target = ["dir"]' package.json | sponge package.json
+}
+
+pre_build() {
+	local carch=x64
+	npm_config_arch=$carch yarn install
+}
+
+do_build() {
+	yarn build
+}
+
+do_install() {
+	vmkdir usr/lib/${pkgname}
+	vcopy build/linux-unpacked/resources/app.asar /usr/lib/${pkgname}
+	vbin ${FILESDIR}/freetube.sh freetube
+	vinstall _icons/icon.svg 0644 usr/share/pixmaps ${pkgname}.svg
+	vinstall ${FILESDIR}/freetube.desktop 644 usr/share/applications
+}
