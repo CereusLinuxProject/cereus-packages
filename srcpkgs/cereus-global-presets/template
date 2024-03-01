@@ -6,17 +6,15 @@ repository="cereus-core"
 conf_files="
     /etc/skel/.profile
     /etc/bash/bashrc.d/*.sh"
-hostmakedepends="git"
 depends="cereus-themes-presets bluez gst-libav libva-utils gst-plugins-base1 gst-plugins-good1 libcups-filters python3-cups python3-cupshelpers system-config-printer system-config-printer-udev vpm vsv numlockx xdg-user-dirs octoxbps-git touchegg plymouth cereus-plymouth-theme sof-firmware libspa-bluetooth NetworkManager chrony elogind alsa-pipewire pipewire gstreamer1-pipewire wireplumber pulseaudio-utils polyglot-prompt"
+_commit="a0f759925101fb0724e5e54afb997efe3981798d"
 short_desc="Cereus Linux global default configurations"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/CereusLinuxProject/presets"
 changelog="${homepage}/commits/main/global"
-
-do_fetch() {
-    git clone ${homepage} ${wrksrc}
-}
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=ed3b3dfa51be20ed361779fa65700b7b45af250d1850284c40c4fabd95897bb6
 
 do_install() {
     cd global/etc

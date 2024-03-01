@@ -3,17 +3,15 @@ pkgname=sgnotes
 version=2023.10.22
 revision=1
 build_style=gnu-makefile
-hostmakedepends="git"
 makedepends="gtk+3-devel gtksourceview-devel pkg-config"
+_commit="65baf43e91317bce4ad828f660c7da1a36a07398"
 short_desc="Simple GTK Notes App"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 repository="cereus-extra"
 license="GPL-3.0-or-later"
 homepage="https://github.com/sgde/sgnotes"
-
-do_fetch() {
-	git clone ${homepage} ${wrksrc}
-}
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=c6eae9ab2eece20a479d7238cc62c47c1769b2211ac3b33ffa3633416fe5d19b
 
 do_build() {
 	make

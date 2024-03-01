@@ -2,18 +2,15 @@
 pkgname=resolution-hooks
 version=2023.01.21
 revision=1
-hostmakedepends="git"
 depends="xeventbind"
 repository="cereus-extra"
+_commit="e82aff8546423308e5834703c0b76136073dcfeb"
 short_desc="Custom hooks when monitor resolution changes"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/CereusLinuxProject/resolution-hooks"
-changelog="${homepage}/commits/main"
-
-do_fetch() {
-    git clone ${homepage} ${wrksrc}
-}
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=b70f5a2be4979e6cbf63cb8c4bcb348ab5432b3f5095fc5fccb54df128058b3b
 
 do_install() {
     for f in resolution-{hooks,monitor}; do

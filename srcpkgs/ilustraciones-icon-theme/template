@@ -3,20 +3,18 @@ pkgname=ilustraciones-icon-theme
 version=2023.04.06
 revision=1
 repository=cereus-extra
-hostmakedepends="git"
+_commit="200a65d20a0358611cc8a097a7bcfc099a4cac3d"
 short_desc="Flat icon pack inspired on Pixelitos icon theme"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT"
 homepage="https://github.com/ItzSelenux/ilustraciones-icon-theme"
-
-do_fetch() {
-	git clone https://github.com/ItzSelenux/ilustraciones-icon-theme ${wrksrc}
-	rm -r ${wrksrc}/.github
-}
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=5408964eb994c71a62b639ecae7d0ccfc16ec930a6eee24fb768ff9335070b7f
 
 do_install() {
-	vmkdir usr/share/icons/ilustraciones
+	rm -rf .github
 	rm install.sh
+	vmkdir usr/share/icons/ilustraciones
 	vcopy ./* usr/share/icons/ilustraciones
 	vlicense LICENSE
 }

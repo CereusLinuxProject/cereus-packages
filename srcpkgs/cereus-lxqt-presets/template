@@ -1,6 +1,6 @@
 # Template file for 'cereus-lxqt-presets'
 pkgname=cereus-lxqt-presets
-version=2023.02.10
+version=2024.02.20
 revision=1
 repository="cereus-core"
 conf_files="
@@ -14,7 +14,6 @@ conf_files="
     /etc/skel/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
     /etc/skel/.config/featherpad/*.conf
     /etc/xdg/autostart/ksuperkey.desktop"
-hostmakedepends="git"
 depends="lxqt-cereus cereus-global-presets cereus-lightdm-presets udisks2 gvfs-afc gvfs-mtp
 gvfs-smb blueman flameshot pasystray-git ksuperkey network-manager-applet pavucontrol-qt"
 short_desc="Cereus Linux default configurations for LXQt edition"
@@ -22,10 +21,9 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/CereusLinuxProject/presets"
 changelog="${homepage}/commits/main/lxqt"
-
-do_fetch() {
-    git clone ${homepage} ${wrksrc}
-}
+_commit="a0f759925101fb0724e5e54afb997efe3981798d"
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=ed3b3dfa51be20ed361779fa65700b7b45af250d1850284c40c4fabd95897bb6
 
 do_install() {
     vcopy lxqt/* ./

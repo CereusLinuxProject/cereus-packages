@@ -3,17 +3,15 @@ pkgname=betterlockscreen-gui
 version=2023.01.28
 revision=2
 repository="cereus-extra"
-hostmakedepends="git"
 depends="python3-psutil betterlockscreen python3-gobject resolution-hooks bc"
+_commit="f6c5b95f17d903684ee7cdc19c078c83e69c9a38"
 short_desc="Betterlockscreen GUI configuration tool"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/CereusLinuxProject/betterlockscreen-gui"
 changelog="${homepage}/commits/master"
-
-do_fetch() {
-    git clone ${homepage} ${wrksrc}
-}
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=8d7547c5cbc15f41f16a2a514b013f95b542e95252de16314baa1945d7967b64
 
 do_install() {
 	vcopy usr ./

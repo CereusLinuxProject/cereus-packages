@@ -3,16 +3,14 @@ pkgname=pixelitos-icon-theme
 version=2023.07.31
 revision=1
 repository=cereus-extra
-hostmakedepends="git"
 short_desc="Pixel art icon theme"
 _icondir="usr/share/icons/pixelitos"
+_commit="730afba2df61b48989edccb55301cb21fc3a31ed"
 maintainer="ItsZariep <https://github.com/ItzSelenux>"
 license="MIT"
 homepage="https://github.com/ItzSelenux/pixelitos-icon-theme"
-
-do_fetch() {
-    git clone ${homepage} ${wrksrc}
-}
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=e754f0c3732491cae6335e2cf88578a7a97500292251616ef7720e713e676d08
 
 do_install() {
     # Delete unnecessary files

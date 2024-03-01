@@ -4,20 +4,18 @@ version=2023.12.29
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF"
-hostmakedepends="git extra-cmake-modules"
+hostmakedepends="extra-cmake-modules"
 makedepends="kdecoration-devel qt5-declarative-devel qt5-x11extras-devel kguiaddons-devel
  kconfigwidgets-devel kwindowsystem-devel gettext-devel kiconthemes-devel"
 depends=""
+_commit="3a2af2cb61e68f2baa1d12241e93c20719aa6bf2"
 short_desc="A modern style for Qt applications"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 repository="cereus-extra"
 license="GPL-2.0-or-later"
 homepage="https://github.com/boehs/Lightly"
-
-
-do_fetch() {
-	git clone ${homepage} ${wrksrc} --depth=1
-}
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=4f7db4b6415a390b10a0a4d2c20eb2dbaa936fa5235ec06b4794506a818a5494
 
 lightly-git-devel_package() {
 	depends="${sourcepkg}>=${version}_${revision}"

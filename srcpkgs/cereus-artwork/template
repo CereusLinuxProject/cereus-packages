@@ -2,19 +2,17 @@
 pkgname=cereus-artwork
 version=2023.01.30
 revision=1
-hostmakedepends="git"
 _wallpaperdir="usr/share/backgrounds"
 _icondir="usr/share/icons/hicolor"
 _logodir="usr/share/cereus-artwork"
+_commit="7d2c92125dae9db643e490194fd6188d322427d5"
 repository="cereus-core"
 short_desc="Cereus Linux artwork"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="CC-BY-SA-4.0"
 homepage="https://github.com/CereusLinuxProject/Cereus-Artwork/"
-
-do_fetch() {
-	git clone ${homepage} ${wrksrc}
-}
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=2655eaa96d3a62cc0ac06996682335c5a9094dd8392442e046e2cfdb9b0c068d
 
 do_install() {
 	# Create directories in targetdir

@@ -3,17 +3,20 @@ pkgname=alttab-git
 version=2024.02.09
 revision=1
 build_style=gnu-configure
-hostmakedepends="pkg-config git"
+hostmakedepends="pkg-config"
 repository="cereus-extra"
 makedepends="libX11-devel libXft-devel libXmu-devel libXrandr-devel
  libXrender-devel libpng-devel libXpm-devel uthash automake"
 checkdepends="procps-ng xvfb-run xeyes xprop"
-short_desc="Task switcher for minimalistic window managers - git branch"
+_commit="831894fb9c352a59dd1c7233a8f932099585f6a7"
+short_desc="Task switcher for minimalistic window managers - git development branch"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/sagb/alttab"
 changelog="https://github.com/sagb/alttab/raw/master/ChangeLog"
 replaces="alttab"
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=baf7b9748224a2493c41ed527b1095ef3511f51f4d0a7ff5ce3f06d5dc8ae3d2
 
 make_check=no # needs cnee/xnee which is not packaged
 
@@ -25,7 +28,3 @@ case "$XBPS_TARGET_MACHINE" in
 	export LDFLAGS="-lfts"
 	;;
 esac
-
-do_fetch() {
-	git clone ${homepage} ${wrksrc}
-}

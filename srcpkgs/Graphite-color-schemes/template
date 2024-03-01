@@ -6,20 +6,18 @@ build_style=meta
 nostrip=yes
 repository="cereus-extra"
 wrksrc=Graphite-color-schemes-${version}
-depends="Graphite-color-schemes-light \
-     Graphite-color-schemes-dark \
-     Graphite-color-schemes-black \
-     Graphite-color-schemes-nord-light \
+depends="Graphite-color-schemes-light
+     Graphite-color-schemes-dark
+     Graphite-color-schemes-black
+     Graphite-color-schemes-nord-light
      Graphite-color-schemes-nord-dark"
-hostmakedepends="git"
 short_desc="Custom additional color schemes of Graphite theme for KDE Plasma desktop"
+_commit="8b9a6b3d96c1cf3c476a46bd095b43c71aed33e1"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0"
 homepage="https://github.com/KF-Art/Graphite-color-schemes"
-
-do_fetch() {
-    git clone https://github.com/KF-Art/Graphite-color-schemes ${wrksrc}
-}
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=21caa00141911d6943692e2d384117973933b3129e37d3473c29158798e3a768
 
 Graphite-color-schemes-light_package() {
 	short_desc+=" - light variant"

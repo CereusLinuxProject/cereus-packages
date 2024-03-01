@@ -2,18 +2,16 @@
 pkgname=calamares-modules-cereus
 version=2023.02.14
 revision=3
-hostmakedepends="git"
 depends="python3-setuptools"
 _modules_dir="usr/lib/calamares/modules/"
 repository="cereus-core"
+_commit="1b0ce33acc98c5caf06065ad20dd8077acdd9526"
 short_desc="Additional Cereus Linux modules for Calamares installer"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-2.0"
 homepage="https://github.com/CereusLinuxProject/calamares-modules"
-
-do_fetch() {
-    git clone ${homepage} ${wrksrc}
-}
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=60c8879d164bc099b1a30b2e87c4bf0aa7f7b6ac3cfbe2a982d8889ce458258b
 
 do_install() {
     vmkdir ${_modules_dir}
