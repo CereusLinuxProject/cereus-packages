@@ -1,6 +1,6 @@
 # Template file for 'freetube'
 pkgname=freetube
-version=0.19.2
+version=0.20.0
 revision=1
 archs="x86_64 x86_64-musl"
 hostmakedepends="yarn jq moreutils app-builder nodejs tar"
@@ -12,12 +12,14 @@ license="AGPL-3.0"
 homepage="https://freetubeapp.io"
 changelog="${homepage}/releases/tag/v${version}-beta"
 distfiles="https://github.com/FreeTubeApp/FreeTube/archive/v${version}-beta.tar.gz"
-checksum=21c4c05eb1e2e8a95d7d1b94a150a6535616c82a17a6f0ad60a974ec03e3c3b0
+checksum=b30b17c193372aa1704971a947e2392adb63ae9379cbd45790006f9aa4ffa720
 
 export USE_SYSTEM_APP_BUILDER=true
 
 post_extract() {
 	jq '.build.linux.target = ["dir"]' package.json | sponge package.json
+	sed -i "4i electronDist: '/usr/lib/electron24'," "_scripts/ebuilder.config.js"
+	sed -i "s/targets = Platform.LINUX.*/targets = Platform.LINUX.createTarget(['dir'], arch)/" "_scripts/build.js"
 }
 
 pre_build() {
