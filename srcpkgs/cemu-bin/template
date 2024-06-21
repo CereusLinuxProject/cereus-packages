@@ -1,6 +1,6 @@
 # Template file for 'cemu-bin'
 pkgname=cemu-bin
-version=2.0.77
+version=2.0.86
 _srcver=${version%.*}-${version##*.}
 revision=1
 archs="x86_64"
@@ -12,9 +12,9 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 repository="cereus-extra"
 license="MPL-2.0"
 homepage="https://cemu.info"
-changelog="https://github.com/cemu-project/Cemu/compare/v${_srcver}...main"
+changelog="https://github.com/cemu-project/Cemu/compare/v2.0-85...v${_srcver}"
 distfiles="https://github.com/cemu-project/Cemu/releases/download/v$_srcver/cemu-$_srcver-ubuntu-22.04-x64.zip"
-checksum=37dbf7251e48e46af8a5b60049e7adb373781bf01c13285391524dd4b0b3d019
+checksum=ee8868fec400d4ff4bae28d3863ef6ee2c15cc8b3533e96b74a0348811c316ac
 _resourcefiles="https://raw.githubusercontent.com/cemu-project/Cemu/main/dist/linux/info.cemu.Cemu.desktop
 	https://github.com/cemu-project/Cemu/raw/main/dist/linux/info.cemu.Cemu.png
 	https://raw.githubusercontent.com/cemu-project/Cemu/main/dist/linux/info.cemu.Cemu.metainfo.xml"
