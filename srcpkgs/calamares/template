@@ -1,31 +1,32 @@
 # Template file for 'calamares'
 pkgname=calamares
-version=3.3.5
+version=3.3.7
 revision=1
 build_style=cmake
 repository=cereus-extra
-configure_args="-DCMAKE_BUILD_TYPE=Release
-    -DWITH_PYTHONQT:BOOL=ON
+configure_args="
+    -DWITH_PYTHON:BOOL=ON
+    -DWITH_QT6:BOOL=ON
     -DINSTALL_CONFIG:BOOL=ON
     -DINSTALL_POLKIT:BOOL=ON
     -DBoost_NO_BOOST_CMAKE=ON
     -DBUILD_APPSTREAM:BOOL=OFF
     -DBUILD_APPDATA:BOOL=OFF
-    -DSKIP_MODULES='webview;interactiveterminal;services-systemd;dummyprocess;dummypython;dummycpp;dummypythonqt;oemid;tracking;'"
+    -DCMAKE_BUILD_TYPE=Release
+    -DSKIP_MODULES='webview;interactiveterminal;services-systemd;dummyprocess;dummypython;dummycpp;dummypythonqt;oemid;tracking;packagechooser;'"
 hostmakedepends="git extra-cmake-modules pkg-config gettext
-    ckbcomp kcoreaddons kdelibs4support python3-yaml clang"
-makedepends="python3-devel python3-jsonschema yaml-cpp-devel qt5-devel python3-devel kpmcore-devel
-    qt5-tools qt5-translations qt5-svg-devel libpwquality plasma-framework-devel
-    qt5-webengine libxcrypt-devel"
-depends="kconfig kcoreaddons kiconthemes ki18n kio ksolid yaml-cpp kpmcore boost ckbcomp
-    hardinfo qt5-svg polkit-qt5 gtk-update-icon-cache plasma-framework qt5-xmlpatterns
+    ckbcomp kf6-kcoreaddons kdelibs4support python3-yaml clang qt6-tools"
+makedepends="python3-devel python3-jsonschema yaml-cpp-devel qt6-base-devel python3-devel kpmcore-devel
+    qt6-tools-devel qt6-translations qt6-svg-devel libpwquality-devel"
+depends="kf6-kconfig kf6-kcoreaddons kf6-kiconthemes kf6-ki18n kf6-kio yaml-cpp kpmcore boost ckbcomp
+    hardinfo qt6-svg polkit-qt6 gtk-update-icon-cache
     squashfs-tools libpwquality icu"
 short_desc="Distribution-independent installer framework"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
 homepage="https://calamares.io"
 distfiles="https://github.com/${pkgname}/${pkgname}/releases/download/v${version}/${pkgname}-${version}.tar.gz"
-checksum=65b11d6bb2ba76fc74fed08faa4b6fe43d1a5bf4a2522b30fc43b44151686c47
+checksum=56589968f2447a2e79da67079602dabc77504bc0f8233b5e655a1a4d57007a34
 
 case ${XBPS_TARGET_MACHINE} in
 	*-musl)
@@ -34,7 +35,6 @@ esac
 
 pre_configure() {
     vsed -i -e "s/desired_size = 512 \* 1024 \* 1024  \# 512MiB/desired_size = 512 \* 1024 \* 1024 \* 4  \# 2048MiB/" src/modules/fstab/main.py
-    vsed -i -e 's/"Install configuration files" OFF/"Install configuration files" ON/' CMakeLists.txt
     vsed -i 's/services-systemd/services-runit/g' settings.conf
 }
 
