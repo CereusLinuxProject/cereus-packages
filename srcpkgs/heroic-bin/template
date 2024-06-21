@@ -13,7 +13,7 @@ short_desc="Heroic Games Launcher, a Native GOG, Amazon and Epic Games Launcher"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0"
 homepage="https://heroicgameslauncher.com"
-changelog="${homepage}/releases/tag/v${version}"
+changelog="https://github.com/releases/tag/v${version}"
 distfiles="https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v${version}/heroic-${version}.tar.xz"
 checksum=cbb486761e2f6ad84a26adaa4892531b57a7f825691d7ee10b2afd144cbaed21
 
