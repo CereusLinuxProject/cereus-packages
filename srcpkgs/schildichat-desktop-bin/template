@@ -1,6 +1,6 @@
 # Template file for 'schildichat-desktop-bin'
 pkgname=schildichat-desktop-bin
-_version="1.11.30-sc.2"
+_version="1.11.36-sc.3"
 version=${_version//-/.}
 revision=1
 archs="x86_64"
@@ -14,7 +14,7 @@ license="Apache-2.0"
 homepage="https://schildi.chat"
 changelog="https://github.com/SchildiChat/schildichat-desktop/releases/tag/v${_version}"
 distfiles="https://github.com/SchildiChat/schildichat-desktop/releases/download/v${_version}/${pkgname%-bin}_${_version}_amd64.deb"
-checksum=ad9bb5cee3c68d9c4d1bf102a50ddaa3dfd2e1005ff1e009e78c82edececc4bc
+checksum=2e540d0bf8ce979bac05c2a8e0e994464a48f0646a38bc5fcc54232ffdedf2ff
 
 do_install() {
 	ar x ${pkgname%-bin}_${_version}_amd64.deb
