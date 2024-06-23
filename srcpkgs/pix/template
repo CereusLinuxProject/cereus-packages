@@ -1,17 +1,17 @@
 # Template file for 'pix'
 pkgname=pix
-version=3.2.2
+version=3.4.1
 revision=1
 repository=cereus-extra
 build_style=meson
 makedepends="make intltool itstool liboauth-devel libchamplain-devel exiv2-devel glib-devel pkg-config yelp-tools gettext-devel libtool gsettings-desktop-schemas-devel libjpeg-turbo-devel tiff-devel gst-plugins-base1-devel gstreamer1-devel libopenraw-devel clutter-devel clutter-gtk-devel liboauth-devel libchamplain-devel brasero-devel libsecret-devel xapps-devel bison flex libxkbfile-devel"
-depends="desktop-file-utils librsvg clutter-gtk gst-plugins-base1 gsettings-desktop-schemas libwebp webkit2gtk liboauth libchamplain tiff exiv2 libjpeg-turbo"
+depends="desktop-file-utils librsvg gst-plugins-base1  libwebp webkit2gtk"
 short_desc="Image viewer and browser based on gthumb. X-Apps Project."
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-2.0"
 homepage="https://github.com/linuxmint/pix"
 distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
-checksum=fec1a2750e3c903794f902b7a1f24cb6737e391e331470cc46f7bab2cbe1753a
+checksum=845758452d1f0ee41d26187fd5fbf43521375b885b7370f59244db16682a6687
 
 post_install() {
 	vlicense COPYING
