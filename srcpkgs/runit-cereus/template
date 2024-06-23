@@ -1,6 +1,6 @@
 # Template file for 'runit-cereus'
 pkgname=runit-cereus
-version=2023.04.13
+version=2023.11.24
 _version=${version//./}
 revision=1
 repository=cereus-core
@@ -12,7 +12,7 @@ license="CC0-1.0"
 conflicts="runit-void"
 homepage="https://github.com/void-linux/void-runit"
 distfiles="https://github.com/void-linux/void-runit/archive/${_version}.tar.gz"
-checksum=1049555eb27c370ec482ab576382ff951c2c33da6e8f5d165b3733c4a6d157cb
+checksum=2bdb86a08ee0ee70d1a189ebbf9e60157f847e8c8f75caedc009536ca794a77c
 
 depends="virtual?awk procps-ng runit"
 conf_files="
