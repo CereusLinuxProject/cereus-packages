@@ -4527,7 +4527,7 @@ libiga64.so.1 intel-graphics-compiler-1.0.11485_1
 libze_loader.so.1 level-zero-1.8.8_1
 libze_validation_layer.so.1 level-zero-1.8.8_1
 libze_tracing_layer.so.1 level-zero-1.8.8_1
-libmetee.so.3.2.4 intel-metee-3.2.4_1
+libmetee.so.4.0.0 intel-metee-4.0.0_1
 libigsc.so.0 igsc-0.8.4_1
 libiga32.so.1 intel-graphics-compiler-32bit
 libigdgmm.so.12 intel-gmmlib-22.2.0_1
