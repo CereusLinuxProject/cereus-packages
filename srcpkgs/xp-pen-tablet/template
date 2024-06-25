@@ -1,6 +1,6 @@
 # Template file for 'xp-pen-tablet'
 pkgname=xp-pen-tablet
-_version=3.4.9-231023
+_version=3.4.9-240607
 version=${_version//-/.}
 revision=1
 archs="x86_64"
@@ -11,7 +11,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 conf_files="/usr/lib/pentablet/conf/xppen/config.xml"
 license="custom:Proprietary"
 homepage="https://www.xp-pen.com/download/index.html"
-distfiles="https://www.xp-pen.com/download/file.html?id=1936&pid=819&ext=gz>XPPenLinux${version}.tar.gz"
+distfiles="https://www.xp-pen.com/download/file.html?id=2901&pid=819&ext=gz>XPPenLinux${version}.tar.gz"
 checksum=df707c2633a3b2fd7bb8569edf38462b0e34a1e0fa7c7275602f7011540eefe4
 
 do_install() {
