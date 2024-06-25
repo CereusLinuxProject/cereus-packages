@@ -1,6 +1,6 @@
 # Template file for 'dockbarx'
 pkgname=dockbarx
-version=1.0.beta3
+version=1.0.beta4
 _pkgrel=${version//.b/-b}
 revision=1
 repository="cereus-extra"
@@ -13,8 +13,8 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/xuzhen/dockbarx"
 distfiles="${homepage}/archive/refs/tags/${_pkgrel}.tar.gz"
-checksum=61be03c1e73bd435d7330917d1a014082a90b3f07bbb6bc4b9d6e3b52a859138
+checksum=8df37a367d4454c590d29cbaea9f7a3ec09ddf13905943b3becc717241c275da
 
 post_install() {
-	vinstall icons/hicolor/128x128/apps/dockbarx.png 644 usr/share/pixmaps/dockbarx.png
+	vinstall data/icons/hicolor/128x128/apps/dockbarx.png 644 usr/share/pixmaps/dockbarx.png
 }
