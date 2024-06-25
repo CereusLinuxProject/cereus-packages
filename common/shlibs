@@ -427,7 +427,7 @@ libField3D.so.1.7 Field3D-1.7.3_1
 libMAC.so.6 libMAC-5.28_1
 libmad.so.0 libmad-0.15.1b_1
 libmatroska.so.7 libmatroska-1.6.0_1
-libmatrix_client.so.0.9.2 mtxclient-0.9.2_1
+libmatrix_client.so.0.10.0 mtxclient-0.10.0_1
 libebml.so.5 libebml-1.4.0_1
 libdvdread.so.8 libdvdread-6.1.1_1
 libdvdnav.so.4 libdvdnav-4.1.3_1
@@ -1023,6 +1023,7 @@ libparserutils.so.0 libparserutils-0.1.1_1
 libwapcaplet.so.0 libwapcaplet-0.1.0_1
 libcss.so.0 libcss-0.1.1_1
 libhubbub.so.0 libhubbub-0.1.1_1
+libhs.so.5 vectorscan-5.4.11_1
 liblutok.so.3 lutok-0.4_1
 libmtdev.so.1 mtdev-1.1.2_1
 libcryptsetup.so.12 libcryptsetup-2.3.4_2
@@ -1111,9 +1112,9 @@ libmowgli-2.so.0 libmowgli-2.1.3_8
 libgts-0.7.so.5 gts-0.7.6_1
 libguess.so.1 libguess-1.1_1
 libaudcore.so.5 audacious-base-4.3.1_1
-libaudgui.so.5 audacious-base-4.3.1_1
+libaudgui.so.6 audacious-base-4.3.1_1
 libaudtag.so.3 audacious-base-4.3.1_1
-libaudqt.so.2 audacious-base-4.3.1_1
+libaudqt.so.3 audacious-base-4.3.1_1
 libgstreamer-1.0.so.0 gstreamer1-1.0.0_1
 libgstbase-1.0.so.0 gstreamer1-1.0.0_1
 libgstcontroller-1.0.so.0 gstreamer1-1.0.0_1
@@ -1311,7 +1312,7 @@ librumpdev_audio.so.0 netbsd-rumpkernel-20140526_3
 librumpclient.so.0 netbsd-rumpkernel-20140526_3
 libdotconf.so.0 dotconf-1.3_1
 libspeechd.so.2 speech-dispatcher-0.8_1
-libre2.so.10 re2-2023.03.01_1
+libre2.so.11 re2-2024.06.01_1
 libminizip.so.1 minizip-1.2.7_1
 libsrtp2.so.1 libsrtp-2.1.0_1
 libjsoncpp.so.25 jsoncpp-1.9.5_1
@@ -1586,6 +1587,14 @@ libuwac0.so.0 libfreerdp-2.2.0_3
 libfreerdp-server2.so.2 libfreerdp-server-2.4.0_1
 libfreerdp-shadow-subsystem2.so.2 libfreerdp-server-2.4.0_1
 libfreerdp-shadow2.so.2 libfreerdp-server-2.4.0_1
+libfreerdp-client3.so.3 libfreerdp3-3.5.1_1
+libfreerdp-server-proxy3.so.3 libfreerdp3-server-3.5.1_1
+libfreerdp-server3.so.3 libfreerdp3-server-3.5.1_1
+libfreerdp-shadow-subsystem3.so.3 libfreerdp3-server-3.5.1_1
+libfreerdp-shadow3.so.3 libfreerdp3-server-3.5.1_1
+libfreerdp3.so.3 libfreerdp3-3.5.1_1
+libwinpr-tools3.so.3 libfreerdp3-3.5.1_1
+libwinpr3.so.3 libfreerdp3-3.5.1_1
 libcppunit-1.15.so.1 libcppunit-1.15.1_1
 libcalc.so.2.14.3.5 libcalc-2.14.3.5_1
 libcustcalc.so.2.14.3.5 libcalc-2.14.3.5_1
@@ -1940,6 +1949,7 @@ libQt6Xdg.so.4 libqtxdg-4.0.0_1
 libQt6XdgIconLoader.so.4 libqtxdg-4.0.0_1
 libqwt-qt5.so.6.2 qwt-6.2.0_2
 libqwt-qt6.so.6.2 qwt-qt6-6.2.0_2
+libKF6BreezeIcons.so.6 breeze-icons-6.3.0_1
 libKF6Archive.so.6 kf6-karchive-6.0.0_1
 libKF6Attica.so.6 kf6-attica-6.0.0_1
 libKF6AuthCore.so.6 kf6-kauth-6.0.0_1
@@ -2723,22 +2733,22 @@ libxdo.so.3 xdotool-3.20150503.1_1
 libabigail.so.4 libabigail-2.5_1
 libgnome-games-support-1.so.3 libgnome-games-support-1.4.0_1
 libgnome-games-support-2.so.4 libgnome-games-support2-2.0.0_1
-libKDevCMakeCommon.so.512 kdevelop-23.08.2_1
-libKDevClangPrivate.so.512 kdevelop-23.08.2_1
-libKDevCompileAnalyzerCommon.so.512 kdevelop-23.08.2_1
-libKDevelopSessionsWatch.so.512 kdevelop-23.08.2_1
-libKDevPlatformDebugger.so.512 kdevelop-23.08.2_1
-libKDevPlatformDocumentation.so.512 kdevelop-23.08.2_1
-libKDevPlatformInterfaces.so.512 kdevelop-23.08.2_1
-libKDevPlatformLanguage.so.512 kdevelop-23.08.2_1
-libKDevPlatformOutputView.so.512 kdevelop-23.08.2_1
-libKDevPlatformProject.so.512 kdevelop-23.08.2_1
-libKDevPlatformSerialization.so.512 kdevelop-23.08.2_1
-libKDevPlatformShell.so.512 kdevelop-23.08.2_1
-libKDevPlatformSublime.so.512 kdevelop-23.08.2_1
-libKDevPlatformTests.so.512 kdevelop-23.08.2_1
-libKDevPlatformUtil.so.512 kdevelop-23.08.2_1
-libKDevPlatformVcs.so.512 kdevelop-23.08.2_1
+libKDevCMakeCommon.so.514 kdevelop-24.05.1_1
+libKDevClangPrivate.so.514 kdevelop-24.05.1_1
+libKDevCompileAnalyzerCommon.so.514 kdevelop-24.05.1_1
+libKDevelopSessionsWatch.so.514 kdevelop-24.05.1_1
+libKDevPlatformDebugger.so.514 kdevelop-24.05.1_1
+libKDevPlatformDocumentation.so.514 kdevelop-24.05.1_1
+libKDevPlatformInterfaces.so.514 kdevelop-24.05.1_1
+libKDevPlatformLanguage.so.514 kdevelop-24.05.1_1
+libKDevPlatformOutputView.so.514 kdevelop-24.05.1_1
+libKDevPlatformProject.so.514 kdevelop-24.05.1_1
+libKDevPlatformSerialization.so.514 kdevelop-24.05.1_1
+libKDevPlatformShell.so.514 kdevelop-24.05.1_1
+libKDevPlatformSublime.so.514 kdevelop-24.05.1_1
+libKDevPlatformTests.so.514 kdevelop-24.05.1_1
+libKDevPlatformUtil.so.514 kdevelop-24.05.1_1
+libKDevPlatformVcs.so.514 kdevelop-24.05.1_1
 libts.so.0 tslib-1.6_1
 libobs.so.0 obs-0.14.1_2
 libobsglad.so.1 obs-28.0.1_1
@@ -3531,7 +3541,7 @@ libhtmlcxx.so.3 htmlcxx-0.86_1
 libcss_parser_pp.so.0 htmlcxx-0.86_1
 libcss_parser.so.0 htmlcxx-0.86_1
 libaom.so.3 libaom-3.4.0_1
-libre.so.18 re-3.6.0_1
+libre.so.23 re-3.11.0_1
 libtpms.so.0 libtpms-0.9.0_1
 libswtpm_libtpms.so.0 libswtpm-0.6.1_1
 libspandsp.so.2 spandsp-0.0.6_1
@@ -3544,7 +3554,7 @@ libspa-jack.so libspa-jack-0.3.6_1
 libspa-v4l2.so libspa-v4l2-0.3.6_1
 libspa-videoconvert.so libspa-videoconvert-0.3.6_1
 libspa-vulkan.so libspa-vulkan-0.3.6_1
-libshp.so.1 shapelib-1.4.1_1
+libshp.so.4 shapelib-1.6.0_1
 libantlr3c.so libantlr3c-3.4_1
 libbzrtp.so.0 bzrtp-1.0.6_1
 libbellesip.so.1 belle-sip-4.4.0_1
@@ -4501,6 +4511,7 @@ libcamera-base.so.0.2 libcamera-0.2.0_1
 libKPim6MimeTreeParserCore.so.6 mimetreeparser-24.02.0_1
 libKPim6MimeTreeParserWidgets.so.6 mimetreeparser-24.02.0_1
 /usr/lib/lua/5.1/lpeg.so lua51-lpeg-1.1.0_2
+libopenrazer.so.0 libopenrazer-0.2.0_1
 
 # Cereus Linux custom shlibs
 libcalamares.so.3.3 calamares-3.3.1_1

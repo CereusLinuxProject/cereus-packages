@@ -316,7 +316,7 @@ The following functions are defined by `xbps-src` and can be used on any templat
 	`${FILESDIR}/$service`, containing `exec vlogger -t $service -p $facility`.
 	if a second argument is not specified, the `daemon` facility is used.
 	For more information about `vlogger` and available values for the facility,
-	see [vlogger(1)](https://man.voidlinux.org/vlogger.1).
+	see [vlogger(8)](https://man.voidlinux.org/vlogger.8).
 
 - *vsed()* `vsed -i <file> -e <regex>`
 
@@ -334,6 +334,29 @@ The following functions are defined by `xbps-src` and can be used on any templat
 	and with the appropriate filename for `shell`. If `command` isn't specified,
 	it will default to `pkgname`. The `shell` argument can be one of `bash`,
 	`fish` or `zsh`.
+
+- *vextract()* `[-C <target directory>] [--no-strip-components|--strip-components=<n>] <file>`
+
+	Extracts `file` to `target directory` with `n` directory components stripped. If
+	`target directory` not specified, defaults to the working directory. If
+	`--strip-components` or `--no-strip-components` is not specified, defaults to
+	`--strip-components=1`.
+
+- *vsrcextract()* `[-C <target directory>] [--no-strip-components|--strip-components=<n>] <file>`
+
+	Extracts `$XBPS_SRCDISTDIR/$pkgname-$version/<file>` to `target directory`
+	with `n` directory components stripped. If `target directory` not specified,
+	defaults to the working directory. If `--strip-components` or `--no-strip-components`
+	is not specified, defaults to `--strip-components=1`.
+
+	This is useful when used in conjunction with `skip_extraction` and for submodule distfiles.
+
+- *vsrccopy()* `<file>... <target>`
+
+	Copies `file`s from `$XBPS_SRCDISTDIR/$pkgname-$version/` into the `target` directory,
+	creating `target` if it does not exist.
+
+	This is useful when used in conjunction with `skip_extraction`.
 
 > Shell wildcards must be properly quoted, Example: `vmove "usr/lib/*.a"`.
 
@@ -736,9 +759,9 @@ built for, available architectures can be found under `common/cross-profiles`.
 In general, `archs` should only be set if the upstream software explicitly targets
 certain architectures or there is a compelling reason why the software should not be
 available on some supported architectures.
-Prepending pattern with tilde means disallowing build on indicated archs.
-First matching pattern is taken to allow/deny build. When no pattern matches,
-package is build if last pattern includes tilde.
+Prepending a pattern with a tilde means disallowing build on the indicated archs.
+The first matching pattern is taken to allow/deny build. When no pattern matches,
+the package is built if the last pattern includes a tilde.
 Examples:
 
 	```
@@ -1227,7 +1250,7 @@ package accordingly. Additionally, the following functions are available:
 - *vopt_feature()* `vopt_feature <option> <property>`
 
   Same as `vopt_bool`, but uses `-D<property=enabled` and
-	`-D<property>=disabled` respectively. 
+	`-D<property>=disabled` respectively.
 
 The following example shows how to change a source package that uses GNU
 configure to enable a new build option to support PNG images:
@@ -1607,6 +1630,8 @@ In most cases version is inferred from shebang, install path or build style.
 Only required for some multi-language
 applications (e.g., the application is written in C while the command is
 written in Python) or just single Python file ones that live in `/usr/bin`.
+If `python_version` is set to `ignore`, python-containing shebangs will not be rewritten.
+Use this only if a package should not be using a system version of python.
 
 Also, a set of useful variables are defined to use in the templates:
 
@@ -2159,7 +2184,7 @@ otherwise the `debug` packages won't have debugging symbols.
 <a id="contributing"></a>
 ### Contributing via git
 
-To get started, [fork](https://help.github.com/articles/fork-a-repo) the void-linux `void-packages` git repository on GitHub and clone it:
+To get started, [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) the void-linux `void-packages` git repository on GitHub and clone it:
 
     $ git clone git@github.com:<user>/void-packages.git
 
