@@ -1,7 +1,7 @@
 # Template file for 'lxqt-minimal'
 pkgname=lxqt-minimal
 version=2.0.0
-revision=1
+revision=2
 repository="cereus-extra"
 build_style=meta
 depends="
@@ -14,6 +14,7 @@ depends="
 	lxqt-policykit>=${version}
 	lxqt-powermanagement>=${version}
 	lxqt-qtplugin>=${version}
+	lxqt-qtplugin-legacy
 	lxqt-runner>=${version}
 	lxqt-session>=${version}
 	lxqt-sudo>=${version}
