@@ -4548,3 +4548,5 @@ libxplayer-plparser.so.18 xplayer-plparser-1.0.3_1
 libtouche.so.0 touche-2.0.9_1
 libtouche.so touche-devel-2.0.9_1
 libcrypto.so.1.1 libcrypto1.1-1.1.1t_2
+libfm-qt.so.14 libfm-qt-legacy-1.4.0_1
+libQt5XdgIconLoader.so.3 libqtxdg-legacy-3.12.0_1
