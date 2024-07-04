@@ -1,13 +1,13 @@
 # Template file for 'octoxbps-git'
 pkgname=octoxbps-git
 version=2024.06.20
-revision=1
+revision=2
 build_style=qmake
 repository="cereus-extra"
 hostmakedepends="qt5-qmake pkg-config qt5-host-tools"
 makedepends="qt5-declarative-devel qtermwidget-devel"
-depends="curl"
-_commit="794e1c9946f94013f81a85ac0b11fb545ebe4124"
+depends="curl qt-sudo"
+_commit="036e7043507528a79b5e541b6c5a74f05f2544e3"
 short_desc="Qt-based XBPS front-end - git development branch"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-2.0-or-later"
@@ -16,11 +16,14 @@ changelog="https://raw.githubusercontent.com/aarnt/octoxbps/master/CHANGELOG"
 conflicts="octoxbps"
 replaces="octoxbps"
 distfiles="https://github.com/aarnt/octoxbps/archive/${_commit}.tar.gz"
-checksum=fac7337da07ff438595ab620ce60a1d24f0bb045f09ff2341d54ca3bb41ea289
+checksum=fec6e5cf74f9a4c731bbbedef900586241833b2ffe40bdb93efb634eed3f3c40
 
-# Experimental Spanish translation
 post_extract() {
+	# Experimental Spanish translation
     cp ${FILESDIR}/octoxbps_es.ts ${wrksrc}/translations
+
+    # Correct qt-sudo path
+    vsed -i 's|/usr/local/bin/qt-sudo|/usr/bin/qt-sudo|g' src/constants.h
 }
 
 
@@ -35,22 +38,16 @@ post_configure() {
 		QMAKE_CXXFLAGS="${CXXFLAGS}" \
 		QMAKE_LFLAGS="${LDFLAGS}" \
 		${qmake_args}
-	cd ${wrksrc}/sudo && qmake-qt5 ${configure_args} \
-		QMAKE_CC=$CC QMAKE_CXX=$CXX QMAKE_LINK=$CXX QMAKE_LINK_C=$CC \
-		QMAKE_CFLAGS="${CFLAGS}" \
-		QMAKE_CXXFLAGS="${CXXFLAGS}" \
-		QMAKE_LFLAGS="${LDFLAGS}" \
-		${qmake_args}
 }
 
 do_build() {
-	for _dir in ${wrksrc} ${wrksrc}/notifier ${wrksrc}/sudo; do
+	for _dir in ${wrksrc} ${wrksrc}/notifier; do
 		cd $_dir && make ${makejobs} ${make_build_args} ${make_build_target} CC="$CC" CXX="$CXX" LINK="$CXX"
 	done
 }
 
 do_install() {
-	for _dir in ${wrksrc} ${wrksrc}/notifier ${wrksrc}/sudo; do
+	for _dir in ${wrksrc} ${wrksrc}/notifier ; do
 		cd $_dir && make INSTALL_ROOT=${DESTDIR} install
 	done
 }
