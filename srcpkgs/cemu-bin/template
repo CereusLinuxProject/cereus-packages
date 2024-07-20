@@ -1,10 +1,10 @@
 # Template file for 'cemu-bin'
 pkgname=cemu-bin
-version=2.0.86
+version=2.0.88
 _srcver=${version%.*}-${version##*.}
 revision=1
 archs="x86_64"
-hostmakedepends="wget"
+hostmakedepends="curl"
 depends="at-spi2-core cairo libgcc gdk-pixbuf glib glu gtk+3 harfbuzz hicolor-icon-theme
 	libglvnd libICE libpng libSM libX11 libXext libxkbcommon libXrender pango"
 short_desc="Nintendo Wii U Emulator - precompiled binaries"
@@ -14,7 +14,7 @@ license="MPL-2.0"
 homepage="https://cemu.info"
 changelog="https://github.com/cemu-project/Cemu/compare/v2.0-85...v${_srcver}"
 distfiles="https://github.com/cemu-project/Cemu/releases/download/v$_srcver/cemu-$_srcver-ubuntu-22.04-x64.zip"
-checksum=ee8868fec400d4ff4bae28d3863ef6ee2c15cc8b3533e96b74a0348811c316ac
+checksum=0daf84babc49e6d5f9bdb74bc2345b6509758ef7359c7a4c5486473d5440a4be
 _resourcefiles="https://raw.githubusercontent.com/cemu-project/Cemu/main/dist/linux/info.cemu.Cemu.desktop
 	https://github.com/cemu-project/Cemu/raw/main/dist/linux/info.cemu.Cemu.png
 	https://raw.githubusercontent.com/cemu-project/Cemu/main/dist/linux/info.cemu.Cemu.metainfo.xml"
@@ -27,7 +27,7 @@ do_install() {
 	done
 
 	for res in ${_resourcefiles}; do
-		wget ${res}
+		curl -O ${res}
 	done
 
 	sed -i -e '/^Exec=Cemu/cExec=cemu' info.cemu.Cemu.desktop
