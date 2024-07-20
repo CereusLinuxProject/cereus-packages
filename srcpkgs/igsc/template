@@ -1,6 +1,6 @@
 # Template file for 'igsc'
 pkgname=igsc
-version=0.8.16
+version=0.9.0
 revision=1
 repository="cereus-extra"
 build_style=cmake
@@ -13,7 +13,7 @@ license="Apache-2.0"
 homepage="https://github.com/intel/igsc"
 changelog="${homepage}/releases/tag/V${version}"
 distfiles="${homepage}/archive/V${version}/${pkgname}-${version}.tar.gz"
-checksum=03e797f23f48221ce797227a1059edd7bceade189966cc1550f4c1d64dbc1550
+checksum=4e07ff3742fe43995ca8f65e4c03353b51d78f3b11be86530a411c338c4a2637
 
 igsc-devel_package() {
     depends="${sourcepkg}>=${version}_${revision}"
