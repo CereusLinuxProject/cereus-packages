@@ -1,7 +1,7 @@
 # Template file for 'cemu-bin'
 pkgname=cemu-bin
-version=2.0.88
-_srcver=${version%.*}-${version##*.}
+version=2.2
+#_srcver=${version%.*}-${version##*.}
 revision=1
 archs="x86_64"
 hostmakedepends="curl"
@@ -12,9 +12,9 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 repository="cereus-extra"
 license="MPL-2.0"
 homepage="https://cemu.info"
-changelog="https://github.com/cemu-project/Cemu/compare/v2.0-85...v${_srcver}"
-distfiles="https://github.com/cemu-project/Cemu/releases/download/v$_srcver/cemu-$_srcver-ubuntu-22.04-x64.zip"
-checksum=0daf84babc49e6d5f9bdb74bc2345b6509758ef7359c7a4c5486473d5440a4be
+changelog="https://github.com/cemu-project/Cemu/compare/v2.0-85...v${version}"
+distfiles="https://github.com/cemu-project/Cemu/releases/download/v${version}/cemu-${version}-ubuntu-22.04-x64.zip"
+checksum=417187048682fa7a7b5bc7b16e54401a856ed39ec9b76d74deb11b490d9a1f00
 _resourcefiles="https://raw.githubusercontent.com/cemu-project/Cemu/main/dist/linux/info.cemu.Cemu.desktop
 	https://github.com/cemu-project/Cemu/raw/main/dist/linux/info.cemu.Cemu.png
 	https://raw.githubusercontent.com/cemu-project/Cemu/main/dist/linux/info.cemu.Cemu.metainfo.xml"
@@ -22,7 +22,7 @@ _resourcefiles="https://raw.githubusercontent.com/cemu-project/Cemu/main/dist/li
 do_install() {
 	vbin Cemu cemu
 	vmkdir usr/share/Cemu
-	for dir in gameProfiles resources shaderCache; do
+	for dir in gameProfiles resources; do
 		vcopy ${dir} usr/share/Cemu
 	done
 
