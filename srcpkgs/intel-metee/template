@@ -1,6 +1,6 @@
 # Template file for 'intel-metee'
 pkgname=intel-metee
-version=4.0.0
+version=4.2.1
 revision=1
 wrksrc=metee-${version}
 build_style=cmake
@@ -13,7 +13,7 @@ license="Apache-2.0"
 homepage="https://github.com/intel/metee/"
 changelog="${homepage}/releases/tag/${version}"
 distfiles="${homepage}/archive/${version}/${pkgname}-${version}.tar.gz"
-checksum=173cd10bc8bbdd85b360c5bbdb1fd8b3df23b35ba1c23c33e061a95b5f452d87
+checksum=bc796f6f07e98106d0303711302633046d6b918f16b3cbce4a49dc406a9a1090
 shlib_provides="libmetee.so.${version}"
 
 post_install() {
