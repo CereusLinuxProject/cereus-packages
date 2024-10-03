@@ -1,6 +1,6 @@
 # Template file for 'linux-mainline-cereus'
 pkgname=linux-mainline-cereus
-version=6.10
+version=6.11
 revision=1
 build_style=meta
 repository="cereus-core"
