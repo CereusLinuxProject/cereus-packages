@@ -1,14 +1,14 @@
 # Template file for 'octoxbps-git'
 pkgname=octoxbps-git
-version=2024.06.20
-revision=2
+version=2024.07.29
+revision=1
 build_style=qmake
 repository="cereus-extra"
-hostmakedepends="qt5-qmake pkg-config qt5-host-tools"
-makedepends="qt5-declarative-devel qtermwidget-devel"
 depends="curl qt-sudo"
-_commit="036e7043507528a79b5e541b6c5a74f05f2544e3"
-short_desc="Qt-based XBPS front-end - git development branch"
+hostmakedepends="pkg-config qt6-tools qt6-base"
+makedepends="qt6-declarative-devel qtermwidget-qt6-devel qt6-qt5compat-devel"
+_commit="9c5111f1072ea48f755cbb44a21b97ca4deda853"
+short_desc="Qt-based XBPS front-end (git development version)"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-2.0-or-later"
 homepage="https://tintaescura.com/projects/octoxbps/"
@@ -16,7 +16,7 @@ changelog="https://raw.githubusercontent.com/aarnt/octoxbps/master/CHANGELOG"
 conflicts="octoxbps"
 replaces="octoxbps"
 distfiles="https://github.com/aarnt/octoxbps/archive/${_commit}.tar.gz"
-checksum=fec6e5cf74f9a4c731bbbedef900586241833b2ffe40bdb93efb634eed3f3c40
+checksum=f480fc8f100b5a3bd8a5a3b0ad80f60033cdf8365ba0fc4d8247f9f49c214117
 
 post_extract() {
 	# Experimental Spanish translation
@@ -32,7 +32,7 @@ post_configure() {
 	if [ "$CROSS_BUILD" ]; then
 		qmake_args="-qtconf ${wrksrc}/qt.conf"
 	fi
-	cd ${wrksrc}/notifier && qmake-qt5 ${configure_args} \
+	cd ${wrksrc}/notifier && /usr/lib/qt6/bin/qmake ${configure_args} \
 		QMAKE_CC=$CC QMAKE_CXX=$CXX QMAKE_LINK=$CXX QMAKE_LINK_C=$CC \
 		QMAKE_CFLAGS="${CFLAGS}" \
 		QMAKE_CXXFLAGS="${CXXFLAGS}" \
