@@ -1,15 +1,15 @@
 # Template file for 'picom-git'
 pkgname="picom-git"
-version=2024.02.29
+version=2024.10.02
 revision=1
 build_style=meson
 configure_args="-Dwith_docs=true"
 hostmakedepends="pkg-config asciidoc"
 makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre2-devel
  pixman-devel xcb-util-image-devel xcb-util-renderutil-devel
- libxdg-basedir-devel uthash libglvnd-devel libepoxy-devel"
+ libxdg-basedir-devel uthash libepoxy-devel ruby-asciidoctor"
 depends="desktop-file-utils"
-_commit="cc8e0a9848144e7786afb7932b5b173c1d080907"
+_commit="904a111033e4359e9b112ea574fc56389743e4b3"
 short_desc="Lightweight compositor for X11 (previously a compton fork) - git development branch"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT, MPL-2.0"
@@ -19,7 +19,7 @@ provides="picom"
 conflicts="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-arian8j2 picom-dccsillag picom-ftlabs"
 replaces="picom picom-jonaburg picom-jonaburg-fix picom-ibhagwan picom-arian8j2 picom-dccsillag picom-ftlabs"
 distfiles="${homepage}/archive/${_commit}.tar.gz"
-checksum=f472679de861c166b1a5bfc176708f22dd7e237cd6c2648fa13578ef8d7368c4
+checksum=5c5d9307bc2572abff35fb1fcb0e0f7c247078fd80be0724e3b9cc99d0a67644
 
 post_install() {
 	vlicense LICENSES/MIT
