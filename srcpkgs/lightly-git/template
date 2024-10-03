@@ -1,7 +1,7 @@
 # Template file for 'lightly-git'
 pkgname=lightly-git
 version=2023.12.29
-revision=2
+revision=3
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF"
 hostmakedepends="extra-cmake-modules"
@@ -9,7 +9,7 @@ makedepends="kdecoration-devel qt5-declarative-devel qt5-x11extras-devel kguiadd
  kconfigwidgets-devel kwindowsystem-devel gettext-devel kiconthemes-devel"
 depends=""
 _commit="3a2af2cb61e68f2baa1d12241e93c20719aa6bf2"
-short_desc="A modern style for Qt applications"
+short_desc="A modern style for Qt applications (Qt5 version, boehs fork)"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 repository="cereus-extra"
 license="GPL-2.0-or-later"

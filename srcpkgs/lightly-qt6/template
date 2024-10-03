@@ -1,24 +1,23 @@
-# Template file for 'lightly-kf6-git'
-pkgname=lightly-kf6-git
-version=2024.02.28
+# Template file for 'lightly-qt6'
+pkgname=lightly-qt6
+version=0.5.2
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF"
 hostmakedepends="extra-cmake-modules"
 makedepends="kf6-kdecoration-devel qt6-declarative-devel kf6-kguiaddons-devel
  kf6-kconfigwidgets-devel kf6-kwindowsystem-devel gettext-devel kf6-kiconthemes-devel kf6-kirigami-devel kf6-kcmutils-devel"
-_commit="00ca23447844114d41bfc0d37cf8823202c082e8"
-short_desc="A modern style for Qt applications (Qt6 port, boehs fork)"
+short_desc="A modern style for Qt applications (Qt6 version, Bali10050 fork)"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 repository="cereus-extra"
 license="GPL-2.0-or-later"
-homepage="https://github.com/boehs/Lightly"
-distfiles="${homepage}/archive/${_commit}.tar.gz"
-conflicts="lightly-qt6"
-replaces="lightly-qt6"
-checksum=f458c0688cd49e142f8ecb292046c4d6019a2ae6df3247bb3d65c66bff705fb5
+homepage="https://github.com/Bali10050/Lightly"
+distfiles="${homepage}/archive/refs/tags/v${version}.tar.gz"
+conflicts="lightly-kf6-git"
+replaces="lightly-kf6-git"
+checksum=7a081e461af4c001458a0b6f7d916c48492e0ea98cddd1273b938535795b1b97
 
-lightly-kf6-git-devel_package() {
+lightly-qt6-devel_package() {
 	depends="${sourcepkg}>=${version}_${revision}"
 	short_desc+=" - development files"
 	pkg_install() {
