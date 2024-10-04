@@ -1,6 +1,6 @@
 # Template file for 'youtube-music-bin'
 pkgname=youtube-music-bin
-version=3.3.12
+version=3.5.3
 revision=1
 repository="cereus-extra"
 archs="x86_64"
@@ -16,7 +16,7 @@ homepage="https://th-ch.github.io/youtube-music"
 changelog="https://github.com/th-ch/youtube-music/blob/master/changelog.md#v${version//./}"
 distfiles="https://github.com/th-ch/youtube-music/releases/download/v${version}/${pkgname%-bin}_${version}_amd64.deb
 https://github.com/th-ch/youtube-music/raw/v${version}/license"
-checksum="d2d3d868f6a9224fc463ffb51e44f09cc6a9be4534910c9c757077e19335b53a
+checksum="96aadb40a94461c85956ec4ba9f5959a195a1a4812d0bbc7918c61ee242ce505
  e7e14b3b771ecadb23f6ee0b6f99d1553e385e35cdb44fc8e36ee7c878dacd08"
 
 do_install() {
