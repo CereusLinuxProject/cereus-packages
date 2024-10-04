@@ -4,6 +4,7 @@ version=2.0.1
 revision=1
 #archs="i686 x86_64"
 build_style=qmake
+build_helper=qmake6
 makedepends="pkg-config qt6-base-devel qt6-tools-devel"
 short_desc="A clone of LXQt sudo tool, without LXQt libs"
 repository="cereus-extra"
