@@ -1,12 +1,11 @@
 # Template file for 'touche'
 pkgname=touche
-version=2.0.12
+version=2.0.14
 revision=1
 repository="cereus-extra"
 build_style=meson
 hostmakedepends="cmake"
 makedepends="gobject-introspection appstream-glib-devel nodejs gjs-devel libadwaita-devel desktop-file-utils pkg-config gettext-devel"
-#provides="libtouche.so.0"
 depends="touchegg gjs libadwaita"
 short_desc="The desktop application to configure Touchégg"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
@@ -14,7 +13,7 @@ license="GPL-3.0-or-later"
 homepage="https://github.com/JoseExposito/touche"
 changelog="${homepage}/releases/tag/${version}"
 distfiles="${homepage}/archive/${version}.tar.gz"
-checksum=7d0919aa1bd571783564358756405682fd883c5f6db07b01308d551adf947605
+checksum=1342ac70d60c21e4dbacd63f6fcd45cbe8206bb92f4bfb8185f71136fe22d63e
 
 pre_build() {
 	export npm_config_cache="./npm_cache"
