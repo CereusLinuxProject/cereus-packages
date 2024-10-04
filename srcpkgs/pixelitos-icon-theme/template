@@ -1,16 +1,16 @@
 # Template file for 'pixelitos-icon-theme'
 pkgname=pixelitos-icon-theme
-version=2023.07.31
+version=2024.09.25
 revision=1
 repository=cereus-extra
 short_desc="Pixel art icon theme"
 _icondir="usr/share/icons/pixelitos"
-_commit="730afba2df61b48989edccb55301cb21fc3a31ed"
+_commit="611ddfcb92f885a626093718022ae0b5224fb9e5"
 maintainer="ItsZariep <https://github.com/ItzSelenux>"
 license="MIT"
 homepage="https://github.com/ItzSelenux/pixelitos-icon-theme"
 distfiles="${homepage}/archive/${_commit}.tar.gz"
-checksum=e754f0c3732491cae6335e2cf88578a7a97500292251616ef7720e713e676d08
+checksum=4326248e071c0d52dd324dcf3c16a4c4fe7809d63f4db3defb52a71bc85379cd
 
 do_install() {
     # Delete unnecessary files
