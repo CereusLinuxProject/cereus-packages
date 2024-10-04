@@ -1,6 +1,6 @@
 # Template file for 'Tela-icon-theme'
 pkgname=Tela-icon-theme
-version=2024.04.19
+version=2024.09.04
 date=${version//./-}
 revision=1
 build_style=meta
@@ -29,7 +29,7 @@ maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0"
 homepage="https://github.com/vinceliuice/Tela-icon-theme"
 distfiles="${homepage}/archive/refs/tags/${date}.tar.gz"
-checksum=bff62334a443023a18225b27c045d782822761566bc06e3117a07de54aa11c0c
+checksum=8d516bd5cf69e1763e87a11a3651ddb73fd7c508adb9d992cdebfab399c78980
 
 Tela-icon-theme-standard_package() {
     color=standard
