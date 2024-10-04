@@ -1,8 +1,8 @@
 # Template file for 'powerline-status'
 # Maybe will split this in different packages in the future.
 pkgname=powerline-status
-version=2.8.3
-revision=2
+version=2.8.4
+revision=1
 repository="cereus-extra"
 makedepends="python3-setuptools python3-Sphinx git"
 build_style=python3-module
@@ -12,7 +12,7 @@ license="MIT"
 homepage="https://github.com/powerline/powerline"
 changelog="${homepage}/releases/tag/${version}"
 distfiles="${homepage}/archive/refs/tags/${version}.tar.gz"
-checksum=45d838dbac94a1363942899708b6ce7c71c1cad9e1b9d048affab4f630c4cb98
+checksum=9e846af9379b57e410efe264cff3a6b98eb78dd9526e83016776ae5ffc5798f4
 
 post_install() {
 	vlicense LICENSE
