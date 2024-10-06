@@ -1,7 +1,7 @@
 # Template file for 'xed-xapps'
 pkgname=xed-xapps
 version=3.6.6
-revision=1
+revision=2
 wrksrc=xed-${version}
 build_style="meson"
 repository="cereus-extra"

@@ -1,11 +1,11 @@
 # Template file for 'xviewer-plugins'
 pkgname=xviewer-plugins
 version=3.4.0
-revision=1
+revision=2
 build_style=meson
 repository=cereus-extra
 wrksrc=xviewer-plugins-${version}
-makedepends="gnome-common gobject-introspection which intltool pkg-config glib-devel gtk+3-devel libpeas-devel xviewer-devel cinnamon-desktop-devel xapps-devel librsvg-devel libexif-devel libchamplain-devel libgdata-devel gettext-devel libtool exempi-devel"
+makedepends="gobject-introspection which intltool pkg-config glib-devel gtk+3-devel libpeas-devel xviewer-devel cinnamon-desktop-devel xapps-devel librsvg-devel libexif-devel libchamplain-devel libgdata-devel gettext-devel libtool exempi-devel"
 depends="xviewer libpeas"
 short_desc="Plugins for XViewer. X-Apps Project."
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"

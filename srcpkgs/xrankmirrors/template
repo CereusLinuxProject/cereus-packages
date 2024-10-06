@@ -8,10 +8,10 @@ _commit="38b6a5f7ea290673d72f76f2e4f229dbc7d69a5a"
 short_desc="Rank and set XBPS mirrors"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MIT"
-homepage="https://github.com/CereusLinuxProject/xrankmirrors"
+homepage="https://codeberg.org/cereus-linux/xrankmirrors"
 changelog="${homepage}/commits/main"
 distfiles="${homepage}/archive/${_commit}.tar.gz"
-checksum=19e5e330470204e3df89cb60edf734726c5fc19fd8bb6f5348ed697e4aaec6d1
+checksum=5e9b33f5d9ce9d20882f72d648e6c8ce9e03e15fea3318a9ab452cba910a4fcd
 
 do_install() {
 	vlicense LICENSE

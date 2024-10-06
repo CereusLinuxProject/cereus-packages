@@ -1,7 +1,7 @@
 # Template file for 'pix'
 pkgname=pix
 version=3.4.3
-revision=1
+revision=2
 repository=cereus-extra
 build_style=meson
 makedepends="make intltool itstool liboauth-devel libchamplain-devel exiv2-devel glib-devel pkg-config yelp-tools gettext-devel libtool gsettings-desktop-schemas-devel libjpeg-turbo-devel tiff-devel gst-plugins-base1-devel gstreamer1-devel libopenraw-devel clutter-devel clutter-gtk-devel liboauth-devel libchamplain-devel brasero-devel libsecret-devel xapps-devel bison flex libxkbfile-devel"

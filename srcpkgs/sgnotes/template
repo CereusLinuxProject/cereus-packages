@@ -1,7 +1,7 @@
 # Template file for 'sgnotes'
 pkgname=sgnotes
 version=2024.09.29
-revision=1
+revision=2
 build_style=gnu-makefile
 makedepends="gtk+3-devel gtksourceview-devel pkg-config"
 _commit="9318a20251447462d1cd55ead4cf58d008db838e"

@@ -1,7 +1,7 @@
 # Template file for 'wapanel'
 pkgname=wapanel
 version=1.1.0
-revision=1
+revision=2
 build_style=meson
 hostmakedepends="clang pkg-config git"
 makedepends="gtk-layer-shell-devel gtk+3-devel wayland-scanner++ pulseaudio-devel"

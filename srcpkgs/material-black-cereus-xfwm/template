@@ -1,16 +1,17 @@
 # Template file for 'material-black-cereus-xfwm'
 pkgname=material-black-cereus-xfwm
-version=2022.05.26
+reverts="2022.05.26_1"
+version=0.1
 revision=1
 repository="cereus-extra"
 _themedir=usr/share/themes/material-black-cereus/
-wrksrc="Material-Black-Cereus-main"
+#wrksrc="Material-Black-Cereus-main"
 short_desc="Cereus Linux custom version of material-black-colors xfwm theme"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="Unlicensed"
-homepage="https://github.com/ItzSelenux/Material-Black-Cereus"
-distfiles="${homepage}/archive/refs/heads/main.zip"
-checksum=b84d0644f7f2a0c1c757667862d80416149126001dcd1c259389ccbafac9d4e9
+homepage="https://codeberg.org/cereus-linux/material-black-cereus-xfwm"
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=9e411daea7b99e07d5f8e2804c441f6ff6b761f649622777d4dfb9b67b666388
 
 do_install() {
 	vmkdir ${_themedir}

@@ -1,6 +1,6 @@
 # Template file for 'cereus-artwork'
 pkgname=cereus-artwork
-version=2023.01.30
+version=2023.01.31
 revision=1
 _wallpaperdir="usr/share/backgrounds"
 _icondir="usr/share/icons/hicolor"
@@ -10,9 +10,9 @@ repository="cereus-core"
 short_desc="Cereus Linux artwork"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="CC-BY-SA-4.0"
-homepage="https://github.com/CereusLinuxProject/Cereus-Artwork/"
+homepage="https://codeberg.org/cereus-linux/artwork"
 distfiles="${homepage}/archive/${_commit}.tar.gz"
-checksum=2655eaa96d3a62cc0ac06996682335c5a9094dd8392442e046e2cfdb9b0c068d
+checksum=22cbf5270ccff6ca876d88fbcfc5c7438411c83b7498741d116659f2034f5d8f
 
 do_install() {
 	# Create directories in targetdir

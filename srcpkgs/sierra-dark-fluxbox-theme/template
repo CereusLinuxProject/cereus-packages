@@ -1,6 +1,6 @@
 # Template file for 'sierra-dark-fluxbox-theme'
 pkgname=sierra-dark-fluxbox-theme
-version=2022.02.02
+version=2024.04.12
 revision=1
 theme_dir=usr/share/fluxbox/styles/${pkgname}
 repository="cereus-extra"
@@ -9,9 +9,10 @@ depends="fonts-roboto-ttf"
 short_desc="MacOS Sierra inspired dark theme for Fluxbox window manager"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0"
-homepage="https://github.com/KF-Art/Sierra-Dark-Fluxbox"
-distfiles="${homepage}/archive/refs/heads/main.zip"
-checksum=e1bd2fe9874b3004f6c3759d3c800e6b4b112a4a342b3404f161c27fb6c1b452
+homepage="https://codeberg.org/kf_art/sierra-dark-fluxbox"
+_commit="4928dc6aa26d67172f1ecd5a4441f2120f1915d8"
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=f3178488df88b2892df6b2e881089c5371721edec0a90b569c89ee2338bc6faf
 
 do_install() {
     vmkdir ${theme_dir}

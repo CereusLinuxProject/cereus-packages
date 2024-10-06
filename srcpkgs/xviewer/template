@@ -1,7 +1,7 @@
 # Template file for 'xviewer'
 pkgname=xviewer
 version=3.4.6
-revision=1
+revision=2
 build_style=meson
 repository=cereus-extra
 makedepends="gobject-introspection librsvg-devel itstool gtk-doc cmake libglib-devel pkg-config gtk+3-devel libpeas-devel cinnamon-desktop-devel xapps-devel gettext glib-devel exempi-devel libexif-devel libjpeg-turbo-devel lcms2-devel"

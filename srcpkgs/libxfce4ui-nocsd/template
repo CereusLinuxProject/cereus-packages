@@ -1,7 +1,7 @@
 # Template file for 'libxfce4ui-nocsd'
 pkgname=libxfce4ui-nocsd
 version=4.17.0
-revision=1
+revision=2
 build_style=gnu-configure
 build_helper="gir"
 configure_args="--with-locales-dir=/usr/share/locale --disable-static

@@ -9,9 +9,9 @@ _commit="1f2f6344f3563430fd7b7facf86dc22a41e6de44"
 short_desc="A simple Plymouth theme for Cereus Linux"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
-homepage="https://github.com/CereusLinuxProject/cereus_simply"
+homepage="https://codeberg.org/cereus-linux/plymouth-theme"
 distfiles="${homepage}/archive/${_commit}.tar.gz"
-checksum=c37e57ab807104160f711d8c87948143e04814a6759e7f3adfda2442f9b89179
+checksum=9d1bd5a4b1c1b19f568605ba40d3ce351d38e307393a28d29009f67f88190d87
 
 do_install() {
 	vmkdir ${_themedir}

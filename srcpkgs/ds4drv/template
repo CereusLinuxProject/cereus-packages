@@ -1,7 +1,7 @@
 # Template file for 'ds4drv'
 pkgname=ds4drv
 version=2021.04.19
-revision=1
+revision=2
 build_style=python3-module
 repository="cereus-extra"
 makedepends="python3-devel python3-setuptools"

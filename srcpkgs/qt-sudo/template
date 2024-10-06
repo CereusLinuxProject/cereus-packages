@@ -1,7 +1,7 @@
 # Template file for 'qt-sudo'
 pkgname=qt-sudo
 version=2.0.1
-revision=1
+revision=2
 #archs="i686 x86_64"
 build_style=qmake
 build_helper=qmake6

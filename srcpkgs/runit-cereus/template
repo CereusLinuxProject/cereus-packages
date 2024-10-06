@@ -2,7 +2,7 @@
 pkgname=runit-cereus
 version=2023.11.24
 _version=${version//./}
-revision=1
+revision=2
 repository=cereus-core
 wrksrc="void-runit-${_version}"
 build_style=gnu-makefile

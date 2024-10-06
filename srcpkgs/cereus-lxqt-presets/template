@@ -19,11 +19,11 @@ gvfs-smb blueman flameshot pasystray-git ksuperkey network-manager-applet pavuco
 short_desc="Cereus Linux default configurations for LXQt edition"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
-homepage="https://github.com/CereusLinuxProject/presets"
+homepage="https://codeberg.org/cereus-linux/presets"
 changelog="${homepage}/commits/main/lxqt"
 _commit="a0f759925101fb0724e5e54afb997efe3981798d"
 distfiles="${homepage}/archive/${_commit}.tar.gz"
-checksum=ed3b3dfa51be20ed361779fa65700b7b45af250d1850284c40c4fabd95897bb6
+checksum=690bab356a19b03f768c582ed841b4e12fab7af1890998da8ca5aaeb60f250de
 
 do_install() {
     vcopy lxqt/* ./

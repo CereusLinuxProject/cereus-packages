@@ -1,7 +1,7 @@
 # Template file for 'xfwm4-lxqt'
 pkgname=xfwm4-lxqt
 version=4.18.0
-revision=3
+revision=4
 repository="cereus-extra"
 build_style=gnu-configure
 configure_args="--with-locales-dir=/usr/share/locale"

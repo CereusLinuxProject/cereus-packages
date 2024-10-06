@@ -1,16 +1,17 @@
 # Template file for 'voidnsrun'
 pkgname=voidnsrun
 version=2021.07.30
-revision=1
+revision=2
 wrksrc=voidnsrun-master
 repository="cereus-extra"
 hostmakedepends="make gcc"
 short_desc="Run glibc binaries in musl libc Void Linux (and derivatives) environment and vice-versa"
+_commit="6375cdde63ccbbe7b01f650822d4f441093e2afd"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="BSD-2-Clause"
 homepage="https://github.com/gch1p/voidnsrun"
-distfiles="${homepage}/archive/refs/heads/master.zip"
-checksum=693ec1c3e225fb5605c5aeb5d06d769d857b95482558fc490f189921d9341850
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=cbe4493ffa29b50eb79f8a40075f53392029feb9904d146dd6e709789a03a77b
 
 do_build() {
     make run

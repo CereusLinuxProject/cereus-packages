@@ -1,7 +1,7 @@
 # Template file for 'os-prober-cereus'
 pkgname=os-prober-cereus
 version=1.81
-revision=1
+revision=2
 repository="cereus-extra"
 conflicts="os-prober"
 replaces="os-prober"

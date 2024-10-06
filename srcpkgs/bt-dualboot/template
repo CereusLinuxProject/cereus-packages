@@ -1,7 +1,7 @@
 # Template file for 'bt-dualboot'
 pkgname=bt-dualboot
 version=1.0.1
-revision=1
+revision=2
 build_style=fetch
 hostmakedepends="git"
 makedepends="python3-wheel python3-installer"

@@ -1,7 +1,7 @@
 # Template file for 'lxqt-build-tools-legacy'
 pkgname=lxqt-build-tools-legacy
 version=0.13.0
-revision=1
+revision=2
 build_style=cmake
 hostmakedepends="qt5-host-tools qt5-qmake pkg-config"
 makedepends="qt5-devel"

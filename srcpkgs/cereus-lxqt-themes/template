@@ -7,10 +7,11 @@ _theme_dir="usr/share/lxqt/themes"
 short_desc="Cereus Linux custom themes for LXQt desktop"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="GPL-3.0-or-later"
-homepage="https://github.com/CereusLinuxProject/cereus-lxqt-themes"
+homepage="https://codeberg.org/cereus-linux/cereus-lxqt-themes"
 changelog="${homepage}/commits/main"
-distfiles="${homepage}/archive/refs/heads/main.zip"
-checksum=73f325b870b2e39b8b15d61faf18a73c84e641dc8710f6d42ad8161e6db2673d
+_commit="bef0d6c74f388fedd0d37eac383505a8605e975c"
+distfiles="${homepage}/archive/${_commit}.tar.gz"
+checksum=d9abc0face80c9dc64b90a500eade2917fe5e004c9ff6daff8127008decb9302
 
 do_install() {
 	vmkdir ${_theme_dir}

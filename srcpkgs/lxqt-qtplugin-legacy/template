@@ -1,7 +1,7 @@
 # Template file for 'lxqt-qtplugin-legacy'
 pkgname=lxqt-qtplugin-legacy
 version=1.4.1
-revision=1
+revision=2
 build_style=cmake
 hostmakedepends="lxqt-build-tools-legacy qt5-qmake qt5-host-tools libfm-qt-legacy-devel"
 makedepends="liblxqt-devel libdbusmenu-qt5-devel libfm-qt-legacy-devel libqtxdg-legacy-devel

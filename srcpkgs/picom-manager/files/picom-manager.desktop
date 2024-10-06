@@ -1,5 +1,0 @@
-[Desktop Entry]
-Exec=picom-manager -t
-Name=Compositor
-Type=Application
-Version=1.0
