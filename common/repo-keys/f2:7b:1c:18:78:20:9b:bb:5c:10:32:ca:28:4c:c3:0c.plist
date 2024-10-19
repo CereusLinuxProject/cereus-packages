@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>public-key</key>
+	<data>LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFybFE5ajZFWFgxMVAvSG9EazIrbAppZExDYXlrVTNmMEw1ajJXbkszMTlLUEMxdE9CRWREemtlWkZxZW1UR0psT0tNemdkY3p2aUg0WWVyMnYvRjZMCjdYZ2trek43bDA3UDVBb3dIYUlFVnBzMGljTUlkZW9kTmdLc0RtQzNjSE1RZ24xL2tKYUYvK01nN1pNVCtWSC8KSXloTDRBYU95RS83M0RaU1lUdGp0QXlvVUhZUWNPc2syTHJVOW10ZHByRXZsUHUzRVRGNGNEeWRZVHZmei9iYgpJUWpmSW5sZmlVd2hWMm95WnlHYkh1RlMrNi9EUXdETSt1MG5BQ2xtM2h6Uzdkc0pSV2xMMG0xRDN5SFdlc0hrCkhrbEZkamhFWllQKytkYVQ2RFJSbHl1dGFYbG1Qa3c0Y0twVVpwOXhUOUE5aURCNGZrTzR5SWtJRFRXdzlDc1YKbFFJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==</data>
+	<key>public-key-size</key>
+	<integer>2048</integer>
+	<key>signature-by</key>
+	<string>Cereus Linux</string>
+</dict>
+</plist>
