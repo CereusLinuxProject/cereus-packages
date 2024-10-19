@@ -1,0 +1,31 @@
+# Template file for 'freetube-bin'
+pkgname=freetube-bin
+version=0.21.3
+revision=1
+nostrip=yes
+archs="x86_64"
+create_wrksrc=yes
+build_style=fetch
+hostmakedepends="bsdtar"
+depends="liberation-fonts-ttf"
+repository="cereus-extra"
+short_desc="An open source desktop YouTube player built with privacy in mind (precompiled binaries)"
+maintainer="Kevin Figueroa <kfdevart@disroot.org>"
+license="GPL-3.0"
+homepage="https://freetubeapp.io"
+changelog="https://github.com/FreeTubeApp/FreeTube/releases/tag/v${version}"
+distfiles="https://github.com/FreeTubeApp/Freetube/releases/download/v${version}-beta/${pkgname%-bin}_${version}_amd64.deb"
+checksum=bf8649c7b384cd50178d6c887371472916bfdacb9971e939c35ddbe4ab3adc08
+
+do_install() {
+	ar x ${pkgname%-bin}_${version}_amd64.deb
+	bsdtar -xf data.tar.xz -C "${DESTDIR}"
+	vmkdir "usr/bin"
+	ln -s "/opt/FreeTube/${pkgname%-bin}" "${DESTDIR}/usr/bin/${pkgname%-bin}"
+}
+
+freetube_package() {
+	build_style=meta
+	depends="freetube-bin"
+	short_desc+=" - transitional dummy package"
+}
