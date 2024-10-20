@@ -1,24 +1,24 @@
-# Template file for 'waterfox-g6-bin'
-pkgname=waterfox-g6-bin
-version=6.0.19
+# Template file for 'waterfox-bin'
+pkgname=waterfox-bin
+version=G6.0.20
 revision=1
 archs="x86_64"
 repository="cereus-extra"
 build_style=fetch
 hostmakedepends="bsdtar"
 depends="dbus-glib ffmpeg gtk+ gtk+3 hicolor-icon-theme startup-notification libnotify fontconfig libXt"
-short_desc="Sixth generation of customizable privacy-conscious web browser - precompiled binaries"
+short_desc="Sixth generation of customizable privacy-conscious web browser (precompiled binaries)"
 maintainer="Kevin Figueroa <kfdevart@disroot.org>"
 license="MPL-2.0"
 homepage="https://www.waterfox.net"
-changelog="${homepage}/docs/releases/G${version}/"
-distfiles="https://cdn1.waterfox.net/waterfox/releases/G${version}/Linux_x86_64/waterfox-G${version}.tar.bz2"
-checksum=48e9710e97f4ce31b2aa7a6f1e6881c7daa22e9a3ad47adf2d08af7f4abf5099
+changelog="${homepage}/docs/releases/${version}/"
+distfiles="https://cdn1.waterfox.net/waterfox/releases/${version}/Linux_x86_64/waterfox-${version}.tar.bz2"
+checksum=7035d9cd1ecdd13c7728a9f918638afd5e322422b53e3c3b4b89e26b6361e342
 replaces="waterfox-g4-bin waterfox-g5-bin"
 
 do_install() {
     vmkdir opt
-    bsdtar -C ${DESTDIR}/opt/ -xf waterfox-G${version}.tar.bz2
+    bsdtar -C ${DESTDIR}/opt/ -xf waterfox-${version}.tar.bz2
     vmkdir usr/bin
     ln -rfs ${DESTDIR}/opt/waterfox/waterfox ${DESTDIR}/usr/bin/
 
@@ -55,4 +55,11 @@ END
     }
 }
 END
+}
+
+waterfox-g6-bin_package() {
+	build_style=meta
+	depends="waterfox-bin>=${version}"
+	reverts="6.0.19_1 6.0.18_1 6.0.17_1 6.0.16_1 6.0.15_1"
+	short_desc+=" - transitional dummy package"
 }
